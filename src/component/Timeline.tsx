@@ -1,159 +1,231 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { italianno, lato, theSansMono } from '@/app/fonts';
 
 interface TimelineEvent {
-  id: number;
-  title: string;
+  id: string;
   time: string;
+  title: string;
+  subtitle: string;
   description: string;
-  day: number;
+  day: string;
 }
 
-const Timeline = () => {
-  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+const EVENTS: TimelineEvent[] = [
+  {
+    id: '1',
+    time: '09:00',
+    title: 'Gates Open',
+    subtitle: 'Welcome to DevSoc',
+    description: 'Registration begins at the main hall. Pick up your swag and meet your teammates.',
+    day: 'Day 1',
+  },
+  {
+    id: '2',
+    time: '10:30',
+    title: 'Opening Ceremony',
+    subtitle: 'Let the Hack begin',
+    description: 'Keynote speakers, theme announcements, and the official start of the hackathon.',
+    day: 'Day 1',
+  },
+  {
+    id: '3',
+    time: '12:00',
+    title: 'Hacking Starts',
+    subtitle: 'Build something amazing',
+    description: 'Teams start working on their projects. Mentors are available for guidance.',
+    day: 'Day 1',
+  },
+  {
+    id: '4',
+    time: '14:00',
+    title: 'Lunch Break',
+    subtitle: 'Refuel and recharge',
+    description: 'Buffet lunch served in the cafeteria. Networking opportunities with sponsors.',
+    day: 'Day 1',
+  },
+  {
+    id: '5',
+    time: '16:30',
+    title: 'Workshop',
+    subtitle: 'Intro to AI Models',
+    description: 'Learn how to integrate LLMs into your project with our lead tech sponsors.',
+    day: 'Day 1',
+  },
+  {
+    id: '6',
+    time: '20:00',
+    title: 'Dinner',
+    subtitle: 'Evening feast',
+    description: 'Dinner is served. Keep the energy high for the night ahead.',
+    day: 'Day 1',
+  },
+];
 
-  const events: TimelineEvent[] = [
-    {
-      id: 1,
-      title: 'Gates Open',
-      time: '19:30',
-      description:
-        'Let the Hack begin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-      day: 1,
-    },
-    {
-      id: 2,
-      title: 'Opening Ceremony',
-      time: '20:00',
-      description:
-        'Welcome to DevSoc 2026. Get ready for an amazing hacking experience with workshops, mentors, and prizes.',
-      day: 1,
-    },
-    {
-      id: 3,
-      title: 'Hacking Begins',
-      time: '21:00',
-      description:
-        'Start coding! The hacking session officially begins. Form teams and start working on your innovative projects.',
-      day: 1,
-    },
-  ];
+export default function Timeline() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const currentEvent = events[currentEventIndex];
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
 
-  const nextEvent = () => {
-    setCurrentEventIndex(prev => (prev + 1) % events.length);
+    const handleScroll = () => {
+      const center = container.scrollLeft + container.clientWidth / 2;
+      const items = container.getElementsByClassName('timeline-item');
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      Array.from(items).forEach((item, index) => {
+        const htmlItem = item as HTMLElement;
+        const itemCenter = htmlItem.offsetLeft + htmlItem.clientWidth / 2;
+        const distance = Math.abs(center - itemCenter);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      if (closestIndex !== activeIndex) {
+        setActiveIndex(closestIndex);
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [activeIndex]);
+
+  const scrollToEvent = (index: number) => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const items = container.getElementsByClassName('timeline-item');
+    if (items[index]) {
+      const item = items[index] as HTMLElement;
+      const scrollLeft = item.offsetLeft - container.clientWidth / 2 + item.clientWidth / 2;
+
+      container.scrollTo({
+        left: scrollLeft,
+        behavior: 'smooth',
+      });
+    }
   };
 
-  const prevEvent = () => {
-    setCurrentEventIndex(prev => (prev - 1 + events.length) % events.length);
-  };
-
-  const [hours, minutes] = currentEvent.time.split(':');
+  const activeEvent = EVENTS[activeIndex];
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+    <div className="relative w-full h-screen bg-[#050505] overflow-hidden text-white font-lato selection:bg-purple-500/30">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-[#050505] to-[#050505] opacity-60 pointer-events-none" />
 
-      <div className="relative z-10 container mx-auto px-6 py-12">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className={`text-6xl font-bold mb-4 ${theSansMono.className}`}>Timeline</h1>
-        </div>
+      <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/20 z-10" />
 
-        {/* Main Timeline Content */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Section - Event Details */}
-            <div className="space-y-6">
-              {/* Event Title */}
-              <div>
-                <h2
-                  className={`text-6xl font-extrabold
-         bg-[radial-gradient(circle_at_center,_#8C20CD,_#E700B7,_#8C20CD)]
-         bg-clip-text text-transparent mb-2 font-lato ${lato.className} leading-1 `}
-                >
-                  {currentEvent.title}
-                </h2>
-                <p className="text-xl text-gray-300 font-lato">Let the Hack begin</p>
-              </div>
-
-              {/* Description */}
-              <p className="text-gray-400 leading-relaxed text-lg font-lato">
-                {currentEvent.description}
-              </p>
-            </div>
-
-            {/* Right Section - Time Display */}
-            <div className="relative">
-              {/* Day indicator */}
-              <div className="absolute -top-8 right-0">
-                <span className={`text-4xl text-white ${italianno.className}`}>
-                  Day {currentEvent.day}
-                </span>
-              </div>
-
-              {/* Large Time Display */}
-              <div className="relative">
-                <div className="flex items-baseline justify-center">
-                  <span className="text-8xl font-thin text-gray-800 font-lato">{hours}</span>
-                  <span className="text-6xl font-thin text-white mx-2 font-lato">:</span>
-                  <span className="text-8xl font-thin text-gray-800 font-lato">{minutes}</span>
-                </div>
-
-                {/* Horizontal Timeline Line */}
-                <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-600 -translate-y-1/2">
-                  {/* Timeline Markers */}
-                  <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-white rounded-full -translate-y-1/2 -translate-x-1/2 border-2 border-gray-600"></div>
-                  <div className="absolute top-1/2 left-3/4 w-4 h-4 bg-white rounded-full -translate-y-1/2 -translate-x-1/2 border-2 border-gray-600"></div>
-                </div>
-              </div>
-            </div>
+      <div className="absolute top-0 left-0 w-full h-1/2 pointer-events-none z-20 flex flex-col justify-end pb-8 px-8 md:px-16">
+        <div className="flex justify-between items-end w-full">
+          <div className="overflow-hidden">
+            <h2
+              key={`title-${activeEvent.id}`}
+              className="text-5xl md:text-7xl font-bold tracking-tight mb-2 animate-in slide-in-from-bottom-2 fade-in duration-500"
+            >
+              <span className="bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent inline-block">
+                {activeEvent.title}
+              </span>
+            </h2>
           </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex justify-end mt-16 space-x-4">
-            <button
-              onClick={prevEvent}
-              className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center group"
-              aria-label="Previous event"
+          <div className="text-right pb-2">
+            <span
+              key={`day-${activeEvent.id}`}
+              className="font-italianno text-5xl md:text-6xl text-white block animate-in fade-in duration-700"
             >
-              <ChevronLeft className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
-            </button>
-            <button
-              onClick={nextEvent}
-              className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center group"
-              aria-label="Next event"
-            >
-              <ChevronRight className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
-            </button>
-          </div>
-
-          {/* Progress Indicators */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {events.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentEventIndex(index)}
-                className={cn(
-                  'w-2 h-2 rounded-full transition-all duration-300',
-                  index === currentEventIndex
-                    ? 'bg-purple-400 w-8'
-                    : 'bg-gray-600 hover:bg-gray-500'
-                )}
-                aria-label={`Go to event ${index + 1}`}
-              />
-            ))}
+              {activeEvent.day}
+            </span>
           </div>
         </div>
       </div>
+      <div className="absolute top-1/2 left-0 w-full h-1/2 pointer-events-none z-20 flex flex-col justify-start pt-8 px-8 md:px-16">
+        <div className="flex justify-between items-start w-full">
+          <div className="transition-opacity duration-500">
+            <p
+              key={`sub-${activeEvent.id}`}
+              className="text-xl md:text-2xl font-normal text-white mb-3 animate-in slide-in-from-top-2 fade-in duration-500"
+            >
+              {activeEvent.subtitle}
+            </p>
+            <p
+              key={`desc-${activeEvent.id}`}
+              className="text-sm md:text-base text-gray-400 leading-relaxed max-w-md animate-in slide-in-from-top-3 fade-in duration-700"
+            >
+              {activeEvent.description}
+            </p>
+          </div>
+
+          <div className="flex gap-4 z-30 pointer-events-auto">
+            <button
+              onClick={() => scrollToEvent(Math.max(0, activeIndex - 1))}
+              disabled={activeIndex === 0}
+              className="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed group active:scale-95"
+            >
+              <ArrowLeft className="w-5 h-5 text-gray-300 group-hover:text-white" />
+            </button>
+            <button
+              onClick={() => scrollToEvent(Math.min(EVENTS.length - 1, activeIndex + 1))}
+              disabled={activeIndex === EVENTS.length - 1}
+              className="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed group active:scale-95"
+            >
+              <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-white" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        ref={scrollContainerRef}
+        className="absolute inset-0 flex items-center overflow-x-auto overflow-y-hidden snap-x snap-mandatory hide-scrollbar z-10"
+        style={{ scrollBehavior: 'smooth' }}
+      >
+        <div className="shrink-0 w-[50vw]" />
+
+        {EVENTS.map((event, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div
+              key={event.id}
+              onClick={() => scrollToEvent(index)}
+              className={cn(
+                'timeline-item shrink-0 w-[60vw] md:w-[45vw] h-full flex flex-col items-center justify-center relative cursor-pointer snap-center group'
+              )}
+            >
+              {/*Background Time */}
+              <div
+                className={cn(
+                  'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10rem] md:text-[18rem] font-thin leading-none tracking-tighter select-none transition-all duration-700 ease-out',
+                  isActive
+                    ? 'text-white/10 font-black blur-0 scale-100'
+                    : 'text-white/5  font-semibold blur-[2px] scale-90'
+                )}
+              >
+                {event.time}
+              </div>
+
+              {/* Marker*/}
+              <div
+                className={cn(
+                  'w-4 h-4 rounded-full border bg-white z-30 transition-all duration-500 relative shadow-sm',
+                  isActive
+                    ? 'scale-[1.8] border-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)]'
+                    : 'scale-100 border-gray-500 opacity-70 group-hover:opacity-100'
+                )}
+              />
+            </div>
+          );
+        })}
+        <div className="shrink-0 w-[50vw]" />
+      </div>
     </div>
   );
-};
-
-export default Timeline;
+}
