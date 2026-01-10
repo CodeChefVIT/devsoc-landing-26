@@ -1,5 +1,5 @@
 import { lato, italianno, theSansMono } from '@/app/fonts';
-
+import Timeline from '@/component/Timeline';
 export default function FontShowcase() {
   return (
     <div
@@ -31,6 +31,7 @@ export default function FontShowcase() {
             </p>
           </div>
         </section>
+        <Timeline />
       </main>
     </div>
   );
