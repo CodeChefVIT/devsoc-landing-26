@@ -1,10 +1,6 @@
-import { lato, italianno, theSansMono } from '@/app/fonts';
-
 export default function FontShowcase() {
   return (
-    <div
-      className={`${lato.variable} ${italianno.variable} ${theSansMono.variable} min-h-screen bg-zinc-50 dark:bg-black p-12`}
-    >
+    <div className={`min-h-screen bg-zinc-50 dark:bg-black p-12`}>
       <main className="mx-auto max-w-3xl rounded-lg p-10 shadow">
         <section className="space-y-8">
           <div>
@@ -22,8 +18,8 @@ export default function FontShowcase() {
           </div>
 
           <div>
-            <h2 className="mb-2 text-xl font-medium">TheSansMono (Mono)</h2>
-            <pre className="font-sans-mono rounded bg-zinc-900 p-4 text-sm overflow-x-auto">
+            <h2 className="mb-2 text-xl font-medium">SplineSansMono</h2>
+            <pre className="font-spline-sans-mono rounded bg-zinc-900 p-4 text-sm overflow-x-auto">
               const example = `The quick brown fox`;
             </pre>
             <p className="mt-2 text-sm text-zinc-600">
