@@ -22,6 +22,8 @@ export default function SectionHeading({ title }: { title: string }) {
 
           tracking-tight
           scroll-mt-28
+
+          mb-16
         "
       >
         {title}

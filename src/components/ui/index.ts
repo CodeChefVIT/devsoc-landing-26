@@ -1,3 +1,4 @@
+import DecorativeBackground from './DecorativeBackground';
 import SectionHeading from './SectionHeading';
 
-export { SectionHeading };
+export { DecorativeBackground, SectionHeading };

@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #000000;
+  --background: #0a0a0a;
   --foreground: #ffffff;
 }
 
@@ -22,6 +22,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 .font-italianno {
   font-family: var(--font-italianno);
 }
@@ -30,6 +34,15 @@ body {
   font-family: var(--font-lato);
 }
 
-.font-sans-mono {
-  font-family: var(--font-sans-mono);
+.font-spline-sans-mono {
+  font-family: var(--font-spline-sans-mono);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
