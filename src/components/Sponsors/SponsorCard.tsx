@@ -27,7 +27,7 @@ const SponsorCard = ({
   return (
     <div className="w-full">
       <div
-        className={`flex flex-col ${getFlexDirection()} ${getLayoutStyle()} gap-10 lg:gap-14 items-center lg:items-start`}
+        className={`flex flex-col ${getFlexDirection()} ${getLayoutStyle()} gap-6 lg:gap-8 items-center lg:items-start`}
       >
         <div className="w-full lg:w-[300px] shrink-0">
           <div className="relative bg-[#0A0A0A] flex flex-col items-center justify-between w-[300px] h-[250px] border border-white/25 rounded-[20px] p-0">
@@ -73,7 +73,9 @@ const SponsorCard = ({
           </div>
         </div>
 
-        <div className="w-full lg:w-[337px] flex flex-col gap-4">
+        <div
+          className={`w-full lg:w-[337px] flex flex-col gap-4 ${alignment === 'right' ? 'lg:text-right' : 'lg:text-left'}`}
+        >
           <h2 className="font-bold text-white font-lato text-2xl leading-[29px]">{title}</h2>
           <p className="font-bold text-[#ADAAF7] font-lato text-base leading-[19px]">
             {description}
