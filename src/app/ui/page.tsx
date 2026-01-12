@@ -18,7 +18,7 @@ export default function FontShowcase() {
           </div>
 
           <div>
-            <h2 className="mb-2 text-xl font-medium">SplineSansMono</h2>
+            <h2 className="mb-2 text-xl font-medium">SplineSansMono (Monospace)</h2>
             <pre className="font-spline-sans-mono rounded bg-zinc-900 p-4 text-sm overflow-x-auto">
               const example = `The quick brown fox`;
             </pre>

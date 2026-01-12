@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { lato, italianno, SplineSansMono } from './fonts';
+import { lato, italianno, splineSansMono } from './fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lato.variable} ${italianno.variable} ${SplineSansMono.variable} antialiased`}
+        className={`${lato.variable} ${italianno.variable} ${splineSansMono.variable} antialiased`}
       >
         {children}
       </body>
