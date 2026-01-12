@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { DecorativeBackground } from '@/components/ui';
 import Sponsors from '@/components/Sponsors';
+import Faqs from '@/components/Faqs';
 
 export default function Page() {
   return (
@@ -11,7 +12,11 @@ export default function Page() {
       {/* Keep hero outside of the decorative-background component */}
       <DecorativeBackground>
         <Sponsors />
+        <Faqs />
       </DecorativeBackground>
+
     </main>
+
   );
 }
+

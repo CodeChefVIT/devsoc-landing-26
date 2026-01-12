@@ -32,7 +32,7 @@ const SponsorCard = ({
         <div className="w-full lg:w-[300px] shrink-0">
           <div className="relative bg-[#0A0A0A] flex flex-col items-center justify-between w-[300px] h-[250px] border border-white/25 rounded-[20px] p-0">
             <div className="flex items-center justify-center flex-1 w-full">
-              <Image
+              <img
                 src={imageSrc}
                 width={279}
                 height={102}
