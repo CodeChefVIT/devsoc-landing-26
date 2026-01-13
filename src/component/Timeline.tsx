@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -73,6 +73,22 @@ export default function Timeline() {
   const dragStartRef = useRef<{ x: number; scrollLeft: number } | null>(null);
   const wheelTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  const scrollToEvent = useCallback((index: number) => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const items = container.getElementsByClassName('timeline-item');
+    if (items[index]) {
+      const item = items[index] as HTMLElement;
+      const scrollLeft = item.offsetLeft - container.clientWidth / 2 + item.clientWidth / 2;
+
+      container.scrollTo({
+        left: scrollLeft,
+        behavior: 'smooth',
+      });
+    }
+  }, []);
+
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
@@ -88,6 +104,24 @@ export default function Timeline() {
 
         wheelTimeoutRef.current = setTimeout(() => {
           setIsWheeling(false);
+
+          const center = container.scrollLeft + container.clientWidth / 2;
+          const items = container.getElementsByClassName('timeline-item');
+          let closestIndex = 0;
+          let minDistance = Infinity;
+
+          Array.from(items).forEach((item, index) => {
+            const htmlItem = item as HTMLElement;
+            const itemCenter = htmlItem.offsetLeft + htmlItem.clientWidth / 2;
+            const distance = Math.abs(center - itemCenter);
+
+            if (distance < minDistance) {
+              minDistance = distance;
+              closestIndex = index;
+            }
+          });
+
+          scrollToEvent(closestIndex);
         }, 150);
       }
     };
@@ -98,7 +132,7 @@ export default function Timeline() {
       container.removeEventListener('wheel', handleWheel);
       if (wheelTimeoutRef.current) clearTimeout(wheelTimeoutRef.current);
     };
-  }, []);
+  }, [scrollToEvent]);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -134,22 +168,6 @@ export default function Timeline() {
 
     return () => container.removeEventListener('scroll', handleScroll);
   }, [activeIndex, isDragging]);
-
-  const scrollToEvent = (index: number) => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    const items = container.getElementsByClassName('timeline-item');
-    if (items[index]) {
-      const item = items[index] as HTMLElement;
-      const scrollLeft = item.offsetLeft - container.clientWidth / 2 + item.clientWidth / 2;
-
-      container.scrollTo({
-        left: scrollLeft,
-        behavior: 'smooth',
-      });
-    }
-  };
 
   // Drag to Scroll Handlers
   const onMouseDown = (e: React.MouseEvent) => {
