@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface TimelineEvent {
   id: string;
@@ -67,12 +68,46 @@ const EVENTS: TimelineEvent[] = [
 export default function Timeline() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isWheeling, setIsWheeling] = useState(false);
+  const dragStartRef = useRef<{ x: number; scrollLeft: number } | null>(null);
+  const wheelTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        setIsWheeling(true);
+
+        if (wheelTimeoutRef.current) clearTimeout(wheelTimeoutRef.current);
+
+        container.scrollLeft += e.deltaY;
+
+        wheelTimeoutRef.current = setTimeout(() => {
+          setIsWheeling(false);
+        }, 150);
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+      if (wheelTimeoutRef.current) clearTimeout(wheelTimeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
     const handleScroll = () => {
+      // Don't update active index while dragging to avoid jitter
+      if (isDragging) return;
+
       const center = container.scrollLeft + container.clientWidth / 2;
       const items = container.getElementsByClassName('timeline-item');
       let closestIndex = 0;
@@ -98,7 +133,7 @@ export default function Timeline() {
     handleScroll();
 
     return () => container.removeEventListener('scroll', handleScroll);
-  }, [activeIndex]);
+  }, [activeIndex, isDragging]);
 
   const scrollToEvent = (index: number) => {
     const container = scrollContainerRef.current;
@@ -116,6 +151,34 @@ export default function Timeline() {
     }
   };
 
+  // Drag to Scroll Handlers
+  const onMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    dragStartRef.current = {
+      x: e.pageX,
+      scrollLeft: scrollContainerRef.current.scrollLeft,
+    };
+  };
+
+  const onMouseLeave = () => {
+    setIsDragging(false);
+    dragStartRef.current = null;
+  };
+
+  const onMouseUp = () => {
+    setIsDragging(false);
+    dragStartRef.current = null;
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !dragStartRef.current || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const walk = (x - dragStartRef.current.x) * 1.5; // Scroll-fast multiplier
+    scrollContainerRef.current.scrollLeft = dragStartRef.current.scrollLeft - walk;
+  };
+
   const activeEvent = EVENTS[activeIndex];
 
   return (
@@ -124,44 +187,63 @@ export default function Timeline() {
 
       <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/20 z-10" />
 
+      {/* Text Content Top */}
       <div className="absolute top-0 left-0 w-full h-1/2 pointer-events-none z-20 flex flex-col justify-end pb-8 px-8 md:px-16">
         <div className="flex justify-between items-end w-full">
           <div className="overflow-hidden">
-            <h2
-              key={`title-${activeEvent.id}`}
-              className="text-5xl md:text-7xl font-bold tracking-tight mb-2 animate-in slide-in-from-bottom-2 fade-in duration-500"
-            >
-              <span className="bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent inline-block">
-                {activeEvent.title}
-              </span>
-            </h2>
+            <AnimatePresence mode="wait">
+              <motion.h2
+                key={`title-${activeEvent.id}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="text-5xl md:text-7xl font-bold tracking-tight mb-2"
+              >
+                <span className="bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent inline-block">
+                  {activeEvent.title}
+                </span>
+              </motion.h2>
+            </AnimatePresence>
           </div>
 
           <div className="text-right pb-2">
-            <span
-              key={`day-${activeEvent.id}`}
-              className="font-italianno text-5xl md:text-6xl text-white block animate-in fade-in duration-700"
-            >
-              {activeEvent.day}
-            </span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={`day-${activeEvent.id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.5 }}
+                className="font-italianno text-5xl md:text-6xl text-white block"
+              >
+                {activeEvent.day}
+              </motion.span>
+            </AnimatePresence>
           </div>
         </div>
       </div>
+
+      {/* Text Content Bottom */}
       <div className="absolute top-1/2 left-0 w-full h-1/2 pointer-events-none z-20 flex flex-col justify-start pt-8 px-8 md:px-16">
         <div className="flex justify-between items-start w-full">
           <div className="transition-opacity duration-500">
-            <p
-              key={`sub-${activeEvent.id}`}
-              className="text-xl md:text-2xl font-normal text-white mb-3 animate-in slide-in-from-top-2 fade-in duration-500"
-            >
-              {activeEvent.subtitle}
-            </p>
-            <p
-              key={`desc-${activeEvent.id}`}
-              className="text-sm md:text-base text-gray-400 leading-relaxed max-w-md animate-in slide-in-from-top-3 fade-in duration-700"
-            >
-              {activeEvent.description}
-            </p>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`content-${activeEvent.id}`}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.5 }}
+              >
+                <p className="text-xl md:text-2xl font-normal text-white mb-3">
+                  {activeEvent.subtitle}
+                </p>
+                <p className="text-sm md:text-base text-gray-400 leading-relaxed max-w-md">
+                  {activeEvent.description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           <div className="flex gap-4 z-30 pointer-events-auto">
@@ -183,10 +265,19 @@ export default function Timeline() {
         </div>
       </div>
 
+      {/* Scrollable Container */}
       <div
         ref={scrollContainerRef}
-        className="absolute inset-0 flex items-center overflow-x-auto overflow-y-hidden snap-x snap-mandatory hide-scrollbar z-10"
-        style={{ scrollBehavior: 'smooth' }}
+        className={cn(
+          'absolute inset-0 flex items-center overflow-x-auto overflow-y-hidden snap-x snap-mandatory hide-scrollbar z-10',
+          isDragging ? 'cursor-grabbing snap-none' : 'cursor-grab',
+          isWheeling && 'snap-none'
+        )}
+        style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
+        onMouseDown={onMouseDown}
+        onMouseLeave={onMouseLeave}
+        onMouseUp={onMouseUp}
+        onMouseMove={onMouseMove}
       >
         <div className="shrink-0 w-[50vw]" />
 
@@ -195,31 +286,38 @@ export default function Timeline() {
           return (
             <div
               key={event.id}
-              onClick={() => scrollToEvent(index)}
+              onClick={() => {
+                if (!isDragging) scrollToEvent(index);
+              }}
               className={cn(
-                'timeline-item shrink-0 w-[60vw] md:w-[45vw] h-full flex flex-col items-center justify-center relative cursor-pointer snap-center group'
+                'timeline-item shrink-0 w-[60vw] md:w-[45vw] h-full flex flex-col items-center justify-center relative snap-center group select-none'
               )}
             >
-              {/*Background Time */}
-              <div
+              {/* Background Time */}
+              <motion.div
                 className={cn(
-                  'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10rem] md:text-[18rem] font-thin leading-none tracking-tighter select-none transition-all duration-700 ease-out',
-                  isActive
-                    ? 'text-white/10 font-black blur-0 scale-100'
-                    : 'text-white/5  font-semibold blur-[2px] scale-90'
+                  'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-thin leading-none tracking-tighter select-none',
+                  isActive ? 'text-white/10 font-black' : 'text-white/5 font-semibold'
                 )}
+                animate={{
+                  scale: isActive ? 1 : 0.9,
+                  filter: isActive ? 'blur(0px)' : 'blur(2px)',
+                }}
+                transition={{ duration: 0.5 }}
               >
-                {event.time}
-              </div>
+                <span className="text-[10rem] md:text-[18rem]">{event.time}</span>
+              </motion.div>
 
-              {/* Marker*/}
-              <div
-                className={cn(
-                  'w-4 h-4 rounded-full border bg-white z-30 transition-all duration-500 relative shadow-sm',
-                  isActive
-                    ? 'scale-[1.8] border-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)]'
-                    : 'scale-100 border-gray-500 opacity-70 group-hover:opacity-100'
-                )}
+              {/* Marker */}
+              <motion.div
+                className={cn('w-4 h-4 rounded-full border bg-white z-30 relative shadow-sm')}
+                animate={{
+                  scale: isActive ? 1.8 : 1,
+                  borderColor: isActive ? 'transparent' : 'rgba(107, 114, 128, 1)', // gray-500
+                  opacity: isActive ? 1 : 0.7,
+                  boxShadow: isActive ? '0 0 15px rgba(255,255,255,0.6)' : 'none',
+                }}
+                transition={{ duration: 0.5 }}
               />
             </div>
           );
