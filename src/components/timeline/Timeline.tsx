@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { splineSansMono } from '@/app/fonts';
 import './timeline.css';
 import {
   motion,
@@ -179,17 +180,31 @@ export default function Timeline() {
   return (
     <div
       ref={containerRef}
-      className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory bg-[#050505] scrollbar-none"
+      className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory bg-transparent scrollbar-none flex justify-center items-center"
     >
       <div className="relative w-full" style={{ height: `${EVENTS.length * 100}vh` }}>
         <div className="sticky top-0 h-screen w-full overflow-hidden text-white font-lato selection:bg-purple-500/30">
-          <div className="absolute inset-0 opacity-60 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.2)_0%,#050505_50%,#050505_100%)]" />
+          {/* <div className="absolute inset-0 opacity-60 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.2)_0%,#050505_50%,#050505_100%)]" /> */}
 
           <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/20 z-10" />
 
-          <div className="absolute top-0 left-0 w-full h-1/2 pointer-events-none z-20 flex flex-col justify-end pb-8 px-8 md:px-16">
-            <div className="flex justify-between items-end w-full">
-              <div className="overflow-hidden">
+          <div className="w-full h-1/2 pointer-events-none z-20 flex flex-col justify-end pb-8 px-8 md:px-16 lg:px-0">
+            {/* <div className="absolute inset-x-0 top-0 z-20 h-1/2 pointer-events-none">
+              <div className="relative grid grid-cols-1 lg:grid-cols-8 h-full items-end pb-8 px-8 md:px-16 lg:px-0 w-full">
+                <h1
+                  className={cn(
+                    'relative mt-24 text-4xl md:text-6xl lg:text-8xl font-bold',
+                    'lg:col-start-2 lg:col-span-6',
+                    splineSansMono.className
+                  )}
+                >
+                  Timeline
+                </h1>
+              </div>
+            </div> */}
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full mb-12 px-8 md:px-16 lg:px-0">
+              <div className="overflow-hidden lg:col-start-3 lg:col-span-4">
                 <AnimatePresence mode="wait">
                   <motion.h2
                     key={`title-${activeEvent.id}`}
@@ -197,7 +212,7 @@ export default function Timeline() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className="text-5xl md:text-7xl font-bold tracking-tight mb-2"
+                    className="text-5xl md:text-7xl lg:text-6xl font-bold tracking-normal leading-normal mb-30"
                   >
                     <span className="bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent inline-block">
                       {activeEvent.title}
@@ -206,7 +221,7 @@ export default function Timeline() {
                 </AnimatePresence>
               </div>
 
-              <div className="text-right pb-2">
+              <div className="text-right lg:col-start-10 lg:col-span-2 mr-40">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={`day-${activeEvent.id}`}
@@ -214,7 +229,7 @@ export default function Timeline() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.5 }}
-                    className="font-italianno text-5xl md:text-6xl text-white block"
+                    className="font-italianno text-5xl md:text-6xl lg:text-7xl text-white block"
                   >
                     {activeEvent.day}
                   </motion.span>
@@ -223,12 +238,12 @@ export default function Timeline() {
             </div>
           </div>
 
-          <div className="absolute top-1/2 left-0 w-full h-1/2 pointer-events-none z-20 flex flex-col justify-start pt-8 px-8 md:px-16">
-            <div className="flex justify-between items-start w-full">
-              <div className="transition-opacity duration-500">
+          <div className="  w-full h-1/2 pointer-events-none z-20 flex flex-col justify-start pt-64 px-8 md:px-16 lg:px-0">
+            <div className="grid grid-cols-1 lg:grid-cols-12 items-start w-full px-8 md:px-16 lg:px-0">
+              <div className="lg:col-start-3 lg:col-span-3">
                 <AnimatePresence mode="wait">
                   <motion.div
-                    key={`content-${activeEvent.id}`}
+                    key={`subtitle-${activeEvent.id}`}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -237,6 +252,16 @@ export default function Timeline() {
                     <p className="text-xl md:text-2xl font-normal text-white mb-3">
                       {activeEvent.subtitle}
                     </p>
+                  </motion.div>
+                </AnimatePresence>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`description-${activeEvent.id}`}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                  >
                     <p className="text-sm md:text-base text-gray-400 leading-relaxed max-w-md">
                       {activeEvent.description}
                     </p>
@@ -244,7 +269,7 @@ export default function Timeline() {
                 </AnimatePresence>
               </div>
 
-              <div className="flex gap-4 z-30 pointer-events-auto">
+              <div className="flex gap-4 z-30 pointer-events-auto lg:col-start-9 lg:col-span-2 justify-end">
                 <button
                   onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
                   disabled={activeIndex === 0}
@@ -282,19 +307,21 @@ export default function Timeline() {
                         isActive ? 'text-white/10 font-black' : 'text-white/5 font-semibold'
                       )}
                       animate={{
-                        scale: isActive ? 1 : 0.9,
+                        scale: isActive ? 1 : 0.5,
                         filter: isActive ? 'blur(0px)' : 'blur(2px)',
                       }}
                       transition={{ duration: 0.5 }}
                     >
-                      <span className="text-[10rem] md:text-[18rem]">{event.time}</span>
+                      <span className="text-[10rem] md:text-[22rem] lg:text-[32rem] tracking-wider">
+                        {event.time}
+                      </span>
                     </motion.div>
 
                     <motion.div
                       className="w-4 h-4 rounded-full border bg-white z-30 relative shadow-sm"
                       animate={{
-                        scale: isActive ? 1.8 : 1,
-                        borderColor: isActive ? 'transparent' : 'rgba(107, 114, 128, 1)', // gray-500
+                        scale: isActive ? 1.8 : 0.5,
+                        borderColor: isActive ? 'transparent' : 'rgba(107, 114, 128, 1)',
                         opacity: isActive ? 1 : 0.7,
                         boxShadow: isActive ? '0 0 15px rgba(255,255,255,0.6)' : 'none',
                       }}
