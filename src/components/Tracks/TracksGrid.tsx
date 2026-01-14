@@ -38,7 +38,7 @@ export default function TracksGrid({ tracks }: { tracks: Track[] }) {
         ...containerStyle,
         ...cssVars,
       }}
-      className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px auto-rows-fr relative z-10 h-[80vh] box-border border border-[#474747] rounded-lg overflow-hidden"
+      className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px auto-rows-fr relative z-10 h-[80vh] box-border border border-[#474747] rounded-3xl overflow-hidden"
     >
       <Image
         src="/images/backgrounds/bg-tracks.avif"
