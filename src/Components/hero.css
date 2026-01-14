@@ -1,0 +1,124 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+.intro {
+  position: absolute;
+  top: 11%;
+  width: 100%;
+  font-family: var(--font-italianno);
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  z-index: 10;
+}
+
+.title-wrap {
+  font-family: var(--font-spline-sans-mono);
+  position: absolute;
+  top: 22%;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  position: absolute;
+  width: 100%;
+  font-size: clamp(3rem, 15vw, 11rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
+  z-index: 30;
+}
+
+.solid {
+  color: white;
+  z-index: 10;
+}
+
+.hollow {
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  z-index: 30;
+}
+
+.ellipse {
+  position: absolute;
+  inset: clamp(10%, 15vw, 20%);
+  bottom: 20%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: rotate(-25deg) translateY(15%);
+  pointer-events: none;
+}
+
+.ellipse-left {
+  clip-path: inset(0 74% 0 0);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 5;
+}
+
+.ellipse-right {
+  clip-path: inset(0 0 0 26%);
+  z-index: 40;
+}
+
+.statue {
+  position: absolute;
+  bottom: 100px;
+  inset-inline: clamp(16px, 6vw, 120px);
+  margin-inline: auto;
+  width: 370px;
+  height: 464.7px;
+  z-index: 20;
+}
+
+.statue img {
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.gradient-box {
+  position: absolute;
+  bottom: 95px;
+  inset-inline: clamp(16px, 6vw, 120px);
+  margin-inline: auto;
+  max-width: 1100px;
+  height: 200px;
+  border-radius: 28px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.gradient-box img {
+  object-fit: fill;
+}
+
+.cta {
+  position: absolute;
+  bottom: calc(140px);
+  transform: translateX(-50%);
+  inset-inline: clamp(16px, 6vw, 120px);
+  margin-inline: auto;
+  height: 42px;
+  padding: 0 28px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(81, 81, 81, 0.25);
+  backdrop-filter: blur(6px);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  width: fit-content;
+  z-index: 30;
+}
