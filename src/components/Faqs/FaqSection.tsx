@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SectionHeading } from '@/components/ui';
 
 const faqs = [
   {
@@ -30,23 +31,14 @@ export default function Faqs() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="faqs" className="relative overflow-hidden px-6 py-24">
+    <section id="faqs" className="relative overflow-hidden px-6 py-24" suppressHydrationWarning>
     <div
-      className="pointer-events-none absolute inset-0 z-[1]"
-        style={{
-          backgroundImage: "url('/images/faq-bg.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.9, //
-    }}
+      className="pointer-events-none absolute inset-0 z-[1] bg-[url('/images/faq-bg.png')] bg-cover bg-center bg-no-repeat opacity-90"
     />
       <div className="relative z-10 mx-auto max-w-7xl">
 
-        <div className="flex justify-end mb-12">
-          <h2 className="font-spline-sans-mono font-bold text-white text-center text-[32px] leading-tight sm:text-[40px] md:text-[56px] lg:text-[72px] tracking-tight">
-            FAQs
-          </h2>
+        <div className="flex justify-end" suppressHydrationWarning>
+          <SectionHeading title="FAQs" />
         </div>
 
         <div className="space-y-4">
@@ -68,11 +60,7 @@ export default function Faqs() {
               </button>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  activeIndex === index
-                    ? "max-h-40 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}
               >
                 <p className="font-lato font-bold text-[#ADAAF7] whitespace-pre-line text-base leading-[19px]">
                   {faq.answer}
