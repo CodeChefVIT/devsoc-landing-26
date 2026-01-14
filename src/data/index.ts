@@ -1,3 +1,4 @@
 import sponsors from './sponsors';
+import tracks from './tracks';
 
-export { sponsors };
+export { sponsors, tracks };
