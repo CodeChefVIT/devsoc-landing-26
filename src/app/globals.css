@@ -46,22 +46,3 @@ button {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-/* Tracks grid overlay draws solid dividers using CSS vars set on the container */
-.tracks-grid__overlay {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 20;
-  border-radius: inherit;
-  background-image:
-    linear-gradient(to right, #474747 0 var(--gap), transparent var(--gap)),
-    linear-gradient(to bottom, #474747 0 var(--gap), transparent var(--gap));
-  background-size:
-    calc(100% / var(--columns)) 100%,
-    100% calc(100% / var(--rows));
-  background-repeat: repeat;
-  background-position:
-    right top,
-    left bottom;
-}
