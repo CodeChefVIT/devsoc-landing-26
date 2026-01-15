@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { DecorativeBackground } from '@/components/ui';
 import Sponsors from '@/components/Sponsors';
 import Tracks from '@/components/Tracks';
+import Faqs from '@/components/Faqs/FaqSection';
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
       <DecorativeBackground>
         <Tracks />
         <Sponsors />
+        <Faqs />
       </DecorativeBackground>
     </main>
   );
