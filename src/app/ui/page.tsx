@@ -1,4 +1,4 @@
-export default function FontShowcase() {
+export default function UIShowcase() {
   return (
     <div className={`min-h-screen bg-zinc-50 dark:bg-black p-12`}>
       <main className="mx-auto max-w-3xl rounded-lg p-10 shadow">

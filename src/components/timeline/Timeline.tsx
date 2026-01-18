@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import './timeline.css';
+import { SectionHeading } from '../ui';
 import {
   motion,
   AnimatePresence,
@@ -83,35 +84,26 @@ export default function Timeline() {
 
   const isMobile = viewportWidth < 768;
   const itemWidthVw = isMobile ? 60 : 49;
-  const initialPaddingVw = isMobile ? 30 : 27.5; // From 'calc(50vw-20vw)' and 'calc(50vw-22.5vw)'
-
-  // Calculate the X position to center each event
-  // For each event index, calculate the offset needed to center that event
+  const initialPaddingVw = isMobile ? 30 : 27.5;
   const calculateEventOffset = useCallback(
     (index: number) => {
-      // Calculate the position of this event's center relative to the container start
-      // Each event is itemWidthVw wide, and we have initialPaddingVw before the first event
       return initialPaddingVw + index * itemWidthVw + itemWidthVw / 2;
     },
     [initialPaddingVw, itemWidthVw]
   );
 
-  // Create a motion value for the container X position
   const containerX = useMotionValue(`calc(50vw - ${calculateEventOffset(0)}vw)`);
 
-  // Update container position smoothly based on scroll progress
   useMotionValueEvent(scrollYProgress, 'change', latest => {
     const currentIndex = latest * (EVENTS.length - 1);
     const floorIndex = Math.floor(currentIndex);
     const ceilIndex = Math.min(Math.ceil(currentIndex), EVENTS.length - 1);
     const t = currentIndex - floorIndex;
 
-    // Interpolate between the two nearest event positions
     const floorOffset = calculateEventOffset(floorIndex);
     const ceilOffset = calculateEventOffset(ceilIndex);
     const interpolatedOffset = floorOffset + (ceilOffset - floorOffset) * t;
 
-    // Move container so event center aligns with screen center (50vw)
     containerX.set(`calc(50vw - ${interpolatedOffset}vw)`);
   });
 
@@ -145,10 +137,6 @@ export default function Timeline() {
   const TRACK_MARGIN_VW = isMobile ? 8 : 10;
   const TRACK_COLOR_CLASS = 'bg-white';
 
-  // Timeline line animation based on state
-  // Start: line extends only to the right (from center to right edge)
-  // Middle: line extends both sides (full width)
-  // End: line extends only to the left (from left edge to center)
   const timelineLineStyle = {
     left: isFirst ? '50%' : `${TRACK_MARGIN_VW}vw`,
     width: isMiddle
@@ -163,14 +151,12 @@ export default function Timeline() {
     >
       <div className="relative w-full" style={{ height: `${EVENTS.length * 100}vh` }}>
         <div className="sticky top-0 h-screen w-full overflow-hidden text-white font-lato selection:bg-purple-500/30">
-          {/* Timeline Title - Top Left */}
-          <div className="absolute top-8 left-8 md:top-12 md:left-16 z-30">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-spline-sans-mono">
-              Timeline
-            </h1>
+          <div className="grid grid-cols-12 ">
+            <div className="col-start-2">
+              <SectionHeading title="Timeline" />
+            </div>
           </div>
-
-          {/* Timeline Track - Background Line */}
+          {/* Background Line */}
           <div
             className="absolute top-1/2 h-px bg-white/20 z-9"
             style={{
@@ -179,14 +165,12 @@ export default function Timeline() {
             }}
           />
 
-          {/* Animated Timeline Line */}
           <motion.div
             className={cn('absolute top-1/2 h-px z-10', TRACK_COLOR_CLASS)}
             animate={timelineLineStyle}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
           />
 
-          {/* Large Background Time Numbers - Centered on Screen */}
           <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
             <AnimatePresence mode="wait">
               <motion.div
@@ -202,7 +186,6 @@ export default function Timeline() {
             </AnimatePresence>
           </div>
 
-          {/* Timeline Dot - Always Centered (separate from scrolling events) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
             <motion.div
               className="w-4 h-4 rounded-full bg-white border-2 border-white shadow-lg"
@@ -214,9 +197,8 @@ export default function Timeline() {
             />
           </div>
 
-          {/* Event Content - Top Section */}
-          <div className="w-full h-1/2 pointer-events-none z-20 flex flex-col justify-end pb-8 px-8 md:px-16 lg:px-0">
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full mb-12 px-8 md:px-16 lg:px-0">
+          <div className="UpperEventDetails w-full h-1/2 pointer-events-none z-20 flex flex-col justify-end pb-64 px-8 md:px-16 lg:px-0">
+            <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full px-8 md:px-16 lg:px-0">
               <div className="overflow-hidden lg:col-start-3 lg:col-span-4">
                 <AnimatePresence mode="wait">
                   <motion.h2
@@ -225,9 +207,9 @@ export default function Timeline() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-normal leading-normal mb-30 font-lato"
+                    className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-normal leading-normal font-lato"
                   >
-                    <span className="bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent inline-block">
+                    <span className="bg-radial-[at_50%_75%] from-[#E700B7] via-[#8C20CD] to-[#0C0A35] to-90% bg-clip-text text-transparent inline-block">
                       {activeEvent.title}
                     </span>
                   </motion.h2>
@@ -251,8 +233,7 @@ export default function Timeline() {
             </div>
           </div>
 
-          {/* Event Content - Bottom Section */}
-          <div className="w-full h-1/2 pointer-events-none z-20 flex flex-col justify-start pt-64 px-8 md:px-16 lg:px-0">
+          <div className="LowerHalfEventDetails w-full h-1/2 pointer-events-none z-20 flex flex-col justify-start pt-64 px-8 md:px-16 lg:px-0">
             <div className="grid grid-cols-1 lg:grid-cols-12 items-start w-full px-8 md:px-16 lg:px-0">
               <div className="lg:col-start-3 lg:col-span-3">
                 <AnimatePresence mode="wait">
@@ -289,20 +270,19 @@ export default function Timeline() {
                   disabled={activeIndex === 0}
                   className="w-12 h-12 rounded-full border border-white/20 bg-white/10 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed group active:scale-95"
                 >
-                  <ArrowLeft className="w-5 h-5 text-white" />
+                  <ChevronLeft className="w-5 h-5 text-white bg-transparent" />
                 </button>
                 <button
                   onClick={() => scrollToIndex(Math.min(EVENTS.length - 1, activeIndex + 1))}
                   disabled={activeIndex === EVENTS.length - 1}
                   className="w-12 h-12 rounded-full border border-white/20 bg-white/10 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed group active:scale-95"
                 >
-                  <ArrowRight className="w-5 h-5 text-white" />
+                  <ChevronRight className="w-5 h-5 text-white bg-transparent" />
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Events Container with Horizontal Scrolling */}
           <div className="bg absolute inset-0 flex items-center z-10 pointer-events-none">
             <motion.div style={{ x: containerX }} className="flex items-center justify-center">
               <div className="shrink-0 w-[calc(50vw-20vw)] md:w-[calc(50vw-22.5vw)]" />
@@ -316,7 +296,6 @@ export default function Timeline() {
                       'events shrink-0 w-[60vw] md:w-[45vw] flex flex-col items-center justify-center relative select-none'
                     )}
                   >
-                    {/* Inactive event indicators - small dots */}
                     {!isActive && (
                       <motion.div
                         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white/50 z-20"
@@ -326,7 +305,6 @@ export default function Timeline() {
                         transition={{ duration: 0.3 }}
                       />
                     )}
-                    {/* Active event circle is hidden here - the fixed centered dot above represents it */}
                   </div>
                 );
               })}
@@ -335,7 +313,6 @@ export default function Timeline() {
           </div>
         </div>
 
-        {/* Scroll Snap Points */}
         {EVENTS.map((_, index) => (
           <div
             key={index}
