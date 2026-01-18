@@ -3,6 +3,9 @@ import { DecorativeBackground } from '@/components/ui';
 import Sponsors from '@/components/Sponsors';
 import Tracks from '@/components/Tracks';
 import Faqs from '@/components/Faqs/FaqSection';
+import Timeline from '@/components/timeline/Timeline';
+import AboutPage from './about/page';
+import Hero from '@/components/hero/hero';
 
 export default function Page() {
   return (
@@ -15,10 +18,13 @@ export default function Page() {
         Click here to view Hero
       </Link>
 
+      <Hero />
       {/* Keep hero outside of the decorative-background component */}
       <DecorativeBackground>
+        <AboutPage />
         <Tracks />
         <Sponsors />
+        <Timeline />
         <Faqs />
       </DecorativeBackground>
     </main>

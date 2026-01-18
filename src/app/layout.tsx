@@ -1,8 +1,8 @@
-import type { Metadata } from 'next'
-import { lato, italianno, splineSansMono } from './fonts'
-import './globals.css'
+import type { Metadata } from 'next';
+import { lato, italianno, splineSansMono } from './fonts';
+import './globals.css';
 
-import Navbar from '@/components/ui/navbar'
+import Navbar from '@/components/ui/navbar';
 
 export const metadata: Metadata = {
   title: "DevSoc'26",
@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     shortcut: '/icons/icon-32x32.webp',
     apple: '/icons/icon-16x16.webp',
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -29,5 +29,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }
