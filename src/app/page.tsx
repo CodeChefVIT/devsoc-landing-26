@@ -3,6 +3,7 @@ import { DecorativeBackground } from '@/components/ui';
 import Sponsors from '@/components/Sponsors';
 import Tracks from '@/components/Tracks';
 import Faqs from '@/components/Faqs/FaqSection';
+import Footer from '@/components/Footer/Footer';
 
 export default function Page() {
   return (
@@ -20,6 +21,7 @@ export default function Page() {
         <Tracks />
         <Sponsors />
         <Faqs />
+        <Footer />
       </DecorativeBackground>
     </main>
   );
