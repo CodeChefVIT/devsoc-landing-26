@@ -53,12 +53,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* title */}
           <div className="text-center">
             <h1
               className="text-[clamp(4rem,14vw,10rem)] font-bold tracking-tight text-transparent"
               style={{
-                WebkitTextStroke: "1px rgba(255,255,255,0.9)",
+                WebkitTextStroke: "2px rgba(255,255,255,0.9)",
                 fontFamily: "The Sans Mono, monospace",
               }}
             >
