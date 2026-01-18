@@ -64,7 +64,7 @@ export default function Footer() {
               DEVSOC'26
             </h1>
 
-            <p className="mt-6 text-gray-300 text-lg">
+            <p className="mt-6 text-gray-300 text-lg font-bold font-lato">
               Made with <span className="text-white">♡</span> by CodeChef-VIT
             </p>
           </div>
