@@ -12,39 +12,39 @@ const SponsorCard = ({
 }) => {
   const getLayoutStyle = () => {
     if (alignment === 'left') {
-      return 'lg:pl-[calc(25%-150px)]';
+      return 'md:pl-[calc(20%-120px)] lg:pl-[calc(25%-150px)]';
     } else if (alignment === 'right') {
-      return 'lg:pr-[calc(25%-150px)]';
+      return 'md:pr-[calc(20%-120px)] lg:pr-[calc(25%-150px)]';
     } else {
-      return 'lg:pl-[25%]';
+      return 'md:pl-[20%] lg:pl-[25%]';
     }
   };
 
   const getFlexDirection = () => {
-    return alignment === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row';
+    return alignment === 'right' ? 'md:flex-row-reverse' : 'md:flex-row';
   };
 
   return (
     <div className="w-full">
       <div
-        className={`flex flex-col ${getFlexDirection()} ${getLayoutStyle()} gap-6 lg:gap-8 items-center lg:items-start`}
+        className={`flex flex-col ${getFlexDirection()} ${getLayoutStyle()} gap-6 md:gap-7 lg:gap-8 items-center md:items-start px-4 sm:px-6 md:px-0`}
       >
-        <div className="w-full lg:w-[300px] shrink-0">
-          <div className="relative bg-[#0A0A0A] flex flex-col items-center justify-between w-[300px] h-[250px] border border-white/25 rounded-[20px] p-0">
-            <div className="flex items-center justify-center flex-1 w-full">
+        <div className="w-full max-w-sm sm:max-w-md md:w-60 lg:w-75 shrink-0">
+          <div className="relative bg-[#0A0A0A] flex flex-col items-center justify-between w-full md:w-60 lg:w-75 min-h-62.5 sm:min-h-70 md:h-55 lg:h-62.5 border border-white/25 rounded-[20px] py-6 sm:py-8 md:py-0">
+            <div className="flex items-center justify-center flex-1 w-full px-4 sm:px-6 md:px-0">
               <Image
                 src={imageSrc}
                 width={279}
                 height={102}
                 alt="Logo"
-                className="object-contain max-w-[279.19px] max-h-[101.59px]"
+                className="object-contain w-full max-w-50 sm:max-w-62.5 md:max-w-[220px] lg:max-w-[279.19px] h-auto max-h-20 sm:max-h-22.5 md:max-h-[80px] lg:max-h-[101.59px]"
                 loading="lazy"
                 draggable={false}
               />
             </div>
 
             <Link href={websiteUrl} target="_blank" rel="noopener noreferrer">
-              <button className="relative flex items-center justify-center mb-7 group transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden w-[120px] h-10 bg-black/[0.001] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] rounded-[10px]">
+              <button className="relative flex items-center justify-center mb-0 md:mb-6 lg:mb-7 group transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden w-28 sm:w-30 h-9 sm:h-10 bg-black/[0.001] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] rounded-[10px]">
                 <div
                   className="absolute inset-0 rounded-[10px] pointer-events-none p-px backdrop-blur-xs backdrop-saturate-[1.8] backdrop-brightness-[1.05]"
                   style={{
@@ -57,7 +57,7 @@ const SponsorCard = ({
                 />
 
                 <div className="absolute inset-0 flex items-center justify-center gap-0 w-16 h-6 top-2 left-[calc(50%-32px)]">
-                  <span className="font-bold text-white transition-all duration-300 group-hover:-translate-x-0.5 font-lato text-xl leading-6 w-[41px] h-6 absolute left-[calc(50%-41px/2-11.5px)] top-[calc(50%-24px/2)]">
+                  <span className="font-bold text-white transition-all duration-300 group-hover:-translate-x-0.5 font-lato text-lg sm:text-xl leading-6 w-10.25 h-6 absolute left-[calc(50%-41px/2-11.5px)] top-[calc(50%-24px/2)]">
                     Visit
                   </span>
                   <Image
@@ -65,7 +65,7 @@ const SponsorCard = ({
                     alt="Arrow Right"
                     width={19}
                     height={16}
-                    className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px absolute w-[19px] h-4 left-[calc(50%-19px/2+22.5px)] top-1"
+                    className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px absolute w-4.75 h-4 left-[calc(50%-19px/2+22.5px)] top-1"
                   />
                 </div>
               </button>
@@ -74,10 +74,12 @@ const SponsorCard = ({
         </div>
 
         <div
-          className={`w-full lg:w-[337px] flex flex-col gap-4 ${alignment === 'right' ? 'lg:text-right' : 'lg:text-left'}`}
+          className={`w-full max-w-sm sm:max-w-md md:w-70 lg:w-84.25 flex flex-col gap-4 text-center ${alignment === 'right' ? 'md:text-right' : 'md:text-left'}`}
         >
-          <h2 className="font-bold text-white font-lato text-2xl leading-[29px]">{title}</h2>
-          <p className="font-bold text-[#ADAAF7] font-lato text-base leading-[19px]">
+          <h2 className="font-bold text-white font-lato text-xl sm:text-2xl leading-tight sm:leading-7.25">
+            {title}
+          </h2>
+          <p className="font-bold text-[#ADAAF7] font-lato text-sm sm:text-base leading-relaxed sm:leading-4.75">
             {description}
           </p>
         </div>
