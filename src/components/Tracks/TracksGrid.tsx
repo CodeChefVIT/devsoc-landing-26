@@ -8,14 +8,11 @@ export default function TracksGrid({ tracks }: { tracks: Track[] }) {
   const columns = 4;
   const rows = 3;
 
-  // keep a fixed 4x3 grid; render placeholders when there are fewer tracks
   const totalCells = columns * rows;
   const cells = Array.from({ length: totalCells }, (_, i) => tracks[i] ?? null);
 
-  // scale the grid width by viewport height but never exceed viewport width
-  const gridWidthVh = (80 * columns) / rows; // matches previous sizing intent
+  const gridWidthVh = (80 * columns) / rows;
   const containerStyle = {
-    // subtract the small-device horizontal margins (mx-4 -> 2rem total)
     width: `min(calc(100% - 2rem), ${gridWidthVh}vh)`,
     maxWidth: '100%',
     gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
