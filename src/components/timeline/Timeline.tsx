@@ -13,6 +13,7 @@ import {
   useMotionValue,
   useAnimation,
 } from 'framer-motion';
+import { div } from 'framer-motion/client';
 
 interface TimelineEvent {
   id: string;
@@ -145,181 +146,184 @@ export default function Timeline() {
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-proximity bg-transparent scrollbar-none"
-    >
-      <div className="relative w-full" style={{ height: `${EVENTS.length * 100}vh` }}>
-        <div className="sticky top-0 h-screen w-full overflow-hidden text-white font-lato selection:bg-purple-500/30">
-          <div className="grid grid-cols-12 ">
-            <div className="col-start-2">
-              <SectionHeading title="Timeline" />
-            </div>
-          </div>
-          {/* Background Line */}
-          <div
-            className="absolute top-1/2 h-px bg-white/20 z-9"
-            style={{
-              left: `${TRACK_MARGIN_VW}vw`,
-              width: `calc(100vw - ${2 * TRACK_MARGIN_VW}vw)`,
-            }}
-          />
-
-          <motion.div
-            className={cn('absolute top-1/2 h-px z-10', TRACK_COLOR_CLASS)}
-            animate={timelineLineStyle}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
-          />
-
-          <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`time-bg-${activeEvent.id}`}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5 }}
-                className="text-[20rem] md:text-[22rem] lg:text-[24rem] xl:text-[32rem] 2xl:text-[40rem] font-black text-white/10 select-none font-lato"
-              >
-                {activeEvent.time}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
-            <motion.div
-              className="w-4 h-4 rounded-full bg-white border-2 border-white shadow-lg"
-              animate={dotControls}
-            />
-            <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full border border-white/50"
-              animate={ringControls}
-            />
-          </div>
-
-          <div className="UpperEventDetails w-full h-1/2 pointer-events-none z-20 flex flex-col justify-end pb-64 px-8 md:px-16 lg:px-0">
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full px-8 md:px-16 lg:px-0">
-              <div className="overflow-hidden lg:col-start-3 lg:col-span-4">
-                <AnimatePresence mode="wait">
-                  <motion.h2
-                    key={`title-${activeEvent.id}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                    className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-normal leading-normal font-lato"
-                  >
-                    <span className="bg-radial-[at_50%_75%] from-[#E700B7] via-[#8C20CD] to-[#0C0A35] to-90% bg-clip-text text-transparent inline-block">
-                      {activeEvent.title}
-                    </span>
-                  </motion.h2>
-                </AnimatePresence>
-              </div>
-
-              <div className="text-right md:col-span-2 md:col-start-9 lg:col-start-10 lg:col-span-4 xl:col-start-9 xl:col-span-3 2xl:col-start-10 2xl:col-span-2 mr-40">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={`day-${activeEvent.id}`}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.5 }}
-                    className="font-italianno text-5xl md:text-6xl lg:text-7xl text-white block"
-                  >
-                    {activeEvent.day}
-                  </motion.span>
-                </AnimatePresence>
-              </div>
-            </div>
-          </div>
-
-          <div className="LowerHalfEventDetails w-full h-1/2 pointer-events-none z-20 flex flex-col justify-start pt-64 px-8 md:px-16 lg:px-0">
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-start w-full px-8 md:px-16 lg:px-0">
-              <div className="lg:col-start-3 lg:col-span-3">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={`subtitle-${activeEvent.id}`}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                  >
-                    <p className="text-xl md:text-2xl font-bold text-white mb-3 font-lato">
-                      {activeEvent.subtitle}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={`description-${activeEvent.id}`}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                  >
-                    <p className="text-sm md:text-base text-gray-400 leading-relaxed max-w-md font-lato">
-                      {activeEvent.description}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              <div className="flex gap-4 z-30 pointer-events-auto lg:col-start-9 lg:col-span-2 justify-end">
-                <button
-                  onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
-                  disabled={activeIndex === 0}
-                  className="w-12 h-12 rounded-full border border-white/20 bg-white/10 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed group active:scale-95"
-                >
-                  <ChevronLeft className="w-5 h-5 text-white bg-transparent" />
-                </button>
-                <button
-                  onClick={() => scrollToIndex(Math.min(EVENTS.length - 1, activeIndex + 1))}
-                  disabled={activeIndex === EVENTS.length - 1}
-                  className="w-12 h-12 rounded-full border border-white/20 bg-white/10 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed group active:scale-95"
-                >
-                  <ChevronRight className="w-5 h-5 text-white bg-transparent" />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg absolute inset-0 flex items-center z-10 pointer-events-none">
-            <motion.div style={{ x: containerX }} className="flex items-center justify-center">
-              <div className="shrink-0 w-[calc(50vw-20vw)] md:w-[calc(50vw-22.5vw)]" />
-
-              {EVENTS.map((event, index) => {
-                const isActive = index === activeIndex;
-                return (
-                  <div
-                    key={event.id}
-                    className={cn(
-                      'events shrink-0 w-[60vw] md:w-[45vw] flex flex-col items-center justify-center relative select-none'
-                    )}
-                  >
-                    {!isActive && (
-                      <motion.div
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white/50 z-20"
-                        animate={{
-                          opacity: 0.5,
-                        }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    )}
-                  </div>
-                );
-              })}
-              <div className="shrink-0 w-[50vw]" />
-            </motion.div>
-          </div>
+    <div className="max-h-screen overflow-x-hidden overflow-clip">
+      <div className="grid grid-cols-12 mt-20">
+        <div className="col-start-2">
+          <SectionHeading title="Timeline" />
         </div>
+      </div>
 
-        {EVENTS.map((_, index) => (
-          <div
-            key={index}
-            className="absolute w-full h-screen snap-start pointer-events-none"
-            style={{ top: `${index * 100}vh` }}
-          />
-        ))}
+      <div
+        ref={containerRef}
+        className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-proximity bg-transparent scrollbar-none"
+      >
+        <div className="relative w-full pt-28" style={{ height: `${EVENTS.length * 100}vh` }}>
+          <div className="sticky top-0 w-full overflow-hidden text-white font-lato selection:bg-purple-500/30">
+            {/* Background Line */}
+            <div
+              className="absolute top-1/2 h-px bg-white/20 z-9"
+              style={{
+                left: `${TRACK_MARGIN_VW}vw`,
+                width: `calc(100vw - ${2 * TRACK_MARGIN_VW}vw)`,
+              }}
+            />
+
+            <motion.div
+              className={cn('absolute top-1/2 h-px z-10', TRACK_COLOR_CLASS)}
+              animate={timelineLineStyle}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            />
+
+            <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`time-bg-${activeEvent.id}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-[20rem] md:text-[22rem] lg:text-[24rem] xl:text-[32rem] 2xl:text-[40rem] font-black text-white/10 select-none font-lato"
+                >
+                  {activeEvent.time}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
+              <motion.div
+                className="w-4 h-4 rounded-full bg-white border-2 border-white shadow-lg"
+                animate={dotControls}
+              />
+              <motion.div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full border border-white/50"
+                animate={ringControls}
+              />
+            </div>
+
+            <div className="UpperEventDetails w-full h-1/2 pointer-events-none z-20 flex flex-col justify-end pb-64 px-8 md:px-16 lg:px-0">
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full px-8 md:px-16 lg:px-0">
+                <div className="overflow-hidden  lg:col-start-3 lg:col-span-4">
+                  <AnimatePresence mode="wait">
+                    <motion.h2
+                      key={`title-${activeEvent.id}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.5 }}
+                      className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-normal leading-normal font-lato"
+                    >
+                      <span className="bg-radial-[at_50%_75%] from-[#E700B7] via-[#8C20CD] to-[#0C0A35] to-90% bg-clip-text text-transparent inline-block mb-24">
+                        {activeEvent.title}
+                      </span>
+                    </motion.h2>
+                  </AnimatePresence>
+                </div>
+
+                <div className="text-right md:col-span-2 md:col-start-9 lg:col-start-10 lg:col-span-4 xl:col-start-9 xl:col-span-3 2xl:col-start-10 2xl:col-span-2 mr-40">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`day-${activeEvent.id}`}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.5 }}
+                      className="font-italianno text-5xl md:text-6xl lg:text-7xl text-white block mt-8"
+                    >
+                      {activeEvent.day}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+              </div>
+            </div>
+
+            <div className="LowerHalfEventDetails w-full h-1/2 pointer-events-none z-20 flex flex-col justify-start pt-40 px-8 md:px-16 lg:px-0">
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-start w-full px-8 md:px-16 lg:px-0">
+                <div className="lg:col-start-3 lg:col-span-3">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={`subtitle-${activeEvent.id}`}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                    >
+                      <p className="text-xl md:text-2xl font-bold text-white mb-3 font-lato">
+                        {activeEvent.subtitle}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={`description-${activeEvent.id}`}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      <p className="text-sm md:text-base text-gray-400 leading-relaxed max-w-md font-lato">
+                        {activeEvent.description}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                <div className="flex gap-4 z-30 pointer-events-auto lg:col-start-9 lg:col-span-2 justify-end">
+                  <button
+                    onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
+                    disabled={activeIndex === 0}
+                    className="w-12 h-12 rounded-full border border-white/20 bg-white/10 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed group active:scale-95"
+                  >
+                    <ChevronLeft className="w-5 h-5 text-white bg-transparent" />
+                  </button>
+                  <button
+                    onClick={() => scrollToIndex(Math.min(EVENTS.length - 1, activeIndex + 1))}
+                    disabled={activeIndex === EVENTS.length - 1}
+                    className="w-12 h-12 rounded-full border border-white/20 bg-white/10 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed group active:scale-95"
+                  >
+                    <ChevronRight className="w-5 h-5 text-white bg-transparent" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg absolute inset-0 flex items-center z-10 pointer-events-none">
+              <motion.div style={{ x: containerX }} className="flex items-center justify-center">
+                <div className="shrink-0 w-[calc(50vw-20vw)] md:w-[calc(50vw-22.5vw)]" />
+
+                {EVENTS.map((event, index) => {
+                  const isActive = index === activeIndex;
+                  return (
+                    <div
+                      key={event.id}
+                      className={cn(
+                        'events shrink-0 w-[60vw] md:w-[45vw] flex flex-col items-center justify-center relative select-none'
+                      )}
+                    >
+                      {!isActive && (
+                        <motion.div
+                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white/50 z-20"
+                          animate={{
+                            opacity: 0.5,
+                          }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
+                <div className="shrink-0 w-[50vw]" />
+              </motion.div>
+            </div>
+          </div>
+
+          {EVENTS.map((_, index) => (
+            <div
+              key={index}
+              className="absolute w-full h-screen snap-start pointer-events-none"
+              style={{ top: `${index * 100}vh` }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

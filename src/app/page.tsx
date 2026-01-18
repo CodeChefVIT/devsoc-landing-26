@@ -18,9 +18,9 @@ export default function Page() {
         Click here to view Hero
       </Link>
 
+      <Hero />
       {/* Keep hero outside of the decorative-background component */}
       <DecorativeBackground>
-        <Hero />
         <AboutPage />
         <Tracks />
         <Sponsors />
