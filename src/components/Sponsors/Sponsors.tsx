@@ -10,11 +10,11 @@ export default function Sponsors() {
   };
 
   return (
-    <div className="relative py-24">
+    <div className="relative py-16 sm:py-20 md:py-22 lg:py-24">
       <div className="relative">
         <SectionHeading title="Sponsors" />
 
-        <div className="space-y-16 w-full">
+        <div className="space-y-10 sm:space-y-12 md:space-y-14 lg:space-y-16 w-full">
           {sponsors.map((sponsor, index) => (
             <SponsorCard
               key={sponsor.name}
