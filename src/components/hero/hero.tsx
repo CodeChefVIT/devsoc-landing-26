@@ -1,22 +1,24 @@
 'use client';
 
 import Image from 'next/image';
+import './hero-responsive.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Hero() {
   const { scrollY } = useScroll();
 
-  const textY = useTransform(scrollY, [0, 300], [0, -40]);
-  const statueY = useTransform(scrollY, [0, 300], [0, 60]);
+  const textY = useTransform(scrollY, [0, 600], [0, -30]);
+  const statueY = useTransform(scrollY, [0, 600], [0, 60]);
 
   return (
     <section className="relative h-screen bg-black">
-      <p className="absolute top-[11%] w-full text-center text-white z-10 font-italianno text-[clamp(2rem,5vw,4rem)]">
+      <p className="hero-intro absolute top-[11%] w-full text-center text-white z-10 font-italianno text-[clamp(2rem,5vw,4rem)]">
         Introducing
       </p>
 
       <motion.div
         className="
+          hero-title
           absolute top-[22%] w-full text-center
           font-spline-sans-mono
         "
@@ -24,6 +26,7 @@ export default function Hero() {
       >
         <h1
           className="
+            
             absolute w-full
             text-[clamp(3rem,15vw,11rem)]
             font-black tracking-[0.02em]
@@ -37,6 +40,7 @@ export default function Hero() {
 
         <h1
           className="
+            
             absolute w-full
             text-[clamp(3rem,15vw,11rem)]
             font-black tracking-[0.02em]
@@ -51,6 +55,7 @@ export default function Hero() {
 
       <div
         className="
+        hero-ring
         absolute pointer-events-none
         w-[clamp(200px,60vw,1600px)]
         h-100
@@ -66,6 +71,7 @@ export default function Hero() {
 
       <div
         className="
+        hero-ring
         absolute pointer-events-none
         w-[clamp(200px,60vw,1600px)]
         h-100
@@ -81,6 +87,7 @@ export default function Hero() {
 
       <motion.div
         className="
+          hero-statue
           absolute bottom-25
           inset-x-[clamp(16px,6vw,120px)]
           mx-auto
@@ -100,6 +107,7 @@ export default function Hero() {
 
       <motion.div
         className="
+          hero-gradient
           absolute bottom-23.75
           inset-x-[clamp(16px,6vw,120px)]
           mx-auto
@@ -115,6 +123,7 @@ export default function Hero() {
 
       <motion.button
         className="
+          hero-cta
           absolute bottom-35
           inset-x-[clamp(16px,6vw,120px)]
           mx-auto
