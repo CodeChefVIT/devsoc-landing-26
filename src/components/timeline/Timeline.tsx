@@ -17,6 +17,7 @@ import { TimelineNavigation } from './TimelineNavigation';
 import { TimelineTrack } from './TimelineTrack';
 import { TimelineCenter } from './TimelineCenter';
 import { TimelineBackground } from './TimelineBackground';
+import { VerticalTimeline } from './VerticalTimeline';
 
 export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,29 +27,18 @@ export default function Timeline() {
   const ringControls = useAnimation();
 
   useEffect(() => {
-    dotControls.start({
-      scale: [1, 1.5, 1],
-      transition: { duration: 0.3, ease: 'easeInOut' },
-    });
-    ringControls.start({
-      scale: [1, 1.2, 1],
-      opacity: [1, 0.5, 1],
-      transition: { duration: 0.4, ease: 'easeInOut' },
-    });
-  }, [activeIndex, dotControls, ringControls]);
-
-  useEffect(() => {
     const handleResize = () => setViewportWidth(window.innerWidth);
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const isMobile = viewportWidth < 768;
+
   const { scrollYProgress } = useScroll({
-    container: containerRef,
+    container: !isMobile ? containerRef : undefined,
   });
 
-  const isMobile = viewportWidth < 768;
   const itemWidthVw = isMobile ? 60 : 49;
   const initialPaddingVw = isMobile ? 30 : 27.5;
   const calculateEventOffset = useCallback(
@@ -60,30 +50,48 @@ export default function Timeline() {
 
   const containerX = useMotionValue(`calc(50vw - ${calculateEventOffset(0)}vw)`);
 
+  useEffect(() => {
+    if (!isMobile) {
+      dotControls.start({
+        scale: [1, 1.5, 1],
+        transition: { duration: 0.3, ease: 'easeInOut' },
+      });
+      ringControls.start({
+        scale: [1, 1.2, 1],
+        opacity: [1, 0.5, 1],
+        transition: { duration: 0.4, ease: 'easeInOut' },
+      });
+    }
+  }, [activeIndex, dotControls, ringControls, isMobile]);
+
   useMotionValueEvent(scrollYProgress, 'change', latest => {
-    const currentIndex = latest * (EVENTS.length - 1);
-    const floorIndex = Math.floor(currentIndex);
-    const ceilIndex = Math.min(Math.ceil(currentIndex), EVENTS.length - 1);
-    const t = currentIndex - floorIndex;
+    if (!isMobile) {
+      const currentIndex = latest * (EVENTS.length - 1);
+      const floorIndex = Math.floor(currentIndex);
+      const ceilIndex = Math.min(Math.ceil(currentIndex), EVENTS.length - 1);
+      const t = currentIndex - floorIndex;
 
-    const floorOffset = calculateEventOffset(floorIndex);
-    const ceilOffset = calculateEventOffset(ceilIndex);
-    const interpolatedOffset = floorOffset + (ceilOffset - floorOffset) * t;
+      const floorOffset = calculateEventOffset(floorIndex);
+      const ceilOffset = calculateEventOffset(ceilIndex);
+      const interpolatedOffset = floorOffset + (ceilOffset - floorOffset) * t;
 
-    containerX.set(`calc(50vw - ${interpolatedOffset}vw)`);
+      containerX.set(`calc(50vw - ${interpolatedOffset}vw)`);
+    }
   });
 
   useMotionValueEvent(scrollYProgress, 'change', latest => {
-    const newIndex = Math.min(
-      EVENTS.length - 1,
-      Math.max(0, Math.round(latest * (EVENTS.length - 1)))
-    );
-    setActiveIndex(newIndex);
+    if (!isMobile) {
+      const newIndex = Math.min(
+        EVENTS.length - 1,
+        Math.max(0, Math.round(latest * (EVENTS.length - 1)))
+      );
+      setActiveIndex(newIndex);
+    }
   });
 
   const scrollToIndex = useCallback(
     (index: number) => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || isMobile) return;
       const { scrollHeight, clientHeight } = containerRef.current;
       const scrollPercentage = index / (EVENTS.length - 1);
       const targetTop = scrollPercentage * (scrollHeight - clientHeight);
@@ -92,10 +100,10 @@ export default function Timeline() {
         behavior: 'smooth',
       });
     },
-    [containerRef]
+    [containerRef, isMobile]
   );
 
-  const activeEvent = EVENTS[activeIndex];
+  const activeEvent = !isMobile ? EVENTS[activeIndex] : undefined;
   const isFirst = activeIndex === 0;
   const isLast = activeIndex === EVENTS.length - 1;
   const isMiddle = !isFirst && !isLast;
@@ -111,60 +119,66 @@ export default function Timeline() {
   };
 
   return (
-    <div className="max-h-screen overflow-x-hidden overflow-clip">
+    <div className={cn('overflow-x-hidden overflow-clip', !isMobile ? 'max-h-screen' : '')}>
       <div className="grid grid-cols-12 mt-20">
         <div className="col-start-2">
           <SectionHeading title="Timeline" />
         </div>
       </div>
 
-      <div
-        ref={containerRef}
-        className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-proximity bg-transparent scrollbar-none"
-      >
-        <div className="relative w-full pt-28" style={{ height: `${EVENTS.length * 100}vh` }}>
-          <div className="sticky top-0 w-full overflow-hidden text-white font-lato selection:bg-purple-500/30">
-            {/* Background Line */}
-            <div
-              className="absolute top-1/2 h-px bg-white/20 z-9"
-              style={{
-                left: `${TRACK_MARGIN_VW}vw`,
-                width: `calc(100vw - ${2 * TRACK_MARGIN_VW}vw)`,
-              }}
-            />
+      {isMobile ? (
+        <VerticalTimeline />
+      ) : (
+        <div
+          ref={containerRef}
+          className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-proximity bg-transparent scrollbar-none"
+        >
+          <div className="relative w-full pt-28" style={{ height: `${EVENTS.length * 100}vh` }}>
+            <div className="sticky top-0 w-full overflow-hidden text-white font-lato selection:bg-purple-500/30">
+              {/* Background Line */}
+              <div
+                className="absolute top-1/2 h-px bg-white/20 z-9"
+                style={{
+                  left: `${TRACK_MARGIN_VW}vw`,
+                  width: `calc(100vw - ${2 * TRACK_MARGIN_VW}vw)`,
+                }}
+              />
 
-            <motion.div
-              className={cn('absolute top-1/2 h-px z-10', TRACK_COLOR_CLASS)}
-              animate={timelineLineStyle}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
-            />
+              <motion.div
+                className={cn('absolute top-1/2 h-px z-10', TRACK_COLOR_CLASS)}
+                animate={timelineLineStyle}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
+              />
 
-            <TimelineBackground activeEvent={activeEvent} />
+              {activeEvent && <TimelineBackground activeEvent={activeEvent} />}
 
-            <TimelineCenter dotControls={dotControls} ringControls={ringControls} />
+              <TimelineCenter dotControls={dotControls} ringControls={ringControls} />
 
-            <TimelineEventDetails activeEvent={activeEvent}>
-              <div className="lg:col-start-9 lg:col-span-2 justify-end flex gap-4 z-30 pointer-events-auto">
-                <TimelineNavigation
-                  scrollToIndex={scrollToIndex}
-                  activeIndex={activeIndex}
-                  eventsLength={EVENTS.length}
-                />
-              </div>
-            </TimelineEventDetails>
+              {activeEvent && (
+                <TimelineEventDetails activeEvent={activeEvent}>
+                  <div className="lg:col-start-9 lg:col-span-2 justify-end flex gap-4 z-30 pointer-events-auto">
+                    <TimelineNavigation
+                      scrollToIndex={scrollToIndex}
+                      activeIndex={activeIndex}
+                      eventsLength={EVENTS.length}
+                    />
+                  </div>
+                </TimelineEventDetails>
+              )}
 
-            <TimelineTrack containerX={containerX} events={EVENTS} activeIndex={activeIndex} />
+              <TimelineTrack containerX={containerX} events={EVENTS} activeIndex={activeIndex} />
+            </div>
+
+            {EVENTS.map((_, index) => (
+              <div
+                key={index}
+                className="absolute w-full h-screen snap-start pointer-events-none"
+                style={{ top: `${index * 100}vh` }}
+              />
+            ))}
           </div>
-
-          {EVENTS.map((_, index) => (
-            <div
-              key={index}
-              className="absolute w-full h-screen snap-start pointer-events-none"
-              style={{ top: `${index * 100}vh` }}
-            />
-          ))}
         </div>
-      </div>
+      )}
     </div>
   );
 }
