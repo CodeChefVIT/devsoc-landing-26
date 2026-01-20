@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import './hero-responsive.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Hero() {
@@ -12,13 +11,12 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen bg-black">
-      <p className="hero-intro absolute top-[11%] w-full text-center text-white z-10 font-italianno text-[clamp(2rem,5vw,4rem)]">
+      <p className="absolute top-[11%] w-full text-center text-white z-10 font-italianno text-[clamp(2rem,5vw,4rem)]">
         Introducing
       </p>
 
       <motion.div
         className="
-          hero-title
           absolute top-[22%] w-full text-center
           font-spline-sans-mono
         "
@@ -26,7 +24,6 @@ export default function Hero() {
       >
         <h1
           className="
-            
             absolute w-full
             text-[clamp(3rem,15vw,11rem)]
             font-black tracking-[0.02em]
@@ -40,7 +37,6 @@ export default function Hero() {
 
         <h1
           className="
-            
             absolute w-full
             text-[clamp(3rem,15vw,11rem)]
             font-black tracking-[0.02em]
@@ -55,7 +51,6 @@ export default function Hero() {
 
       <div
         className="
-        hero-ring
         absolute pointer-events-none
         w-[clamp(200px,60vw,1600px)]
         h-100
@@ -71,7 +66,6 @@ export default function Hero() {
 
       <div
         className="
-        hero-ring
         absolute pointer-events-none
         w-[clamp(200px,60vw,1600px)]
         h-100
@@ -87,13 +81,14 @@ export default function Hero() {
 
       <motion.div
         className="
-          hero-statue
-          absolute bottom-25
-          inset-x-[clamp(16px,6vw,120px)]
-          mx-auto
-          w-92.5 h-[464.7px]
-          z-20
-        "
+    absolute
+    bottom-[15vh]
+    left-1/2 -translate-x-1/2
+    w-full max-w-[900px]
+    h-[55vh]
+    min-h-[350px]
+    z-20
+  "
         style={{ y: statueY }}
       >
         <Image
@@ -107,15 +102,16 @@ export default function Hero() {
 
       <motion.div
         className="
-          hero-gradient
-          absolute bottom-23.75
-          inset-x-[clamp(16px,6vw,120px)]
-          mx-auto
-          max-w-275 h-50
-          rounded-[28px]
-          overflow-hidden
-          z-10
-        "
+    absolute
+    bottom-[14.5vh]
+    left-1/2 -translate-x-1/2
+    w-full max-w-[900px]
+    h-[22vh]
+    min-h-[180px]
+    rounded-[28px]
+    overflow-hidden
+    z-10
+  "
         style={{ y: statueY }}
       >
         <Image src="/png/bg-gradient.png" alt="Gradient" fill className="object-fill" />
@@ -123,19 +119,18 @@ export default function Hero() {
 
       <motion.button
         className="
-          hero-cta
-          absolute bottom-35
-          inset-x-[clamp(16px,6vw,120px)]
-          mx-auto
-          h-10.5 px-7
-          rounded-xl
-          w-fit z-30
-          text-white text-base
-          bg-[rgba(81,81,81,0.25)]
-          backdrop-blur-[6px]
-          shadow-[0_0_2px_1px_rgba(0,0,0,0.2)]
-          cursor-pointer
-        "
+    absolute
+    bottom-[18vh]
+    left-1/2 -translate-x-1/2
+    h-10.5 px-7
+    rounded-xl
+    w-fit z-30
+    text-white text-base
+    bg-[rgba(81,81,81,0.25)]
+    backdrop-blur-[6px]
+    shadow-[0_0_2px_1px_rgba(0,0,0,0.2)]
+    cursor-pointer
+  "
         style={{ y: statueY }}
       >
         Register Now ↗
