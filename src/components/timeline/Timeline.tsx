@@ -133,7 +133,7 @@ export default function Timeline() {
           ref={containerRef}
           className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-proximity bg-transparent scrollbar-none"
         >
-          <div className="relative w-full pt-28" style={{ height: `${EVENTS.length * 100}vh` }}>
+          <div className="relative w-full" style={{ height: `${EVENTS.length * 100}vh` }}>
             <div className="sticky top-0 w-full overflow-hidden text-white font-lato selection:bg-purple-500/30">
               {/* Background Line */}
               <div

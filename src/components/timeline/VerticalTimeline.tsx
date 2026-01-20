@@ -22,8 +22,8 @@ export function VerticalTimeline() {
   };
 
   return (
-    <div className="relative w-full pt-28 px-8 snap-y snap-mandatory scroll-smooth h-screen overflow-y-auto scrollbar-none">
-      <div className="sticky top-1/2 z-10">
+    <div className="relative w-full px-8 snap-y snap-mandatory scroll-smooth h-screen overflow-y-auto scrollbar-none">
+      <div className="sticky top-1/2 z-10 ">
         <TimelineCenter dotControls={dotControls} ringControls={ringControls} />
       </div>
       <div className="relative">
@@ -43,13 +43,15 @@ export function VerticalTimeline() {
                 <>
                   <div className="w-1/2 pr-8">
                     <div className="p-4 rounded-lg bg-white/5">
-                      <h3 className="text-xl font-bold">{event.title}</h3>
-                      <p className="text-sm text-gray-400">{event.subtitle}</p>
-                      <p className="text-sm mt-2">{event.description}</p>
+                      <h3 className="text-lg font-bold">{event.title}</h3>
+                      <p className="text-xs tracking-tighter text-gray-300">{event.subtitle}</p>
+                      <p className="text-xs mt-2! tracking-tighter text-gray-400">
+                        {event.description}
+                      </p>
                     </div>
                   </div>
                   <div className="w-1/2 pl-8 text-left">
-                    <span className="text-[10rem] -my-5 text-wrap wrap-break-word font-black text-white/10 select-none font-lato">
+                    <span className="text-[8rem] -my-5 text-wrap font-black text-white/10 select-none font-lato">
                       {event.time.replace(':', ' ')}
                     </span>
                   </div>
@@ -57,15 +59,17 @@ export function VerticalTimeline() {
               ) : (
                 <>
                   <div className="w-1/2 pr-8 text-right">
-                    <span className="text-[10rem] text-wrap wrap-break-word font-black text-white/10 select-none font-lato">
+                    <span className="text-[8rem] -my-5 text-wrap font-black text-white/10 select-none font-lato">
                       {event.time.replace(':', ' ')}
                     </span>
                   </div>
                   <div className="w-1/2 pl-8">
                     <div className="p-4 rounded-lg bg-white/5">
-                      <h3 className="text-xl font-bold">{event.title}</h3>
-                      <p className="text-sm text-gray-400">{event.subtitle}</p>
-                      <p className="text-sm mt-2">{event.description}</p>
+                      <h3 className="text-lg font-bold">{event.title}</h3>
+                      <p className="text-xs tracking-tighter text-gray-300">{event.subtitle}</p>
+                      <p className="text-xs !mt-2 tracking-tighter text-gray-400">
+                        {event.description}
+                      </p>
                     </div>
                   </div>
                 </>
