@@ -1,73 +1,107 @@
 import Image from 'next/image';
-import SectionHeading from '../ui/SectionHeading';
+import { SectionHeading } from '@/components/ui';
 
 export default function About() {
-  const aboutSections = [
-    {
-      image: '/about/1.png',
-      text: 'DEVSOC’26 ignites innovation in its seventh edition blending AI and the',
-      imageLeft: true,
-    },
-    {
-      image: '/about/2.png',
-      text: 'metaverse to solve real-world challenges. Bringing together diverse minds, we go',
-      imageLeft: false,
-    },
-    {
-      image: '/about/3.png',
-      text: 'beyond coding to build bold solutions that redefine what’s possible.',
-      imageLeft: true,
-    },
-  ];
-
   return (
-    <div id="about" className="relative py-24 max:h-screen overflow-clip text-white">
+    <section id="about" className="relative py-60 lg:py-60 text-white bg-transparent">
       <div className="mx-auto max-w-7xl px-6">
+        <div className="block lg:hidden space-y-10">
+          <div className="flex justify-end">
+            <SectionHeading title="About" />
+          </div>
+
+          <div className="space-y-4">
+            <Image
+              src="/about/1.png"
+              alt=""
+              width={187}
+              height={116}
+              className="w-full max-w-[220px] h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105"
+            />
+            <p className="max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white">
+              DEVSOC’26 ignites innovation in its seventh edition blending AI and the
+              metaverse to solve real-world challenges.
+            </p>
+          </div>
+
+          <div className="space-y-4 ml-auto text-right">
+            <Image
+              src="/about/2.png"
+              alt=""
+              width={213}
+              height={145}
+              className="w-full max-w-[250px] h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ml-auto transition-transform duration-300 ease-out hover:scale-105"
+            />
+            <p className="max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white ml-auto">
+              Bringing together diverse minds, we go beyond coding to build bold
+              solutions that redefine what’s possible.
+            </p>
+          </div>
+
+          <Image
+            src="/about/3.png"
+            alt=""
+            width={164}
+            height={105}
+            className="w-full max-w-[190px] h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105"
+          />
+        </div>
+        
         <div className="hidden lg:grid lg:grid-cols-2 gap-16">
-          <div className="relative md:h-150  mt-20 scale-85">
-            <div className="absolute left-0 -top-28 -translate-x-10">
-              <Image
-                src="/about/1.png"
-                alt="About image 1"
-                width={401}
-                height={168}
-                className="rounded-xl object-cover"
-                priority
-              />
+          <div className="relative h-[560px]">
+            <div className="absolute left-0 top-0 z-10">
+              <div className="overflow-hidden rounded-3xl shadow-[0px_2px_8px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105">
+                <Image
+                  src="/about/1.png"
+                  alt=""
+                  width={512}
+                  height={318}
+                  className="w-full max-w-[300px] h-auto object-cover"
+                  priority
+                />
+              </div>
             </div>
 
-            <div className="absolute left-30 top-18 translate-x-50 z-10">
-              <Image
-                src="/about/2.png"
-                alt="About image 2"
-                width={450}
-                height={288}
-                className="rounded-xl object-cover"
-              />
+            <div className="absolute left-[260px] top-[100px] z-20 w-[430px]">
+              <div className="overflow-hidden rounded-3xl shadow-[0px_4px_16px_rgba(0,0,0,0.35)] transition-transform duration-300 ease-out hover:scale-105">
+                <Image
+                  src="/about/2.png"
+                  alt=""
+                  width={613}
+                  height={425}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             </div>
 
-            <div className="absolute left-0 top-85 -translate-x-10">
-              <Image
-                src="/about/3.png"
-                alt="About image 3"
-                width={410}
-                height={246}
-                className="rounded-xl object-cover"
-              />
+            <div className="absolute left-10 top-[360px] z-0">
+              <div className="overflow-hidden rounded-3xl shadow-[0px_2px_8px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105">
+                <Image
+                  src="/about/3.png"
+                  alt=""
+                  width={449}
+                  height={286}
+                  className="w-full max-w-[280px] h-auto object-cover"
+                />
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-col items-end text-right justify-center translate-y-30">
-            <SectionHeading title="About" />
+          <div className="flex flex-col items-end text-right justify-center">
+            <div className="translate-y-[120px]">
+              <SectionHeading title="About" />
+            </div>
+
             <div
               className="
-                max-w-200
+                w-[880px]
                 text-right
-                text-xl
                 font-lato
+                text-base
+                sm:text-lg
                 leading-relaxed
-                space-y-2
-                translate-y-5
+                text-white
+                translate-y-[140px]
               "
             >
               <div className="whitespace-nowrap">
@@ -83,32 +117,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="lg:hidden mt-12 space-y-12">
-          <SectionHeading title="About" />
-          {aboutSections.map((section, index) => (
-            <div key={index} className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
-              <div
-                className={`flex justify-center ${section.imageLeft ? 'sm:order-1' : 'sm:order-2'}`}
-              >
-                <Image
-                  src={section.image}
-                  alt={`About section ${index + 1}`}
-                  width={400}
-                  height={240}
-                  className="rounded-xl object-cover"
-                />
-              </div>
-              <div
-                className={`flex items-center justify-center text-center sm:text-left ${
-                  section.imageLeft ? 'sm:order-2' : 'sm:order-1'
-                }`}
-              >
-                <p className="text-md font-lato leading-relaxed">{section.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
-    </div>
+    </section>
   );
 }
