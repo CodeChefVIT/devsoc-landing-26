@@ -6,8 +6,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 export default function Hero() {
   const { scrollY } = useScroll();
 
-  const textY = useTransform(scrollY, [0, 300], [0, -40]);
-  const statueY = useTransform(scrollY, [0, 300], [0, 60]);
+  const textY = useTransform(scrollY, [0, 600], [0, -30]);
+  const statueY = useTransform(scrollY, [0, 600], [0, 60]);
 
   return (
     <section className="relative h-screen bg-black">
@@ -81,12 +81,14 @@ export default function Hero() {
 
       <motion.div
         className="
-          absolute bottom-25
-          inset-x-[clamp(16px,6vw,120px)]
-          mx-auto
-          w-92.5 h-[464.7px]
-          z-20
-        "
+    absolute
+    bottom-[15vh]
+    left-1/2 -translate-x-1/2
+    w-full max-w-[900px]
+    h-[55vh]
+    min-h-[350px]
+    z-20
+  "
         style={{ y: statueY }}
       >
         <Image
@@ -100,14 +102,16 @@ export default function Hero() {
 
       <motion.div
         className="
-          absolute bottom-23.75
-          inset-x-[clamp(16px,6vw,120px)]
-          mx-auto
-          max-w-275 h-50
-          rounded-[28px]
-          overflow-hidden
-          z-10
-        "
+    absolute
+    bottom-[14.5vh]
+    left-1/2 -translate-x-1/2
+    w-full max-w-[900px]
+    h-[22vh]
+    min-h-[180px]
+    rounded-[28px]
+    overflow-hidden
+    z-10
+  "
         style={{ y: statueY }}
       >
         <Image src="/png/bg-gradient.png" alt="Gradient" fill className="object-fill" />
@@ -115,18 +119,18 @@ export default function Hero() {
 
       <motion.button
         className="
-          absolute bottom-35
-          inset-x-[clamp(16px,6vw,120px)]
-          mx-auto
-          h-10.5 px-7
-          rounded-xl
-          w-fit z-30
-          text-white text-base
-          bg-[rgba(81,81,81,0.25)]
-          backdrop-blur-[6px]
-          shadow-[0_0_2px_1px_rgba(0,0,0,0.2)]
-          cursor-pointer
-        "
+    absolute
+    bottom-[18vh]
+    left-1/2 -translate-x-1/2
+    h-10.5 px-7
+    rounded-xl
+    w-fit z-30
+    text-white text-base
+    bg-[rgba(81,81,81,0.25)]
+    backdrop-blur-[6px]
+    shadow-[0_0_2px_1px_rgba(0,0,0,0.2)]
+    cursor-pointer
+  "
         style={{ y: statueY }}
       >
         Register Now ↗

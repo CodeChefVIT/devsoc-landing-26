@@ -1,71 +1,107 @@
 import Image from 'next/image';
+import { SectionHeading } from '@/components/ui';
 
 export default function About() {
   return (
-    <div className="relative py-24 text-white">
+    <section id="about" className="relative py-60 lg:py-60 text-white bg-transparent">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid lg:grid-cols-2 gap-16">
-          <div className="relative h-[520px] mt-[80px]">
-            <div className="absolute left-0 top-[-110px] -translate-x-[40px]">
-              <Image
-                src="/about/1.png"
-                alt=""
-                width={401}
-                height={168}
-                className="rounded-xl object-cover"
-                priority
-              />
+        <div className="block lg:hidden space-y-10">
+          <div className="flex justify-end">
+            <SectionHeading title="About" />
+          </div>
+
+          <div className="space-y-4">
+            <Image
+              src="/about/1.png"
+              alt=""
+              width={187}
+              height={116}
+              className="w-full max-w-[220px] h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105"
+            />
+            <p className="max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white">
+              DEVSOC’26 ignites innovation in its seventh edition blending AI and the
+              metaverse to solve real-world challenges.
+            </p>
+          </div>
+
+          <div className="space-y-4 ml-auto text-right">
+            <Image
+              src="/about/2.png"
+              alt=""
+              width={213}
+              height={145}
+              className="w-full max-w-[250px] h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ml-auto transition-transform duration-300 ease-out hover:scale-105"
+            />
+            <p className="max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white ml-auto">
+              Bringing together diverse minds, we go beyond coding to build bold
+              solutions that redefine what’s possible.
+            </p>
+          </div>
+
+          <Image
+            src="/about/3.png"
+            alt=""
+            width={164}
+            height={105}
+            className="w-full max-w-[190px] h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105"
+          />
+        </div>
+        
+        <div className="hidden lg:grid lg:grid-cols-2 gap-16">
+          <div className="relative h-[560px]">
+            <div className="absolute left-0 top-0 z-10">
+              <div className="overflow-hidden rounded-3xl shadow-[0px_2px_8px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105">
+                <Image
+                  src="/about/1.png"
+                  alt=""
+                  width={512}
+                  height={318}
+                  className="w-full max-w-[300px] h-auto object-cover"
+                  priority
+                />
+              </div>
             </div>
 
-            <div className="absolute left-[120px] top-[70px] translate-x-[200px] z-10">
-              <Image
-                src="/about/2.png"
-                alt=""
-                width={450}
-                height={288}
-                className="rounded-xl object-cover"
-              />
+            <div className="absolute left-[260px] top-[100px] z-20 w-[430px]">
+              <div className="overflow-hidden rounded-3xl shadow-[0px_4px_16px_rgba(0,0,0,0.35)] transition-transform duration-300 ease-out hover:scale-105">
+                <Image
+                  src="/about/2.png"
+                  alt=""
+                  width={613}
+                  height={425}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             </div>
 
-            <div className="absolute left-0 top-[340px] -translate-x-[40px]">
-              <Image
-                src="/about/3.png"
-                alt=""
-                width={410}
-                height={246}
-                className="rounded-xl object-cover"
-              />
+            <div className="absolute left-10 top-[360px] z-0">
+              <div className="overflow-hidden rounded-3xl shadow-[0px_2px_8px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105">
+                <Image
+                  src="/about/3.png"
+                  alt=""
+                  width={449}
+                  height={286}
+                  className="w-full max-w-[280px] h-auto object-cover"
+                />
+              </div>
             </div>
           </div>
 
           <div className="flex flex-col items-end text-right justify-center">
-            <h1
-              className="
-                font-spline-sans-mono
-                text-[56px]
-                md:text-[80px]
-                lg:text-[96px]
-                font-extrabold
-                leading-none
-                mb-6
-                translate-y-[150px]
-                translate-x-[70px]
-              "
-            >
-              About
-            </h1>
+            <div className="translate-y-[120px]">
+              <SectionHeading title="About" />
+            </div>
 
             <div
               className="
-                max-w-[880px]
+                w-[880px]
                 text-right
-                text-2xl
                 font-lato
+                text-base
+                sm:text-lg
                 leading-relaxed
-                space-y-2
-                
-                translate-y-[220px]
-                translate-x-[72px]
+                text-white
+                translate-y-[140px]
               "
             >
               <div className="whitespace-nowrap">
@@ -80,7 +116,8 @@ export default function About() {
             </div>
           </div>
         </div>
+
       </div>
-    </div>
+    </section>
   );
 }

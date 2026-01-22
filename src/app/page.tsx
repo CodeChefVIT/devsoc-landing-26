@@ -3,6 +3,7 @@ import { DecorativeBackground } from '@/components/ui';
 import Sponsors from '@/components/Sponsors';
 import Tracks from '@/components/Tracks';
 import Faqs from '@/components/Faqs/FaqSection';
+import Footer from '@/components/Footer/Footer';
 import Timeline from '@/components/timeline/Timeline';
 import AboutPage from './about/page';
 import Hero from '@/components/hero/hero';
@@ -10,14 +11,6 @@ import Hero from '@/components/hero/hero';
 export default function Page() {
   return (
     <main className=" rounded-lg py-10 shadow">
-      <Link href="/ui" className="text-blue-500 underline">
-        Click here to go to the UI page
-      </Link>
-      <br></br>
-      <Link href="/final_preview" className="text-blue-500 underline">
-        Click here to view Hero
-      </Link>
-
       <Hero />
       {/* Keep hero outside of the decorative-background component */}
       <DecorativeBackground>
@@ -26,6 +19,7 @@ export default function Page() {
         <Sponsors />
         <Timeline />
         <Faqs />
+        <Footer />
       </DecorativeBackground>
     </main>
   );
