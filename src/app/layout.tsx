@@ -17,7 +17,13 @@ export const metadata: Metadata = {
     description:
       "DevSoc'26 ignites innovation in its seventh edition blending AI and the metaverse to solve real-world challenges. Bringing together diverse minds, we go beyond coding to build bold solutions that redefine what’s possible.",
     images: [
-      'https://res.cloudinary.com/dul1hx8p3/image/upload/v1769076740/opengraph-image_dxemve.jpg',
+      {
+        url: 'https://res.cloudinary.com/dul1hx8p3/image/upload/v1769076740/opengraph-image_dxemve.jpg',
+        width: 1200,
+        height: 630,
+        alt: "DevSoc'26",
+        type: 'image/jpeg',
+      },
     ],
   },
   twitter: {
@@ -26,7 +32,10 @@ export const metadata: Metadata = {
     description:
       "DevSoc'26 ignites innovation in its seventh edition blending AI and the metaverse to solve real-world challenges. Bringing together diverse minds, we go beyond coding to build bold solutions that redefine what’s possible.",
     images: [
-      'https://res.cloudinary.com/dul1hx8p3/image/upload/v1769076740/opengraph-image_dxemve.jpg',
+      {
+        url: 'https://res.cloudinary.com/dul1hx8p3/image/upload/v1769076740/opengraph-image_dxemve.jpg',
+        alt: "DevSoc'26",
+      },
     ],
   },
 };
