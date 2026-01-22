@@ -21,10 +21,10 @@ export default function About() {
   ];
 
   return (
-    <div id="about" className="relative py-24 text-white">
+    <div id="about" className="relative py-24 max:h-screen overflow-clip text-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="hidden lg:grid lg:grid-cols-2 gap-16">
-          <div className="relative md:h-130 mt-20 scale-85">
+          <div className="relative md:h-150  mt-20 scale-85">
             <div className="absolute left-0 -top-28 -translate-x-10">
               <Image
                 src="/about/1.png"
