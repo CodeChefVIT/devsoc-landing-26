@@ -19,8 +19,8 @@ export default function About() {
               className="w-full max-w-[220px] h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105"
             />
             <p className="max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white">
-              DEVSOC’26 ignites innovation in its seventh edition blending AI and the
-              metaverse to solve real-world challenges.
+              DEVSOC’26 ignites innovation in its seventh edition blending AI and the metaverse to
+              solve real-world challenges.
             </p>
           </div>
 
@@ -33,8 +33,8 @@ export default function About() {
               className="w-full max-w-[250px] h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ml-auto transition-transform duration-300 ease-out hover:scale-105"
             />
             <p className="max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white ml-auto">
-              Bringing together diverse minds, we go beyond coding to build bold
-              solutions that redefine what’s possible.
+              Bringing together diverse minds, we go beyond coding to build bold solutions that
+              redefine what’s possible.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export default function About() {
             className="w-full max-w-[190px] h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105"
           />
         </div>
-        
+
         <div className="hidden lg:grid lg:grid-cols-2 gap-16">
           <div className="relative h-[560px]">
             <div className="absolute left-0 top-0 z-10">
@@ -116,7 +116,6 @@ export default function About() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
