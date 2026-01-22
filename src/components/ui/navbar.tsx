@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function getTimeLeft(target: Date) {
   const now = new Date().getTime();
@@ -39,27 +40,29 @@ export default function Navbar() {
         "
       >
         <div className="flex h-20 w-20 items-center justify-center">
-          <Image
-            src="/icon.png"
-            alt="DevSoc Logo"
-            width={35}
-            height={35}
-            className="object-contain"
-          />
+          <Link href={'/'}>
+            <Image
+              src="/icon.png"
+              alt="DevSoc Logo"
+              width={35}
+              height={35}
+              className="object-contain"
+            />
+          </Link>
         </div>
         <div className="flex items-center gap-12 text-sm tracking-wide text-white/100 font-bold">
-          <a href="about" className="hover:text-white transition">
+          <Link href="#about" className="hover:text-white transition">
             ABOUT
-          </a>
-          <a href="timeline" className="hover:text-white transition">
+          </Link>
+          <Link href="#timeline" className="hover:text-white transition">
             TIMELINE
-          </a>
-          <a href="tracks" className="hover:text-white transition">
+          </Link>
+          <Link href="#tracks" className="hover:text-white transition">
             TRACKS
-          </a>
-          <a href="sponsors" className="hover:text-white transition">
+          </Link>
+          <Link href="#sponsors" className="hover:text-white transition">
             SPONSORS
-          </a>
+          </Link>
         </div>
         <div
           className="

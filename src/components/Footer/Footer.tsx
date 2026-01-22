@@ -3,8 +3,8 @@ import { FaXTwitter, FaInstagram, FaLinkedinIn, FaGithub, FaYoutube } from 'reac
 
 export default function Footer() {
   return (
-    <div className=" bg-black flex items-end">
-      <footer className="relative w-full overflow-hidden bg-black text-white">
+    <div className=" bg-transparent flex items-end">
+      <footer className="relative w-full overflow-hidden bg-transparent text-white">
         <div className="absolute inset-0 pointer-events-none opacity-[0.15]">
           <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:320px_320px]" />
         </div>
@@ -78,7 +78,7 @@ export default function Footer() {
                 fontFamily: 'The Sans Mono, monospace',
               }}
             >
-              DEVSOC'26
+              {`DEVSOC'26`}
             </h1>
 
             <p className="mt-6 text-gray-300 text-lg font-bold font-lato">
