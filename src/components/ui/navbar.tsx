@@ -52,22 +52,22 @@ export default function Navbar() {
         </div>
         <div className="hidden md:flex items-center gap-12 text-sm tracking-wide text-white font-bold">
           <Link href="#hero" className="hover:text-white transition">
-            HERO
+            Hero
           </Link>
           <Link href="#about" className="hover:text-white transition">
-            ABOUT
+            About
           </Link>
           <Link href="#tracks" className="hover:text-white transition">
-            TRACKS
+            Tracks
           </Link>
           <Link href="#sponsors" className="hover:text-white transition">
-            SPONSORS
+            Sponsors
           </Link>
           <Link href="#timeline" className="hover:text-white transition">
-            TIMELINE
+            Timeline
           </Link>
           <Link href="#faqs" className="hover:text-white transition">
-            FAQ
+            Faq
           </Link>
         </div>
         <div
@@ -132,45 +132,45 @@ export default function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               href="#hero"
-              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 border-b-2 "
+              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
               onClick={() => setIsOpen(false)}
             >
-              HERO
+              Hero
             </Link>
             <Link
               href="#about"
-              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10"
+              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
               onClick={() => setIsOpen(false)}
             >
-              ABOUT
+              About
             </Link>
             <Link
               href="#tracks"
-              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10"
+              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
               onClick={() => setIsOpen(false)}
             >
-              TRACKS
+              Tracks
             </Link>
             <Link
               href="#sponsors"
-              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10"
+              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
               onClick={() => setIsOpen(false)}
             >
-              SPONSORS
+              Sponsors
             </Link>
             <Link
               href="#timeline"
-              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10"
+              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
               onClick={() => setIsOpen(false)}
             >
-              TIMELINE
+              Timeline
             </Link>
             <Link
               href="#faqs"
-              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10"
+              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
-              FAQ
+              Faq
             </Link>
           </div>
         </div>
