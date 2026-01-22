@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import SectionHeading from '../ui/SectionHeading';
 
 export default function About() {
   const aboutSections = [
@@ -22,26 +23,8 @@ export default function About() {
   return (
     <div id="about" className="relative py-24 text-white">
       <div className="mx-auto max-w-7xl px-6">
-        <h1
-          className="
-            font-spline-sans-mono
-            text-[56px]
-            md:text-[80px]
-            lg:text-[96px]
-            font-extrabold
-            leading-none
-            mb-6
-            text-center
-            lg:text-right
-            lg:translate-y-38
-            lg:translate-x-18
-          "
-        >
-          About
-        </h1>
-
         <div className="hidden lg:grid lg:grid-cols-2 gap-16">
-          <div className="relative h-130 mt-20">
+          <div className="relative h-130 mt-20 scale-85">
             <div className="absolute left-0 -top-28 -translate-x-10">
               <Image
                 src="/about/1.png"
@@ -74,17 +57,17 @@ export default function About() {
             </div>
           </div>
 
-          <div className="flex flex-col items-end text-right justify-center">
+          <div className="flex flex-col items-end text-right justify-center translate-y-30">
+            <SectionHeading title="About" />
             <div
               className="
-                max-w-220
+                max-w-200
                 text-right
-                text-2xl
+                text-xl
                 font-lato
                 leading-relaxed
                 space-y-2
-                translate-y-55
-                translate-x-18
+                translate-y-5
               "
             >
               <div className="whitespace-nowrap">
