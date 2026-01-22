@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import { lato, italianno, splineSansMono } from './fonts';
+import { lato, italianno, theSansMono } from './fonts';
 import './globals.css';
-
-import Navbar from '@/components/ui/navbar';
+import Navbar from '@/components/Navbar/Navbar';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: "DevSoc'26",
@@ -23,10 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lato.variable} ${italianno.variable} ${splineSansMono.variable} antialiased bg-black text-white`}
+        className={`${lato.variable} ${italianno} ${theSansMono} antialiased bg-black text-white select-none`}
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

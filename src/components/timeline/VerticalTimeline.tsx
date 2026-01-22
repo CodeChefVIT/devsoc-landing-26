@@ -1,6 +1,5 @@
 'use client';
 
-import React, { useEffect } from 'react';
 import { EVENTS } from './data';
 import { motion, useAnimation } from 'framer-motion';
 import { TimelineCenter } from './TimelineCenter';
@@ -67,7 +66,7 @@ export function VerticalTimeline() {
                     <div className="p-4 rounded-lg bg-white/5">
                       <h3 className="text-lg font-bold">{event.title}</h3>
                       <p className="text-xs tracking-tighter text-gray-300">{event.subtitle}</p>
-                      <p className="text-xs !mt-2 tracking-tighter text-gray-400">
+                      <p className="text-xs mt-2! tracking-tighter text-gray-400">
                         {event.description}
                       </p>
                     </div>
