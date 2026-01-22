@@ -8,7 +8,7 @@ export default function SectionHeading({ title }: { title: string }) {
       <h2
         id={link}
         className="
-          font-spline-sans-mono
+          font-the-sans-mono
           font-bold
           text-white
           text-center

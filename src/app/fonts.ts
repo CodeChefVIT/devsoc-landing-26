@@ -43,8 +43,8 @@ export const italianno = localFont({
   display: 'swap',
 });
 
-export const splineSansMono = localFont({
-  src: '../../public/fonts/SplineSansMono/SplineSansMono-VariableFont_wght.ttf',
-  variable: '--font-spline-sans-mono',
+export const theSansMono = localFont({
+  src: '../../public/fonts/TheSansMono/thesansmono-extra-bold.ttf',
+  variable: '--font-the-sans-mono',
   display: 'swap',
 });
