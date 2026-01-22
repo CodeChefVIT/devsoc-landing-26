@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <div className="relative py-24 text-white">
+    <div id="about" className="relative py-24 text-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           <div className="relative h-[520px] mt-[80px]">
