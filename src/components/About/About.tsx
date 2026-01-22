@@ -1,15 +1,34 @@
 import Image from 'next/image';
+import SectionHeading from '../ui/SectionHeading';
 
 export default function About() {
+  const aboutSections = [
+    {
+      image: '/about/1.png',
+      text: 'DEVSOC’26 ignites innovation in its seventh edition blending AI and the',
+      imageLeft: true,
+    },
+    {
+      image: '/about/2.png',
+      text: 'metaverse to solve real-world challenges. Bringing together diverse minds, we go',
+      imageLeft: false,
+    },
+    {
+      image: '/about/3.png',
+      text: 'beyond coding to build bold solutions that redefine what’s possible.',
+      imageLeft: true,
+    },
+  ];
+
   return (
-    <div id="about" className="relative py-24 text-white">
+    <div id="about" className="relative py-24 max:h-screen overflow-clip text-white">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid lg:grid-cols-2 gap-16">
-          <div className="relative h-[520px] mt-[80px]">
-            <div className="absolute left-0 top-[-110px] -translate-x-[40px]">
+        <div className="hidden lg:grid lg:grid-cols-2 gap-16">
+          <div className="relative md:h-150  mt-20 scale-85">
+            <div className="absolute left-0 -top-28 -translate-x-10">
               <Image
                 src="/about/1.png"
-                alt=""
+                alt="About image 1"
                 width={401}
                 height={168}
                 className="rounded-xl object-cover"
@@ -17,20 +36,20 @@ export default function About() {
               />
             </div>
 
-            <div className="absolute left-[120px] top-[70px] translate-x-[200px] z-10">
+            <div className="absolute left-30 top-18 translate-x-50 z-10">
               <Image
                 src="/about/2.png"
-                alt=""
+                alt="About image 2"
                 width={450}
                 height={288}
                 className="rounded-xl object-cover"
               />
             </div>
 
-            <div className="absolute left-0 top-[340px] -translate-x-[40px]">
+            <div className="absolute left-0 top-85 -translate-x-10">
               <Image
                 src="/about/3.png"
-                alt=""
+                alt="About image 3"
                 width={410}
                 height={246}
                 className="rounded-xl object-cover"
@@ -38,34 +57,17 @@ export default function About() {
             </div>
           </div>
 
-          <div className="flex flex-col items-end text-right justify-center">
-            <h1
-              className="
-                font-spline-sans-mono
-                text-[56px]
-                md:text-[80px]
-                lg:text-[96px]
-                font-extrabold
-                leading-none
-                mb-6
-                translate-y-[150px]
-                translate-x-[70px]
-              "
-            >
-              About
-            </h1>
-
+          <div className="flex flex-col items-end text-right justify-center translate-y-30">
+            <SectionHeading title="About" />
             <div
               className="
-                max-w-[880px]
+                max-w-200
                 text-right
-                text-2xl
+                text-xl
                 font-lato
                 leading-relaxed
                 space-y-2
-                
-                translate-y-[220px]
-                translate-x-[72px]
+                translate-y-5
               "
             >
               <div className="whitespace-nowrap">
@@ -79,6 +81,32 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="lg:hidden mt-12 space-y-12">
+          <SectionHeading title="About" />
+          {aboutSections.map((section, index) => (
+            <div key={index} className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+              <div
+                className={`flex justify-center ${section.imageLeft ? 'sm:order-1' : 'sm:order-2'}`}
+              >
+                <Image
+                  src={section.image}
+                  alt={`About section ${index + 1}`}
+                  width={400}
+                  height={240}
+                  className="rounded-xl object-cover"
+                />
+              </div>
+              <div
+                className={`flex items-center justify-center text-center sm:text-left ${
+                  section.imageLeft ? 'sm:order-2' : 'sm:order-1'
+                }`}
+              >
+                <p className="text-md font-lato leading-relaxed">{section.text}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
