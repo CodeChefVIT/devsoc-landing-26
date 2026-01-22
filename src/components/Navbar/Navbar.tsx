@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { navigationItems } from '@/data/navigation';
 
 function getTimeLeft(target: Date) {
   const now = new Date().getTime();
@@ -20,6 +21,7 @@ const targetDate = new Date('2026-02-06T00:00:00');
 export default function Navbar() {
   const [time, setTime] = useState(getTimeLeft(targetDate));
   const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(getTimeLeft(targetDate));
@@ -29,62 +31,42 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="fixed top-5 md:top-10 left-1/2 z-50 -translate-x-1/2">
-      <div
-        className="
-          flex items-center justify-between
-          md:w-350 w-[95vw] h-16
-          rounded-xl
-          sm:border border-white/30
-          bg-white/1
-          backdrop-blur-xl
-          px-10
-        "
-      >
-        <div className="flex h-20 w-20 items-center justify-center">
+    <nav className="fixed top-5 md:top-10 left-1/2 z-50 -translate-x-1/2 w-full max-w-[1354.87px] px-4">
+      {/* Main navbar with glass effect on border */}
+      <div className="relative flex items-center h-14 rounded-[10px] bg-black/[0.01] backdrop-blur-[75px] border border-white/30">
+        {/* Logo */}
+        <div className="absolute left-4 md:left-[22px] flex items-center">
           <Link href={'/'}>
             <Image
               src="/icon.png"
               alt="DevSoc Logo"
-              width={35}
-              height={35}
+              width={33}
+              height={32}
               className="object-contain"
             />
           </Link>
         </div>
-        <div className="hidden md:flex items-center gap-12 text-sm tracking-wide text-white font-bold">
-          <Link href="#hero" className="hover:text-white transition">
-            Hero
-          </Link>
-          <Link href="#about" className="hover:text-white transition">
-            About
-          </Link>
-          <Link href="#tracks" className="hover:text-white transition">
-            Tracks
-          </Link>
-          <Link href="#sponsors" className="hover:text-white transition">
-            Sponsors
-          </Link>
-          <Link href="#timeline" className="hover:text-white transition">
-            Timeline
-          </Link>
-          <Link href="#faqs" className="hover:text-white transition">
-            Faq
-          </Link>
+
+        {/* Countdown Timer - positioned at left: 602.43px on desktop */}
+        <div className="absolute left-1/2 -translate-x-1/2 xl:left-[44.5%] xl:translate-x-0 hidden md:flex flex-col justify-center items-center py-[7px] px-5 w-[150px] h-[38px] bg-black/[0.01] backdrop-blur-[80px] border border-white/10 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] rounded-[10px]">
+          <span className="font-lato font-bold text-[20px] leading-6 text-white">{time}</span>
         </div>
-        <div
-          className="hidden md:block
-            rounded-xl
-            border border-white/15
-            bg-white/
-            px-3 py-1
-            font-mono text-3xl text-white
-            backdrop-blur-lg
-          "
-        >
-          {time}
+
+        {/* Navigation - positioned at right with gap 25px */}
+        <div className="absolute right-4 xl:right-[29.5px] hidden lg:flex items-center gap-[25px]">
+          {navigationItems.map(item => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="font-lato font-bold text-[15px] leading-[18px] uppercase text-white hover:opacity-80 transition-opacity whitespace-nowrap"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
-        <div className="md:hidden">
+
+        {/* Mobile menu button */}
+        <div className="absolute right-4 lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             type="button"
@@ -129,51 +111,26 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full right-0  bg-white/1 backdrop-blur-xl border border-white/30 rounded-xl mt-2">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link
-              href="#hero"
-              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
-              onClick={() => setIsOpen(false)}
-            >
-              Hero
-            </Link>
-            <Link
-              href="#about"
-              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="#tracks"
-              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
-              onClick={() => setIsOpen(false)}
-            >
-              Tracks
-            </Link>
-            <Link
-              href="#sponsors"
-              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
-              onClick={() => setIsOpen(false)}
-            >
-              Sponsors
-            </Link>
-            <Link
-              href="#timeline"
-              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10 border-b border-white/10"
-              onClick={() => setIsOpen(false)}
-            >
-              Timeline
-            </Link>
-            <Link
-              href="#faqs"
-              className="text-white block px-3 py-2 text-base font-medium hover:bg-white/10"
-              onClick={() => setIsOpen(false)}
-            >
-              Faq
-            </Link>
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-black/[0.01] backdrop-blur-[75px] border border-white/30 rounded-xl mt-2">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            {navigationItems.map(item => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-white uppercase block px-3 py-2 text-[15px] font-bold leading-[18px] hover:bg-white/10 border-b border-white/10"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="px-3 py-2 flex justify-center">
+              <div className="flex items-center justify-center py-[7px] px-5 bg-black/[0.01] backdrop-blur-[80px] border border-white/10 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] rounded-[10px]">
+                <span className="font-lato font-bold text-[20px] leading-6 text-white">{time}</span>
+              </div>
+            </div>
           </div>
         </div>
       )}

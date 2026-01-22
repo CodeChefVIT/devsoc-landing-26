@@ -17,6 +17,7 @@ export default function About() {
               width={187}
               height={116}
               className="w-full max-w-55 h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105"
+              draggable="false"
             />
             <p className="max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white">
               DEVSOC’26 ignites innovation in its seventh edition blending AI and the metaverse to
@@ -58,6 +59,7 @@ export default function About() {
                   height={318}
                   className="w-full max-w-75 h-auto object-cover"
                   priority
+                  draggable="false"
                 />
               </div>
             </div>
@@ -70,6 +72,7 @@ export default function About() {
                   width={613}
                   height={425}
                   className="w-full h-auto object-cover"
+                  draggable="false"
                 />
               </div>
             </div>
@@ -82,6 +85,7 @@ export default function About() {
                   width={449}
                   height={286}
                   className="w-full max-w-70 h-auto object-cover"
+                  draggable="false"
                 />
               </div>
             </div>
