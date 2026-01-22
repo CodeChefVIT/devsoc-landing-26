@@ -24,7 +24,7 @@ export default function About() {
     <div id="about" className="relative py-24 text-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="hidden lg:grid lg:grid-cols-2 gap-16">
-          <div className="relative h-130 mt-20 scale-85">
+          <div className="relative md:h-130 mt-20 scale-85">
             <div className="absolute left-0 -top-28 -translate-x-10">
               <Image
                 src="/about/1.png"
@@ -84,6 +84,7 @@ export default function About() {
         </div>
 
         <div className="lg:hidden mt-12 space-y-12">
+          <SectionHeading title="About" />
           {aboutSections.map((section, index) => (
             <div key={index} className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
               <div
@@ -98,11 +99,11 @@ export default function About() {
                 />
               </div>
               <div
-                className={`flex items-center text-center sm:text-left ${
+                className={`flex items-center justify-center text-center sm:text-left ${
                   section.imageLeft ? 'sm:order-2' : 'sm:order-1'
                 }`}
               >
-                <p className="text-lg font-lato leading-relaxed">{section.text}</p>
+                <p className="text-md font-lato leading-relaxed">{section.text}</p>
               </div>
             </div>
           ))}
