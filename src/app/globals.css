@@ -34,8 +34,12 @@ button {
   font-family: var(--font-lato);
 }
 
-.font-spline-sans-mono {
-  font-family: var(--font-spline-sans-mono);
+.font-the-sans-mono {
+  font-family: var(--font-the-sans-mono);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .no-scrollbar::-webkit-scrollbar {

@@ -29,7 +29,7 @@ export default function FaqSection() {
 
   return (
     <section id="faqs" className="relative overflow-hidden px-6 py-24" suppressHydrationWarning>
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[url('/images/faq-bg.png')] bg-cover bg-center bg-no-repeat opacity-90" />
+      <div className="pointer-events-none absolute inset-0 z-1 bg-[url('/images/faq-bg.png')] bg-cover bg-center bg-no-repeat opacity-90" />
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="flex justify-end">
           <SectionHeading title="FAQs" />
@@ -45,11 +45,11 @@ export default function FaqSection() {
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                 className="flex w-full items-center justify-between text-left group py-2"
               >
-                <span className="font-lato font-bold text-white text-2xl leading-[29px]">
+                <span className="font-lato font-bold text-white text-2xl leading-7.25">
                   {faq.question}
                 </span>
 
-                <span className="ml-4 text-base font-light flex-shrink-0 text-white">
+                <span className="ml-4 text-base font-light shrink-0 text-white">
                   {activeIndex === index ? '−' : '+'}
                 </span>
               </button>
@@ -57,7 +57,7 @@ export default function FaqSection() {
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === index ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
               >
-                <p className="font-lato font-bold text-[#ADAAF7] whitespace-pre-line text-base leading-[19px]">
+                <p className="font-lato font-bold text-[#ADAAF7] whitespace-pre-line text-base leading-4.75">
                   {faq.answer}
                 </p>
               </div>

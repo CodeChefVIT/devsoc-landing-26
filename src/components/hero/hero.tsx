@@ -18,7 +18,7 @@ export default function Hero() {
       <motion.div
         className="
           absolute top-[22%] w-full text-center
-          font-spline-sans-mono
+          font-the-sans-mono
         "
         style={{ y: textY }}
       >
@@ -84,9 +84,9 @@ export default function Hero() {
     absolute
     bottom-[15vh]
     left-1/2 -translate-x-1/2
-    w-full max-w-[900px]
+    w-full max-w-225
     h-[55vh]
-    min-h-[350px]
+    min-h-87.5
     z-20
   "
         style={{ y: statueY }}
@@ -105,9 +105,9 @@ export default function Hero() {
     absolute
     bottom-[14.5vh]
     left-1/2 -translate-x-1/2
-    w-full max-w-[900px]
+    w-full max-w-225
     h-[22vh]
-    min-h-[180px]
+    min-h-45
     rounded-[28px]
     overflow-hidden
     z-10

@@ -14,8 +14,10 @@ function getTimeLeft(target: Date) {
   const seconds = Math.floor((diff / 1000) % 60);
   return [days, hours, minutes, seconds].map(v => String(v).padStart(2, '0')).join(':');
 }
+
+const targetDate = new Date('2026-02-06T00:00:00');
+
 export default function Navbar() {
-  const targetDate = new Date('2026-02-06T00:00:00');
   const [time, setTime] = useState(getTimeLeft(targetDate));
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
@@ -24,7 +26,7 @@ export default function Navbar() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  });
 
   return (
     <nav className="fixed top-5 md:top-10 left-1/2 z-50 -translate-x-1/2">
