@@ -27,14 +27,14 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-[43px] left-1/2 z-50 -translate-x-1/2">
+    <nav className="fixed top-10 left-1/2 z-50 -translate-x-1/2">
       <div
         className="
           flex items-center justify-between
-          w-[1400px] h-[64px]
+          w-350 h-16
           rounded-xl
           border border-white/30
-          bg-white/[0.01]
+          bg-white/1
           backdrop-blur-xl
           px-10
         "
@@ -51,17 +51,23 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex items-center gap-12 text-sm tracking-wide text-white/100 font-bold">
+          <Link href="#hero" className="hover:text-white transition">
+            HERO
+          </Link>
           <Link href="#about" className="hover:text-white transition">
             ABOUT
-          </Link>
-          <Link href="#timeline" className="hover:text-white transition">
-            TIMELINE
           </Link>
           <Link href="#tracks" className="hover:text-white transition">
             TRACKS
           </Link>
           <Link href="#sponsors" className="hover:text-white transition">
             SPONSORS
+          </Link>
+          <Link href="#timeline" className="hover:text-white transition">
+            TIMELINE
+          </Link>
+          <Link href="#faqs" className="hover:text-white transition">
+            FAQ
           </Link>
         </div>
         <div
