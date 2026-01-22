@@ -5,8 +5,8 @@ export default function About() {
     <div id="about" className="relative py-24 text-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-2 gap-16">
-          <div className="relative h-[520px] mt-[80px]">
-            <div className="absolute left-0 top-[-110px] -translate-x-[40px]">
+          <div className="relative h-130 mt-20">
+            <div className="absolute left-0 -top-28 -translate-x-10">
               <Image
                 src="/about/1.png"
                 alt=""
@@ -17,7 +17,7 @@ export default function About() {
               />
             </div>
 
-            <div className="absolute left-[120px] top-[70px] translate-x-[200px] z-10">
+            <div className="absolute left-30 top-18 translate-x-50 z-10">
               <Image
                 src="/about/2.png"
                 alt=""
@@ -27,7 +27,7 @@ export default function About() {
               />
             </div>
 
-            <div className="absolute left-0 top-[340px] -translate-x-[40px]">
+            <div className="absolute left-0 top-85 -translate-x-10">
               <Image
                 src="/about/3.png"
                 alt=""
@@ -48,8 +48,8 @@ export default function About() {
                 font-extrabold
                 leading-none
                 mb-6
-                translate-y-[150px]
-                translate-x-[70px]
+                translate-y-38
+                translate-x-18
               "
             >
               About
@@ -57,15 +57,14 @@ export default function About() {
 
             <div
               className="
-                max-w-[880px]
+                max-w-220
                 text-right
                 text-2xl
                 font-lato
                 leading-relaxed
                 space-y-2
-                
-                translate-y-[220px]
-                translate-x-[72px]
+                translate-y-55
+                translate-x-18
               "
             >
               <div className="whitespace-nowrap">
