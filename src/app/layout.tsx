@@ -3,6 +3,9 @@ import { lato, italianno, splineSansMono } from './fonts';
 import './globals.css';
 import Navbar from '@/components/ui/navbar';
 
+const embedImagesUrl =
+  'https://res.cloudinary.com/dul1hx8p3/image/upload/v1769078428/opengraph-image_m2vfnh.jpg';
+
 export const metadata: Metadata = {
   title: "DevSoc'26",
   description:
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
       "DevSoc'26 ignites innovation in its seventh edition blending AI and the metaverse to solve real-world challenges. Bringing together diverse minds, we go beyond coding to build bold solutions that redefine what’s possible.",
     images: [
       {
-        url: 'https://res.cloudinary.com/dul1hx8p3/image/upload/v1769076740/opengraph-image_dxemve.jpg',
+        url: embedImagesUrl,
         width: 1200,
         height: 630,
         alt: "DevSoc'26",
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
       "DevSoc'26 ignites innovation in its seventh edition blending AI and the metaverse to solve real-world challenges. Bringing together diverse minds, we go beyond coding to build bold solutions that redefine what’s possible.",
     images: [
       {
-        url: 'https://res.cloudinary.com/dul1hx8p3/image/upload/v1769076740/opengraph-image_dxemve.jpg',
+        url: embedImagesUrl,
         alt: "DevSoc'26",
       },
     ],
