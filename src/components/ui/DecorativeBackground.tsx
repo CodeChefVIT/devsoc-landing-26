@@ -17,6 +17,13 @@ export default function DecorativeBackground({ children }: DecorativeBackgroundP
           priority
           className="block h-auto w-full object-cover object-top"
         />
+        <div
+          className="absolute inset-x-0 top-0 h-12.5"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(10, 10, 10, 1) 0px, rgba(10, 10, 10, 1) 2px, transparent 50px)',
+          }}
+        />
       </div>
 
       <div className="relative z-2 w-full">{children}</div>

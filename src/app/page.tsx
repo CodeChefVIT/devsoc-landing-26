@@ -8,9 +8,8 @@ import Hero from '@/components/hero/hero';
 
 export default function Page() {
   return (
-    <main className=" rounded-lg py-10 shadow">
+    <main>
       <Hero />
-      {/* Keep hero outside of the decorative-background component */}
       <DecorativeBackground>
         <About />
         <Tracks />

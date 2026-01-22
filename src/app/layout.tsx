@@ -52,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lato.variable} ${italianno} ${theSansMono} antialiased bg-black text-white select-none`}
+        className={`${lato.variable} ${italianno.variable} ${theSansMono.variable} antialiased bg-black text-white select-none`}
       >
         <Navbar />
         {children}

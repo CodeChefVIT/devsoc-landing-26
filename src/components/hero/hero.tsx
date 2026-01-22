@@ -10,7 +10,7 @@ export default function Hero() {
   const statueY = useTransform(scrollY, [0, 600], [0, 60]);
 
   return (
-    <section className="relative h-screen bg-black">
+    <section className="relative h-screen">
       <p className="absolute top-[11%] w-full text-center text-white z-10 font-italianno text-[clamp(2rem,5vw,4rem)]">
         Introducing
       </p>
@@ -97,6 +97,7 @@ export default function Hero() {
           fill
           priority
           className="object-contain object-bottom"
+          draggable="false"
         />
       </motion.div>
 
