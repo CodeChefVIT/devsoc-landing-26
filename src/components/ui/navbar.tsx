@@ -27,13 +27,13 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-10 left-1/2 z-50 -translate-x-1/2">
+    <nav className="fixed top-5 md:top-10 left-1/2 z-50 -translate-x-1/2">
       <div
         className="
           flex items-center justify-between
-          md:w-350 w-80 h-16
+          md:w-350 w-[95vw] h-16
           rounded-xl
-          border border-white/30
+          sm:border border-white/30
           bg-white/1
           backdrop-blur-xl
           px-10
