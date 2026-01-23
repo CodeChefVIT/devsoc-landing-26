@@ -18,6 +18,7 @@ import { TimelineTrack } from './TimelineTrack';
 import { TimelineCenter } from './TimelineCenter';
 import { TimelineBackground } from './TimelineBackground';
 import { VerticalTimeline } from './VerticalTimeline';
+import { div } from 'framer-motion/client';
 
 export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -127,7 +128,10 @@ export default function Timeline() {
       </div>
 
       {isMobile ? (
-        <VerticalTimeline />
+        <div>
+          <VerticalTimeline />
+          <div className="h-10 snap-none" />
+        </div>
       ) : (
         <div
           ref={containerRef}

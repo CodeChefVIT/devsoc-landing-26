@@ -21,7 +21,7 @@ export function VerticalTimeline() {
   };
 
   return (
-    <div className="relative w-full px-8 snap-y snap-mandatory scroll-smooth h-screen overflow-y-auto scrollbar-none">
+    <div className="relative w-full px-8 snap-y snap-proximity scroll-smooth h-screen overflow-y-auto scrollbar-none">
       <div className="sticky top-1/2 z-10 ">
         <TimelineCenter dotControls={dotControls} ringControls={ringControls} />
       </div>
