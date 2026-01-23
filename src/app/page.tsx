@@ -6,6 +6,8 @@ import Timeline from '@/components/timeline/Timeline';
 import About from '@/components/About';
 import Hero from '@/components/hero/hero';
 
+export const dynamic = 'force-static';
+
 export default function Page() {
   return (
     <main>

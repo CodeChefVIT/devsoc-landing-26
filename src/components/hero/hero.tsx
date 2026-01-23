@@ -16,10 +16,7 @@ export default function Hero() {
       </p>
 
       <motion.div
-        className="
-          absolute top-[22%] w-full text-center
-          font-the-sans-mono
-        "
+        className="absolute top-[22%] w-full text-center font-the-sans-mono"
         style={{ y: textY }}
       >
         <h1
