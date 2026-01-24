@@ -39,7 +39,7 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <motion.div
-        className="relative flex items-center h-12 md:h-14 lg:h-16 rounded-lg md:rounded-xl backdrop-blur-[75px] backdrop-saturate-180 backdrop-brightness-110 border border-white/18 shadow-[0_8px_32px_0_rgba(0,0,0,0.37),inset_0_0_0_1px_rgba(255,255,255,0.18),0_0_50px_0_rgba(0,0,0,0.1)]"
+        className="relative flex items-center h-12 md:h-14 lg:h-16 rounded-lg md:rounded-xl bg-[rgba(10,10,20,0.06)] backdrop-blur-xl shadow-recess border border-white/18"
         whileHover={{ scale: 1.002 }}
         transition={{ duration: 0.2 }}
       >
@@ -60,7 +60,7 @@ export default function Navbar() {
         </motion.div>
 
         <motion.div
-          className="absolute left-1/2 -translate-x-1/2 xl:left-[44.5%] xl:translate-x-0 hidden md:flex flex-col justify-center items-center py-1.5 md:py-2 px-4 md:px-5 min-w-35 md:min-w-37.5 h-9 md:h-9.5 rounded-lg md:rounded-xl backdrop-blur-[80px] backdrop-saturate-180 backdrop-brightness-115 border border-white/10 shadow-[0_4px_24px_0_rgba(0,0,0,0.25),inset_0_0_0_1px_rgba(255,255,255,0.15),0_0_50px_0_rgba(0,0,0,0.1)]"
+          className="absolute left-1/2 -translate-x-1/2 xl:left-[44.5%] xl:translate-x-0 hidden md:flex flex-col justify-center items-center py-1.5 md:py-2 px-4 md:px-5 min-w-35 md:min-w-37.5 h-9 md:h-9.5 rounded-lg md:rounded-xl bg-[rgba(10,10,20,0.06)] backdrop-blur-xl shadow-recess border border-white/18"
           whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.2 }}
         >
@@ -130,7 +130,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="lg:hidden absolute top-full left-0 right-0 rounded-lg md:rounded-xl mt-2 overflow-hidden backdrop-blur-[75px] backdrop-saturate-180 backdrop-brightness-110 border border-white/18 shadow-[0_8px_32px_0_rgba(0,0,0,0.37),inset_0_0_0_1px_rgba(255,255,255,0.18),0_0_50px_0_rgba(0,0,0,0.1)]"
+            className="lg:hidden absolute top-full left-0 right-0 rounded-lg md:rounded-xl mt-2 overflow-hidden bg-[rgba(10,10,20,0.06)] backdrop-blur-xl shadow-recess border border-white/18"
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -159,7 +159,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: navigationItems.length * 0.05, duration: 0.2 }}
               >
-                <div className="flex items-center justify-center py-2 px-5 rounded-lg md:rounded-xl backdrop-blur-[80px] backdrop-saturate-180 backdrop-brightness-115 border border-white/10 shadow-[0_4px_24px_0_rgba(0,0,0,0.25),inset_0_0_0_1px_rgba(255,255,255,0.15),0_0_50px_0_rgba(0,0,0,0.1)]">
+                <div className="flex items-center justify-center py-2 px-5 rounded-lg md:rounded-xl bg-[rgba(10,10,20,0.06)] backdrop-blur-xl shadow-recess border border-white/18">
                   <span className="font-lato font-bold text-lg md:text-xl leading-5 md:leading-6 text-white tracking-wide">
                     {time}
                   </span>
