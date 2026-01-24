@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { DecorativeBackground } from '@/components/ui';
+import { DecorativeBackground, SectionBg } from '@/components/ui';
 import Sponsors from '@/components/Sponsors';
 import Tracks from '@/components/Tracks';
 import Faqs from '@/components/Faqs/FaqSection';
@@ -9,39 +8,14 @@ import Hero from '@/components/hero/hero';
 
 export const dynamic = 'force-static';
 
-function SectionBg({
-  src,
-  opacity = 'opacity-100',
-  fullWidth = false,
-}: {
-  src: string;
-  opacity?: string;
-  fullWidth?: boolean;
-}) {
-  return (
-    <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
-      <div
-        className={`relative h-full ${
-          fullWidth ? 'w-screen' : 'w-[140vw] md:w-[130vw] lg:w-[120vw]'
-        }`}
-      >
-        <Image src={src} alt="" fill priority className={`object-fill scale-110 ${opacity}`} />
-      </div>
-    </div>
-  );
-}
-
 export default function Page() {
   return (
     <main className="relative flex flex-col gap-30">
       <Hero />
-
       <DecorativeBackground>
         <section id="about-section" className="relative overflow-hidden pb-32 md:pb-48 lg:pb-64">
           <SectionBg src="/images/backgrounds/bg-about.svg" />
-          <div className="relative z-10">
-            <About />
-          </div>
+          <About />
         </section>
 
         <section
@@ -49,9 +23,7 @@ export default function Page() {
           className="relative -mt-32 overflow-hidden pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64"
         >
           <SectionBg src="/images/backgrounds/bg-tracks.svg" />
-          <div className="relative z-10">
-            <Tracks />
-          </div>
+          <Tracks />
         </section>
 
         <section className="relative -mt-32 overflow-hidden pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64">
@@ -63,16 +35,12 @@ export default function Page() {
           className="relative -mt-32 overflow-hidden pb-24 md:-mt-32 md:pb-32 lg:-mt-48 lg:pb-48"
         >
           <SectionBg src="/images/backgrounds/bg-sponsors.svg" />
-          <div className="relative z-10">
-            <Sponsors />
-          </div>
+          <Sponsors />
         </section>
 
         <section id="faqs-section" className="relative -mt-32 overflow-hidden md:-mt-48 lg:-mt-64">
           <SectionBg src="/images/backgrounds/bg-faq.svg" opacity="opacity-90" fullWidth />
-          <div className="relative z-10">
-            <Faqs />
-          </div>
+          <Faqs />
         </section>
       </DecorativeBackground>
     </main>
