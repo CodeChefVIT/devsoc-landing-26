@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function Logo() {
   return (
     <motion.div
-      className="absolute left-3 md:left-5 lg:left-6 flex items-center"
+      className="flex items-center"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.2 }}
     >

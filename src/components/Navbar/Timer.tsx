@@ -36,7 +36,7 @@ export default function Timer({ className = '', isMobile = false }: TimerProps) 
   if (isMobile) {
     return (
       <motion.div
-        className={`px-3 py-3 flex justify-center ${className}`}
+        className={`flex justify-center ${className}`}
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.2 }}
@@ -54,7 +54,7 @@ export default function Timer({ className = '', isMobile = false }: TimerProps) 
 
   return (
     <motion.div
-      className={`absolute left-1/2 -translate-x-1/2 xl:left-[44.5%] xl:translate-x-0 hidden md:flex ${className}`}
+      className={`flex ${className}`}
       whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.2 }}
     >

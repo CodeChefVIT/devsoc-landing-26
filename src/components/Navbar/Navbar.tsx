@@ -16,16 +16,27 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <Glass className="shadow-4xl">
-        <motion.div
-          className="relative flex items-center h-12 md:h-14 lg:h-16 md:rounded-xl shadow-recess bg-[rgba(10,10,20,0.06)] rounded-2xl p-8 shadow-recess backdrop-blur-xl justify-between gap-8"
-          whileHover={{ scale: 1.002 }}
-          transition={{ duration: 0.2 }}
-        >
-          <Logo />
-          <Timer />
-          <DesktopNav />
-          <MobileMenu />
-        </motion.div>
+        <div className="relative rounded-2xl md:rounded-xl shadow-recess bg-[rgba(10,10,20,0.06)] backdrop-blur-xl overflow-hidden">
+          {/* Desktop Layout */}
+          <div className="hidden lg:flex items-center h-16 px-6 relative">
+            <Logo />
+            <div className="absolute left-1/2 -translate-x-1/2">
+              <Timer />
+            </div>
+            <div className="ml-auto">
+              <DesktopNav />
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="lg:hidden">
+            {/* Logo positioned absolutely on top */}
+            <div className="absolute left-3 md:left-5 top-3 md:top-3.5 z-10">
+              <Logo />
+            </div>
+            <MobileMenu />
+          </div>
+        </div>
       </Glass>
     </motion.nav>
   );
