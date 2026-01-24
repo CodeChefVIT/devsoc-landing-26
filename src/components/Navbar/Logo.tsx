@@ -6,11 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function Logo() {
   return (
-    <motion.div
-      className="flex items-center"
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.2 }}
-    >
+    <motion.div className="flex items-center">
       <Link href={'/'}>
         <Image
           src="/icon.png"

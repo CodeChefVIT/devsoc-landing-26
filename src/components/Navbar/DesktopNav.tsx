@@ -21,7 +21,7 @@ export default function DesktopNav() {
         >
           <Link
             href={item.href}
-            className="relative font-lato font-bold text-sm lg:text-[15px] xl:text-base leading-tight lg:leading-4.5 uppercase text-white whitespace-nowrap inline-block group"
+            className="relative font-lato font-bold text-sm lg:text-[15px] xl:text-base leading-tight lg:leading-4.5 uppercase text-gray-200 hover:text-white whitespace-nowrap inline-block group transition-colors duration-200"
           >
             <motion.span
               className="relative z-10"
@@ -30,11 +30,6 @@ export default function DesktopNav() {
             >
               {item.label}
             </motion.span>
-            <motion.span
-              className="absolute -inset-2 bg-white/10 rounded-lg -z-10 blur-sm opacity-0 group-hover:opacity-100"
-              initial={false}
-              transition={{ duration: 0.3 }}
-            />
           </Link>
         </motion.div>
       ))}

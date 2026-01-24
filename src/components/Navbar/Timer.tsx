@@ -53,11 +53,7 @@ export default function Timer({ className = '', isMobile = false }: TimerProps) 
   }
 
   return (
-    <motion.div
-      className={`flex ${className}`}
-      whileHover={{ scale: 1.03 }}
-      transition={{ duration: 0.2 }}
-    >
+    <motion.div className={`flex ${className}`}>
       <Glass>
         <div className="flex flex-col justify-center items-center py-1.5 md:py-2 px-4 md:px-5 min-w-35 md:min-w-37.5 h-9 md:h-9.5">
           <span className="font-lato font-bold text-base md:text-lg lg:text-xl leading-5 md:leading-6 text-white whitespace-nowrap tracking-wide">
