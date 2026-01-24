@@ -8,8 +8,7 @@ export default function FaqSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="faqs" className="relative overflow-hidden px-6 py-24" suppressHydrationWarning>
-      <div className="pointer-events-none absolute inset-0 z-1 bg-[url('/images/faq-bg.png')] bg-cover bg-center bg-no-repeat opacity-90" />
+    <section id="faqs" className="relative px-6 py-24" suppressHydrationWarning>
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="flex justify-end">
           <SectionHeading title="FAQs" />

@@ -3,7 +3,7 @@ import { SectionHeading } from '@/components/ui';
 
 export default function About() {
   return (
-    <section id="about" className="relative py-60 lg:py-60 text-white bg-transparent">
+    <section id="about" className="relative py-60 lg:py-60 text-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="block lg:hidden space-y-10">
           <div className="flex justify-end">
@@ -51,7 +51,7 @@ export default function About() {
         <div className="hidden lg:grid lg:grid-cols-2 gap-16">
           <div className="relative h-140">
             <div className="absolute left-0 top-0 z-10">
-              <div className="overflow-hidden rounded-3xl shadow-[0px_2px_8px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105">
+              <div className="rounded-3xl shadow-[0px_2px_8px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105">
                 <Image
                   src="/images/about/about-1.avif"
                   alt=""
@@ -65,7 +65,7 @@ export default function About() {
             </div>
 
             <div className="absolute left-65 top-25 z-20 w-107.5">
-              <div className="overflow-hidden rounded-3xl shadow-[0px_4px_16px_rgba(0,0,0,0.35)] transition-transform duration-300 ease-out hover:scale-105">
+              <div className="rounded-3xl shadow-[0px_4px_16px_rgba(0,0,0,0.35)] transition-transform duration-300 ease-out hover:scale-105">
                 <Image
                   src="/images/about/about-2.avif"
                   alt=""
@@ -78,7 +78,7 @@ export default function About() {
             </div>
 
             <div className="absolute left-10 top-90 z-0">
-              <div className="overflow-hidden rounded-3xl shadow-[0px_2px_8px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105">
+              <div className="rounded-3xl shadow-[0px_2px_8px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105">
                 <Image
                   src="/images/about/about-3.avif"
                   alt=""
