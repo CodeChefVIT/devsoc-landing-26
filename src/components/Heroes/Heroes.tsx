@@ -40,9 +40,7 @@ export default function Hero() {
             text-white z-10
           "
         >
-          DEVS
-          <span className="text-transparent [-webkit-text-stroke:2px_white]">O</span>
-          C’26
+          DEVSOC’26
         </h1>
       </motion.div>
 
