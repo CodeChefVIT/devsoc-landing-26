@@ -11,10 +11,8 @@ export default function MobileFooter() {
             WebkitTextStroke: '2px #FFFFFF',
           }}
         >
-          {⁠ DEVSOC'26 ⁠}
+          {`DEVSOC'26 `}
         </h1>
-
-        
 
         {/* Navigation Sections */}
         <nav className="flex gap-4 text-[10px] leading-3 font-semibold font-lato flex-wrap justify-center">
@@ -74,6 +72,5 @@ export default function MobileFooter() {
         </div>
       </div>
     </div>
-
   );
 }
