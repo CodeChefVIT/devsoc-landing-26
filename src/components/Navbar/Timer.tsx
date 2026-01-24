@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import Glass from '../ui/Glass/Glass';
 
 function getTimeLeft(target: Date) {
   const now = new Date().getTime();
@@ -40,24 +41,30 @@ export default function Timer({ className = '', isMobile = false }: TimerProps) 
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.2 }}
       >
-        <div className="flex items-center justify-center py-2 px-5 rounded-lg md:rounded-xl bg-white/10 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.3),0_2px_8px_rgba(255,255,255,0.1)_inset]">
-          <span className="font-lato font-bold text-lg md:text-xl leading-5 md:leading-6 text-white tracking-wide">
-            {time}
-          </span>
-        </div>
+        <Glass>
+          <div className="flex items-center justify-center py-2 px-5">
+            <span className="font-lato font-bold text-lg md:text-xl leading-5 md:leading-6 text-white tracking-wide">
+              {time}
+            </span>
+          </div>
+        </Glass>
       </motion.div>
     );
   }
 
   return (
     <motion.div
-      className={`absolute left-1/2 -translate-x-1/2 xl:left-[44.5%] xl:translate-x-0 hidden md:flex flex-col justify-center items-center py-1.5 md:py-2 px-4 md:px-5 min-w-35 md:min-w-37.5 h-9 md:h-9.5 rounded-lg md:rounded-xl backdrop-blur-4xl shadow-[0_8px_32px_rgba(0,0,0,0.3),0_2px_8px_rgba(255,255,255,0.1)_inset] ${className}`}
+      className={`absolute left-1/2 -translate-x-1/2 xl:left-[44.5%] xl:translate-x-0 hidden md:flex ${className}`}
       whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.2 }}
     >
-      <span className="font-lato font-bold text-base md:text-lg lg:text-xl leading-5 md:leading-6 text-white whitespace-nowrap tracking-wide">
-        {time}
-      </span>
+      <Glass>
+        <div className="flex flex-col justify-center items-center py-1.5 md:py-2 px-4 md:px-5 min-w-35 md:min-w-37.5 h-9 md:h-9.5">
+          <span className="font-lato font-bold text-base md:text-lg lg:text-xl leading-5 md:leading-6 text-white whitespace-nowrap tracking-wide">
+            {time}
+          </span>
+        </div>
+      </Glass>
     </motion.div>
   );
 }
