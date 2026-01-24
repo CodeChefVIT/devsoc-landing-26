@@ -98,16 +98,19 @@ export default function Hero() {
 
       <motion.div
         className="
-              absolute
-              bottom-[14.5vh]
-              left-1/2 -translate-x-1/2
-              w-full max-w-225
-              h-[22vh]
-              min-h-45
-              rounded-[28px]
-              overflow-hidden
-              z-10
-            "
+            absolute
+            bottom-[14.5vh]
+            left-1/2 -translate-x-1/2
+
+            w-[calc(100%-4rem)] sm:w-full
+            max-w-225
+            h-[22vh]
+            min-h-45
+
+            rounded-[28px]
+            overflow-hidden
+            z-10
+          "
         style={{ y: statueY }}
       >
         <Image src="/png/bg-gradient.png" alt="Gradient" fill className="object-fill" />
