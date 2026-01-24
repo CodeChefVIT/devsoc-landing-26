@@ -23,7 +23,7 @@ export default function TrackCard({
   const isExpanded = expandedIndex === index;
   const hasExpandedCard = expandedIndex !== null;
   const animationVariant = getAnimationVariant(expandedIndex, index);
-  const isClickable = track.title;
+  const isClickable = track.type === 'track';
 
   return (
     <motion.div
