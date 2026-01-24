@@ -27,6 +27,7 @@ export default function TrackContent({ track, isExpanded = false }: TrackContent
           className="object-cover"
           sizes="(max-width: 1024px) 25vw, 12vw"
           draggable="false"
+          loading="lazy"
         />
       </div>
     );
