@@ -20,7 +20,7 @@ export default function Page() {
 
         <section
           id="tracks-section"
-          className="relative -mt-32 overflow-hidden pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64"
+          className="relative -mt-32 overflow-visible pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64"
         >
           <SectionBg src="/images/backgrounds/bg-tracks.svg" />
           <Tracks />
