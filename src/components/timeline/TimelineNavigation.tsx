@@ -13,7 +13,7 @@ export function TimelineNavigation({
   eventsLength,
 }: TimelineNavigationProps) {
   return (
-    <div className="flex gap-4 z-30 pointer-events-auto lg:col-start-9 lg:col-span-2 justify-end">
+    <div className="flex gap-4 z-30 pointer-events-auto md:col-start-10 lg:col-start-9 lg:col-span-2 justify-end">
       <button
         onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
         disabled={activeIndex === 0}

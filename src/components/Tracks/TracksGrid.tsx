@@ -31,10 +31,10 @@ export default function TracksGrid({ tracks }: { tracks: Track[] }) {
         ...containerStyle,
         ...cssVars,
       }}
-      className="mx-4 sm:mx-auto grid gap-px auto-rows-fr relative z-10 aspect-square sm:h-[80vh] box-border border border-[#474747] rounded-3xl overflow-hidden"
+      className="mx-4 sm:mx-auto grid gap-px auto-rows-fr relative z-10 aspect-square sm:h-[80vh] box-border border border-[#474747] rounded-3xl "
     >
       <Image
-        src="/images/backgrounds/bg-tracks.avif"
+        src="/images/backgrounds/bg-tracks_grid.avif"
         alt="Tracks background"
         fill
         className="object-cover -z-10"
@@ -43,7 +43,7 @@ export default function TracksGrid({ tracks }: { tracks: Track[] }) {
       {cells.map((t, idx) => (
         <div
           key={idx}
-          className="h-full flex items-center justify-center overflow-hidden box-border bg-clip-border"
+          className="h-full flex items-center justify-center box-border bg-clip-border"
         >
           <div className="relative h-full aspect-square max-w-full box-border">
             <div className="absolute inset-0 flex items-center justify-center">
