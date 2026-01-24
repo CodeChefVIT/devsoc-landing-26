@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import { navigationItems } from '@/data/navigation';
 import Timer from './Timer';
 
@@ -20,39 +21,21 @@ export default function MobileMenu() {
           aria-expanded={isOpen}
         >
           <span className="sr-only">Open main menu</span>
-          <motion.svg
-            className="h-5 w-5 md:h-6 md:w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+          <motion.div
+            className="h-5 w-5 md:h-6 md:w-6 flex items-center justify-center"
             aria-hidden="true"
             animate={isOpen ? { rotate: 90 } : { rotate: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {!isOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            )}
-          </motion.svg>
+            {!isOpen ? <Menu className="h-full w-full" /> : <X className="h-full w-full" />}
+          </motion.div>
         </button>
       </motion.div>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="lg:hidden absolute top-full left-0 right-0 rounded-lg md:rounded-xl mt-2 overflow-hidden bg-[rgba(10,10,20,0.06)] backdrop-blur-xl shadow-recess border border-white/18"
+            className="lg:hidden absolute top-full left-0 right-0 rounded-lg md:rounded-xl mt-2 overflow-hidden bg-[rgba(10,10,20,0.06)] backdrop-blur-xl shadow-recess"
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
