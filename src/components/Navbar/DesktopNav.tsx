@@ -6,7 +6,7 @@ import { navigationItems } from '@/data/navigation';
 
 export default function DesktopNav() {
   return (
-    <div className="flex items-center gap-5 lg:gap-6 xl:gap-7">
+    <div className="flex items-center gap-5 lg:gap-3 xl:gap-4">
       {navigationItems.map((item, index) => (
         <motion.div
           key={item.label}
@@ -21,7 +21,7 @@ export default function DesktopNav() {
         >
           <Link
             href={item.href}
-            className="relative font-lato font-bold text-sm lg:text-[15px] xl:text-base leading-tight lg:leading-4.5 uppercase text-gray-200 hover:text-white whitespace-nowrap inline-block group transition-colors duration-200"
+            className="relative font-lato font-bold text-sm lg:text-xs xl:text-sm leading-tight lg:leading-4.5 uppercase text-gray-200 hover:text-white whitespace-nowrap inline-block group transition-colors duration-200"
           >
             <motion.span
               className="relative z-10"
