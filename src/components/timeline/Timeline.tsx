@@ -120,7 +120,7 @@ export default function Timeline() {
   };
 
   return (
-    <div className={cn('overflow-x-hidden overflow-clip', !isMobile ? 'max-h-screen' : '')}>
+    <div className={cn('overflow-x-hidden overflow-clip')}>
       <div className="grid grid-cols-12 mt-20">
         <div className="col-start-2">
           <SectionHeading title="Timeline" />
@@ -130,7 +130,6 @@ export default function Timeline() {
       {isMobile ? (
         <div>
           <VerticalTimeline />
-          <div className="h-10 snap-none" />
         </div>
       ) : (
         <div
