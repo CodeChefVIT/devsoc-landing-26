@@ -134,11 +134,10 @@ export default function Timeline() {
       ) : (
         <div
           ref={containerRef}
-          className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-proximity bg-transparent scrollbar-none"
+          className="snap-start max-h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-proximity bg-transparent scrollbar-none"
         >
-          <div className="relative w-full" style={{ height: `${EVENTS.length * 100}vh` }}>
+          <div className="relative w-full " style={{ height: `${EVENTS.length * 100}vh` }}>
             <div className="sticky top-0 w-full overflow-hidden text-white font-lato selection:bg-purple-500/30">
-              {/* Background Line */}
               <div
                 className="absolute top-1/2 h-px bg-white/20 z-9"
                 style={{
@@ -159,7 +158,7 @@ export default function Timeline() {
 
               {activeEvent && (
                 <TimelineEventDetails activeEvent={activeEvent}>
-                  <div className="lg:col-start-9 lg:col-span-2 justify-end flex gap-4 z-30 pointer-events-auto">
+                  <div className="lg:col-start-9 md:col-start-8 lg:col-span-2 justify-end flex gap-4 z-30 pointer-events-auto">
                     <TimelineNavigation
                       scrollToIndex={scrollToIndex}
                       activeIndex={activeIndex}
