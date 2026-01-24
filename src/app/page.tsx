@@ -37,7 +37,6 @@ export default function Page() {
       <Hero />
 
       <DecorativeBackground>
-        {/* ABOUT */}
         <section id="about-section" className="relative overflow-hidden pb-32 md:pb-48 lg:pb-64">
           <SectionBg src="/images/backgrounds/bg-about.svg" />
           <div className="relative z-10">
@@ -45,7 +44,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* TRACKS */}
         <section
           id="tracks-section"
           className="relative -mt-32 overflow-hidden pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64"
@@ -56,15 +54,13 @@ export default function Page() {
           </div>
         </section>
 
-        {/* TIMELINE */}
         <section className="relative -mt-32 overflow-hidden pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64">
           <Timeline />
         </section>
 
-        {/* SPONSORS */}
         <section
           id="sponsors-section"
-          className="relative -mt-32 overflow-hidden pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64"
+          className="relative -mt-32 overflow-hidden pb-24 md:-mt-32 md:pb-32 lg:-mt-48 lg:pb-48"
         >
           <SectionBg src="/images/backgrounds/bg-sponsors.svg" />
           <div className="relative z-10">
@@ -72,7 +68,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* FAQ — FULL SCREEN WIDTH */}
         <section id="faqs-section" className="relative -mt-32 overflow-hidden md:-mt-48 lg:-mt-64">
           <SectionBg src="/images/backgrounds/bg-faq.svg" opacity="opacity-90" fullWidth />
           <div className="relative z-10">

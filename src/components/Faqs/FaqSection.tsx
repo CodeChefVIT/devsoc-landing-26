@@ -8,7 +8,7 @@ export default function FaqSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="faqs" className="relative px-6 py-24" suppressHydrationWarning>
+    <div id="faqs" className="relative px-6 py-24" suppressHydrationWarning>
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="flex justify-end">
           <SectionHeading title="FAQs" />
@@ -44,6 +44,6 @@ export default function FaqSection() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

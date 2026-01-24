@@ -10,7 +10,7 @@ export default function Sponsors() {
   };
 
   return (
-    <div className="relative py-16 sm:py-20 md:py-22 lg:py-24">
+    <div className="relative">
       <div className="relative">
         <SectionHeading title="Sponsors" />
 

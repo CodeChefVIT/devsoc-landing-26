@@ -3,7 +3,7 @@ import { SectionHeading } from '@/components/ui';
 
 export default function About() {
   return (
-    <section id="about" className="relative py-60 lg:py-60 text-white">
+    <div id="about" className="relative text-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="block lg:hidden space-y-10">
           <div className="flex justify-end">
@@ -121,6 +121,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
