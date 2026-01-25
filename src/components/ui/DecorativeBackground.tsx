@@ -10,7 +10,7 @@ export default function DecorativeBackground({ children }: DecorativeBackgroundP
     <div className="relative w-full overflow-x-hidden" style={{ aspectRatio: '1920 / 8923' }}>
       <div className="pointer-events-none absolute inset-0 z-1 overflow-hidden">
         <Image
-          src="/images/backgrounds/bg-main.svg"
+          src="/images/backgrounds/bg-desktop.svg"
           alt=""
           width={1920}
           height={8923}
