@@ -85,7 +85,7 @@ export default function Timeline() {
   return (
     <section
       ref={containerRef}
-      className="h-screen w-full overflow-hidden flex flex-col justify-center px-6 md:px-12"
+      className="h-screen w-full overflow-hidden flex flex-col justify-center"
     >
       <TimelineTop currentEvent={currentEvent} />
       <TimelineMiddle

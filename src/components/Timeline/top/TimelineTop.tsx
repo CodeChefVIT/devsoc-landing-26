@@ -7,7 +7,7 @@ interface TimelineTopProps {
 
 export default function TimelineTop({ currentEvent }: TimelineTopProps) {
   return (
-    <div className="flex flex-col w-full gap-6">
+    <div className="flex flex-col w-full gap-6 px-16">
       {/* Timeline Heading */}
       <div className="w-full text-left">
         <SectionHeading title="Timeline" className="text-left mb-0!" />
