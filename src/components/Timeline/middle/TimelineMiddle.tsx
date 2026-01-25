@@ -12,13 +12,13 @@ export default function TimelineMiddle({
   events,
 }: TimelineMiddleProps) {
   const totalEvents = events.length;
-  const eventSpacing = 200; // pixels between each event circle
+  const eventSpacing = typeof window !== 'undefined' ? window.innerWidth * 0.4 : 400;
   const containerWidth = (totalEvents - 1) * eventSpacing;
 
-  // Translate the progress line so current event is roughly centered
+  // Translate the progress line so current event is at 20% from left
   const translateX =
     -(currentEventIndex * eventSpacing) +
-    (typeof window !== 'undefined' ? window.innerWidth / 2 - 100 : 400);
+    (typeof window !== 'undefined' ? window.innerWidth * 0.2 : 80);
 
   return (
     <div className="relative w-full h-[35vh] overflow-x-auto mb-8 shrink-0">
@@ -29,7 +29,7 @@ export default function TimelineMiddle({
 
       {/* Progress Container - scrolls horizontally */}
       <div
-        className="absolute left-0 top-1/2 -translate-y-1/2 h-20 transition-transform duration-700 ease-out"
+        className="absolute left-0 top-1/2 -translate-y-1/2 h-20 transition-transform duration-700"
         style={{
           width: `${containerWidth + 200}px`,
           transform: `translateX(${translateX}px)`,
@@ -43,7 +43,7 @@ export default function TimelineMiddle({
 
         {/* Progress fill - filled portion */}
         <div
-          className="absolute left-0 top-1/2 h-1 bg-linear-to-r from-purple-500 to-pink-500 transition-all duration-700"
+          className="absolute left-0 top-1/2 h-1 bg-white transition-all duration-700"
           style={{
             width: `${currentEventIndex * eventSpacing}px`,
           }}
@@ -69,18 +69,18 @@ export default function TimelineMiddle({
                 {/* Circle */}
                 <div
                   className={`relative transition-all duration-500 ${
-                    isFirstEvent ? 'w-20 h-20' : 'w-10 h-10'
+                    isCurrentEvent ? 'w-20 h-20' : 'w-10 h-10'
                   } ${isCurrentEvent ? 'scale-110' : 'scale-100'}`}
                 >
-                  {/* Outer ring (only for first event) */}
-                  {isFirstEvent && (
+                  {/* Outer ring (only for current event) */}
+                  {isCurrentEvent && (
                     <div className="absolute inset-0 rounded-full border border-white" />
                   )}
 
                   {/* Inner circle */}
                   <div
                     className={`absolute rounded-full transition-all duration-500 ${
-                      isFirstEvent
+                      isCurrentEvent
                         ? 'w-10 h-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
                         : 'w-full h-full'
                     } ${

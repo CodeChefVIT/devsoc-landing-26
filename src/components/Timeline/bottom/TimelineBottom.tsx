@@ -11,7 +11,7 @@ export default function TimelineBottom({ currentEvent, onPrevious, onNext }: Tim
   return (
     <div className="flex flex-row justify-between items-center w-full gap-4">
       {/* Bottom Text */}
-      <div className="flex-1 max-w-2xl mx-auto text-center">
+      <div className="flex-1 max-w-2xl mx-auto text-left">
         {/* Subtitle */}
         <h3
           className="text-xl md:text-2xl font-bold text-white mb-2"
@@ -34,7 +34,7 @@ export default function TimelineBottom({ currentEvent, onPrevious, onNext }: Tim
         {/* Arrow Left */}
         <button
           onClick={onPrevious}
-          className="relative w-17.5-h-17.5dmd:w-20d:hmd:h-20 rounded-full bg-neutral-900/31 border border-white/10 hover:bg-neutral-800/50 transition-colors group shrink-0"
+          className="relative w-17.5 h-17.5 md:w-20 md:h-20 rounded-full bg-neutral-900/31 border border-white/10 hover:bg-neutral-800/50 transition-colors group shrink-0"
           aria-label="Previous event"
         >
           <ChevronLeft
