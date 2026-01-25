@@ -9,7 +9,7 @@ interface TimelineBottomProps {
 
 export default function TimelineBottom({ currentEvent, onPrevious, onNext }: TimelineBottomProps) {
   return (
-    <div className="flex flex-row justify-between items-center w-full gap-4 mt-auto">
+    <div className="flex flex-row justify-between items-center w-full gap-4">
       {/* Bottom Text */}
       <div className="flex-1 max-w-2xl mx-auto text-center">
         {/* Subtitle */}
