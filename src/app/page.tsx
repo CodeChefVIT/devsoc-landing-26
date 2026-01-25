@@ -2,7 +2,7 @@ import { DecorativeBackground, SectionBg } from '@/components/ui';
 import Sponsors from '@/components/Sponsors';
 import Tracks from '@/components/Tracks';
 import Faqs from '@/components/Faqs/FaqSection';
-// import Timeline from '@/components/timeline/Timeline';
+import Timeline from '@/components/Timeline';
 import About from '@/components/About';
 import Hero from '@/components/hero/hero';
 
@@ -26,9 +26,9 @@ export default function Page() {
           <Tracks />
         </section>
 
-        {/* <section className="relative -mt-32 overflow-hidden pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64">
+        <section className="relative -mt-32 overflow-hidden pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64">
           <Timeline />
-        </section> */}
+        </section>
 
         <section
           id="sponsors-section"

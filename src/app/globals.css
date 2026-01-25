@@ -38,6 +38,15 @@ button {
   font-family: var(--font-the-sans-mono);
 }
 
+.gradient-text-event {
+  background:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    radial-gradient(65.87% 65.87% at 45.87% 50.33%, #e700b7 0%, #8c20cd 50%, #0c0a35 86.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
