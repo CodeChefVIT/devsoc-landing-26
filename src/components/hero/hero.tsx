@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
+import { Alignment, Fit, Layout, useRive} from '@rive-app/react-canvas';
 
 export default function HomeRive() {
   const [isMobile, setIsMobile] = useState(false);
