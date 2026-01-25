@@ -41,11 +41,7 @@ export default function HomeRive() {
       }`}
     >
       <div className="absolute inset-0 -translate-y-24 md:-translate-y-14">
-        <RiveComponent
-          key={artboard}
-          className="absolute inset-0"
-          // IMPORTANT: remove pointer-events-none so hover works
-        />
+        <RiveComponent key={artboard} className="absolute inset-0" />
       </div>
     </section>
   );
