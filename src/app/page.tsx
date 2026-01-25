@@ -32,7 +32,8 @@ export default function Page() {
 
         <section
           id="sponsors-section"
-          className="relative -mt-32 overflow-hidden pb-24 md:-mt-32 md:pb-32 lg:-mt-48 lg:pb-48"
+          className="relative -mt-32 overflow-hidden pb-24 md:-mt-32 md:pb-32 lg:-mt-96 lg:pb-112"
+          // className="relative -mt-48 overflow-hidden pb-24 md:-mt-56 md:pb-32 lg:-mt-64 lg:pb-48"
         >
           <SectionBg src="/images/backgrounds/bg-sponsors.svg" />
           <Sponsors />

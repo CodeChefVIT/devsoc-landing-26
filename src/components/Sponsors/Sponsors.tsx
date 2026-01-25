@@ -14,7 +14,7 @@ export default function Sponsors() {
       <div className="relative">
         <SectionHeading title="Sponsors" />
 
-        <div className="space-y-10 sm:space-y-12 md:space-y-14 lg:space-y-16 w-full">
+        <div className="space-y-2 sm:space-y-3 md:space-y-4 w-full">
           {sponsors.map((sponsor, index) => (
             <SponsorCard
               key={sponsor.name}
