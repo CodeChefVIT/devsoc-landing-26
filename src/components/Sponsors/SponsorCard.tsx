@@ -12,10 +12,13 @@ const SponsorCard = ({
 }) => {
   const getLayoutStyle = () => {
     if (alignment === 'left') {
-      return 'md:pl-[calc(20%-120px)] lg:pl-[calc(25%-150px)]';
+      // For smaller card widths use half the card width to center the image
+      return 'md:pl-[calc(20%-96px)] lg:pl-[calc(25%-120px)]';
     } else if (alignment === 'right') {
-      return 'md:pr-[calc(20%-120px)] lg:pr-[calc(25%-150px)]';
+      // Mirror the left offsets for right alignment
+      return 'md:pr-[calc(20%-96px)] lg:pr-[calc(25%-120px)]';
     } else {
+      // Left border aligned to the vertical guide (no image-centering offset)
       return 'md:pl-[20%] lg:pl-[25%]';
     }
   };

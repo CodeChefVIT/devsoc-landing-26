@@ -26,7 +26,7 @@ export default function DecorativeBackground({ children }: DecorativeBackgroundP
         />
       </div>
 
-      <div className="relative flex flex-col gap-150 py-50">{children}</div>
+      <div className="relative flex flex-col gap-180 py-50">{children}</div>
     </div>
   );
 }
