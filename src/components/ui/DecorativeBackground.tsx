@@ -7,15 +7,15 @@ type DecorativeBackgroundProps = {
 
 export default function DecorativeBackground({ children }: DecorativeBackgroundProps) {
   return (
-    <div className="relative w-full overflow-x-hidden">
+    <div className="relative w-full overflow-x-hidden" style={{ aspectRatio: '1920 / 8923' }}>
       <div className="pointer-events-none absolute inset-0 z-1 overflow-hidden">
         <Image
-          src="/images/background.svg"
+          src="/images/backgrounds/bg-main.svg"
           alt=""
           width={1920}
-          height={3000}
-          priority
-          className="block h-auto w-full object-cover object-top"
+          height={8923}
+          loading="lazy"
+          className="block h-full w-full object-cover object-top"
         />
         <div
           className="absolute inset-x-0 top-0 h-12.5"
@@ -26,7 +26,7 @@ export default function DecorativeBackground({ children }: DecorativeBackgroundP
         />
       </div>
 
-      <div className="relative z-2 w-full flex flex-col gap-60">{children}</div>
+      <div className="relative z-2 w-full h-full flex flex-col justify-around">{children}</div>
     </div>
   );
 }
