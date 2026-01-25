@@ -11,9 +11,35 @@ export default function MobileFooter() {
             WebkitTextStroke: '2px #FFFFFF',
           }}
         >
-          {`DEVSOC'26`}
+          {`DEVSOC'26 `}
         </h1>
 
+        {/* Navigation Sections */}
+        <nav className="flex gap-4 text-[10px] leading-3 font-semibold font-lato flex-wrap justify-center">
+          <a href="#about" className="hover:text-gray-300 transition">
+            About
+          </a>
+          <a href="#tracks" className="hover:text-gray-300 transition">
+            Tracks
+          </a>
+          <a href="#timeline" className="hover:text-gray-300 transition">
+            Timeline
+          </a>
+          <a href="#sponsors" className="hover:text-gray-300 transition">
+            Sponsors
+          </a>
+          <a href="#faqs" className="hover:text-gray-300 transition">
+            FAQs
+          </a>
+        </nav>
+
+        {/* Register Now */}
+        <a
+          href="#register"
+          className="text-[10px] leading-3 font-semibold font-lato hover:text-gray-300 transition flex items-center gap-1"
+        >
+          Register Now ↗
+        </a>
         {/* Social Icons */}
         <div className="flex items-center gap-3">
           <a
@@ -44,38 +70,6 @@ export default function MobileFooter() {
             <FaYoutube className="w-3 h-3 hover:text-gray-300 transition cursor-pointer" />
           </a>
         </div>
-
-        {/* Navigation Sections */}
-        <nav className="flex gap-4 text-[10px] leading-3 font-semibold font-lato flex-wrap justify-center">
-          <a href="#about" className="hover:text-gray-300 transition">
-            About
-          </a>
-          <a href="#tracks" className="hover:text-gray-300 transition">
-            Tracks
-          </a>
-          <a href="#timeline" className="hover:text-gray-300 transition">
-            Timeline
-          </a>
-          <a href="#sponsors" className="hover:text-gray-300 transition">
-            Sponsors
-          </a>
-          <a href="#faqs" className="hover:text-gray-300 transition">
-            FAQs
-          </a>
-        </nav>
-
-        {/* Register Now */}
-        <a
-          href="#register"
-          className="text-[10px] leading-3 font-semibold font-lato hover:text-gray-300 transition flex items-center gap-1"
-        >
-          Register Now ↗
-        </a>
-
-        {/* Made with love */}
-        <p className="mt-2 text-gray-300 text-xs font-bold font-lato text-center">
-          Made with <span className="text-white">♡</span> by CodeChef-VIT
-        </p>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ const SponsorCard = ({
             </div>
 
             <Link href={websiteUrl} target="_blank" rel="noopener noreferrer">
-              <button className="relative flex items-center justify-center mb-0 md:mb-6 lg:mb-7 group transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden w-28 sm:w-30 h-9 sm:h-10 bg-black/[0.001] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] rounded-[10px]">
+              <button className="relative flex items-center justify-center mb-0 md:mb-6 lg:mb-7 group transition-all duration-300 hover:scale-105 active:scale-95 w-28 sm:w-30 h-9 sm:h-10 bg-black/[0.001] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] rounded-[10px]">
                 <div
                   className="absolute inset-0 rounded-[10px] pointer-events-none p-px backdrop-blur-xs backdrop-saturate-[1.8] backdrop-brightness-[1.05]"
                   style={{

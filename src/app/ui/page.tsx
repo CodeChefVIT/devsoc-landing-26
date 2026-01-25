@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import { Glass } from '@/components/ui';
+
 export default function UIShowcase() {
   return (
     <div className={`min-h-screen bg-zinc-50 dark:bg-black p-12`}>
@@ -41,6 +44,18 @@ export default function UIShowcase() {
               0123456789 !@#$%^&*()_+-={`[]{}|;':",.<>/?`}~
             </p>
           </div>
+        </section>
+
+        <section className="mt-16 space-y-8 max-w-md bg-[url('/images/sponsors/sponsor-1.avif')] bg-cover bg-center p-6">
+          <h2 className="text-xl font-medium">GlassUI Component</h2>
+          <Glass>
+            <div className="p-6 text-center">
+              <h3 className="mb-2 text-2xl font-semibold">GlassUI Component</h3>
+              <p className="text-zinc-700 dark:text-zinc-300">
+                This is an example of content inside the GlassUI component.
+              </p>
+            </div>
+          </Glass>
         </section>
       </main>
     </div>

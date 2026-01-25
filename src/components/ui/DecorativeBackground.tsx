@@ -26,7 +26,7 @@ export default function DecorativeBackground({ children }: DecorativeBackgroundP
         />
       </div>
 
-      <div className="relative z-2 w-full">{children}</div>
+      <div className="relative z-2 w-full flex flex-col gap-60">{children}</div>
     </div>
   );
 }
