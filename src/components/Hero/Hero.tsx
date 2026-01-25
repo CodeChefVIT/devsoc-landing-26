@@ -2,11 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { Alignment, Fit, Layout, useRive, useStateMachineInput } from '@rive-app/react-canvas';
-import { useRouter } from 'next/navigation';
 
 export default function HomeRive() {
   const [isMobile, setIsMobile] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 768px)');
@@ -23,7 +21,7 @@ export default function HomeRive() {
   const artboard = isMobile ? 'Mobile' : 'main';
 
   const { rive, RiveComponent } = useRive({
-    src: '/rive/HeroV8.riv',
+    src: '/rive/HeroV12.riv',
     artboard,
     stateMachines: ['State Machine 1'],
     autoplay: true,
