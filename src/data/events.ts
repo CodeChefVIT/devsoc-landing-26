@@ -1,13 +1,13 @@
-export interface TimelineEvent {
+type Event = {
   id: string;
   time: string;
   title: string;
   subtitle: string;
   description: string;
   day: string;
-}
+};
 
-export const EVENTS: TimelineEvent[] = [
+const Events: Event[] = [
   {
     id: '1',
     time: '19:30',
@@ -61,3 +61,6 @@ export const EVENTS: TimelineEvent[] = [
     day: 'Day 1',
   },
 ];
+
+export type { Event };
+export default Events;

@@ -1,9 +1,8 @@
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { TimelineEvent } from './data';
+import { Event } from '@/data';
 
 interface TimelineBackgroundProps {
-  activeEvent: TimelineEvent;
+  activeEvent: Event;
 }
 
 export function TimelineBackground({ activeEvent }: TimelineBackgroundProps) {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { TimelineEvent } from './data';
+import { Event } from '@/data';
 
 interface TimelineEventDetailsProps {
-  activeEvent: TimelineEvent;
+  activeEvent: Event;
   children: React.ReactNode;
 }
 

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 import './timeline.css';
 import { SectionHeading } from '../ui';
@@ -11,7 +11,7 @@ import {
   useMotionValue,
   useAnimation,
 } from 'framer-motion';
-import { EVENTS } from './data';
+import { Events } from '@/data';
 import { TimelineEventDetails } from './TimelineEventDetails';
 import { TimelineNavigation } from './TimelineNavigation';
 import { TimelineTrack } from './TimelineTrack';
@@ -66,9 +66,9 @@ export default function Timeline() {
 
   useMotionValueEvent(scrollYProgress, 'change', latest => {
     if (!isMobile) {
-      const currentIndex = latest * (EVENTS.length - 1);
+      const currentIndex = latest * (Events.length - 1);
       const floorIndex = Math.floor(currentIndex);
-      const ceilIndex = Math.min(Math.ceil(currentIndex), EVENTS.length - 1);
+      const ceilIndex = Math.min(Math.ceil(currentIndex), Events.length - 1);
       const t = currentIndex - floorIndex;
 
       const floorOffset = calculateEventOffset(floorIndex);
@@ -82,8 +82,8 @@ export default function Timeline() {
   useMotionValueEvent(scrollYProgress, 'change', latest => {
     if (!isMobile) {
       const newIndex = Math.min(
-        EVENTS.length - 1,
-        Math.max(0, Math.round(latest * (EVENTS.length - 1)))
+        Events.length - 1,
+        Math.max(0, Math.round(latest * (Events.length - 1)))
       );
       setActiveIndex(newIndex);
     }
@@ -93,7 +93,7 @@ export default function Timeline() {
     (index: number) => {
       if (!containerRef.current || isMobile) return;
       const { scrollHeight, clientHeight } = containerRef.current;
-      const scrollPercentage = index / (EVENTS.length - 1);
+      const scrollPercentage = index / (Events.length - 1);
       const targetTop = scrollPercentage * (scrollHeight - clientHeight);
       containerRef.current.scrollTo({
         top: targetTop,
@@ -103,9 +103,9 @@ export default function Timeline() {
     [containerRef, isMobile]
   );
 
-  const activeEvent = !isMobile ? EVENTS[activeIndex] : undefined;
+  const activeEvent = !isMobile ? Events[activeIndex] : undefined;
   const isFirst = activeIndex === 0;
-  const isLast = activeIndex === EVENTS.length - 1;
+  const isLast = activeIndex === Events.length - 1;
   const isMiddle = !isFirst && !isLast;
 
   const TRACK_MARGIN_VW = isMobile ? 8 : 10;
@@ -135,7 +135,7 @@ export default function Timeline() {
           ref={containerRef}
           className="snap-start max-h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-proximity bg-transparent scrollbar-none"
         >
-          <div className="relative w-full " style={{ height: `${EVENTS.length * 100}vh` }}>
+          <div className="relative w-full " style={{ height: `${Events.length * 100}vh` }}>
             <div className="sticky top-0 w-full overflow-hidden text-white font-lato selection:bg-purple-500/30">
               <div
                 className="absolute top-1/2 h-px bg-white/20 z-9"
@@ -161,16 +161,16 @@ export default function Timeline() {
                     <TimelineNavigation
                       scrollToIndex={scrollToIndex}
                       activeIndex={activeIndex}
-                      eventsLength={EVENTS.length}
+                      eventsLength={Events.length}
                     />
                   </div>
                 </TimelineEventDetails>
               )}
 
-              <TimelineTrack containerX={containerX} events={EVENTS} activeIndex={activeIndex} />
+              <TimelineTrack containerX={containerX} events={Events} activeIndex={activeIndex} />
             </div>
 
-            {EVENTS.map((_, index) => (
+            {Events.map((_, index) => (
               <div
                 key={index}
                 className="absolute w-full h-screen snap-start pointer-events-none"

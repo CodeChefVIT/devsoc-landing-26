@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion, MotionValue } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { TimelineEvent } from './data';
+import { Event } from '@/data';
 
 interface TimelineTrackProps {
   containerX: MotionValue<string>;
-  events: TimelineEvent[];
+  events: Event[];
   activeIndex: number;
 }
 

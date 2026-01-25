@@ -1,22 +1,15 @@
 'use client';
 
-import { EVENTS } from './data';
-import { motion, useAnimation, useScroll, useMotionValueEvent } from 'framer-motion';
+import { Events } from '@/data';
+import { motion, useAnimation } from 'framer-motion';
 import { TimelineCenter } from './TimelineCenter';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 
 export function VerticalTimeline() {
   const dotControls = useAnimation();
   const ringControls = useAnimation();
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const { scrollYProgress } = useScroll({
-    container: containerRef,
-  });
-
-  const [isSnapping, setIsSnapping] = useState(false);
 
   const handleInView = () => {
     dotControls.start({
@@ -45,7 +38,7 @@ export function VerticalTimeline() {
         {/* Vertical Line */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/20" />
 
-        {EVENTS.map((event, index) => (
+        {Events.map((event, index) => (
           <section key={event.id} id={`event-${index}`} className="relative h-screen mb-16">
             {/* Center Dot */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-white shadow-lg" />
