@@ -2,7 +2,6 @@
 
 import { useRef, useState, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
-import './timeline.css';
 import { SectionHeading } from '../ui';
 import {
   motion,
@@ -173,7 +172,7 @@ export default function Timeline() {
             {Events.map((_, index) => (
               <div
                 key={index}
-                className="absolute w-full h-screen snap-start pointer-events-none"
+                className="absolute w-full h-screen snap-start snap-always pointer-events-none"
                 style={{ top: `${index * 100}vh` }}
               />
             ))}
