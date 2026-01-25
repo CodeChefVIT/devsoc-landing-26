@@ -4,7 +4,7 @@ import Tracks from '@/components/Tracks';
 import Faqs from '@/components/Faqs/FaqSection';
 import Timeline from '@/components/timeline/Timeline';
 import About from '@/components/About';
-import Hero from '@/components/hero/hero';
+import Hero from '@/components/Hero/Hero';
 
 export const dynamic = 'force-static';
 
