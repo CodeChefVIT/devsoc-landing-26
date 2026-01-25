@@ -11,7 +11,7 @@ export default function Footer() {
             src="/images/backgrounds/bg-footer.svg"
             alt="Footer background"
             fill
-            className="object-cover"
+            className="object-cover object-right"
             loading="lazy"
           />
         </div>

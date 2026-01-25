@@ -2,8 +2,8 @@ import { FaXTwitter, FaInstagram, FaLinkedinIn, FaGithub, FaYoutube } from 'reac
 
 export default function DesktopFooter() {
   return (
-    <div className="hidden md:block relative max-w-7xl mx-auto px-8 py-24 font-lato font-semibold">
-      <div className="flex items-center justify-between text-sm text-gray-300 mb-24">
+    <div className="hidden md:block relative max-w-7xl mx-auto px-8 py-12 font-lato font-semibold">
+      <div className="flex items-center justify-between text-sm text-gray-300 mb-12">
         <a href="#register" className="hover:text-white transition">
           Register Now ↗
         </a>
@@ -57,9 +57,9 @@ export default function DesktopFooter() {
         </div>
       </div>
 
-      <div className="text-center">
+      <div className="text-center overflow-visible px-4 py-8">
         <h1
-          className="text-[clamp(4rem,14vw,10rem)] tracking-wider text-transparent font-the-sans-mono "
+          className="text-[clamp(4rem,14vw,10rem)] tracking-wider text-transparent font-the-sans-mono overflow-visible"
           style={{
             WebkitTextStroke: '2px rgba(255,255,255,0.9)',
           }}
