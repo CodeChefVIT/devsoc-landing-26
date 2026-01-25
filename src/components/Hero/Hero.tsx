@@ -38,14 +38,12 @@ export default function HomeRive() {
 
   return (
     <section
-      className={`relative w-full min-h-screen bg-black flex items-center justify-center ${
-        screenSize === 'mobile' ? 'h-screen' : screenSize === 'tablet' ? 'h-[110vh]' : 'h-[125vh]'
+      className={`relative w-full bg-[#0a0a0a] flex items-center justify-center ${
+        screenSize === 'mobile' ? 'h-screen' : screenSize === 'tablet' ? 'h-screen' : 'h-screen'
       }`}
     >
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-full h-full max-w-full max-h-full">
-          <RiveComponent key={artboard} className="w-full h-full" />
-        </div>
+      <div className="w-full h-full flex items-center justify-center">
+        <RiveComponent key={artboard} className="w-full h-full" />
       </div>
     </section>
   );
