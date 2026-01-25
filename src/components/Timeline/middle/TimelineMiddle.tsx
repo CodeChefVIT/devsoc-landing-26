@@ -40,21 +40,11 @@ export default function TimelineMiddle({
           className="absolute left-0 top-1/2 h-px bg-white/30"
           style={{ width: `${containerWidth}px` }}
         />
-
-        {/* Progress fill - filled portion */}
-        <div
-          className="absolute left-0 top-1/2 h-1 bg-white transition-all duration-700"
-          style={{
-            width: `${currentEventIndex * eventSpacing}px`,
-          }}
-        />
-
         {/* Event circles */}
         <div className="absolute left-0 top-0 h-full">
           {events.map((event, index) => {
             const isCurrentEvent = index === currentEventIndex;
             const isPastEvent = index < currentEventIndex;
-            const isFirstEvent = index === 0;
 
             return (
               <div
@@ -67,11 +57,7 @@ export default function TimelineMiddle({
                 }}
               >
                 {/* Circle */}
-                <div
-                  className={`relative transition-all duration-500 ${
-                    isCurrentEvent ? 'w-20 h-20' : 'w-10 h-10'
-                  } ${isCurrentEvent ? 'scale-110' : 'scale-100'}`}
-                >
+                <div className={`relative ${isCurrentEvent ? 'w-20 h-20' : 'w-10 h-10'}`}>
                   {/* Outer ring (only for current event) */}
                   {isCurrentEvent && (
                     <div className="absolute inset-0 rounded-full border border-white" />
@@ -79,7 +65,7 @@ export default function TimelineMiddle({
 
                   {/* Inner circle */}
                   <div
-                    className={`absolute rounded-full transition-all duration-500 ${
+                    className={`absolute rounded-full ${
                       isCurrentEvent
                         ? 'w-10 h-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
                         : 'w-full h-full'

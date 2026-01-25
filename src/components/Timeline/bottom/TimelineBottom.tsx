@@ -38,7 +38,7 @@ export default function TimelineBottom({ currentEvent, onPrevious, onNext }: Tim
           aria-label="Previous event"
         >
           <ChevronLeft
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 text-white group-hover:scale-110 transition-transform"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 text-white transition-transform"
             strokeWidth={3}
           />
         </button>
@@ -50,7 +50,7 @@ export default function TimelineBottom({ currentEvent, onPrevious, onNext }: Tim
           aria-label="Next event"
         >
           <ChevronRight
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 text-white group-hover:scale-110 transition-transform"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 text-white transition-transform"
             strokeWidth={3}
           />
         </button>

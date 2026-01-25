@@ -22,18 +22,29 @@ export default function Timeline() {
     const el = containerRef.current;
     if (!el) return;
 
+    let activateTimeout: ReturnType<typeof setTimeout> | null = null;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
           el.scrollIntoView({ behavior: 'smooth', block: 'center' });
           setActive(true);
+
+          // briefly lock scrolling to avoid immediate wheel events
+          scrollLock.current = true;
+          activateTimeout = setTimeout(() => {
+            scrollLock.current = false;
+          }, 700);
         }
       },
       { threshold: 0.6 }
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (activateTimeout) clearTimeout(activateTimeout);
+    };
   }, []);
 
   /* HARD scroll hijack */
@@ -47,6 +58,8 @@ export default function Timeline() {
         (currentEventIndex === events.length - 1 && e.deltaY > 0)
       ) {
         setActive(false);
+        // clear any lock so re-entering works predictably
+        scrollLock.current = false;
         return;
       }
 
@@ -54,7 +67,11 @@ export default function Timeline() {
       if (scrollLock.current) return;
 
       scrollLock.current = true;
-      e.deltaY > 0 ? next() : prev();
+      if (e.deltaY > 0) {
+        next();
+      } else {
+        prev();
+      }
 
       setTimeout(() => {
         scrollLock.current = false;
