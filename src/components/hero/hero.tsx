@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Glass } from '@/components/ui';
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -115,24 +116,28 @@ export default function Hero() {
         <Image src="/png/bg-gradient.png" alt="Gradient" fill className="object-fill" />
       </motion.div>
 
-      <motion.button
+      <motion.div
         className="
     absolute
     bottom-[18vh]
     left-1/2 -translate-x-1/2
-    h-10.5 px-7
-    rounded-xl
     w-fit z-30
-    text-white text-base
-    bg-[rgba(81,81,81,0.25)]
-    backdrop-blur-[6px]
-    shadow-[0_0_2px_1px_rgba(0,0,0,0.2)]
-    cursor-pointer
   "
         style={{ y: statueY }}
       >
-        Register Now ↗
-      </motion.button>
+        <Glass>
+          <button
+            className="
+      h-10.5 px-7
+      rounded-xl
+      text-white text-base
+      cursor-pointer
+    "
+          >
+            Register Now ↗
+          </button>
+        </Glass>
+      </motion.div>
     </section>
   );
 }
