@@ -10,36 +10,30 @@ export const dynamic = 'force-static';
 
 export default function Page() {
   return (
-    <main className="relative flex flex-col gap-30">
+    <main className="relative flex flex-col">
       <Hero />
+
       <DecorativeBackground>
-        <section id="about-section" className="relative overflow-hidden pb-32 md:pb-48 lg:pb-64">
+        <section id="about" className="relative">
           <SectionBg src="/images/backgrounds/bg-about.svg" />
           <About />
         </section>
 
-        <section
-          id="tracks-section"
-          className="relative -mt-32 overflow-visible pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64"
-        >
+        <section id="tracks" className="relative">
           <SectionBg src="/images/backgrounds/bg-tracks.svg" />
           <Tracks />
         </section>
 
-        <section className="relative -mt-32 overflow-hidden pb-32 md:-mt-48 md:pb-48 lg:-mt-64 lg:pb-64">
+        <section id="timeline" className="relative">
           <Timeline />
         </section>
 
-        <section
-          id="sponsors-section"
-          className="relative -mt-32 overflow-hidden pb-24 md:-mt-32 md:pb-32 lg:-mt-96 lg:pb-112"
-          // className="relative -mt-48 overflow-hidden pb-24 md:-mt-56 md:pb-32 lg:-mt-64 lg:pb-48"
-        >
+        <section id="sponsors" className="relative">
           <SectionBg src="/images/backgrounds/bg-sponsors.svg" />
           <Sponsors />
         </section>
 
-        <section id="faqs-section" className="relative -mt-32 overflow-hidden md:-mt-48 lg:-mt-64">
+        <section id="faq" className="relative">
           <SectionBg src="/images/backgrounds/bg-faq.svg" opacity="opacity-90" fullWidth />
           <Faqs />
         </section>

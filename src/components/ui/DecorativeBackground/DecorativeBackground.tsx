@@ -7,62 +7,26 @@ type DecorativeBackgroundProps = {
 
 export default function DecorativeBackground({ children }: DecorativeBackgroundProps) {
   return (
-    <>
-      {/* Mobile version */}
-      <div
-        className="md:hidden relative w-full overflow-x-hidden"
-        style={{
-          aspectRatio: '401 / 5050',
-        }}
-      >
-        <div className="pointer-events-none absolute inset-0 z-1 overflow-hidden">
-          <Image
-            src="/images/backgrounds/bg-phone.svg"
-            alt=""
-            width={401}
-            height={5050}
-            loading="lazy"
-            className="h-full w-full object-cover object-top"
-          />
-          <div
-            className="absolute inset-x-0 top-0 h-12.5"
-            style={{
-              background:
-                'linear-gradient(to bottom, rgba(10, 10, 10, 1) 0px, rgba(10, 10, 10, 1) 2px, transparent 50px)',
-            }}
-          />
-        </div>
-
-        <div className="relative z-2 w-full h-full flex flex-col justify-around">{children}</div>
+    <div className="relative w-full">
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        {/* Mobile background */}
+        <Image
+          src="/images/backgrounds/bg-phone.svg"
+          alt=""
+          fill
+          className="object-cover object-top md:hidden"
+        />
+        {/* Desktop background */}
+        <Image
+          src="/images/backgrounds/bg-desktop.svg"
+          alt=""
+          fill
+          className="hidden object-cover object-top md:block"
+        />
       </div>
 
-      {/* Desktop version */}
-      <div
-        className="hidden md:block relative w-full overflow-x-hidden"
-        style={{
-          aspectRatio: '1920 / 8923',
-        }}
-      >
-        <div className="pointer-events-none absolute inset-0 z-1 overflow-hidden">
-          <Image
-            src="/images/backgrounds/bg-desktop.svg"
-            alt=""
-            width={1920}
-            height={8923}
-            loading="lazy"
-            className="h-full w-full object-cover object-top"
-          />
-          <div
-            className="absolute inset-x-0 top-0 h-12.5"
-            style={{
-              background:
-                'linear-gradient(to bottom, rgba(10, 10, 10, 1) 0px, rgba(10, 10, 10, 1) 2px, transparent 50px)',
-            }}
-          />
-        </div>
-
-        <div className="relative z-2 w-full h-full flex flex-col justify-around">{children}</div>
-      </div>
-    </>
+      <div className="relative flex flex-col gap-150 py-50">{children}</div>
+    </div>
   );
 }
