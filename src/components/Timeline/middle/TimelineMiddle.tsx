@@ -31,6 +31,10 @@ export default function TimelineMiddle({
   const [slideWidth, setSlideWidth] = useState(() =>
     typeof window !== 'undefined' ? calc(window.innerWidth) : 320
   );
+  const [spaceBetween, setSpaceBetween] = useState<number>(40);
+  const [isPhone, setIsPhone] = useState<boolean>(
+    typeof window !== 'undefined' ? window.innerWidth < 768 : false
+  );
 
   type SwiperExt = SwiperType & {
     __verticalTouchCleanup?: () => void;
@@ -40,7 +44,25 @@ export default function TimelineMiddle({
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const onResize = () => setSlideWidth(calc(window.innerWidth));
+    const onResize = () => {
+      const w = window.innerWidth;
+      const sw = calc(w);
+      setSlideWidth(sw);
+      const desktop = w >= 1024;
+      const phone = w < 768;
+      setIsPhone(phone);
+      if (desktop) {
+        // ensure center-to-center gap ~80% of viewport width
+        const gap = Math.round(w * 0.8 - sw);
+        setSpaceBetween(Math.max(40, gap));
+      } else {
+        setSpaceBetween(40);
+      }
+    };
+
+    // run once to initialize
+    onResize();
+
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
@@ -83,8 +105,10 @@ export default function TimelineMiddle({
           }}
           onSlideChange={s => onIndexChange?.(s.activeIndex)}
           slidesPerView={'auto'}
-          centeredSlides={true}
-          spaceBetween={40}
+          // Center slides only on phones so active ball is centered on small screens
+          centeredSlides={isPhone}
+          // use dynamic spacing so the center-to-center distance ~= 80% viewport on desktop
+          spaceBetween={spaceBetween}
           mousewheel={{ forceToAxis: true }}
           initialSlide={currentEventIndex}
         >

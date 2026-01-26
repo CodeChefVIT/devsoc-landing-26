@@ -11,12 +11,9 @@ export default function TimelineBottom({ currentEvent, onPrevious, onNext }: Tim
   return (
     <div className="flex flex-col md:flex-row justify-between items-center w-full gap-4 px-4 sm:px-6 md:px-8 lg:px-12 py-4 md:py-6">
       {/* Bottom Text */}
-      <div className="flex-1 max-w-2xl mx-auto md:mx-0 text-left px-0 md:px-4">
+      <div className="flex-1 w-full text-left px-0 md:px-4">
         {/* Subtitle */}
-        <h3
-          className="text-xl md:text-2xl font-bold text-white mb-2"
-          style={{ fontFamily: 'Lato, sans-serif' }}
-        >
+        <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-lato">
           {currentEvent.subtitle}
         </h3>
 
