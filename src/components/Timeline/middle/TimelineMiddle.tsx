@@ -131,8 +131,13 @@ export default function TimelineMiddle({
                       <div className="absolute inset-0 rounded-full border border-white" />
                     )}
 
-                    <div
-                      className={`absolute rounded-full ${
+                    {/* Clickable, focusable marker for better UX */}
+                    <button
+                      type="button"
+                      onClick={() => onIndexChange?.(index)}
+                      aria-pressed={isCurrentEvent}
+                      aria-label={`Go to ${event.title}`}
+                      className={`absolute rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors ${
                         isCurrentEvent
                           ? 'w-8 h-8 sm:w-10 sm:h-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
                           : 'w-full h-full'

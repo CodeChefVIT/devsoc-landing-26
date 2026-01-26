@@ -27,8 +27,17 @@ export default function Timeline() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const prefersReduced =
+            typeof window !== 'undefined' &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
           setActive(true);
+
+          // focus the container so keyboard navigation works immediately
+          try {
+            el.focus();
+          } catch {}
 
           // briefly lock scrolling to avoid immediate wheel events
           scrollLock.current = true;
@@ -46,6 +55,34 @@ export default function Timeline() {
       if (activateTimeout) clearTimeout(activateTimeout);
     };
   }, []);
+
+  /* Keyboard navigation while active */
+  useEffect(() => {
+    if (!active) return;
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+        e.preventDefault();
+        next();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prev();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        setCurrentEventIndex(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        setCurrentEventIndex(events.length - 1);
+      } else if (e.key === 'Escape') {
+        setActive(false);
+        // clear any lock so re-entering works predictably
+        scrollLock.current = false;
+      }
+    };
+
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [active, currentEventIndex]);
 
   useEffect(() => {
     if (!active) return;
@@ -163,16 +200,19 @@ export default function Timeline() {
   return (
     <section
       ref={containerRef}
-      className="h-screen w-full overflow-hidden flex flex-col justify-center"
+      className="h-screen w-full overflow-hidden flex flex-col justify-end"
     >
-      <TimelineTop currentEvent={currentEvent} />
-      <TimelineMiddle
-        currentEvent={currentEvent}
-        currentEventIndex={currentEventIndex}
-        events={events}
-        onIndexChange={setCurrentEventIndex}
-      />
-      <TimelineBottom currentEvent={currentEvent} onPrevious={prev} onNext={next} />
+      {/* Group the three subcomponents inside a 90vh container anchored to bottom */}
+      <div className="h-[90vh] w-full flex flex-col justify-center">
+        <TimelineTop currentEvent={currentEvent} />
+        <TimelineMiddle
+          currentEvent={currentEvent}
+          currentEventIndex={currentEventIndex}
+          events={events}
+          onIndexChange={setCurrentEventIndex}
+        />
+        <TimelineBottom currentEvent={currentEvent} onPrevious={prev} onNext={next} />
+      </div>
     </section>
   );
 }
