@@ -5,14 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
-import type { Event } from '@/data';
-
-interface TimelineMiddleProps {
-  currentEvent: Event;
-  currentEventIndex: number;
-  events: Event[];
-  onIndexChange?: (i: number) => void;
-}
+import type { TimelineMiddleProps } from '../types';
 
 export default function TimelineMiddle({
   currentEvent,

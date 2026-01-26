@@ -1,11 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import type { Event } from '@/data';
 
-interface TimelineBottomProps {
-  currentEvent: Event;
-  onPrevious: () => void;
-  onNext: () => void;
-}
+import type { TimelineBottomProps } from '../types';
 
 export default function TimelineBottom({ currentEvent, onPrevious, onNext }: TimelineBottomProps) {
   return (

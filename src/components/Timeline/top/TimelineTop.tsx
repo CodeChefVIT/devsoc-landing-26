@@ -1,9 +1,5 @@
 import { SectionHeading } from '@/components/ui';
-import type { Event } from '@/data';
-
-interface TimelineTopProps {
-  currentEvent: Event;
-}
+import type { TimelineTopProps } from '../types';
 
 export default function TimelineTop({ currentEvent }: TimelineTopProps) {
   return (
