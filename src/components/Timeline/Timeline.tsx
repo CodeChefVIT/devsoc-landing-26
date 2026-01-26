@@ -47,9 +47,11 @@ export default function Timeline() {
     };
   }, []);
 
-  /* HARD scroll hijack */
   useEffect(() => {
     if (!active) return;
+
+    const el = containerRef.current;
+    if (!el) return;
 
     const onWheel = (e: WheelEvent) => {
       // allow escape at edges
@@ -78,8 +80,8 @@ export default function Timeline() {
       }, 600);
     };
 
-    window.addEventListener('wheel', onWheel, { passive: false });
-    return () => window.removeEventListener('wheel', onWheel);
+    el.addEventListener('wheel', onWheel as EventListener, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel as EventListener);
   }, [active, currentEventIndex]);
 
   return (
