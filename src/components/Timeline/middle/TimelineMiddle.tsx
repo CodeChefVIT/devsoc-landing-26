@@ -1,92 +1,143 @@
-import type { Event } from '@/data';
+'use client';
 
-interface TimelineMiddleProps {
-  currentEvent: Event;
-  currentEventIndex: number;
-  events: Event[];
-}
+import { useEffect, useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Mousewheel } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import type { TimelineMiddleProps } from '../types';
 
 export default function TimelineMiddle({
   currentEvent,
   currentEventIndex,
   events,
+  onIndexChange,
 }: TimelineMiddleProps) {
-  const totalEvents = events.length;
-  const eventSpacing = typeof window !== 'undefined' ? window.innerWidth * 0.4 : 400;
-  const containerWidth = (totalEvents - 1) * eventSpacing;
+  const swiperRef = useRef<SwiperType | null>(null);
+  const calc = (w: number) => {
+    if (w < 480) return Math.round(w * 0.8);
+    if (w < 768) return Math.round(w * 0.6);
+    if (w < 1024) return Math.round(w * 0.45);
+    return Math.round(w * 0.4);
+  };
 
-  // Translate the progress line so current event is at 20% from left
-  const translateX =
-    -(currentEventIndex * eventSpacing) +
-    (typeof window !== 'undefined' ? window.innerWidth * 0.2 : 80);
+  const [slideWidth, setSlideWidth] = useState(() =>
+    typeof window !== 'undefined' ? calc(window.innerWidth) : 320
+  );
+  const [spaceBetween, setSpaceBetween] = useState<number>(40);
+  const [isPhone, setIsPhone] = useState<boolean>(
+    typeof window !== 'undefined' ? window.innerWidth < 768 : false
+  );
+
+  type SwiperExt = SwiperType & {
+    __verticalTouchCleanup?: () => void;
+    on?: (event: string, cb: () => void) => void;
+    el?: HTMLElement | null;
+  };
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onResize = () => {
+      const w = window.innerWidth;
+      const sw = calc(w);
+      setSlideWidth(sw);
+      const desktop = w >= 1024;
+      const phone = w < 768;
+      setIsPhone(phone);
+      if (desktop) {
+        const gap = Math.round(w * 0.8 - sw);
+        setSpaceBetween(Math.max(40, gap));
+      } else {
+        setSpaceBetween(40);
+      }
+    };
+
+    onResize();
+
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  useEffect(() => {
+    if (swiperRef.current && typeof currentEventIndex === 'number') {
+      try {
+        swiperRef.current.slideTo(currentEventIndex);
+      } catch {}
+    }
+  }, [currentEventIndex]);
+
+  useEffect(() => {
+    return () => {
+      const s = swiperRef.current as SwiperExt | null;
+      if (s && typeof s.__verticalTouchCleanup === 'function') {
+        try {
+          s.__verticalTouchCleanup();
+        } catch {}
+      }
+    };
+  }, []);
 
   return (
-    <div className="relative w-full h-[35vh] overflow-x-auto mb-8 shrink-0">
-      {/* Large time background */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vh] leading-none text-white/10 text-center whitespace-nowrap pointer-events-none font-the-sans-mono select-none">
+    <div className="relative w-full h-[35vh] overflow-hidden mb-8 shrink-0">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl sm:text-12xl md:text-[12vh] lg:text-[20vh] leading-none text-white/10 text-center whitespace-nowrap pointer-events-none font-the-sans-mono select-none">
         {currentEvent.time}
       </div>
 
-      {/* Progress Container - scrolls horizontally */}
-      <div
-        className="absolute left-0 top-1/2 -translate-y-1/2 h-20 transition-transform duration-700"
-        style={{
-          width: `${containerWidth + 200}px`,
-          transform: `translateX(${translateX}px)`,
-        }}
-      >
-        {/* Horizontal Line - base line */}
-        <div
-          className="absolute left-0 top-1/2 h-px bg-white/30"
-          style={{ width: `${containerWidth}px` }}
-        />
-        {/* Event circles */}
-        <div className="absolute left-0 top-0 h-full">
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full">
+        <Swiper
+          modules={[Mousewheel]}
+          onSwiper={sw => {
+            const s = sw as SwiperExt;
+            swiperRef.current = s;
+          }}
+          onSlideChange={s => onIndexChange?.(s.activeIndex)}
+          slidesPerView={'auto'}
+          centeredSlides={isPhone}
+          spaceBetween={spaceBetween}
+          mousewheel={{ forceToAxis: true }}
+          initialSlide={currentEventIndex}
+        >
+          <div className="absolute left-0 top-1/2 h-px bg-white/30 w-full" />
+
           {events.map((event, index) => {
             const isCurrentEvent = index === currentEventIndex;
             const isPastEvent = index < currentEventIndex;
 
             return (
-              <div
-                key={event.id}
-                className="absolute flex flex-col items-center gap-2"
-                style={{
-                  left: `${index * eventSpacing}px`,
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
-                }}
-              >
-                {/* Circle */}
-                <div className={`relative ${isCurrentEvent ? 'w-20 h-20' : 'w-10 h-10'}`}>
-                  {/* Outer ring (only for current event) */}
-                  {isCurrentEvent && (
-                    <div className="absolute inset-0 rounded-full border border-white" />
-                  )}
-
-                  {/* Inner circle */}
+              <SwiperSlide key={event.id} style={{ width: `${slideWidth}px` }}>
+                <div className="flex flex-col items-center gap-2 justify-center h-28 sm:h-40">
                   <div
-                    className={`absolute rounded-full ${
-                      isCurrentEvent
-                        ? 'w-10 h-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
-                        : 'w-full h-full'
-                    } ${
-                      isPastEvent || isCurrentEvent
-                        ? 'bg-white shadow-lg shadow-white/50'
-                        : 'bg-white/30'
+                    className={`relative ${
+                      isCurrentEvent ? 'w-14 h-14 sm:w-20 sm:h-20' : 'w-8 h-8 sm:w-10 sm:h-10'
                     }`}
-                  />
-                </div>
+                  >
+                    {isCurrentEvent && (
+                      <div className="absolute inset-0 rounded-full border border-white" />
+                    )}
 
-                {/* Event time label - only show for current event */}
-                {isCurrentEvent && (
-                  <span className="text-white text-xs font-mono absolute -bottom-8 whitespace-nowrap">
-                    {event.time}
-                  </span>
-                )}
-              </div>
+                    <button
+                      type="button"
+                      onClick={() => onIndexChange?.(index)}
+                      aria-pressed={isCurrentEvent}
+                      aria-label={`Go to ${event.title}`}
+                      className={`absolute rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors ${
+                        isCurrentEvent
+                          ? 'w-8 h-8 sm:w-10 sm:h-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
+                          : 'w-full h-full'
+                      } ${isPastEvent || isCurrentEvent ? 'bg-white shadow-lg shadow-white/50' : 'bg-white/30'}`}
+                    />
+                  </div>
+
+                  {isCurrentEvent && (
+                    <span className="text-white text-xs sm:text-sm font-mono absolute -bottom-8 sm:-bottom-10 whitespace-nowrap">
+                      {event.time}
+                    </span>
+                  )}
+                </div>
+              </SwiperSlide>
             );
           })}
-        </div>
+        </Swiper>
       </div>
     </div>
   );

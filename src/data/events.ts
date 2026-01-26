@@ -1,13 +1,4 @@
-type Event = {
-  id: string;
-  day: number;
-  date: string; // YYYY-MM-DD
-  time: string; // HH:mm (24h)
-  datetime: string; // ISO-ish for sorting
-  title: string;
-  subtitle: string;
-  description: string;
-};
+import type { Event } from '@/components/Timeline/types';
 
 const events: Event[] = [
   // DAY 1
@@ -127,4 +118,5 @@ const events: Event[] = [
   },
 ];
 
-export { type Event, events };
+export { events };
+export type { Event };
