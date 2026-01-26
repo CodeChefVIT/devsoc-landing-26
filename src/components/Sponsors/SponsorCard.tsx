@@ -12,10 +12,13 @@ const SponsorCard = ({
 }) => {
   const getLayoutStyle = () => {
     if (alignment === 'left') {
-      return 'md:pl-[calc(20%-120px)] lg:pl-[calc(25%-150px)]';
+      // For smaller card widths use half the card width to center the image
+      return 'md:pl-[calc(20%-96px)] lg:pl-[calc(25%-120px)]';
     } else if (alignment === 'right') {
-      return 'md:pr-[calc(20%-120px)] lg:pr-[calc(25%-150px)]';
+      // Mirror the left offsets for right alignment
+      return 'md:pr-[calc(20%-96px)] lg:pr-[calc(25%-120px)]';
     } else {
+      // Left border aligned to the vertical guide (no image-centering offset)
       return 'md:pl-[20%] lg:pl-[25%]';
     }
   };
@@ -29,15 +32,15 @@ const SponsorCard = ({
       <div
         className={`flex flex-col ${getFlexDirection()} ${getLayoutStyle()} gap-6 md:gap-7 lg:gap-8 items-center md:items-start px-4 sm:px-6 md:px-0`}
       >
-        <div className="w-full max-w-sm sm:max-w-md md:w-60 lg:w-75 shrink-0">
-          <div className="relative bg-[#0A0A0A] flex flex-col items-center justify-between w-full md:w-60 lg:w-75 min-h-62.5 sm:min-h-70 md:h-55 lg:h-62.5 border border-white/25 rounded-[20px] py-6 sm:py-8 md:py-0">
+        <div className="w-full max-w-xs sm:max-w-sm md:w-48 lg:w-60 shrink-0">
+          <div className="relative bg-[#0A0A0A] flex flex-col items-center justify-between w-full md:w-48 lg:w-60 min-h-50 sm:min-h-56 md:h-44 lg:h-50 border border-white/25 rounded-[20px] py-6 sm:py-8 md:py-0">
             <div className="flex items-center justify-center flex-1 w-full px-4 sm:px-6 md:px-0">
               <Image
                 src={imageSrc}
-                width={279}
-                height={102}
+                width={150}
+                height={60}
                 alt="Logo"
-                className="object-contain w-full max-w-50 sm:max-w-62.5 md:max-w-55 lg:max-w-[279.19px] h-auto max-h-20 sm:max-h-22.5 md:max-h-20 lg:max-h-[101.59px]"
+                className="object-contain w-full max-w-32 sm:max-w-36 md:max-w-34 lg:max-w-[150px] h-auto max-h-12 sm:max-h-14 md:max-h-12 lg:max-h-[60px]"
                 loading="lazy"
                 draggable={false}
               />
@@ -76,10 +79,10 @@ const SponsorCard = ({
         <div
           className={`w-full max-w-sm sm:max-w-md md:w-70 lg:w-84.25 flex flex-col gap-4 text-center ${alignment === 'right' ? 'md:text-right' : 'md:text-left'}`}
         >
-          <h2 className="font-bold text-white font-lato text-xl sm:text-2xl leading-tight sm:leading-7.25">
+          <h2 className="font-bold text-white font-lato text-lg sm:text-xl leading-tight sm:leading-6">
             {title}
           </h2>
-          <p className="font-bold text-[#ADAAF7] font-lato text-sm sm:text-base leading-relaxed sm:leading-4.75">
+          <p className="font-bold text-[#ADAAF7] font-lato text-xs sm:text-sm leading-relaxed sm:leading-4.25">
             {description}
           </p>
         </div>

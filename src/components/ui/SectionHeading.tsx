@@ -1,18 +1,23 @@
 import Link from 'next/link';
 
-export default function SectionHeading({ title }: { title: string }) {
+export default function SectionHeading({
+  title,
+  className,
+}: {
+  title: string;
+  className?: string;
+}) {
   const link = title.toLowerCase().replace(/\s+/g, '-');
 
   return (
     <Link href={`#${link}`} className="block">
       <h2
         id={link}
-        className="
+        className={`
           font-the-sans-mono
           font-bold
           text-white
           text-center
-
           text-[32px]
           leading-tight
 
@@ -24,7 +29,8 @@ export default function SectionHeading({ title }: { title: string }) {
           scroll-mt-28
 
           mb-16
-        "
+          ${className}
+        `}
       >
         {title}
       </h2>

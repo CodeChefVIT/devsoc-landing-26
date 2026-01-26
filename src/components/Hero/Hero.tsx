@@ -43,7 +43,11 @@ export default function HomeRive() {
       }`}
     >
       <div className="w-full h-full flex items-center justify-center">
-        <RiveComponent key={artboard} className="w-full h-full" />
+        <RiveComponent
+          key={artboard}
+          className={`w-full h-full ${screenSize === 'mobile' ? 'pointer-events-none' : ''}`}
+          style={{ touchAction: 'pan-y' }}
+        />
       </div>
     </section>
   );
