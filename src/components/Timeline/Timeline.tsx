@@ -34,12 +34,10 @@ export default function Timeline() {
           el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
           setActive(true);
 
-          // focus the container so keyboard navigation works immediately
           try {
             el.focus();
           } catch {}
 
-          // briefly lock scrolling to avoid immediate wheel events
           scrollLock.current = true;
           activateTimeout = setTimeout(() => {
             scrollLock.current = false;
@@ -75,7 +73,7 @@ export default function Timeline() {
         setCurrentEventIndex(events.length - 1);
       } else if (e.key === 'Escape') {
         setActive(false);
-        // clear any lock so re-entering works predictably
+
         scrollLock.current = false;
       }
     };
@@ -89,15 +87,14 @@ export default function Timeline() {
 
     const el = containerRef.current;
     if (!el) return;
-    // Wheel handler for desktop
+
     const onWheel = (e: WheelEvent) => {
-      // allow escape at edges
       if (
         (currentEventIndex === 0 && e.deltaY < 0) ||
         (currentEventIndex === events.length - 1 && e.deltaY > 0)
       ) {
         setActive(false);
-        // clear any lock so re-entering works predictably
+
         scrollLock.current = false;
         return;
       }
@@ -117,7 +114,6 @@ export default function Timeline() {
       }, 600);
     };
 
-    // Touch handlers for mobile: map vertical swipes to next/prev
     let startY = 0;
     let startX = 0;
     let lastDy = 0;
@@ -173,7 +169,7 @@ export default function Timeline() {
     };
 
     el.addEventListener('wheel', onWheel as EventListener, { passive: false });
-    // attach touch handlers only for touch-capable devices
+
     const isTouch =
       typeof window !== 'undefined' &&
       ('ontouchstart' in window || window.matchMedia('(pointer: coarse)').matches);
@@ -202,7 +198,6 @@ export default function Timeline() {
       ref={containerRef}
       className="h-screen w-full overflow-hidden flex flex-col justify-end"
     >
-      {/* Group the three subcomponents inside a 90vh container anchored to bottom */}
       <div className="h-[90vh] w-full flex flex-col justify-center">
         <TimelineTop currentEvent={currentEvent} />
         <TimelineMiddle

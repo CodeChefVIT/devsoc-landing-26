@@ -52,7 +52,6 @@ export default function TimelineMiddle({
       const phone = w < 768;
       setIsPhone(phone);
       if (desktop) {
-        // ensure center-to-center gap ~80% of viewport width
         const gap = Math.round(w * 0.8 - sw);
         setSpaceBetween(Math.max(40, gap));
       } else {
@@ -60,7 +59,6 @@ export default function TimelineMiddle({
       }
     };
 
-    // run once to initialize
     onResize();
 
     window.addEventListener('resize', onResize);
@@ -69,12 +67,9 @@ export default function TimelineMiddle({
 
   useEffect(() => {
     if (swiperRef.current && typeof currentEventIndex === 'number') {
-      // keep swiper in sync when parent index changes
       try {
         swiperRef.current.slideTo(currentEventIndex);
-      } catch {
-        // ignore if swiper not yet ready
-      }
+      } catch {}
     }
   }, [currentEventIndex]);
 
@@ -91,7 +86,6 @@ export default function TimelineMiddle({
 
   return (
     <div className="relative w-full h-[35vh] overflow-hidden mb-8 shrink-0">
-      {/* Large time background */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl sm:text-12xl md:text-[12vh] lg:text-[20vh] leading-none text-white/10 text-center whitespace-nowrap pointer-events-none font-the-sans-mono select-none">
         {currentEvent.time}
       </div>
@@ -105,14 +99,11 @@ export default function TimelineMiddle({
           }}
           onSlideChange={s => onIndexChange?.(s.activeIndex)}
           slidesPerView={'auto'}
-          // Center slides only on phones so active ball is centered on small screens
           centeredSlides={isPhone}
-          // use dynamic spacing so the center-to-center distance ~= 80% viewport on desktop
           spaceBetween={spaceBetween}
           mousewheel={{ forceToAxis: true }}
           initialSlide={currentEventIndex}
         >
-          {/* Horizontal baseline */}
           <div className="absolute left-0 top-1/2 h-px bg-white/30 w-full" />
 
           {events.map((event, index) => {
@@ -131,7 +122,6 @@ export default function TimelineMiddle({
                       <div className="absolute inset-0 rounded-full border border-white" />
                     )}
 
-                    {/* Clickable, focusable marker for better UX */}
                     <button
                       type="button"
                       onClick={() => onIndexChange?.(index)}
