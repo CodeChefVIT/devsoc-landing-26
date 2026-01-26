@@ -25,10 +25,11 @@ export default function HomeRive() {
   const artboard = screenSize === 'mobile' ? 'Mobile' : 'main';
 
   const { rive, RiveComponent } = useRive({
-    src: '/rive/HeroV12.riv',
+    src: '/rive/HeroV13.riv',
     artboard,
     stateMachines: ['State Machine 1'],
     autoplay: true,
+    isTouchScrollEnabled: true,
     automaticallyHandleEvents: true,
     layout: new Layout({
       fit: Fit.Contain,
@@ -45,7 +46,7 @@ export default function HomeRive() {
       <div className="w-full h-full flex items-center justify-center">
         <RiveComponent
           key={artboard}
-          className={`w-full h-full ${screenSize === 'mobile' ? 'pointer-events-none' : ''}`}
+          className={`w-full h-full`}
           style={{ touchAction: 'pan-y' }}
         />
       </div>
