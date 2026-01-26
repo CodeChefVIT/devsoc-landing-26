@@ -52,7 +52,7 @@ export default function Timeline() {
 
     const el = containerRef.current;
     if (!el) return;
-
+    // Wheel handler for desktop
     const onWheel = (e: WheelEvent) => {
       // allow escape at edges
       if (
@@ -80,8 +80,84 @@ export default function Timeline() {
       }, 600);
     };
 
+    // Touch handlers for mobile: map vertical swipes to next/prev
+    let startY = 0;
+    let startX = 0;
+    let lastDy = 0;
+    let moved = false;
+    let lockSet = false;
+    let touchLockTimeout: ReturnType<typeof setTimeout> | null = null;
+
+    const handleTouchStart = (ev: TouchEvent) => {
+      if (!ev.touches || !ev.touches[0]) return;
+      startY = ev.touches[0].clientY;
+      startX = ev.touches[0].clientX;
+      moved = false;
+      lastDy = 0;
+    };
+
+    const handleTouchMove = (ev: TouchEvent) => {
+      if (!ev.touches || !ev.touches[0]) return;
+      const dy = ev.touches[0].clientY - startY;
+      const dx = ev.touches[0].clientX - startX;
+      lastDy = dy;
+      if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 10) {
+        moved = true;
+        if (!lockSet) {
+          lockSet = true;
+          scrollLock.current = true;
+          touchLockTimeout = setTimeout(() => {
+            scrollLock.current = false;
+            lockSet = false;
+          }, 600);
+        }
+        ev.preventDefault();
+      }
+    };
+
+    const handleTouchEnd = () => {
+      if (!moved) return;
+
+      if (
+        (currentEventIndex === 0 && lastDy > 0) ||
+        (currentEventIndex === events.length - 1 && lastDy < 0)
+      ) {
+        setActive(false);
+        if (touchLockTimeout) {
+          clearTimeout(touchLockTimeout);
+          touchLockTimeout = null;
+        }
+        scrollLock.current = false;
+        lockSet = false;
+        return;
+      }
+      if (lastDy < 0) next();
+      else prev();
+    };
+
     el.addEventListener('wheel', onWheel as EventListener, { passive: false });
-    return () => el.removeEventListener('wheel', onWheel as EventListener);
+    // attach touch handlers only for touch-capable devices
+    const isTouch =
+      typeof window !== 'undefined' &&
+      ('ontouchstart' in window || window.matchMedia('(pointer: coarse)').matches);
+    if (isTouch) {
+      el.addEventListener('touchstart', handleTouchStart, { passive: true });
+      el.addEventListener('touchmove', handleTouchMove, { passive: false });
+      el.addEventListener('touchend', handleTouchEnd, { passive: true });
+    }
+
+    return () => {
+      el.removeEventListener('wheel', onWheel as EventListener);
+      if (isTouch) {
+        el.removeEventListener('touchstart', handleTouchStart as EventListener);
+        el.removeEventListener('touchmove', handleTouchMove as EventListener);
+        el.removeEventListener('touchend', handleTouchEnd as EventListener);
+      }
+      if (touchLockTimeout) {
+        clearTimeout(touchLockTimeout);
+        touchLockTimeout = null;
+      }
+    };
   }, [active, currentEventIndex]);
 
   return (
@@ -94,6 +170,7 @@ export default function Timeline() {
         currentEvent={currentEvent}
         currentEventIndex={currentEventIndex}
         events={events}
+        onIndexChange={setCurrentEventIndex}
       />
       <TimelineBottom currentEvent={currentEvent} onPrevious={prev} onNext={next} />
     </section>
