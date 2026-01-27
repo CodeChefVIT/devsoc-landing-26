@@ -9,7 +9,7 @@ export default function Logo() {
     <motion.div className="flex items-center">
       <Link href={'/'}>
         <Image
-          src="/icon.png"
+          src="/icon.webp"
           alt="DevSoc Logo"
           width={33}
           height={32}
