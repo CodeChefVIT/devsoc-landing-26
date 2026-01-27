@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { SectionHeading } from '@/components/ui';
 import { faqs } from '@/data/faq';
+import { FaPlus, FaMinus } from 'react-icons/fa6';
 
 export default function FaqSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -29,7 +30,7 @@ export default function FaqSection() {
                 </span>
 
                 <span className="ml-4 text-base font-light shrink-0 text-white">
-                  {activeIndex === index ? '−' : '+'}
+                  {activeIndex === index ? <FaMinus /> : <FaPlus />}
                 </span>
               </button>
 
