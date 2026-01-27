@@ -10,7 +10,7 @@ import MobileMenu from './MobileMenu';
 export default function Navbar() {
   return (
     <motion.nav
-      className="fixed top-3 md:top-6 lg:top-3 left-1/2 z-50 -translate-x-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-full max-w-7xl px-3 md:px-4"
+      className="fixed top-3 md:top-6 lg:top-3 inset-x-0 z-50 px-6 md:px-12 mx-auto max-w-6xl"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
