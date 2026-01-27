@@ -25,7 +25,7 @@ export default function HomeRive() {
   const artboard = screenSize === 'mobile' ? 'Mobile' : 'main';
 
   const { rive, RiveComponent } = useRive({
-    src: '/rive/HeroV13.riv',
+    src: '/rive/HeroV15.riv',
     artboard,
     stateMachines: ['State Machine 1'],
     autoplay: true,
