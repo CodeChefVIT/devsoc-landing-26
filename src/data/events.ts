@@ -11,7 +11,7 @@ const events: Event[] = [
     title: 'Doors Open & Check-in',
     subtitle: 'Welcome to DEVSOC',
     description:
-      'Participants arrive, complete registrations, collect kits, and settle in. The hackathon officially begins with onboarding and venue access.',
+      'Participants arrive, complete registrations and settle in. The hackathon officially begins with onboarding and venue access.',
   },
   {
     id: 'd1-2200',
@@ -32,8 +32,7 @@ const events: Event[] = [
     datetime: '2026-02-08T23:00',
     title: 'Hacking Begins',
     subtitle: 'Build mode ON',
-    description:
-      'Teams start ideating, designing, and coding. Mentors are available and the first build sprint officially kicks off.',
+    description: 'Teams start ideating, designing, and coding.',
   },
 
   // DAY 2
@@ -153,8 +152,8 @@ const events: Event[] = [
     id: 'd3-0530',
     day: 3,
     date: '2026-02-10',
-    time: '05:30',
-    datetime: '2026-02-10T05:30',
+    time: '06:00',
+    datetime: '2026-02-10T06:00',
     title: 'Breakfast Break',
     subtitle: 'Morning refresh',
     description:
