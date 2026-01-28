@@ -52,7 +52,7 @@ export default function Page() {
               inset-x-0
               top-[-20vh]
               mx-auto
-              z-0
+              -z-10
               w-[15vw]
             "
           />
