@@ -20,5 +20,9 @@ const navigationItems: NavigationItem[] = [
     label: 'Sponsors',
     href: '#sponsors',
   },
+  {
+    label: 'Speakers',
+    href: '#speaker',
+  },
 ];
 export { navigationItems, type NavigationItem };
