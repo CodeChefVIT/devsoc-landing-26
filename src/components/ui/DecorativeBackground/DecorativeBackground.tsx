@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { ReactNode } from 'react';
 
 type DecorativeBackgroundProps = {
@@ -7,26 +6,36 @@ type DecorativeBackgroundProps = {
 
 export default function DecorativeBackground({ children }: DecorativeBackgroundProps) {
   return (
-    <div className="relative w-full">
-      {/* Background */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        {/* Mobile background */}
-        <Image
-          src="/images/backgrounds/bg-phone.svg"
-          alt=""
-          fill
-          className="object-cover object-top md:hidden"
-        />
-        {/* Desktop background */}
-        <Image
-          src="/images/backgrounds/bg-desktop.svg"
-          alt=""
-          fill
-          className="hidden object-cover object-top md:block"
-        />
-      </div>
+    <div className="relative w-full min-h-screen overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          backgroundImage: `
+            linear-gradient(
+              to right,
+              transparent 25%,
+              rgba(255,255,255,0.2) 25%,
+              rgba(255,255,255,0.2) calc(25% + 1px),
+              transparent calc(25% + 1px),
 
-      <div className="relative flex flex-col gap-180 py-50">{children}</div>
+              transparent 50%,
+              rgba(255,255,255,0.2) 50%,
+              rgba(255,255,255,0.2) calc(50% + 1px),
+              transparent calc(50% + 1px),
+
+              transparent 75%,
+              rgba(255,255,255,0.2) 75%,
+              rgba(255,255,255,0.2) calc(75% + 1px),
+              transparent calc(75% + 1px)
+            )
+          `,
+          maskImage: 'linear-gradient(to bottom, transparent 0px, black 50px)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0px, black 50px)',
+        }}
+      />
+
+      <div className="relative flex flex-col gap-10 md:gap-350 lg:gap-50 py-50">{children}</div>
     </div>
   );
 }

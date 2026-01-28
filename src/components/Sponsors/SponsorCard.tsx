@@ -40,7 +40,7 @@ const SponsorCard = ({
                 width={150}
                 height={60}
                 alt="Logo"
-                className="object-contain w-full max-w-32 sm:max-w-36 md:max-w-34 lg:max-w-[150px] h-auto max-h-12 sm:max-h-14 md:max-h-12 lg:max-h-[60px]"
+                className="object-contain w-full max-w-32 sm:max-w-36 md:max-w-34 lg:max-w-37.5 h-auto max-h-12 sm:max-h-14 md:max-h-12 lg:max-h-15"
                 loading="lazy"
                 draggable={false}
               />
