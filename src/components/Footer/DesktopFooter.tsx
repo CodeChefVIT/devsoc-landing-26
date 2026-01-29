@@ -1,5 +1,5 @@
-import { FaXTwitter, FaInstagram, FaLinkedinIn, FaGithub, FaYoutube } from 'react-icons/fa6';
 import { ScrollButton } from '@/components/ui';
+import { footerLinks, socialLinks } from '@/data';
 
 export default function DesktopFooter() {
   return (
@@ -10,51 +10,19 @@ export default function DesktopFooter() {
         </ScrollButton>
 
         <nav className="flex gap-8">
-          <ScrollButton href="#about" className="hover:text-white transition">
-            About
-          </ScrollButton>
-          <ScrollButton href="#tracks" className="hover:text-white transition">
-            Tracks
-          </ScrollButton>
-          <ScrollButton href="#timeline" className="hover:text-white transition">
-            Timeline
-          </ScrollButton>
-          <ScrollButton href="#sponsors" className="hover:text-white transition">
-            Sponsors
-          </ScrollButton>
-          <ScrollButton href="#faqs" className="hover:text-white transition">
-            FAQs
-          </ScrollButton>
+          {footerLinks.map(link => (
+            <ScrollButton key={link.href} href={link.href} className="hover:text-white transition">
+              {link.label}
+            </ScrollButton>
+          ))}
         </nav>
 
         <div className="flex items-center gap-4">
-          <a
-            href="https://x.com/codechefvit/with_replies"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaXTwitter className="w-4 h-4 hover:text-white transition cursor-pointer" />
-          </a>
-          <a
-            href="https://www.instagram.com/codechefvit/?hl=en"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram className="w-4 h-4 hover:text-white transition cursor-pointer" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/codechefvit/posts/?feedView=all"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedinIn className="w-4 h-4 hover:text-white transition cursor-pointer" />
-          </a>
-          <a href="https://github.com/codechefvit" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="w-4 h-4 hover:text-white transition cursor-pointer" />
-          </a>
-          <a href="https://www.youtube.com/c/CodeChefVIT" target="_blank" rel="noopener noreferrer">
-            <FaYoutube className="w-4 h-4 hover:text-white transition cursor-pointer" />
-          </a>
+          {socialLinks.map(({ href, Icon, label }) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+              <Icon className="w-4 h-4 hover:text-white transition cursor-pointer" />
+            </a>
+          ))}
         </div>
       </div>
 
