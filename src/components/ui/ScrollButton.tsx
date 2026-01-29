@@ -13,14 +13,17 @@ export default function ScrollButton({ href, children, className, onClick }: Scr
   const { setIsNavigating } = useNavigation();
 
   const handleClick = () => {
+    onClick?.();
     setIsNavigating(true);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      // Reset navigating after scroll completes
-      setTimeout(() => setIsNavigating(false), 1000);
+      // Delay scroll to allow mobile menu animation to complete
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Reset navigating after scroll completes
+        setTimeout(() => setIsNavigating(false), 1000);
+      }, 350);
     }
-    onClick?.();
   };
 
   return (
