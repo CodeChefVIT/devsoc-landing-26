@@ -10,10 +10,7 @@ export default function TimelineBottom({ currentEvent, onPrevious, onNext }: Tim
           {currentEvent.subtitle}
         </h3>
 
-        <p
-          className="text-sm md:text-base font-medium text-neutral-500"
-          style={{ fontFamily: 'Lato, sans-serif' }}
-        >
+        <p className="text-sm md:text-base font-medium text-neutral-500 font-lato">
           {currentEvent.description}
         </p>
       </div>
