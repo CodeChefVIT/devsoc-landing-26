@@ -1,12 +1,15 @@
 import { ScrollButton } from '@/components/ui';
 import { footerLinks, socialLinks } from '@/data';
+import { LuArrowUpRight } from 'react-icons/lu';
+import { FaRegHeart } from 'react-icons/fa6';
 
 export default function DesktopFooter() {
   return (
     <div className="hidden md:block relative max-w-7xl mx-auto px-8 py-12 font-lato font-semibold">
       <div className="flex items-center justify-between text-sm text-gray-300 mb-12">
         <ScrollButton href="#register" className="hover:text-white transition">
-          Register Now ↗
+          Register Now
+          <LuArrowUpRight className="inline-block ml-1 w-4 h-4" />
         </ScrollButton>
 
         <nav className="flex gap-8">
@@ -33,11 +36,11 @@ export default function DesktopFooter() {
             WebkitTextStroke: '2px rgba(255,255,255,0.9)',
           }}
         >
-          {`DEVSOC’26`}
+          DEVSOC’26
         </h1>
 
-        <p className="mt-6 text-gray-300 text-lg">
-          Made with <span className="text-white">♡</span> by CodeChef-VIT
+        <p className="w-full text-center justify-center mb-6 text-gray-300 md:text-3xl flex gap-2">
+          Made with <FaRegHeart /> by CodeChef-VIT
         </p>
       </div>
     </div>
