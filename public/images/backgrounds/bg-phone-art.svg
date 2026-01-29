@@ -1,20 +1,18 @@
 <svg width="202" height="1497" viewBox="0 0 202 1497" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="100.5" cy="100.5" r="100" stroke="url(#paint0_linear_2080_149)" stroke-opacity="0.2"/>
-<circle cx="100.5" cy="1395.82" r="100" stroke="url(#paint1_linear_2080_149)" stroke-opacity="0.2"/>
-<line x1="201.5" y1="98.9043" x2="201.5" y2="1397.42" stroke="white" stroke-opacity="0.2"/>
-<line x1="0.5" y1="98.9043" x2="0.5" y2="1397.42" stroke="white" stroke-opacity="0.2"/>
+<g clip-path="url(#clip0_93_108)">
+<path d="M101 1C156.228 1 201 45.7696 201 100.995C201 156.23 156.228 201 101 201C45.7717 201 1.00001 156.23 1.00001 100.995C1.00001 45.7696 45.7717 1 101 1Z" stroke="white" stroke-opacity="0.2"/>
+</g>
+<path d="M201 101V1396" stroke="white" stroke-opacity="0.2"/>
+<path d="M1 101V1396" stroke="white" stroke-opacity="0.2"/>
+<g clip-path="url(#clip1_93_108)">
+<path d="M101 1496C45.7717 1496 1 1451.23 1 1396.01C1 1340.77 45.7717 1296 101 1296C156.228 1296 201 1340.77 201 1396.01C201 1451.23 156.228 1496 101 1496Z" stroke="white" stroke-opacity="0.2"/>
+</g>
 <defs>
-<linearGradient id="paint0_linear_2080_149" x1="100.5" y1="0" x2="100.5" y2="201" gradientUnits="userSpaceOnUse">
-<stop stop-color="white"/>
-<stop offset="0.5" stop-color="white"/>
-<stop offset="0.5" stop-opacity="0"/>
-<stop offset="1" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint1_linear_2080_149" x1="100.5" y1="1295.32" x2="100.5" y2="1496.32" gradientUnits="userSpaceOnUse">
-<stop stop-opacity="0"/>
-<stop offset="0.485577" stop-opacity="0"/>
-<stop offset="0.5" stop-color="white"/>
-<stop offset="1" stop-color="white"/>
-</linearGradient>
+<clipPath id="clip0_93_108">
+<rect width="101" height="202" fill="white" transform="matrix(0 1 -1 0 202 0)"/>
+</clipPath>
+<clipPath id="clip1_93_108">
+<rect width="101" height="202" fill="white" transform="matrix(0 -1 1 0 0 1497)"/>
+</clipPath>
 </defs>
 </svg>
