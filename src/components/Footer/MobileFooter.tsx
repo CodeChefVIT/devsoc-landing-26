@@ -1,4 +1,5 @@
 import { FaXTwitter, FaInstagram, FaLinkedinIn, FaGithub, FaYoutube } from 'react-icons/fa6';
+import { ScrollButton } from '@/components/ui';
 
 export default function MobileFooter() {
   return (
@@ -16,30 +17,30 @@ export default function MobileFooter() {
 
         {/* Navigation Sections */}
         <nav className="flex gap-4 text-[10px] leading-3 font-semibold font-lato flex-wrap justify-center">
-          <a href="#about" className="hover:text-gray-300 transition">
+          <ScrollButton href="#about" className="hover:text-gray-300 transition">
             About
-          </a>
-          <a href="#tracks" className="hover:text-gray-300 transition">
+          </ScrollButton>
+          <ScrollButton href="#tracks" className="hover:text-gray-300 transition">
             Tracks
-          </a>
-          <a href="#timeline" className="hover:text-gray-300 transition">
+          </ScrollButton>
+          <ScrollButton href="#timeline" className="hover:text-gray-300 transition">
             Timeline
-          </a>
-          <a href="#sponsors" className="hover:text-gray-300 transition">
+          </ScrollButton>
+          <ScrollButton href="#sponsors" className="hover:text-gray-300 transition">
             Sponsors
-          </a>
-          <a href="#faqs" className="hover:text-gray-300 transition">
+          </ScrollButton>
+          <ScrollButton href="#faqs" className="hover:text-gray-300 transition">
             FAQs
-          </a>
+          </ScrollButton>
         </nav>
 
         {/* Register Now */}
-        <a
+        <ScrollButton
           href="#register"
           className="text-[10px] leading-3 font-semibold font-lato hover:text-gray-300 transition flex items-center gap-1"
         >
           Register Now ↗
-        </a>
+        </ScrollButton>
         {/* Social Icons */}
         <div className="flex items-center gap-3">
           <a

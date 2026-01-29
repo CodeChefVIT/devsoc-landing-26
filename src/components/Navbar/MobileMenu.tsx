@@ -1,14 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { navigationItems } from '@/data/navigation';
 import Timer from './Timer';
+import { ScrollButton } from '@/components/ui';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleScroll = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div className="lg:hidden w-full">
@@ -56,13 +60,13 @@ export default function MobileMenu() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05, duration: 0.2 }}
                 >
-                  <Link
+                  <ScrollButton
                     href={item.href}
-                    className="text-white uppercase block px-4 py-3 text-sm md:text-base font-bold hover:bg-white/10 rounded-lg transition-all duration-200"
-                    onClick={() => setIsOpen(false)}
+                    onClick={handleScroll}
+                    className="text-white uppercase block px-4 py-3 text-sm md:text-base font-bold hover:bg-white/10 rounded-lg transition-all duration-200 w-full text-left"
                   >
                     {item.label}
-                  </Link>
+                  </ScrollButton>
                 </motion.div>
               ))}
 

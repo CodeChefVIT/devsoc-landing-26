@@ -1,4 +1,6 @@
-import Link from 'next/link';
+'use client';
+
+import { useNavigation } from '@/contexts/NavigationContext';
 
 export default function SectionHeading({
   title,
@@ -9,31 +11,43 @@ export default function SectionHeading({
 }) {
   const link = title.toLowerCase().replace(/\s+/g, '-');
 
+  const { setIsNavigating } = useNavigation();
+
+  const handleClick = () => {
+    setIsNavigating(true);
+    const element = document.querySelector(`#${link}`);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      // Reset navigating after scroll completes
+      setTimeout(() => setIsNavigating(false), 1000);
+    }
+  };
+
   return (
-    <Link href={`#${link}`} className="block">
-      <h2
-        id={link}
-        className={`
-          font-the-sans-mono
-          font-bold
-          text-white
-          text-center
-          text-[32px]
-          leading-tight
+    <h2
+      id={link}
+      onClick={handleClick}
+      className={`
+        font-the-sans-mono
+        font-bold
+        text-white
+        text-center
+        text-[32px]
+        leading-tight
 
-          sm:text-[40px]
-          md:text-[56px]
-          lg:text-[72px]
+        sm:text-[40px]
+        md:text-[56px]
+        lg:text-[72px]
 
-          tracking-tight
-          scroll-mt-28
+        tracking-tight
+        scroll-mt-28
 
-          mb-16
-          ${className}
-        `}
-      >
-        {title}
-      </h2>
-    </Link>
+        mb-16
+        cursor-pointer
+        ${className}
+      `}
+    >
+      {title}
+    </h2>
   );
 }

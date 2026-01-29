@@ -5,12 +5,14 @@ import { useEffect, useRef, useState } from 'react';
 import TimelineTop from './top/TimelineTop';
 import TimelineMiddle from './middle/TimelineMiddle';
 import TimelineBottom from './bottom/TimelineBottom';
+import { useNavigation } from '@/contexts/NavigationContext';
 
 export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollLock = useRef(false);
   const [active, setActive] = useState(false);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const { isNavigating } = useNavigation();
 
   const currentEvent = events[currentEventIndex];
 
@@ -26,7 +28,7 @@ export default function Timeline() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.6 && !isNavigating) {
           const prefersReduced =
             typeof window !== 'undefined' &&
             window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -52,7 +54,7 @@ export default function Timeline() {
       observer.disconnect();
       if (activateTimeout) clearTimeout(activateTimeout);
     };
-  }, []);
+  }, [isNavigating]);
 
   /* Keyboard navigation while active */
   useEffect(() => {

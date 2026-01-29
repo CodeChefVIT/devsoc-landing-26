@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { navigationItems } from '@/data/navigation';
+import { ScrollButton } from '@/components/ui';
 
 export default function DesktopNav() {
   return (
@@ -19,7 +19,7 @@ export default function DesktopNav() {
             delay: index * 0.08,
           }}
         >
-          <Link
+          <ScrollButton
             href={item.href}
             className="relative font-lato font-bold text-sm lg:text-xs xl:text-sm leading-tight lg:leading-4.5 uppercase text-gray-200 hover:text-white whitespace-nowrap inline-block group transition-colors duration-200"
           >
@@ -30,7 +30,7 @@ export default function DesktopNav() {
             >
               {item.label}
             </motion.span>
-          </Link>
+          </ScrollButton>
         </motion.div>
       ))}
     </div>

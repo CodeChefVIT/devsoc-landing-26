@@ -3,6 +3,7 @@ import { lato, italianno, theSansMono } from './fonts';
 import './globals.css';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
+import { NavigationProvider } from '@/contexts/NavigationContext';
 
 const embedImagesUrl =
   'https://res.cloudinary.com/dul1hx8p3/image/upload/v1769078428/opengraph-image_m2vfnh.jpg';
@@ -54,9 +55,11 @@ export default function RootLayout({
       <body
         className={`${lato.variable} ${italianno.variable} ${theSansMono.variable} antialiased bg-black text-white select-none`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <NavigationProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </NavigationProvider>
       </body>
     </html>
   );

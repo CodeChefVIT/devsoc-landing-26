@@ -1,29 +1,30 @@
 import { FaXTwitter, FaInstagram, FaLinkedinIn, FaGithub, FaYoutube } from 'react-icons/fa6';
+import { ScrollButton } from '@/components/ui';
 
 export default function DesktopFooter() {
   return (
     <div className="hidden md:block relative max-w-7xl mx-auto px-8 py-12 font-lato font-semibold">
       <div className="flex items-center justify-between text-sm text-gray-300 mb-12">
-        <a href="#register" className="hover:text-white transition">
+        <ScrollButton href="#register" className="hover:text-white transition">
           Register Now ↗
-        </a>
+        </ScrollButton>
 
         <nav className="flex gap-8">
-          <a href="#about" className="hover:text-white transition">
+          <ScrollButton href="#about" className="hover:text-white transition">
             About
-          </a>
-          <a href="#tracks" className="hover:text-white transition">
+          </ScrollButton>
+          <ScrollButton href="#tracks" className="hover:text-white transition">
             Tracks
-          </a>
-          <a href="#timeline" className="hover:text-white transition">
+          </ScrollButton>
+          <ScrollButton href="#timeline" className="hover:text-white transition">
             Timeline
-          </a>
-          <a href="#sponsors" className="hover:text-white transition">
+          </ScrollButton>
+          <ScrollButton href="#sponsors" className="hover:text-white transition">
             Sponsors
-          </a>
-          <a href="#faqs" className="hover:text-white transition">
+          </ScrollButton>
+          <ScrollButton href="#faqs" className="hover:text-white transition">
             FAQs
-          </a>
+          </ScrollButton>
         </nav>
 
         <div className="flex items-center gap-4">
