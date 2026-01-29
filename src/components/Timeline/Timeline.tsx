@@ -10,9 +10,13 @@ import { useNavigation } from '@/contexts/NavigationContext';
 export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollLock = useRef(false);
+  const scrollAccumulator = useRef(0);
   const [active, setActive] = useState(false);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const { isNavigating } = useNavigation();
+
+  const SCROLL_THRESHOLD = 100;
+  const TOUCH_THRESHOLD = 50;
 
   const currentEvent = timeline[currentEventIndex];
 
@@ -77,6 +81,7 @@ export default function Timeline() {
         setActive(false);
 
         scrollLock.current = false;
+        scrollAccumulator.current = 0;
       }
     };
 
@@ -98,22 +103,27 @@ export default function Timeline() {
         setActive(false);
 
         scrollLock.current = false;
+        scrollAccumulator.current = 0;
         return;
       }
 
       e.preventDefault();
       if (scrollLock.current) return;
 
-      scrollLock.current = true;
-      if (e.deltaY > 0) {
-        next();
-      } else {
-        prev();
-      }
+      scrollAccumulator.current += e.deltaY;
 
-      setTimeout(() => {
-        scrollLock.current = false;
-      }, 600);
+      if (Math.abs(scrollAccumulator.current) > SCROLL_THRESHOLD) {
+        if (scrollAccumulator.current > 0) {
+          next();
+        } else {
+          prev();
+        }
+        scrollAccumulator.current = 0;
+        scrollLock.current = true;
+        setTimeout(() => {
+          scrollLock.current = false;
+        }, 600);
+      }
     };
 
     let startY = 0;
@@ -166,8 +176,10 @@ export default function Timeline() {
         lockSet = false;
         return;
       }
-      if (lastDy < 0) next();
-      else prev();
+      if (Math.abs(lastDy) > TOUCH_THRESHOLD) {
+        if (lastDy < 0) next();
+        else prev();
+      }
     };
 
     el.addEventListener('wheel', onWheel as EventListener, { passive: false });
