@@ -1,6 +1,6 @@
-import type { Event } from '@/components/Timeline/types';
+import type { TimelineItem } from '@/components/Timeline/types';
 
-const events: Event[] = [
+const timeline: TimelineItem[] = [
   // DAY 1
   {
     id: 'd1-2000',
@@ -227,5 +227,5 @@ const events: Event[] = [
   },
 ];
 
-export { events };
-export type { Event };
+export { timeline };
+export type { TimelineItem };

@@ -1,6 +1,6 @@
 'use client';
 
-import { events } from '@/data';
+import { timeline } from '@/data';
 import { useEffect, useRef, useState } from 'react';
 import TimelineTop from './top/TimelineTop';
 import TimelineMiddle from './middle/TimelineMiddle';
@@ -14,9 +14,9 @@ export default function Timeline() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const { isNavigating } = useNavigation();
 
-  const currentEvent = events[currentEventIndex];
+  const currentEvent = timeline[currentEventIndex];
 
-  const next = () => setCurrentEventIndex(i => Math.min(i + 1, events.length - 1));
+  const next = () => setCurrentEventIndex(i => Math.min(i + 1, timeline.length - 1));
   const prev = () => setCurrentEventIndex(i => Math.max(i - 1, 0));
 
   /* Center + activate */
@@ -72,7 +72,7 @@ export default function Timeline() {
         setCurrentEventIndex(0);
       } else if (e.key === 'End') {
         e.preventDefault();
-        setCurrentEventIndex(events.length - 1);
+        setCurrentEventIndex(timeline.length - 1);
       } else if (e.key === 'Escape') {
         setActive(false);
 
@@ -93,7 +93,7 @@ export default function Timeline() {
     const onWheel = (e: WheelEvent) => {
       if (
         (currentEventIndex === 0 && e.deltaY < 0) ||
-        (currentEventIndex === events.length - 1 && e.deltaY > 0)
+        (currentEventIndex === timeline.length - 1 && e.deltaY > 0)
       ) {
         setActive(false);
 
@@ -155,7 +155,7 @@ export default function Timeline() {
 
       if (
         (currentEventIndex === 0 && lastDy > 0) ||
-        (currentEventIndex === events.length - 1 && lastDy < 0)
+        (currentEventIndex === timeline.length - 1 && lastDy < 0)
       ) {
         setActive(false);
         if (touchLockTimeout) {
@@ -202,7 +202,7 @@ export default function Timeline() {
         <TimelineMiddle
           currentEvent={currentEvent}
           currentEventIndex={currentEventIndex}
-          events={events}
+          events={timeline}
           onIndexChange={setCurrentEventIndex}
         />
         <TimelineBottom currentEvent={currentEvent} onPrevious={prev} onNext={next} />
