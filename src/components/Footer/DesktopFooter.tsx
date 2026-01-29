@@ -33,7 +33,7 @@ export default function DesktopFooter() {
             WebkitTextStroke: '2px rgba(255,255,255,0.9)',
           }}
         >
-          {`DEVSOC'26`}
+          {`DEVSOC’26`}
         </h1>
 
         <p className="mt-6 text-gray-300 text-lg">
