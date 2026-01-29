@@ -1,8 +1,8 @@
 import DecorativeBackground from './DecorativeBackground';
-import SectionHeading from './SectionHeading';
-import SectionBg from './SectionBg';
-import SectionSeparator from './SectionSeparator';
 import Glass from './Glass/Glass';
 import ScrollButton from './ScrollButton';
+import SectionBg from './SectionBg/';
+import SectionHeading from './SectionHeading';
+import SectionSeparator from './SectionSeparator';
 
-export { DecorativeBackground, SectionHeading, SectionBg, SectionSeparator, Glass, ScrollButton };
+export { DecorativeBackground, Glass, ScrollButton, SectionBg, SectionHeading, SectionSeparator };

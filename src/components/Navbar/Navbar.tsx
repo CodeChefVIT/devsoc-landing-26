@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Glass from '../ui/Glass/Glass';
+import { Glass } from '@/components/ui';
 import Logo from './Logo';
 import Timer from './Timer';
 import DesktopNav from './DesktopNav';

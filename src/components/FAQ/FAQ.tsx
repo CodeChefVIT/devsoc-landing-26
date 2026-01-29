@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { FaPlus, FaMinus } from 'react-icons/fa6';
 import { SectionHeading } from '@/components/ui';
 import { faqs } from '@/data/faq';
-import { FaPlus, FaMinus } from 'react-icons/fa6';
 
-export default function FaqSection() {
+export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
@@ -14,7 +14,6 @@ export default function FaqSection() {
         <div className="flex justify-end">
           <SectionHeading title="FAQs" />
         </div>
-
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div

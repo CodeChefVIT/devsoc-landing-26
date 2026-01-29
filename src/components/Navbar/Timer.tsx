@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import Glass from '../ui/Glass/Glass';
+import { Glass } from '@/components/ui';
 
 function getTimeLeft(target: Date) {
   const now = new Date().getTime();

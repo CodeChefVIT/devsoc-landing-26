@@ -1,8 +1,8 @@
 'use client';
 
+import { useLayoutEffect, useState } from 'react';
 import { SectionHeading } from '@/components/ui';
 import { tracks } from '@/data';
-import { useLayoutEffect, useState } from 'react';
 import DesktopTracks from './Desktop';
 import MobileTracks from './Mobile';
 

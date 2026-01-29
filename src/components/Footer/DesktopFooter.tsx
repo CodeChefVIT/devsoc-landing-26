@@ -1,7 +1,7 @@
-import { ScrollButton } from '@/components/ui';
-import { footerLinks, socialLinks } from '@/data';
 import { LuArrowUpRight } from 'react-icons/lu';
 import { FaRegHeart } from 'react-icons/fa6';
+import { ScrollButton } from '@/components/ui';
+import { footerLinks, socialLinks } from '@/data';
 
 export default function DesktopFooter() {
   return (

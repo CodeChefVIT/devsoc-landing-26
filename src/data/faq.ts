@@ -1,4 +1,9 @@
-export const faqs = [
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export const faqs: FAQ[] = [
   {
     question: 'Is the hackathon free to attend?',
     answer: "Yes, DevSOC'26 is completely free to attend thanks to our sponsors.",

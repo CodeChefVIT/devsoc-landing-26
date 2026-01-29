@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ScrollButton } from '@/components/ui';
 import { navigationItems } from '@/data/navigation';
 import Timer from './Timer';
-import { ScrollButton } from '@/components/ui';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);

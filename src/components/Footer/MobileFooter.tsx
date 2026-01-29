@@ -1,6 +1,6 @@
+import { LuArrowUpRight } from 'react-icons/lu';
 import { ScrollButton } from '@/components/ui';
 import { footerLinks, socialLinks } from '@/data';
-import { LuArrowUpRight } from 'react-icons/lu';
 
 export default function MobileFooter() {
   const half = Math.ceil(footerLinks.length / 2);

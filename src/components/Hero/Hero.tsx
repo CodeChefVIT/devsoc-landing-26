@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 
-export default function HomeRive() {
+export default function Hero() {
   const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
 
   useEffect(() => {
@@ -44,11 +44,7 @@ export default function HomeRive() {
       }`}
     >
       <div className="w-full h-full flex items-center justify-center">
-        <RiveComponent
-          key={artboard}
-          className={`w-full h-full`}
-          style={{ touchAction: 'pan-y' }}
-        />
+        <RiveComponent key={artboard} className="w-full h-full pan-y" />
       </div>
     </section>
   );

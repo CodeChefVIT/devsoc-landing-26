@@ -1,12 +1,12 @@
-import { DecorativeBackground, SectionBg, SectionSeparator } from '@/components/ui';
-import Sponsors from '@/components/Sponsors';
-import Speaker from '@/components/Speaker';
-import Tracks from '@/components/Tracks';
-import Faqs from '@/components/Faqs/FaqSection';
-import Timeline from '@/components/Timeline';
-import About from '@/components/About';
-import Hero from '@/components/Hero/Hero';
 import Image from 'next/image';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Tracks from '@/components/Tracks';
+import Speaker from '@/components/Speaker';
+import Timeline from '@/components/Timeline';
+import Sponsors from '@/components/Sponsors';
+import Faqs from '@/components/FAQ';
+import { DecorativeBackground, SectionBg, SectionSeparator } from '@/components/ui';
 
 export const dynamic = 'force-static';
 

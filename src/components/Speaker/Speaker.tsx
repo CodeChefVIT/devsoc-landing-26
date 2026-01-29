@@ -1,7 +1,7 @@
-import { speakers } from '@/data';
-import { SectionHeading } from '@/components/ui';
-import SpeakerCard from './SpeakerCard';
 import Image from 'next/image';
+import { SectionHeading } from '@/components/ui';
+import { speakers } from '@/data';
+import SpeakerCard from './SpeakerCard';
 
 export default function Speaker() {
   return (

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { lato, italianno, theSansMono } from './fonts';
 import './globals.css';
-import Navbar from '@/components/Navbar/Navbar';
-import Footer from '@/components/Footer/Footer';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { NavigationProvider } from '@/contexts/NavigationContext';
 
 const embedImagesUrl =
