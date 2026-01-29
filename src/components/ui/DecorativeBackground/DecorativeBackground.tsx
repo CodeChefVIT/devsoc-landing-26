@@ -14,22 +14,29 @@ export default function DecorativeBackground({ children }: DecorativeBackgroundP
           backgroundImage: `
             linear-gradient(
               to right,
-              transparent 25%,
-              rgba(255,255,255,0.2) 25%,
-              rgba(255,255,255,0.2) calc(25% + 1px),
-              transparent calc(25% + 1px),
-
-              transparent 50%,
-              rgba(255,255,255,0.2) 50%,
-              rgba(255,255,255,0.2) calc(50% + 1px),
-              transparent calc(50% + 1px),
-
-              transparent 75%,
-              rgba(255,255,255,0.2) 75%,
-              rgba(255,255,255,0.2) calc(75% + 1px),
-              transparent calc(75% + 1px)
+              transparent calc(25vw - 0.5px),
+              rgba(255,255,255,0.2) calc(25vw - 0.5px),
+              rgba(255,255,255,0.2) calc(25vw + 0.5px),
+              transparent calc(25vw + 0.5px)
+            ),
+            linear-gradient(
+              to right,
+              transparent calc(50vw - 0.5px),
+              rgba(255,255,255,0.2) calc(50vw - 0.5px),
+              rgba(255,255,255,0.2) calc(50vw + 0.5px),
+              transparent calc(50vw + 0.5px)
+            ),
+            linear-gradient(
+              to right,
+              transparent calc(75vw - 0.5px),
+              rgba(255,255,255,0.2) calc(75vw - 0.5px),
+              rgba(255,255,255,0.2) calc(75vw + 0.5px),
+              transparent calc(75vw + 0.5px)
             )
           `,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: '100vw 100%',
+          backgroundPosition: 'left top',
           maskImage: 'linear-gradient(to bottom, transparent 0px, black 50px)',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0px, black 50px)',
         }}

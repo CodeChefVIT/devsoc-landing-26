@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Tracks from '@/components/Tracks';
-import Speaker from '@/components/Speaker';
+import Speakers from '@/components/Speakers';
 import Timeline from '@/components/Timeline';
 import Sponsors from '@/components/Sponsors';
 import Faqs from '@/components/FAQ';
@@ -21,36 +21,36 @@ export default function Page() {
           <About />
         </section>
 
-        {/* <SectionSeparator
+        <SectionSeparator
           imgUrl="/images/backgrounds/bg-about-sep-tracks.svg"
           width={375}
           height={96}
           className="w-1/4 mx-auto md:ml-[25%] md:w-[25%] md:h-auto md:mx-0"
-        /> */}
+        />
 
         <section id="tracks" className="relative">
           <SectionBg src="/images/backgrounds/bg-tracks.svg" />
           <Tracks />
         </section>
 
-        <section id="speaker" className="relative">
-          <SectionBg src="/images/backgrounds/bg-sponsors.svg" />
-          <Speaker />
-        </section>
-
-        {/* <SectionSeparator
-          imgUrl="/images/backgrounds/bg-about-sep-tracks.svg"
-          width={375}
-          height={96}
-          className="w-1/4 mx-auto md:ml-[25%] md:w-[25%] md:h-auto md:mx-0"
-        /> */}
-
-        {/* <SectionSeparator
-          imgUrl="/images/backgrounds/bg-tracks-sep-timeline.svg"
+        <SectionSeparator
+          imgUrl="/images/backgrounds/bg-tracks-sep-speakers.svg"
           width={375}
           height={96}
           className="w-1/4 mx-auto md:ml-[50%] md:w-[25%] md:h-auto md:mx-0 md:block hidden"
-        /> */}
+        />
+
+        <section id="speaker" className="relative">
+          <SectionBg src="/images/backgrounds/bg-sponsors.svg" />
+          <Speakers />
+        </section>
+
+        <SectionSeparator
+          imgUrl="/images/backgrounds/bg-speakers-sep-timeline.svg"
+          width={375}
+          height={96}
+          className="w-1/4 mx-auto md:ml-[25%] md:w-[25%] md:h-auto md:mx-0"
+        />
 
         <div className="relative block lg:hidden">
           <Image

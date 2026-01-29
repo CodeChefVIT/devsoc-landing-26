@@ -3,16 +3,10 @@ import { SectionHeading } from '@/components/ui';
 import { speakers } from '@/data';
 import SpeakerCard from './SpeakerCard';
 
-export default function Speaker() {
+export default function Speakers() {
   return (
     <div className="relative w-full py-12 md:py-16">
       <div className="absolute inset-0 pointer-events-none -z-10">
-        <Image
-          src="/images/backgrounds/bg-sponsors-art.svg"
-          fill
-          className="hidden md:block object-contain scale-90 -translate-y-10 opacity-50"
-          alt="Speakers background art"
-        />
         <div className="md:hidden absolute left-0 bottom-0 w-[50vw] h-full">
           <Image
             src="/images/backgrounds/bg-sponsors-art-phone.svg"
