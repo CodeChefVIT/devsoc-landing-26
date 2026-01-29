@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Glass } from '@/components/ui';
 
 export default function UIShowcase() {
