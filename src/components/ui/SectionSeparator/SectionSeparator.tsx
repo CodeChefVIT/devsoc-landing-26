@@ -21,6 +21,7 @@ export default function SectionSeparator({
         className={`${className || ''}`}
         aria-hidden="true"
         loading="lazy"
+        draggable="false"
       />
     </div>
   );
