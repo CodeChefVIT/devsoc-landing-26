@@ -3,7 +3,7 @@ import tracks from './tracks';
 import speakers from './speaker';
 import { navigationItems, type NavigationItem } from './navigation';
 import { timeline, type TimelineItem } from './timeline';
-import { footerLinks, socialLinks } from './footerData';
+import { footerLinks, socialLinks } from './footer';
 
 export {
   sponsors,
