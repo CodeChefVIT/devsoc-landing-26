@@ -1,22 +1,26 @@
 'use client';
 
-import { events } from '@/data';
 import { useEffect, useRef, useState } from 'react';
+import { useNavigation } from '@/contexts/NavigationContext';
+import { timeline } from '@/data';
 import TimelineTop from './top/TimelineTop';
 import TimelineMiddle from './middle/TimelineMiddle';
 import TimelineBottom from './bottom/TimelineBottom';
-import { useNavigation } from '@/contexts/NavigationContext';
 
 export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollLock = useRef(false);
+  const scrollAccumulator = useRef(0);
   const [active, setActive] = useState(false);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const { isNavigating } = useNavigation();
 
-  const currentEvent = events[currentEventIndex];
+  const SCROLL_THRESHOLD = 100;
+  const TOUCH_THRESHOLD = 50;
 
-  const next = () => setCurrentEventIndex(i => Math.min(i + 1, events.length - 1));
+  const currentEvent = timeline[currentEventIndex];
+
+  const next = () => setCurrentEventIndex(i => Math.min(i + 1, timeline.length - 1));
   const prev = () => setCurrentEventIndex(i => Math.max(i - 1, 0));
 
   /* Center + activate */
@@ -56,7 +60,6 @@ export default function Timeline() {
     };
   }, [isNavigating]);
 
-  /* Keyboard navigation while active */
   useEffect(() => {
     if (!active) return;
 
@@ -72,11 +75,12 @@ export default function Timeline() {
         setCurrentEventIndex(0);
       } else if (e.key === 'End') {
         e.preventDefault();
-        setCurrentEventIndex(events.length - 1);
+        setCurrentEventIndex(timeline.length - 1);
       } else if (e.key === 'Escape') {
         setActive(false);
 
         scrollLock.current = false;
+        scrollAccumulator.current = 0;
       }
     };
 
@@ -90,35 +94,52 @@ export default function Timeline() {
     const el = containerRef.current;
     if (!el) return;
 
+    const VELOCITY_THRESHOLD = 0.5;
+    const DISTANCE_THRESHOLD = SCROLL_THRESHOLD;
+
+    let lastWheelTime = 0;
+    let wheelAccum = 0;
+
     const onWheel = (e: WheelEvent) => {
       if (
         (currentEventIndex === 0 && e.deltaY < 0) ||
-        (currentEventIndex === events.length - 1 && e.deltaY > 0)
+        (currentEventIndex === timeline.length - 1 && e.deltaY > 0)
       ) {
         setActive(false);
 
         scrollLock.current = false;
+        wheelAccum = 0;
         return;
       }
 
       e.preventDefault();
       if (scrollLock.current) return;
 
-      scrollLock.current = true;
-      if (e.deltaY > 0) {
-        next();
-      } else {
-        prev();
-      }
+      const now = typeof performance !== 'undefined' ? performance.now() : Date.now();
+      const dt = Math.max(1, now - lastWheelTime);
+      lastWheelTime = now;
 
-      setTimeout(() => {
-        scrollLock.current = false;
-      }, 600);
+      const dy = e.deltaY;
+
+      const velocity = Math.abs(dy) / dt;
+
+      wheelAccum += dy;
+
+      if (Math.abs(wheelAccum) > DISTANCE_THRESHOLD || velocity > VELOCITY_THRESHOLD) {
+        if (wheelAccum > 0) next();
+        else prev();
+        wheelAccum = 0;
+        scrollLock.current = true;
+        setTimeout(() => {
+          scrollLock.current = false;
+        }, 600);
+      }
     };
 
     let startY = 0;
-    let startX = 0;
-    let lastDy = 0;
+    let lastTouchY = 0;
+    let touchStartTime = 0;
+    let touchAccum = 0;
     let moved = false;
     let lockSet = false;
     let touchLockTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -126,17 +147,21 @@ export default function Timeline() {
     const handleTouchStart = (ev: TouchEvent) => {
       if (!ev.touches || !ev.touches[0]) return;
       startY = ev.touches[0].clientY;
-      startX = ev.touches[0].clientX;
+      lastTouchY = startY;
+      touchStartTime = typeof performance !== 'undefined' ? performance.now() : Date.now();
       moved = false;
-      lastDy = 0;
+      touchAccum = 0;
     };
 
     const handleTouchMove = (ev: TouchEvent) => {
       if (!ev.touches || !ev.touches[0]) return;
-      const dy = ev.touches[0].clientY - startY;
-      const dx = ev.touches[0].clientX - startX;
-      lastDy = dy;
-      if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 10) {
+      const y = ev.touches[0].clientY;
+      const dy = y - lastTouchY;
+      lastTouchY = y;
+      touchAccum += dy;
+
+      const dx = ev.touches[0].clientX - (ev.targetTouches?.[0]?.clientX || 0);
+      if (Math.abs(touchAccum) > Math.abs(dx) && Math.abs(dy) > 5) {
         moved = true;
         if (!lockSet) {
           lockSet = true;
@@ -153,9 +178,13 @@ export default function Timeline() {
     const handleTouchEnd = () => {
       if (!moved) return;
 
+      const now = typeof performance !== 'undefined' ? performance.now() : Date.now();
+      const totalTime = Math.max(1, now - touchStartTime);
+      const velocity = Math.abs(touchAccum) / totalTime;
+
       if (
-        (currentEventIndex === 0 && lastDy > 0) ||
-        (currentEventIndex === events.length - 1 && lastDy < 0)
+        (currentEventIndex === 0 && touchAccum > 0) ||
+        (currentEventIndex === timeline.length - 1 && touchAccum < 0)
       ) {
         setActive(false);
         if (touchLockTimeout) {
@@ -166,8 +195,17 @@ export default function Timeline() {
         lockSet = false;
         return;
       }
-      if (lastDy < 0) next();
-      else prev();
+
+      if (Math.abs(touchAccum) > TOUCH_THRESHOLD || velocity > VELOCITY_THRESHOLD) {
+        if (touchAccum < 0) next();
+        else prev();
+      }
+
+      if (touchLockTimeout) {
+        clearTimeout(touchLockTimeout);
+        touchLockTimeout = null;
+      }
+      lockSet = false;
     };
 
     el.addEventListener('wheel', onWheel as EventListener, { passive: false });
@@ -196,16 +234,13 @@ export default function Timeline() {
   }, [active, currentEventIndex]);
 
   return (
-    <section
-      ref={containerRef}
-      className="h-screen w-full overflow-hidden flex flex-col justify-end"
-    >
+    <section ref={containerRef} className="h-fit  w-full overflow-hidden flex flex-col justify-end">
       <div className="h-[90vh] w-full flex flex-col justify-center">
         <TimelineTop currentEvent={currentEvent} />
         <TimelineMiddle
           currentEvent={currentEvent}
           currentEventIndex={currentEventIndex}
-          events={events}
+          events={timeline}
           onIndexChange={setCurrentEventIndex}
         />
         <TimelineBottom currentEvent={currentEvent} onPrevious={prev} onNext={next} />

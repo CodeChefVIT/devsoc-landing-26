@@ -1,31 +1,31 @@
 <svg width="480" height="579" viewBox="0 0 480 579" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2123_619)">
+<g clip-path="url(#clip0_2122_505)">
 <path d="M120.25 1C186.11 1 239.5 54.3877 239.5 120.244C239.5 186.112 186.11 239.5 120.25 239.5C54.3902 239.5 1.00001 186.112 1.00001 120.244C1.00001 54.3877 54.3902 1 120.25 1Z" stroke="white" stroke-opacity="0.2"/>
 </g>
 <path d="M239.5 120.25V458.75" stroke="white" stroke-opacity="0.2"/>
 <path d="M1 120.25V458.75" stroke="white" stroke-opacity="0.2"/>
-<g clip-path="url(#clip1_2123_619)">
+<g clip-path="url(#clip1_2122_505)">
 <path d="M120.25 578C54.3902 578 1 524.612 1 458.756C1 392.888 54.3902 339.5 120.25 339.5C186.11 339.5 239.5 392.888 239.5 458.756C239.5 524.612 186.11 578 120.25 578Z" stroke="white" stroke-opacity="0.2"/>
 </g>
-<g clip-path="url(#clip2_2123_619)">
+<g clip-path="url(#clip2_2122_505)">
 <path d="M359.75 1C425.61 1 479 54.3877 479 120.244C479 186.112 425.61 239.5 359.75 239.5C293.89 239.5 240.5 186.112 240.5 120.244C240.5 54.3877 293.89 1 359.75 1Z" stroke="white" stroke-opacity="0.2"/>
 </g>
 <path d="M479 120.25V458.75" stroke="white" stroke-opacity="0.2"/>
 <path d="M240.5 120.25V458.75" stroke="white" stroke-opacity="0.2"/>
-<g clip-path="url(#clip3_2123_619)">
+<g clip-path="url(#clip3_2122_505)">
 <path d="M359.75 578C293.89 578 240.5 524.612 240.5 458.756C240.5 392.888 293.89 339.5 359.75 339.5C425.61 339.5 479 392.888 479 458.756C479 524.612 425.61 578 359.75 578Z" stroke="white" stroke-opacity="0.2"/>
 </g>
 <defs>
-<clipPath id="clip0_2123_619">
+<clipPath id="clip0_2122_505">
 <rect width="120.25" height="240.5" fill="white" transform="matrix(0 1 -1 0 240.5 0)"/>
 </clipPath>
-<clipPath id="clip1_2123_619">
+<clipPath id="clip1_2122_505">
 <rect width="120.25" height="240.5" fill="white" transform="matrix(0 -1 1 0 0 579)"/>
 </clipPath>
-<clipPath id="clip2_2123_619">
+<clipPath id="clip2_2122_505">
 <rect width="120.25" height="240.5" fill="white" transform="matrix(0 1 -1 0 480 0)"/>
 </clipPath>
-<clipPath id="clip3_2123_619">
+<clipPath id="clip3_2122_505">
 <rect width="120.25" height="240.5" fill="white" transform="matrix(0 -1 1 0 239.5 579)"/>
 </clipPath>
 </defs>

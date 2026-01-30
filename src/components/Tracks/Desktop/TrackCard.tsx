@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Track } from '@/data/tracks';
 import TrackContent from './TrackContent';
@@ -25,11 +26,51 @@ export default function TrackCard({
   const animationVariant = getAnimationVariant(expandedIndex, index);
   const isClickable = track.type === 'track';
 
+  const [descriptionAction, setDescriptionAction] = useState<'show' | 'hide' | null>(null);
+  const [awaitingDescription, setAwaitingDescription] = useState(false);
+  const inFlightRef = useRef(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setDescriptionAction(null);
+      setAwaitingDescription(false);
+      inFlightRef.current = false;
+    }, 0);
+    return () => clearTimeout(t);
+  }, [expandedIndex]);
+
+  const handleClick = () => {
+    if (!isClickable) return;
+    if (inFlightRef.current) return;
+
+    if (!isExpanded) {
+      inFlightRef.current = true;
+      setDescriptionAction('show');
+      setAwaitingDescription(true);
+    } else {
+      inFlightRef.current = true;
+      setDescriptionAction('hide');
+      setAwaitingDescription(true);
+    }
+  };
+
+  const onDescriptionAnimationComplete = () => {
+    if (!awaitingDescription) return;
+    setAwaitingDescription(false);
+    setDescriptionAction(null);
+
+    onCardClick(index);
+
+    setTimeout(() => {
+      inFlightRef.current = false;
+    }, 50);
+  };
+
   return (
     <motion.div
       key={track.id}
-      className={`flex-1 aspect-square relative ${isClickable ? 'cursor-pointer' : 'cursor-default'} ${borderClasses} ${isExpanded ? 'z-50' : 'z-1'}`}
-      onClick={() => isClickable && onCardClick(index)}
+      className={`flex-1 aspect-square relative ${isClickable ? 'cursor-pointer' : 'cursor-default'} ${!isExpanded ? borderClasses : ''} ${isExpanded ? 'z-50' : 'z-0'}`}
+      onClick={handleClick}
       animate={
         isExpanded
           ? { scale: 1, x: 0, y: 0, opacity: 1 }
@@ -38,7 +79,7 @@ export default function TrackCard({
             : { scale: 1, x: 0, y: 0, opacity: 1 }
       }
       transition={{
-        duration: 0.5,
+        duration: 0.3,
         ease: 'easeInOut',
         delay: !isExpanded && hasExpandedCard ? 0.2 : 0,
       }}
@@ -47,23 +88,33 @@ export default function TrackCard({
         {isExpanded ? (
           <motion.div
             key="expanded"
-            className="absolute inset-0 bg-[#161616] border-[0.5px] border-[#505050] rounded-2xl flex items-center justify-center"
+            className="absolute inset-0 bg-[#161616] border-[0.5px] border-transparent rounded-2xl flex items-center justify-center"
             initial={{ scale: 1 }}
             animate={getExpandedAnimationProps(index)}
-            exit={{ opacity: 0 }}
+            exit={{ scale: 1, x: 0, y: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <TrackContent track={track} isExpanded={true} />
+            <TrackContent
+              track={track}
+              isExpanded={true}
+              descriptionAction={descriptionAction}
+              onDescriptionAnimationComplete={onDescriptionAnimationComplete}
+            />
           </motion.div>
         ) : (
           <motion.div
             key="collapsed"
             className="w-full h-full"
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: 0.15, ease: 'easeInOut' }}
           >
-            <TrackContent track={track} isExpanded={false} />
+            <TrackContent
+              track={track}
+              isExpanded={false}
+              descriptionAction={descriptionAction}
+              onDescriptionAnimationComplete={onDescriptionAnimationComplete}
+            />
           </motion.div>
         )}
       </AnimatePresence>

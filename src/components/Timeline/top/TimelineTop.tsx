@@ -8,9 +8,9 @@ export default function TimelineTop({ currentEvent }: TimelineTopProps) {
         <SectionHeading title="Timeline" className="text-left mb-0!" />
       </div>
 
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full min-h-32">
         <div
-          className="w-full text-4xl ml-12 md:text-5xl lg:text-6xl font-medium text-left leading-tight font-lato gradient-text-event"
+          className="w-full text-4xl ml-12 md:text-5xl lg:text-6xl font-medium text-left leading-tight font-lato gradient-text-event h-20 flex items-center"
           aria-live="polite"
         >
           {currentEvent.title}

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import Glass from '../ui/Glass/Glass';
+import { Glass } from '@/components/ui';
 
 function getTimeLeft(target: Date) {
   const now = new Date().getTime();
@@ -15,7 +15,7 @@ function getTimeLeft(target: Date) {
   return [days, hours, minutes, seconds].map(v => String(v).padStart(2, '0')).join(':');
 }
 
-const targetDate = new Date('2026-02-06T00:00:00');
+const targetDate = new Date('2026-02-08T14:30:00Z');
 
 interface TimerProps {
   className?: string;

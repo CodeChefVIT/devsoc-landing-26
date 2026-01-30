@@ -1,7 +1,7 @@
-import { sponsors } from '@/data';
-import { SectionHeading } from '@/components/ui';
-import SponsorCard from './SponsorCard';
 import Image from 'next/image';
+import { SectionHeading } from '@/components/ui';
+import { sponsors } from '@/data';
+import SponsorCard from './SponsorCard';
 
 export default function Sponsors() {
   const getAlignment = (index: number) => {

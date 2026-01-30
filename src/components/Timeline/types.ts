@@ -1,4 +1,4 @@
-export type Event = {
+export type TimelineItem = {
   id: string;
   day: number;
   date: string;
@@ -9,21 +9,19 @@ export type Event = {
   description: string;
 };
 
-export type { Event as TimelineEvent };
-
 export type TimelineTopProps = {
-  currentEvent: Event;
+  currentEvent: TimelineItem;
 };
 
 export type TimelineMiddleProps = {
-  currentEvent: Event;
+  currentEvent: TimelineItem;
   currentEventIndex: number;
-  events: Event[];
+  events: TimelineItem[];
   onIndexChange?: (i: number) => void;
 };
 
 export type TimelineBottomProps = {
-  currentEvent: Event;
+  currentEvent: TimelineItem;
   onPrevious: () => void;
   onNext: () => void;
 };

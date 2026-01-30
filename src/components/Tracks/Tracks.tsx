@@ -1,8 +1,8 @@
 'use client';
 
+import { useLayoutEffect, useState } from 'react';
 import { SectionHeading } from '@/components/ui';
 import { tracks } from '@/data';
-import { useLayoutEffect, useState } from 'react';
 import DesktopTracks from './Desktop';
 import MobileTracks from './Mobile';
 
@@ -14,10 +14,8 @@ export default function Tracks() {
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Initial check
     checkMobile();
 
-    // Add event listener
     window.addEventListener('resize', checkMobile);
 
     return () => window.removeEventListener('resize', checkMobile);
