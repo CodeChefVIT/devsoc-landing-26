@@ -84,7 +84,7 @@ export default function Page() {
           imgUrl="/images/backgrounds/bg-sponsors-sep-faq.svg"
           width={960}
           height={361}
-          className="absolute left-[25%] w-[50%] h-auto"
+          className="absolute left-[25%] w-[50%] h-auto md:block hidden"
         />
 
         <section id="faq" className="relative">
