@@ -19,7 +19,7 @@ const tracks: Track[] = [
     title: 'Hotfoot AI Challenges\n(Sponsor Track)',
     description:
       'Challenge 1: Financial Audio Intelligence - Process unstructured voice calls into structured financial insights via AI.\n\nChallenge 2: Financial Document Intelligence - Extract data from 200+ document formats beyond rule-based OCR. \n\nSpecial prizes for winners using Backboard.io APIs.',
-    image: { mobile: '/images/tracks/track-1.png' },
+    image: { mobile: '/images/tracks/track-1.avif' },
   },
   { id: 3, type: 'decoration', image: { desktop: '/images/tracks/box-3.svg' } },
   {
@@ -28,7 +28,7 @@ const tracks: Track[] = [
     title: 'Digital Economy',
     description:
       'Build smarter financial systems, Web3 decentralization via blockchain, cybersecurity for privacy, secure identities, innovative payments, AI finance tools and e-commerce for creators and businesses.',
-    image: { mobile: '/images/tracks/track-2.png' },
+    image: { mobile: '/images/tracks/track5.jpg' },
   },
 
   // Row 2
@@ -38,7 +38,7 @@ const tracks: Track[] = [
     title: 'Media & Entertainment',
     description:
       'Reimagine storytelling, gaming, and creative expression through technology, blending AR/VR, interactivity, and the evolving creator economy.',
-    image: { mobile: '/images/tracks/track-3.png' },
+    image: { mobile: '/images/tracks/track2.avif' },
   },
   { id: 6, type: 'decoration', image: { desktop: '/images/tracks/box-6.svg' } },
   {
@@ -47,7 +47,7 @@ const tracks: Track[] = [
     title: 'Tech for Good',
     description:
       'Use technology to address sustainability, healthcare, education, accessibility, and social justice and campus solutions.\nBuild inclusive, fair solutions with real, scalable impact.',
-    image: { mobile: '/images/tracks/track-4.png' },
+    image: { mobile: '/images/tracks/SDGs.jpg' },
   },
   { id: 8, type: 'spacer', transparent: true },
 
@@ -61,7 +61,7 @@ const tracks: Track[] = [
     title: 'Open Innovation',
     description:
       'Explore innovative ideas across domains. Blend disciplines and explore the unexpected side of tech.',
-    image: { mobile: '/images/tracks/track-6.png' },
+    image: { mobile: '/images/tracks/track-6.jpeg' },
   },
 ];
 

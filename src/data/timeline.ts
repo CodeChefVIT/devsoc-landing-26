@@ -6,10 +6,10 @@ const timeline: TimelineItem[] = [
     id: 'd1-2000',
     day: 1,
     date: '2026-02-08',
-    time: '20:00',
-    datetime: '2026-02-08T20:00',
+    time: '21:00',
+    datetime: '2026-02-08T21:00',
     title: 'Doors Open & Check-in',
-    subtitle: 'Welcome to DEVSOC',
+    subtitle: 'Welcome to DevSOC',
     description:
       'Participants arrive, complete registrations and settle in. The hackathon officially begins with onboarding and venue access.',
   },
@@ -171,11 +171,11 @@ const timeline: TimelineItem[] = [
 
   // DAY 4
   {
-    id: 'd4-0830',
+    id: 'd4-0800',
     day: 4,
     date: '2026-02-11',
-    time: '08:30',
-    datetime: '2026-02-11T08:30',
+    time: '08:00',
+    datetime: '2026-02-11T08:00',
     title: 'Final Pitches',
     subtitle: 'Showtime',
     description:

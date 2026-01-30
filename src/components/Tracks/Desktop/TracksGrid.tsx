@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import type { Track } from '@/data/tracks';
+import { theSansMono } from '@/app/fonts';
 import TrackRow from './TrackRow';
 
 const ROWS = 3;
@@ -22,7 +23,7 @@ export default function TracksGrid({ tracks }: { tracks: Track[] }) {
   }));
 
   return (
-    <div className="mx-4 sm:mx-auto max-w-[100vh] relative">
+    <div className={`${theSansMono.className} mx-4 sm:mx-auto max-w-[100vh] relative`}>
       <div className="relative w-full h-[75vh] border border-[#505050] rounded-3xl overflow-hidden">
         <Image
           src="/images/backgrounds/bg-tracks_grid.avif"
