@@ -11,7 +11,7 @@ export default function TimelineBottom({
   hasNext = true,
 }: TimelineBottomProps) {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center w-full gap-4 px-4 sm:px-6 md:px-8 lg:px-12 py-4 md:py-6 md:mb-8">
+    <div className="flex flex-col md:flex-row justify-between items-center w-full gap-4 px-4 sm:px-6 md:px-8 lg:px-12 py-3 md:py-4 md:mb-4">
       <div className="flex-1 w-full text-left px-0 md:px-4 min-h-24">
         <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-lato">
           {currentEvent.subtitle}
@@ -22,7 +22,7 @@ export default function TimelineBottom({
         </p>
       </div>
 
-      <div className="flex flex-row items-center gap-6 mx-auto md:mx-0 mt-4 md:mt-0">
+      <div className="flex flex-row items-center gap-24 md:gap-6 mx-auto md:mx-0 mt-4 md:mt-0">
         <TimelineNavButton onStep={onPrevious} ariaLabel="Previous event" disabled={!hasPrevious}>
           <ChevronLeft
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 text-white transition-transform"

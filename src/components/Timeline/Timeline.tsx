@@ -234,8 +234,8 @@ export default function Timeline() {
   }, [active, currentEventIndex]);
 
   return (
-    <section ref={containerRef} className="h-fit  w-full overflow-hidden flex flex-col justify-end">
-      <div className="h-[90vh] w-full flex flex-col justify-center">
+    <section ref={containerRef} className="h-fit w-full overflow-hidden flex flex-col justify-end">
+      <div className="w-full flex flex-col justify-center py-6">
         <TimelineTop currentEvent={currentEvent} />
         <TimelineMiddle
           currentEvent={currentEvent}
