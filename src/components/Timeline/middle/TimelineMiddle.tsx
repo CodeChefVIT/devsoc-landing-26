@@ -28,6 +28,11 @@ export default function TimelineMiddle({
   const [isPhone, setIsPhone] = useState<boolean>(
     typeof window !== 'undefined' ? window.innerWidth < 768 : false
   );
+  const [initialRingScale, setInitialRingScale] = useState<number>(() =>
+    typeof window !== 'undefined'
+      ? (window.innerWidth >= 640 ? 40 : 32) / (window.innerWidth >= 640 ? 80 : 56)
+      : 32 / 56
+  );
   const [slideOffset, setSlideOffset] = useState<number>(() =>
     typeof window !== 'undefined'
       ? Math.max(0, Math.round(window.innerWidth * 0.2 - calc(window.innerWidth) / 2))
@@ -48,7 +53,9 @@ export default function TimelineMiddle({
       setSlideWidth(sw);
       const desktop = w >= 1024;
       const phone = w < 768;
+      const sm = w >= 640;
       setIsPhone(phone);
+      setInitialRingScale((sm ? 40 : 32) / (sm ? 80 : 56));
       if (desktop) {
         const desiredSpaceBetween = Math.round(w * 0.6 - sw);
         setSpaceBetween(Math.max(16, desiredSpaceBetween));
@@ -123,9 +130,13 @@ export default function TimelineMiddle({
                   >
                     <div
                       className={`absolute inset-0 rounded-full border border-white pointer-events-none transform transition-transform ease-out ${
-                        isCurrentEvent ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
+                        isCurrentEvent ? 'scale-100 opacity-100' : 'opacity-0'
                       }`}
-                      style={{ transitionDuration: '650ms', transitionDelay: '350ms' }}
+                      style={{
+                        transitionDuration: '650ms',
+                        transitionDelay: '350ms',
+                        transform: isCurrentEvent ? undefined : `scale(${initialRingScale})`,
+                      }}
                     />
 
                     <button
