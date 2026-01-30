@@ -14,6 +14,8 @@ export default function Logo() {
           width={33}
           height={32}
           className="w-6 h-6 md:w-8 md:h-8 lg:w-8.25 lg:h-8 object-contain"
+          draggable="false"
+          loading="lazy"
         />
       </Link>
     </motion.div>

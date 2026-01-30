@@ -18,6 +18,8 @@ export default function Sponsors() {
           fill
           className="hidden md:block object-contain -z-10 scale-125 translate-y-4"
           alt="Sponsors background art"
+          draggable="false"
+          loading="lazy"
         />
         <SectionHeading title="Sponsors" />
 
@@ -39,6 +41,8 @@ export default function Sponsors() {
             fill
             className="object-contain object-left"
             alt="Sponsors background art phone"
+            draggable="false"
+            loading="lazy"
           />
         </div>
       </div>

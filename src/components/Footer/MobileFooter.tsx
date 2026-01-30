@@ -55,6 +55,7 @@ export default function MobileFooter() {
             width={19}
             height={16}
             className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px w-auto h-3 self-center"
+            draggable="false"
             loading="lazy"
           />
         </ScrollButton>
