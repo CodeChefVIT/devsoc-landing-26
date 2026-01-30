@@ -41,11 +41,11 @@ const tracks: Track[] = [
     image: { mobile: '/images/tracks/track2.avif' },
   },
   { id: 6, type: 'decoration', image: { desktop: '/images/tracks/box-6.svg' } },
-  //ive fixed ts. When i firrst creted this code, only me and God knew how it worked, now only God knows.
+  //when i first created this code, only me and God knew how it worked, now only God knows.
   {
     id: 7,
     type: 'decoration',
-    image: { desktop: '/images/tracks/box-67.svg', mobile: '/images/tracks/SDGs.jpg' },
+    image: { desktop: '/images/tracks/box-67.svg' },
   },
   { id: 8, type: 'spacer', transparent: true },
 
@@ -57,7 +57,7 @@ const tracks: Track[] = [
     title: 'Tech for Good ',
     description:
       'Use technology to address sustainability, healthcare, education, accessibility, and social justice and campus solutions.\nBuild inclusive, fair solutions with real, scalable impact.',
-    image: { mobile: '/images/tracks/track-5.png' },
+    image: { mobile: '/images/tracks/SDGs.jpg' },
   },
   { id: 11, type: 'decoration', image: { desktop: '/images/tracks/box-11.svg' } },
   {
