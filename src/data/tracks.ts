@@ -53,13 +53,7 @@ const tracks: Track[] = [
 
   // Row 3
   { id: 9, type: 'decoration', image: { desktop: '/images/tracks/box-9.svg' } },
-  {
-    id: 10,
-    type: 'spacer',
-    title: '',
-    description: '',
-    image: { mobile: '/images/tracks/track-5.png' },
-  },
+  { id: 10, type: 'decoration', image: { desktop: '/images/tracks/box-10.svg' } },
   { id: 11, type: 'decoration', image: { desktop: '/images/tracks/box-11.svg' } },
   {
     id: 12,

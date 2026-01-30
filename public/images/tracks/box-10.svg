@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_97_119)">
+<path d="M256 0V256H512V0H256Z" fill="#0A0A0A"/>
+<path d="M256.25 0.25V255.75H511.75V0.25H256.25Z" stroke="white" stroke-opacity="0.25" stroke-width="0.5"/>
+<path d="M0 256V384H128V256H0Z" fill="#0A0A0A"/>
+<path d="M0.25 256.25V383.75H127.75V256.25H0.25Z" stroke="white" stroke-opacity="0.25" stroke-width="0.5"/>
+<path d="M128 384V512H256V384H128Z" fill="#0A0A0A"/>
+<path d="M128.25 384.25V511.75H255.75V384.25H128.25Z" stroke="white" stroke-opacity="0.25" stroke-width="0.5"/>
+<path d="M128 256V384H256V256H128Z" fill="#0A0A0A"/>
+<path d="M128.25 256.25V383.75H255.75V256.25H128.25Z" stroke="white" stroke-opacity="0.25" stroke-width="0.5"/>
+<path d="M0 384V512H128V384H0Z" fill="#0A0A0A"/>
+<path d="M0.25 384.25V511.75H127.75V384.25H0.25Z" stroke="white" stroke-opacity="0.25" stroke-width="0.5"/>
+</g>
+<defs>
+<clipPath id="clip0_97_119">
+<rect width="512" height="512" fill="white" transform="matrix(0 -1 1 0 0 512)"/>
+</clipPath>
+</defs>
+</svg>
