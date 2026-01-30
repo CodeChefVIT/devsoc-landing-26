@@ -47,7 +47,7 @@ const tracks: Track[] = [
     title: 'Tech for Good',
     description:
       'Use technology to address sustainability, healthcare, education, accessibility, and social justice and campus solutions.\nBuild inclusive, fair solutions with real, scalable impact.',
-    image: { mobile: '/images/tracks/SDGs.jpg' },
+    image: { desktop: '/images/tracks/box-67.svg', mobile: '/images/tracks/SDGs.jpg' },
   },
   { id: 8, type: 'spacer', transparent: true },
 

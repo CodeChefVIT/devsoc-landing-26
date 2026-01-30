@@ -50,6 +50,22 @@ export default function TrackContent({
       </div>
     );
   }
+  //fckin hell.
+  if (track.type === 'track' && track.image?.desktop) {
+    return (
+      <div className="relative w-full h-full">
+        <Image
+          src={track.image.desktop}
+          alt={track.title ?? 'Track'}
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 25vw, 12vw"
+          draggable="false"
+          loading="lazy"
+        />
+      </div>
+    );
+  }
 
   if (track.type === 'track') {
     const shouldShowDescription = Boolean(
