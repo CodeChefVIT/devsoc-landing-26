@@ -20,6 +20,7 @@ export default function TrackCarouselCard({ track }: { track: Track }) {
           className="object-cover"
           sizes="200px"
           draggable="false"
+          loading="lazy"
         />
       )}
 

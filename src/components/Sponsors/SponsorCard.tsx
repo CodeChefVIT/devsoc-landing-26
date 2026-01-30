@@ -38,8 +38,8 @@ const SponsorCard = ({
                 height={300}
                 alt="Logo"
                 className="object-contain w-full max-w-40 sm:max-w-48 md:max-w-44 lg:max-w-50 h-auto max-h-20 sm:max-h-24 md:max-h-20 lg:max-h-24"
+                draggable="false"
                 loading="lazy"
-                draggable={false}
               />
             </div>
 
@@ -66,6 +66,8 @@ const SponsorCard = ({
                     width={19}
                     height={16}
                     className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px absolute w-4.75 h-4 left-[calc(50%-19px/2+22.5px)] top-1"
+                    draggable="false"
+                    loading="lazy"
                   />
                 </div>
               </button>

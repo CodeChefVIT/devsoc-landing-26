@@ -13,6 +13,8 @@ export default function Speakers() {
             fill
             className="object-contain object-bottom opacity-50"
             alt="Speakers background art"
+            draggable="false"
+            loading="lazy"
           />
         </div>
       </div>

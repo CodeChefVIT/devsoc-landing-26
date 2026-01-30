@@ -85,6 +85,7 @@ export default function Hero() {
             decoding="async"
             fetchPriority="low"
             sizes="100vw"
+            draggable="false"
           />
         </div>
 

@@ -25,8 +25,8 @@ const SpeakerCard = ({
                 fill
                 alt={name}
                 className="object-cover"
-                loading="lazy"
                 draggable="false"
+                loading="lazy"
               />
             </div>
           </div>
@@ -64,6 +64,7 @@ const SpeakerCard = ({
                   alt="Arrow Right"
                   fill
                   className="object-contain"
+                  draggable="false"
                   loading="lazy"
                 />
               </div>
