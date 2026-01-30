@@ -21,7 +21,7 @@ export default function About() {
         height={1497}
         alt=""
         aria-hidden="true"
-        className="block lg:hidden pointer-events-none absolute top-[70%] left-[25%] -translate-x-1/2 -translate-y-1/2 z-0 w-[15vw]"
+        className="block lg:hidden pointer-events-none absolute top-[70%] left-[25%] -translate-x-1/2 -translate-y-1/2 -z-10 w-[15vw]"
         draggable="false"
         loading="lazy"
       />

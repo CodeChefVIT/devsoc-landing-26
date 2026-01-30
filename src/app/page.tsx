@@ -25,7 +25,7 @@ export default function Page() {
           imgUrl="/images/backgrounds/bg-about-sep-tracks.svg"
           width={375}
           height={96}
-          className="w-1/4 mx-auto md:ml-[25%] md:w-[25%] md:h-auto md:mx-0"
+          className="w-1/4 mx-auto md:ml-[25%] md:w-[25%] md:h-auto md:mx-0 hidden md:block"
         />
 
         <section id="tracks" className="relative">
@@ -49,7 +49,7 @@ export default function Page() {
           imgUrl="/images/backgrounds/bg-speakers-sep-timeline.svg"
           width={375}
           height={96}
-          className="w-1/4 mx-auto md:ml-[25%] md:w-[25%] md:h-auto md:mx-0"
+          className="w-1/4 mx-auto md:ml-[25%] md:w-[25%] md:h-auto md:mx-0 hidden md:block"
         />
 
         <div className="relative block lg:hidden">
