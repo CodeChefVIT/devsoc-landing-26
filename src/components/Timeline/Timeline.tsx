@@ -243,7 +243,13 @@ export default function Timeline() {
           events={timeline}
           onIndexChange={setCurrentEventIndex}
         />
-        <TimelineBottom currentEvent={currentEvent} onPrevious={prev} onNext={next} />
+        <TimelineBottom
+          currentEvent={currentEvent}
+          onPrevious={prev}
+          onNext={next}
+          hasPrevious={currentEventIndex > 0}
+          hasNext={currentEventIndex < timeline.length - 1}
+        />
       </div>
     </section>
   );
