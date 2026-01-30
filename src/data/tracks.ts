@@ -44,8 +44,11 @@ const tracks: Track[] = [
   //when i first created this code, only me and God knew how it worked, now only God knows.
   {
     id: 7,
-    type: 'decoration',
-    image: { desktop: '/images/tracks/box-67.svg' },
+    type: 'track',
+    title: 'Tech for Good',
+    description:
+      'Use technology to address sustainability, healthcare, education, accessibility, and social justice and campus solutions.\nBuild inclusive, fair solutions with real, scalable impact.',
+    image: { desktop: '/images/tracks/box-67.svg', mobile: '/images/tracks/SDGs.jpg' },
   },
   { id: 8, type: 'spacer', transparent: true },
 
@@ -54,10 +57,9 @@ const tracks: Track[] = [
   {
     id: 10,
     type: 'track',
-    title: 'Tech for Good ',
-    description:
-      'Use technology to address sustainability, healthcare, education, accessibility, and social justice and campus solutions.\nBuild inclusive, fair solutions with real, scalable impact.',
-    image: { mobile: '/images/tracks/SDGs.jpg' },
+    title: 'Digital Economy',
+    description: 'Innovate within the digital economy, including fintech solutions.',
+    image: { mobile: '/images/tracks/track-5.png' },
   },
   { id: 11, type: 'decoration', image: { desktop: '/images/tracks/box-11.svg' } },
   {
