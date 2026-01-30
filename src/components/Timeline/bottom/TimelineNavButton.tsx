@@ -115,12 +115,15 @@ export default function TimelineNavButton({
     <button
       disabled={disabled}
       aria-disabled={disabled}
-      onMouseDown={() => {
+      onPointerDown={() => {
         if (disabled) return;
         setIsHolding(true);
+        if (holdTimeoutRef.current) {
+          window.clearTimeout(holdTimeoutRef.current);
+        }
         holdTimeoutRef.current = window.setTimeout(startAutoplay, 300);
       }}
-      onMouseUp={() => {
+      onPointerUp={() => {
         if (disabled) return;
         if (holdTimeoutRef.current) {
           window.clearTimeout(holdTimeoutRef.current);
@@ -133,50 +136,26 @@ export default function TimelineNavButton({
             window.setTimeout(() => setShowHoldHint(false), 900);
           }
         } else {
-          stopAutoplay();
+          // pointer up after autoplay hold
+          if (isAutoplayingRef.current) stopAutoplay();
         }
-        setIsHolding(false);
-      }}
-      onMouseLeave={() => {
-        if (holdTimeoutRef.current) {
-          window.clearTimeout(holdTimeoutRef.current);
-          holdTimeoutRef.current = null;
-        }
-        stopAutoplay();
-        setIsHolding(false);
-      }}
-      onPointerUp={() => {
-        if (disabled) return;
-        // stop autoplay immediately on pointer release
-        if (isAutoplayingRef.current) stopAutoplay();
-        // don't clear holdTimeout here — let mouse/touch handlers detect quick taps
         setIsHolding(false);
       }}
       onPointerCancel={() => {
         if (disabled) return;
-        if (isAutoplayingRef.current) stopAutoplay();
-        setIsHolding(false);
-      }}
-      onTouchStart={() => {
-        if (disabled) return;
-        setIsHolding(true);
-        holdTimeoutRef.current = window.setTimeout(startAutoplay, 300);
-      }}
-      onTouchEnd={() => {
-        if (disabled) return;
         if (holdTimeoutRef.current) {
           window.clearTimeout(holdTimeoutRef.current);
           holdTimeoutRef.current = null;
-          onStep();
-          // show hint on touch as well
-          if (shouldShowHintOnTap()) {
-            writeHintInfo(false);
-            setShowHoldHint(true);
-            window.setTimeout(() => setShowHoldHint(false), 900);
-          }
-        } else {
-          stopAutoplay();
         }
+        if (isAutoplayingRef.current) stopAutoplay();
+        setIsHolding(false);
+      }}
+      onPointerLeave={() => {
+        if (holdTimeoutRef.current) {
+          window.clearTimeout(holdTimeoutRef.current);
+          holdTimeoutRef.current = null;
+        }
+        if (isAutoplayingRef.current) stopAutoplay();
         setIsHolding(false);
       }}
       className={
