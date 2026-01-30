@@ -86,12 +86,12 @@ export default function TimelineMiddle({
   }, []);
 
   return (
-    <div className="relative w-full h-[28vh] overflow-hidden mb-6 shrink-0">
+    <div className="relative w-full h-[28vh] mb-6 shrink-0">
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl sm:text-12xl md:text-[12vh] lg:text-[40vh] leading-none text-white/10 text-center whitespace-nowrap pointer-events-none font-the-sans-mono select-none">
         {currentEvent.time}
       </div>
 
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full">
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full overflow-hidden">
         <Swiper
           modules={[Mousewheel]}
           onSwiper={sw => {
