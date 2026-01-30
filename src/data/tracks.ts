@@ -16,16 +16,18 @@ const tracks: Track[] = [
   {
     id: 2,
     type: 'track',
-    title: 'AI Track',
-    description: 'Explore artificial intelligence research and build intelligent systems.',
+    title: 'Hotfoot AI Challenges\n(Sponsor Track)',
+    description:
+      'Challenge 1: Financial Audio Intelligence - Process unstructured voice calls into structured financial insights via AI.\n\nChallenge 2: Financial Document Intelligence - Extract data from 200+ document formats beyond rule-based OCR. \n\nSpecial prizes for winners using Backboard.io APIs.',
     image: { mobile: '/images/tracks/track-1.png' },
   },
   { id: 3, type: 'decoration', image: { desktop: '/images/tracks/box-3.svg' } },
   {
     id: 4,
     type: 'track',
-    title: 'Media & Entertainment',
-    description: 'Create immersive media and entertainment experiences.',
+    title: 'Digital Economy',
+    description:
+      'Build smarter financial systems, Web3 decentralization via blockchain, cybersecurity for privacy, secure identities, innovative payments, AI finance tools and e-commerce for creators and businesses.',
     image: { mobile: '/images/tracks/track-2.png' },
   },
 
@@ -33,16 +35,18 @@ const tracks: Track[] = [
   {
     id: 5,
     type: 'track',
-    title: 'Tech for Good',
-    description: 'Develop technology solutions that generate positive social impact.',
+    title: 'Media & Entertainment',
+    description:
+      'Reimagine storytelling, gaming, and creative expression through technology, blending AR/VR, interactivity, and the evolving creator economy.',
     image: { mobile: '/images/tracks/track-3.png' },
   },
   { id: 6, type: 'decoration', image: { desktop: '/images/tracks/box-6.svg' } },
   {
     id: 7,
     type: 'track',
-    title: 'Web3 & Digital Security',
-    description: 'Build decentralized applications and strengthen digital security.',
+    title: 'Tech for Good',
+    description:
+      'Use technology to address sustainability, healthcare, education, accessibility, and social justice and campus solutions.\nBuild inclusive, fair solutions with real, scalable impact.',
     image: { mobile: '/images/tracks/track-4.png' },
   },
   { id: 8, type: 'spacer', transparent: true },
@@ -52,8 +56,8 @@ const tracks: Track[] = [
   {
     id: 10,
     type: 'track',
-    title: 'Digital Economy',
-    description: 'Innovate within the digital economy, including fintech solutions.',
+    title: 'X',
+    description: 'X',
     image: { mobile: '/images/tracks/track-5.png' },
   },
   { id: 11, type: 'decoration', image: { desktop: '/images/tracks/box-11.svg' } },
@@ -61,7 +65,8 @@ const tracks: Track[] = [
     id: 12,
     type: 'track',
     title: 'Open Innovation',
-    description: 'Foster open innovation and collaborative problem solving.',
+    description:
+      'Explore innovative ideas across domains. Blend disciplines and explore the unexpected side of tech.',
     image: { mobile: '/images/tracks/track-6.png' },
   },
 ];
