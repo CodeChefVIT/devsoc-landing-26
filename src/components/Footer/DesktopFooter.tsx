@@ -1,4 +1,4 @@
-import { LuArrowUpRight } from 'react-icons/lu';
+import Image from 'next/image';
 import { FaRegHeart } from 'react-icons/fa6';
 import { ScrollButton } from '@/components/ui';
 import { footerLinks, socialLinks } from '@/data';
@@ -8,8 +8,17 @@ export default function DesktopFooter() {
     <div className="hidden md:block relative max-w-7xl mx-auto px-8 py-12 font-lato font-semibold">
       <div className="flex items-center justify-between text-sm text-gray-300 mb-12">
         <ScrollButton href="#register" className="hover:text-white transition">
-          Register Now
-          <LuArrowUpRight className="inline-block ml-1 w-4 h-4" />
+          <span className="flex flex-row gap-2">
+            Register Now
+            <Image
+              src="/images/icons/arrow-up-right.svg"
+              alt="Arrow Right"
+              width={19}
+              height={16}
+              className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px w-auto h-3 self-center"
+              loading="lazy"
+            />
+          </span>
         </ScrollButton>
 
         <nav className="flex gap-8">
