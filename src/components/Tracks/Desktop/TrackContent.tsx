@@ -50,7 +50,6 @@ export default function TrackContent({
       </div>
     );
   }
-  //fckin hell.
   if (track.type === 'track' && track.image?.desktop) {
     return (
       <div className="relative w-full h-full">
