@@ -80,17 +80,7 @@ const timeline: TimelineItem[] = [
     description:
       'Teams continue building, integrating APIs, training models, and polishing core functionality.',
   },
-  {
-    id: 'd2-2100',
-    day: 2,
-    date: '2026-02-09',
-    time: '21:00',
-    datetime: '2026-02-09T21:00',
-    title: 'Hacking Session',
-    subtitle: 'Night sprint',
-    description:
-      'Late night coding begins. Teams focus on core features, debugging, and preparing for upcoming evaluations.',
-  },
+
   {
     id: 'd2-2300',
     day: 2,
@@ -115,23 +105,14 @@ const timeline: TimelineItem[] = [
     description:
       'Overnight hacking continues as teams work towards feature completion and stability.',
   },
-  {
-    id: 'd3-0900',
-    day: 3,
-    date: '2026-02-10',
-    time: '09:00',
-    datetime: '2026-02-10T09:00',
-    title: 'Hacking Session',
-    subtitle: 'Building Further',
-    description: 'Resuming and refining pojects according to progress made overnight.',
-  },
+
   {
     id: 'd3-1000',
     day: 3,
     date: '2026-02-10',
     time: '10:00',
     datetime: '2026-02-10T010:00',
-    title: 'Panel Discussion',
+    title: 'Speaker Session',
     subtitle: 'Learn from experts',
     description:
       'A technical session by industry professionals covering tools, trends, or best practices relevant to hackathon projects.',
