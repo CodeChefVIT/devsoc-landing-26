@@ -20,7 +20,14 @@ const SpeakerCard = ({
         <div className="relative w-32 h-32 sm:w-40 sm:h-40 shrink-0">
           <div className="absolute inset-0 rounded-full bg-linear-to-tr from-white/20 to-transparent p-1">
             <div className="w-full h-full rounded-full overflow-hidden relative bg-[#0A0A0A]">
-              <Image src={imageSrc} fill alt={name} className="object-cover" loading="lazy" />
+              <Image
+                src={imageSrc}
+                fill
+                alt={name}
+                className="object-cover"
+                loading="lazy"
+                draggable="false"
+              />
             </div>
           </div>
         </div>
@@ -57,6 +64,7 @@ const SpeakerCard = ({
                   alt="Arrow Right"
                   fill
                   className="object-contain"
+                  loading="lazy"
                 />
               </div>
             </div>
