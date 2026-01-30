@@ -1,4 +1,4 @@
-import { LuArrowUpRight } from 'react-icons/lu';
+import Image from 'next/image';
 import { ScrollButton } from '@/components/ui';
 import { footerLinks, socialLinks } from '@/data';
 
@@ -48,7 +48,15 @@ export default function MobileFooter() {
           href="#register"
           className="text-md leading-4 font-semibold font-lato hover:text-gray-300 transition flex items-center gap-2 px-3 py-2 rounded-md"
         >
-          Register Now <LuArrowUpRight className="w-4 h-4" />
+          Register Now
+          <Image
+            src="/images/icons/arrow-up-right.svg"
+            alt="Arrow Right"
+            width={19}
+            height={16}
+            className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px w-auto h-3 self-center"
+            loading="lazy"
+          />
         </ScrollButton>
         <div className="flex items-center gap-5">
           {socialLinks.map(({ href, Icon, label }) => (
