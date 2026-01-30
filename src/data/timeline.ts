@@ -47,17 +47,7 @@ const timeline: TimelineItem[] = [
     description:
       'Initial evaluation round where mentors review ideas, validate problem statements, and provide feedback on technical direction.',
   },
-  {
-    id: 'd2-0600',
-    day: 2,
-    date: '2026-02-09',
-    time: '06:00',
-    datetime: '2026-02-09T06:00',
-    title: 'Breakfast Break',
-    subtitle: 'Recharge & refuel',
-    description:
-      'Participants take a short break to freshen up and grab breakfast before jumping back into development.',
-  },
+
   {
     id: 'd2-0900',
     day: 2,
@@ -75,22 +65,12 @@ const timeline: TimelineItem[] = [
     date: '2026-02-09',
     time: '11:00',
     datetime: '2026-02-09T11:00',
-    title: 'Informative Tech Session',
+    title: 'Panel Discussion',
     subtitle: 'Learn from experts',
     description:
       'A technical session by industry professionals covering tools, trends, or best practices relevant to hackathon projects.',
   },
-  {
-    id: 'd2-1200',
-    day: 2,
-    date: '2026-02-09',
-    time: '12:00',
-    datetime: '2026-02-09T12:00',
-    title: 'Lunch Break',
-    subtitle: 'Midday reset',
-    description:
-      'A short break for lunch and to relax briefly, network, and prepare for the next long build stretch.',
-  },
+
   {
     id: 'd2-1400',
     day: 2,
@@ -102,17 +82,7 @@ const timeline: TimelineItem[] = [
     description:
       'Teams continue building, integrating APIs, training models, and polishing core functionality.',
   },
-  {
-    id: 'd2-1900',
-    day: 2,
-    date: '2026-02-09',
-    time: '19:00',
-    datetime: '2026-02-09T19:00',
-    title: 'Dinner Break',
-    subtitle: 'Evening recharge',
-    description:
-      'Dinner break to relax, network with fellow hackers, and mentally reset before the night sprint.',
-  },
+
   {
     id: 'd2-2100',
     day: 2,
@@ -148,17 +118,7 @@ const timeline: TimelineItem[] = [
     description:
       'Overnight hacking continues as teams work towards feature completion and stability.',
   },
-  {
-    id: 'd3-0530',
-    day: 3,
-    date: '2026-02-10',
-    time: '06:00',
-    datetime: '2026-02-10T06:00',
-    title: 'Breakfast Break',
-    subtitle: 'Morning refresh',
-    description:
-      'Breakfast break before teams regroup and prepare for the last major development window.',
-  },
+
   {
     id: 'd3-0900',
     day: 3,
@@ -166,18 +126,29 @@ const timeline: TimelineItem[] = [
     time: '09:00',
     datetime: '2026-02-10T09:00',
     title: 'Hacking Session',
-    subtitle: 'Polish & finalize',
-    description: 'Teams focus on UI polish, documentation, demos, and final integrations.',
+    subtitle: 'Building Further',
+    description: 'Resuming and refining pojects according to progress made overnight.',
   },
   {
-    id: 'd3-1200',
+    id: 'd3-1000',
     day: 3,
     date: '2026-02-10',
-    time: '12:00',
-    datetime: '2026-02-10T12:00',
-    title: 'Lunch Break',
-    subtitle: 'Quick recharge',
-    description: 'Lunch before heading into the final evaluation phase.',
+    time: '10:00',
+    datetime: '2026-02-10T010:00',
+    title: 'Panel Discussion',
+    subtitle: 'Learn from experts',
+    description:
+      'A technical session by industry professionals covering tools, trends, or best practices relevant to hackathon projects.',
+  },
+  {
+    id: 'd3-1100',
+    day: 3,
+    date: '2026-02-10',
+    time: '11:00',
+    datetime: '2026-02-10T011:00',
+    title: 'Hacking Session',
+    subtitle: 'Polish & finalize',
+    description: 'Teams focus on UI polish, documentation, demos, and final integrations.',
   },
   {
     id: 'd3-1400',

@@ -35,7 +35,7 @@ export const getAnimationVariant = (
 
 export const getExpandedAnimationProps = (index: number): TargetAndTransition => {
   return {
-    scale: 4,
+    scale: 2.5,
     x: `${(1.5 - (index % COLUMNS)) * 100}%`,
     y: `${(1 - Math.floor(index / COLUMNS)) * 100}%`,
   };

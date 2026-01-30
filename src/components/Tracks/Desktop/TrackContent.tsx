@@ -58,8 +58,14 @@ export default function TrackContent({
     );
 
     return (
-      <div className="w-full h-full bg-[#161616] flex flex-col justify-center items-center p-4 gap-3">
-        <span className={isExpanded ? 'text-xs font-semibold' : 'text-base'}>{track.title}</span>
+      <div className="w-full h-full bg-[#161616] flex flex-col justify-center items-center p-2 gap-2">
+        <span
+          className={
+            isExpanded ? 'text-[10px] font-semibold mt-2 text-center' : 'text-s text-center'
+          }
+        >
+          {track.title}
+        </span>
 
         <AnimatePresence mode="wait">
           {shouldShowDescription && (
@@ -81,7 +87,11 @@ export default function TrackContent({
               }
               exit={{ opacity: 0, y: 6 }}
               transition={{ duration: 0.26, ease: 'easeInOut' }}
-              className="text-[8px] text-gray-400 text-center max-w-xs leading-relaxed"
+              className={`text-gray-400 leading-tight whitespace-pre-line ${
+                track.id === 1 && isExpanded
+                  ? 'text-[6.5px] text-left max-w-[140px] p-0 m-0'
+                  : 'text-[6.5px] text-left max-w-xs'
+              }`}
             >
               {track.description}
             </motion.p>

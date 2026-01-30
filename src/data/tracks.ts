@@ -16,16 +16,18 @@ const tracks: Track[] = [
   {
     id: 2,
     type: 'track',
-    title: 'Track 1',
-    description: 'Build innovative solutions and showcase your creativity',
+    title: 'Hotfoot AI Challenges\n(Sponsor Track)',
+    description:
+      'Challenge 1: Financial Audio Intelligence - Process unstructured voice calls into structured financial insights via AI.\n\nChallenge 2: Financial Document Intelligence - Extract data from 200+ document formats beyond rule-based OCR. \n\nSpecial prizes for winners using Backboard.io APIs.',
     image: { mobile: '/images/tracks/track-1.png' },
   },
   { id: 3, type: 'decoration', image: { desktop: '/images/tracks/box-3.svg' } },
   {
     id: 4,
     type: 'track',
-    title: 'Track 2',
-    description: 'Develop cutting-edge applications with modern technologies',
+    title: 'Digital Economy',
+    description:
+      'Build smarter financial systems, Web3 decentralization via blockchain, cybersecurity for privacy, secure identities, innovative payments, AI finance tools and e-commerce for creators and businesses.',
     image: { mobile: '/images/tracks/track-2.png' },
   },
 
@@ -33,16 +35,18 @@ const tracks: Track[] = [
   {
     id: 5,
     type: 'track',
-    title: 'Track 3',
-    description: 'Create impactful projects that solve real-world problems',
+    title: 'Media & Entertainment',
+    description:
+      'Reimagine storytelling, gaming, and creative expression through technology, blending AR/VR, interactivity, and the evolving creator economy.',
     image: { mobile: '/images/tracks/track-3.png' },
   },
   { id: 6, type: 'decoration', image: { desktop: '/images/tracks/box-6.svg' } },
   {
     id: 7,
     type: 'track',
-    title: 'Track 4',
-    description: 'Design and implement scalable software solutions',
+    title: 'Tech for Good',
+    description:
+      'Use technology to address sustainability, healthcare, education, accessibility, and social justice and campus solutions.\nBuild inclusive, fair solutions with real, scalable impact.',
     image: { mobile: '/images/tracks/track-4.png' },
   },
   { id: 8, type: 'spacer', transparent: true },
@@ -52,16 +56,17 @@ const tracks: Track[] = [
   {
     id: 10,
     type: 'track',
-    title: 'Track 5',
-    description: 'Explore emerging technologies and push boundaries',
+    title: 'X',
+    description: 'X',
     image: { mobile: '/images/tracks/track-5.png' },
   },
   { id: 11, type: 'decoration', image: { desktop: '/images/tracks/box-11.svg' } },
   {
     id: 12,
     type: 'track',
-    title: 'Track 6',
-    description: 'Transform ideas into working prototypes and beyond',
+    title: 'Open Innovation',
+    description:
+      'Explore innovative ideas across domains. Blend disciplines and explore the unexpected side of tech.',
     image: { mobile: '/images/tracks/track-6.png' },
   },
 ];
