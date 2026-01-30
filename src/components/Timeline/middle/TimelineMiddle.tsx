@@ -111,9 +111,12 @@ export default function TimelineMiddle({
                       isCurrentEvent ? 'w-14 h-14 sm:w-20 sm:h-20' : 'w-8 h-8 sm:w-10 sm:h-10'
                     }`}
                   >
-                    {isCurrentEvent && (
-                      <div className="absolute inset-0 rounded-full border border-white" />
-                    )}
+                    <div
+                      className={`absolute inset-0 rounded-full border border-white pointer-events-none transform transition-transform ease-out ${
+                        isCurrentEvent ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
+                      }`}
+                      style={{ transitionDuration: '650ms', transitionDelay: '350ms' }}
+                    />
 
                     <button
                       type="button"
