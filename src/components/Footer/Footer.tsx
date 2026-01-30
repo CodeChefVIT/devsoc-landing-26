@@ -12,6 +12,7 @@ export default function Footer() {
             alt="Footer background"
             fill
             className="object-cover object-right"
+            draggable="false"
             loading="lazy"
           />
         </div>

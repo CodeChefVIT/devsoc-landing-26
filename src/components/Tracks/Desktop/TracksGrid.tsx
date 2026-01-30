@@ -29,7 +29,8 @@ export default function TracksGrid({ tracks }: { tracks: Track[] }) {
           alt="Tracks background"
           fill
           className="object-cover -z-10"
-          priority
+          draggable="false"
+          loading="lazy"
         />
 
         <div className="relative w-full h-full">

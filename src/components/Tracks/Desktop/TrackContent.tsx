@@ -59,7 +59,9 @@ export default function TrackContent({
 
     return (
       <div className="w-full h-full bg-[#161616] flex flex-col justify-center items-center p-4 gap-3">
-        <span className={isExpanded ? 'text-xs font-semibold' : 'text-base'}>{track.title}</span>
+        <span className={isExpanded ? 'text-xs font-semibold' : 'text-base text-center'}>
+          {track.title}
+        </span>
 
         <AnimatePresence mode="wait">
           {shouldShowDescription && (

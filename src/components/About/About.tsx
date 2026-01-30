@@ -11,6 +11,8 @@ export default function About() {
         alt=""
         aria-hidden="true"
         className="block pointer-events-none absolute -top-16 lg:top-1/2 left-[75%] -translate-x-1/2 lg:-translate-y-1/2 z-0 w-[15vw]"
+        draggable="false"
+        loading="lazy"
       />
 
       <Image
@@ -19,7 +21,9 @@ export default function About() {
         height={1497}
         alt=""
         aria-hidden="true"
-        className="block lg:hidden pointer-events-none absolute top-[70%] left-[25%] -translate-x-1/2 -translate-y-1/2 z-0 w-[15vw]"
+        className="block lg:hidden pointer-events-none absolute top-[70%] left-[25%] -translate-x-1/2 -translate-y-1/2 -z-10 w-[15vw]"
+        draggable="false"
+        loading="lazy"
       />
 
       <SectionHeading
@@ -41,6 +45,7 @@ export default function About() {
               height={116}
               className="w-full max-w-40 sm:max-w-55 h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105"
               draggable="false"
+              loading="lazy"
             />
             <p className="max-w-[20rem] sm:max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white">
               DEVSOC’26 ignites innovation in its seventh edition blending AI and the metaverse to
@@ -55,6 +60,8 @@ export default function About() {
               width={213}
               height={145}
               className="w-full max-w-50 sm:max-w-62.5 h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ml-auto transition-transform duration-300 ease-out hover:scale-105"
+              draggable="false"
+              loading="lazy"
             />
             <p className="max-w-[20rem] sm:max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white ml-auto">
               Bringing together diverse minds, we go beyond coding to build bold solutions that
@@ -68,6 +75,8 @@ export default function About() {
             width={164}
             height={105}
             className="w-full max-w-35 sm:max-w-47.5 h-auto rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out hover:scale-105"
+            draggable="false"
+            loading="lazy"
           />
         </div>
 
@@ -81,8 +90,8 @@ export default function About() {
                   width={512}
                   height={318}
                   className="w-full max-w-75 h-auto object-cover"
-                  priority
                   draggable="false"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -96,6 +105,7 @@ export default function About() {
                   height={425}
                   className="w-full h-auto object-cover"
                   draggable="false"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -109,14 +119,13 @@ export default function About() {
                   height={286}
                   className="w-full max-w-70 h-auto object-cover"
                   draggable="false"
+                  loading="lazy"
                 />
               </div>
             </div>
           </div>
 
           <div className="flex flex-col items-end text-right justify-end lg:pl-[22%] relative z-10 h-140">
-            {/* large-screen heading moved to absolute 75% placement */}
-
             <div
               className="
                   w-160

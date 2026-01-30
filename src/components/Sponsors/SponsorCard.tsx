@@ -12,13 +12,10 @@ const SponsorCard = ({
 }) => {
   const getLayoutStyle = () => {
     if (alignment === 'left') {
-      // For smaller card widths use half the card width to center the image
       return 'md:pl-[calc(20%-96px)] lg:pl-[calc(25%-120px)]';
     } else if (alignment === 'right') {
-      // Mirror the left offsets for right alignment
-      return 'md:pr-[calc(20%-96px)] lg:pr-[calc(25%-120px)]';
+      return 'md:pr-[calc(37.5%-96px)] lg:pr-[calc(37.5%-120px)]';
     } else {
-      // Left border aligned to the vertical guide (no image-centering offset)
       return 'md:pl-[20%] lg:pl-[25%]';
     }
   };
@@ -37,12 +34,12 @@ const SponsorCard = ({
             <div className="flex items-center justify-center flex-1 w-full px-4 sm:px-6 md:px-0">
               <Image
                 src={imageSrc}
-                width={150}
-                height={60}
+                width={300}
+                height={300}
                 alt="Logo"
-                className="object-contain w-full max-w-32 sm:max-w-36 md:max-w-34 lg:max-w-37.5 h-auto max-h-12 sm:max-h-14 md:max-h-12 lg:max-h-15"
+                className="object-contain w-full max-w-40 sm:max-w-48 md:max-w-44 lg:max-w-50 h-auto max-h-20 sm:max-h-24 md:max-h-20 lg:max-h-24"
+                draggable="false"
                 loading="lazy"
-                draggable={false}
               />
             </div>
 
@@ -69,6 +66,8 @@ const SponsorCard = ({
                     width={19}
                     height={16}
                     className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px absolute w-4.75 h-4 left-[calc(50%-19px/2+22.5px)] top-1"
+                    draggable="false"
+                    loading="lazy"
                   />
                 </div>
               </button>
@@ -77,12 +76,12 @@ const SponsorCard = ({
         </div>
 
         <div
-          className={`w-full max-w-sm sm:max-w-md md:w-70 lg:w-84.25 flex flex-col gap-4 text-center ${alignment === 'right' ? 'md:text-right' : 'md:text-left'}`}
+          className={`w-full max-w-sm sm:max-w-md md:w-70 lg:w-84.25 flex flex-col gap-4 text-center md:self-center ${alignment === 'right' ? 'md:text-right' : 'md:text-left'}`}
         >
           <h2 className="font-bold text-white font-lato text-lg sm:text-xl leading-tight sm:leading-6">
             {title}
           </h2>
-          <p className="font-bold text-[#ADAAF7] font-lato text-xs sm:text-sm leading-relaxed sm:leading-4.25">
+          <p className="font-bold text-[#ADAAF7] font-lato text-xs sm:text-sm leading-relaxed sm:leading-4.25 md:text-base md:leading-6">
             {description}
           </p>
         </div>

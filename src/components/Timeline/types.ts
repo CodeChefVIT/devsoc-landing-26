@@ -24,4 +24,6 @@ export type TimelineBottomProps = {
   currentEvent: TimelineItem;
   onPrevious: () => void;
   onNext: () => void;
+  hasPrevious?: boolean;
+  hasNext?: boolean;
 };

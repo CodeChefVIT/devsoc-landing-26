@@ -6,17 +6,6 @@ import SpeakerCard from './SpeakerCard';
 export default function Speakers() {
   return (
     <div className="relative w-full py-12 md:py-16">
-      <div className="absolute inset-0 pointer-events-none -z-10">
-        <div className="md:hidden absolute left-0 bottom-0 w-[50vw] h-full">
-          <Image
-            src="/images/backgrounds/bg-sponsors-art-phone.svg"
-            fill
-            className="object-contain object-bottom opacity-50"
-            alt="Speakers background art"
-          />
-        </div>
-      </div>
-
       <div className="relative container mx-auto px-4 sm:px-6">
         <SectionHeading title="Speakers" />
 

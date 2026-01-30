@@ -7,19 +7,21 @@ interface Sponsor {
 
 const sponsors: Sponsor[] = [
   {
-    name: 'Sponsor 1',
+    name: 'Hotfoot',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
-    logoUrl: '/images/sponsors/sponsor-1.avif',
-    websiteUrl: 'https://sponsor1.com',
+      'Hotfoot Technology Solutions is a FinTech & CreditTech company enabling end-to-end digital and automated lending through smart onboarding, decision automation, and seamless disbursements.',
+    logoUrl: '/images/sponsors/hotfoot.avif',
+    websiteUrl: 'https://hotfoot.co.in/',
   },
   {
-    name: 'Sponsor 2',
+    name: 'Backboard',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-    logoUrl: '/images/sponsors/sponsor-1.avif',
-    websiteUrl: 'https://sponsor2.com',
+      'Backboard provides a unified API for the entire AI stack, with built-in memory, RAG, and access to thousands of models.',
+    logoUrl: '/images/sponsors/backboard.avif',
+    websiteUrl: 'https://backboard.io/',
   },
+
+  /*
   {
     name: 'Sponsor 3',
     description:
@@ -27,6 +29,7 @@ const sponsors: Sponsor[] = [
     logoUrl: '/images/sponsors/sponsor-1.avif',
     websiteUrl: 'https://sponsor3.com',
   },
+  */
 ];
 
 export default sponsors;

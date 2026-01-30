@@ -20,8 +20,9 @@ export default function SectionBg({
           src={src}
           alt=""
           fill
-          priority
           className={`object-cover sm:object-fill scale-110 ${opacity}`}
+          draggable="false"
+          loading="lazy"
         />
       </div>
     </div>
