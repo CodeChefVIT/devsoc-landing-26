@@ -18,7 +18,7 @@ export default function TimelineMiddle({
     if (w < 480) return Math.round(w * 0.8);
     if (w < 768) return Math.round(w * 0.6);
     if (w < 1024) return Math.round(w * 0.45);
-    return Math.round(w * 0.4);
+    return Math.round(w * 0.28);
   };
 
   const [slideWidth, setSlideWidth] = useState(() =>
@@ -27,6 +27,11 @@ export default function TimelineMiddle({
   const [spaceBetween, setSpaceBetween] = useState<number>(40);
   const [isPhone, setIsPhone] = useState<boolean>(
     typeof window !== 'undefined' ? window.innerWidth < 768 : false
+  );
+  const [slideOffset, setSlideOffset] = useState<number>(() =>
+    typeof window !== 'undefined'
+      ? Math.max(0, Math.round(window.innerWidth * 0.2 - calc(window.innerWidth) / 2))
+      : 0
   );
 
   type SwiperExt = SwiperType & {
@@ -45,10 +50,13 @@ export default function TimelineMiddle({
       const phone = w < 768;
       setIsPhone(phone);
       if (desktop) {
-        const gap = Math.round(w * 0.8 - sw);
-        setSpaceBetween(Math.max(40, gap));
+        const desiredSpaceBetween = Math.round(w * 0.6 - sw);
+        setSpaceBetween(Math.max(16, desiredSpaceBetween));
+        const offset = Math.max(0, Math.round(w * 0.2 - sw / 2));
+        setSlideOffset(offset);
       } else {
         setSpaceBetween(40);
+        setSlideOffset(0);
       }
     };
 
@@ -93,6 +101,8 @@ export default function TimelineMiddle({
           onSlideChange={s => onIndexChange?.(s.activeIndex)}
           slidesPerView={'auto'}
           centeredSlides={isPhone}
+          slidesOffsetBefore={slideOffset}
+          slidesOffsetAfter={slideOffset}
           spaceBetween={spaceBetween}
           mousewheel={{ forceToAxis: true }}
           initialSlide={currentEventIndex}
