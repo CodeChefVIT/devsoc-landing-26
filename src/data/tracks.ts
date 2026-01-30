@@ -41,7 +41,6 @@ const tracks: Track[] = [
     image: { mobile: '/images/tracks/track2.avif' },
   },
   { id: 6, type: 'decoration', image: { desktop: '/images/tracks/box-6.svg' } },
-  //when i first created this code, only me and God knew how it worked, now only God knows.
   {
     id: 7,
     type: 'track',
