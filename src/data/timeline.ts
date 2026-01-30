@@ -20,9 +20,9 @@ const timeline: TimelineItem[] = [
     time: '22:00',
     datetime: '2026-02-08T22:00',
     title: 'Opening Ceremony',
-    subtitle: 'Kickoff & vision',
+    subtitle: 'Kick-off & vision',
     description:
-      'Introduction to DEVSOC, sponsor shoutouts, rules walkthrough, and inspiration from organizers and partners to set the tone for the hackathon.',
+      'Introduction to DEVSOC, sponsor shoutouts, rules walkthrough and an energizing kickoff to spark creativity and collaboration.',
   },
   {
     id: 'd1-2300',
@@ -32,7 +32,8 @@ const timeline: TimelineItem[] = [
     datetime: '2026-02-08T23:00',
     title: 'Hacking Begins',
     subtitle: 'Build mode ON',
-    description: 'Teams start ideating, designing, and coding.',
+    description:
+      'Teams dive into ideation, design, and development as they bring their ideas to life.',
   },
 
   // DAY 2
@@ -45,7 +46,7 @@ const timeline: TimelineItem[] = [
     title: 'Review 1',
     subtitle: 'Early progress check',
     description:
-      'Initial evaluation round where mentors review ideas, validate problem statements, and provide feedback on technical direction.',
+      'Initial evaluation round to validate problem statements and provide feedback on technical direction.',
   },
   {
     id: 'd2-0900',
@@ -56,7 +57,7 @@ const timeline: TimelineItem[] = [
     title: 'Hacking Session',
     subtitle: 'Deep work',
     description:
-      'Focused development time to implement features, refine designs, and push MVPs forward.',
+      'Focused build time to incorporate feedback, refine features and designs, and strengthen project foundations.',
   },
   {
     id: 'd2-1100',
@@ -65,9 +66,9 @@ const timeline: TimelineItem[] = [
     time: '11:00',
     datetime: '2026-02-09T11:00',
     title: 'Panel Discussion',
-    subtitle: 'Learn from experts',
+    subtitle: 'Learn from Google industry experts and gain real world insights.',
     description:
-      'A technical session by industry professionals covering tools, trends, or best practices relevant to hackathon projects.',
+      'A technical session by industry professionals covering tools, trends and best practices relevant to building projects.',
   },
   {
     id: 'd2-1400',
@@ -88,7 +89,7 @@ const timeline: TimelineItem[] = [
     time: '23:00',
     datetime: '2026-02-09T23:00',
     title: 'Engagement Activity',
-    subtitle: 'Fun & games',
+    subtitle: 'Time to unwind',
     description:
       'Light hearted engagement activities to boost morale, encourage networking, and refresh participants.',
   },
@@ -101,7 +102,7 @@ const timeline: TimelineItem[] = [
     time: '00:30',
     datetime: '2026-02-10T00:30',
     title: 'Hacking Session',
-    subtitle: 'Final build push',
+    subtitle: 'Focused development',
     description:
       'Overnight hacking continues as teams work towards feature completion and stability.',
   },
@@ -115,7 +116,7 @@ const timeline: TimelineItem[] = [
     title: 'Speaker Session',
     subtitle: 'Learn from experts',
     description:
-      'A technical session by industry professionals covering tools, trends, or best practices relevant to hackathon projects.',
+      'A word from our sponsors packed with industry insights, practical tools, and tips to level up your tech journey.',
   },
   {
     id: 'd3-1100',
@@ -136,7 +137,7 @@ const timeline: TimelineItem[] = [
     title: 'Review 2',
     subtitle: 'Pre-final evaluation',
     description:
-      'Second review round where judges assess progress, validate solutions, and shortlist teams for final pitching.',
+      'Second review round where judges assess progress and validate solutions to shortlist top teams.',
   },
   {
     id: 'd3-2000',
@@ -146,8 +147,7 @@ const timeline: TimelineItem[] = [
     datetime: '2026-02-10T20:00',
     title: 'Final Submission',
     subtitle: 'Code freeze',
-    description:
-      'All teams submit their projects. Hacking officially ends and participants disperse back to hostels.',
+    description: 'All teams submit their projects for evaluation.',
   },
 
   // DAY 4
@@ -169,9 +169,8 @@ const timeline: TimelineItem[] = [
     time: '12:00',
     datetime: '2026-02-11T12:00',
     title: 'Closing Ceremony',
-    subtitle: 'Awards & wrap-up',
-    description:
-      'Winner announcements, prize distribution, partner acknowledgements, and official closing of DEVSOC 2026.',
+    subtitle: 'Wrap-up',
+    description: 'Partner acknowledgements, closing remarks and officially concluding DEVSOC 2026.',
   },
 ];
 
