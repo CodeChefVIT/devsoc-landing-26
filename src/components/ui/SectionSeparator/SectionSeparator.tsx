@@ -20,8 +20,8 @@ export default function SectionSeparator({
         height={height}
         className={`${className || ''}`}
         aria-hidden="true"
-        loading="lazy"
         draggable="false"
+        loading="lazy"
       />
     </div>
   );

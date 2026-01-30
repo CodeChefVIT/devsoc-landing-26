@@ -47,7 +47,6 @@ const timeline: TimelineItem[] = [
     description:
       'Initial evaluation round where mentors review ideas, validate problem statements, and provide feedback on technical direction.',
   },
-
   {
     id: 'd2-0900',
     day: 2,
@@ -70,7 +69,6 @@ const timeline: TimelineItem[] = [
     description:
       'A technical session by industry professionals covering tools, trends, or best practices relevant to hackathon projects.',
   },
-
   {
     id: 'd2-1400',
     day: 2,
@@ -82,7 +80,6 @@ const timeline: TimelineItem[] = [
     description:
       'Teams continue building, integrating APIs, training models, and polishing core functionality.',
   },
-
   {
     id: 'd2-2100',
     day: 2,
@@ -118,7 +115,6 @@ const timeline: TimelineItem[] = [
     description:
       'Overnight hacking continues as teams work towards feature completion and stability.',
   },
-
   {
     id: 'd3-0900',
     day: 3,

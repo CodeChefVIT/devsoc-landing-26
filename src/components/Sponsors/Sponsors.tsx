@@ -11,17 +11,19 @@ export default function Sponsors() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative h-[90vh]">
       <div className="relative">
         <Image
           src="/images/backgrounds/bg-sponsors-art.svg"
           fill
-          className="hidden md:block object-contain -z-10 scale-90 -translate-y-10"
+          className="hidden md:block object-contain -z-10 scale-125 translate-y-4"
           alt="Sponsors background art"
+          draggable="false"
+          loading="lazy"
         />
         <SectionHeading title="Sponsors" />
 
-        <div className="space-y-2 sm:space-y-3 md:space-y-4 w-full">
+        <div className="space-y-14 sm:space-y-3 md:space-y-4 w-full">
           {sponsors.map((sponsor, index) => (
             <SponsorCard
               key={sponsor.name}
@@ -33,12 +35,14 @@ export default function Sponsors() {
             />
           ))}
         </div>
-        <div className="md:hidden absolute left-0 bottom-0 w-[50vw] h-full -z-10">
+        <div className="md:hidden absolute left-0 -bottom-100 w-[50vw] h-[110%] -z-10">
           <Image
             src="/images/backgrounds/bg-sponsors-art-phone.svg"
             fill
-            className="object-contain object-bottom"
+            className="object-contain object-left"
             alt="Sponsors background art phone"
+            draggable="false"
+            loading="lazy"
           />
         </div>
       </div>
