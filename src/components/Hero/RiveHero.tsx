@@ -1,17 +1,18 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 
 type Props = {
   artboard: string;
   className?: string;
+  onLoad?: () => void;
 };
 
-export default function RiveHero({ artboard, className }: Props) {
+export default function RiveHero({ artboard, className, onLoad }: Props) {
   const layout = useMemo(() => new Layout({ fit: Fit.Contain, alignment: Alignment.Center }), []);
 
-  const { RiveComponent } = useRive({
+  const { rive, RiveComponent } = useRive({
     src: '/rive/Hero.riv',
     artboard,
     stateMachines: ['State Machine 1'],
@@ -20,6 +21,12 @@ export default function RiveHero({ artboard, className }: Props) {
     automaticallyHandleEvents: true,
     layout,
   });
+
+  useEffect(() => {
+    if (rive) {
+      onLoad?.();
+    }
+  }, [rive, onLoad]);
 
   return <RiveComponent className={className} />;
 }
