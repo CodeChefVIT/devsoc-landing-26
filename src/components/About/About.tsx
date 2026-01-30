@@ -90,7 +90,6 @@ export default function About() {
                   width={512}
                   height={318}
                   className="w-full max-w-75 h-auto object-cover"
-                  priority
                   draggable="false"
                   loading="lazy"
                 />
