@@ -10,7 +10,7 @@ export default function Discord() {
       className="flex items-center gap-2"
     >
       <FaDiscord className="w-6 h-6 md:w-6 md:h-6 lg:w-6 lg:h-8 object-contain" />
-      <span className="hidden lg:inline-block text-sm font-medium text-gray-200 whitespace-nowrap">
+      <span className="hidden lg:inline-block text-sm font-medium text-gray-200 whitespace-nowrap font-lato">
         Join Discord
       </span>
     </a>
