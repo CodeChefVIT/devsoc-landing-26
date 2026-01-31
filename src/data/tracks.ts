@@ -47,13 +47,19 @@ const tracks: Track[] = [
     title: 'Tech for Good',
     description:
       'Use technology to address sustainability, healthcare, education, accessibility, and social justice and campus solutions.\nBuild inclusive, fair solutions with real, scalable impact.',
-    image: { mobile: '/images/tracks/SDGs.jpg' },
+    image: { desktop: '/images/tracks/box-67.svg', mobile: '/images/tracks/SDGs.jpg' },
   },
   { id: 8, type: 'spacer', transparent: true },
 
   // Row 3
   { id: 9, type: 'decoration', image: { desktop: '/images/tracks/box-9.svg' } },
-  { id: 10, type: 'decoration', image: { desktop: '/images/tracks/box-10.svg' } },
+  {
+    id: 10,
+    type: 'track',
+    title: 'Digital Economy',
+    description: 'Innovate within the digital economy, including fintech solutions.',
+    image: { mobile: '/images/tracks/track-5.png' },
+  },
   { id: 11, type: 'decoration', image: { desktop: '/images/tracks/box-11.svg' } },
   {
     id: 12,

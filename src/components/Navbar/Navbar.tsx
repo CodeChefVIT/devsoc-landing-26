@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Glass } from '@/components/ui';
 import Logo from './Logo';
+import Discord from './Discord';
 import Timer from './Timer';
 import DesktopNav from './DesktopNav';
 import MobileMenu from './MobileMenu';
@@ -18,7 +19,10 @@ export default function Navbar() {
       <Glass className="shadow-4xl">
         <div className="relative rounded-2xl md:rounded-xl shadow-recess bg-[rgba(10,10,20,0.06)] backdrop-blur-xl overflow-hidden">
           <div className="hidden lg:flex items-center h-10 px-2 relative">
-            <Logo />
+            <div className="flex flex-row items-center gap-4 mr-auto">
+              <Logo />
+              <Discord />
+            </div>
             <div className="absolute left-1/2 -translate-x-1/2">
               <Timer />
             </div>
