@@ -16,7 +16,7 @@ const sponsors: Sponsor[] = [
   {
     name: 'Backboard IO',
     description:
-      'Backboard provides a unified API for the entire AI stack, with built-in memory, RAG, and access to thousands of models.',
+      'Backboard IO provides a unified API for the entire AI stack, with built-in memory, RAG, and access to thousands of models.',
     logoUrl: '/images/sponsors/backboard.avif',
     websiteUrl: 'https://backboard.io/',
   },
