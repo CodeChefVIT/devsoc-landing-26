@@ -16,7 +16,7 @@ export default function Sponsors() {
         <Image
           src="/images/backgrounds/bg-sponsors-art.svg"
           fill
-          className="hidden md:block object-contain -z-10 scale-125 translate-y-4"
+          className="hidden md:block object-contain -z-10 scale-125 translate-y-20"
           alt="Sponsors background art"
           draggable="false"
           loading="lazy"
