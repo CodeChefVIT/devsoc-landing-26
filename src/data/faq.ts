@@ -22,4 +22,8 @@ export const faqs: FAQ[] = [
     answer:
       'Yes! Mentors from different domains will be available throughout the hackathon to guide you, give feedback & help you overcome challenges.',
   },
+  {
+    question: 'Have any more queries?',
+    answer: 'If you have any further doubts, feel free to ask your doubts on our Discord server.',
+  },
 ];

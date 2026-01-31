@@ -104,7 +104,7 @@ export default function TrackContent({
               transition={{ duration: 0.26, ease: 'easeInOut' }}
               className={`text-gray-400 leading-tight whitespace-pre-line ${
                 track.id === 1 && isExpanded
-                  ? 'text-[6.5px] text-left max-w-[140px] p-0 m-0'
+                  ? 'text-[6.5px] text-left max-w-35 p-0 m-0'
                   : 'text-[6.5px] text-left max-w-xs'
               }`}
             >

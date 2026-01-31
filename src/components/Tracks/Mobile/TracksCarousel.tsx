@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useCallback, useEffect } from 'react';
+import { useRef, useCallback, useLayoutEffect } from 'react';
 import type { Track } from '@/data/tracks';
 import TrackCarouselCard from './TrackCarouselCard';
 
@@ -12,11 +12,25 @@ export default function TracksCarousel({ tracks }: { tracks: Track[] }) {
   const adjustingRef = useRef(false);
   const loopWidthRef = useRef(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    loopWidthRef.current = el.scrollWidth / 2;
-  }, []);
+
+    const update = () => {
+      loopWidthRef.current = el.scrollWidth / 2;
+
+      if (Math.abs(el.scrollLeft) < 1) {
+        el.scrollLeft = loopWidthRef.current;
+      }
+    };
+
+    update();
+
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+
+    return () => ro.disconnect();
+  }, [tracks]);
 
   const handleScroll = useCallback(() => {
     const el = scrollRef.current;

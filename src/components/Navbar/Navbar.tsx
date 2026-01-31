@@ -19,7 +19,7 @@ export default function Navbar() {
       <Glass className="shadow-4xl">
         <div className="relative rounded-2xl md:rounded-xl shadow-recess bg-[rgba(10,10,20,0.06)] backdrop-blur-xl overflow-hidden">
           <div className="hidden lg:flex items-center h-10 px-2 relative">
-            <div className="flex flex-row items-center gap-4 mr-auto">
+            <div className="flex flex-row items-center gap-6 mr-auto">
               <Logo />
               <Discord />
             </div>
