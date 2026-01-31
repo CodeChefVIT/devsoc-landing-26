@@ -9,20 +9,20 @@ const navigationItems: NavigationItem[] = [
     href: '#about',
   },
   {
-    label: 'Timeline',
-    href: '#timeline',
-  },
-  {
     label: 'Tracks',
     href: '#tracks',
   },
   {
-    label: 'Sponsors',
-    href: '#sponsors',
-  },
-  {
     label: 'Speakers',
     href: '#speaker',
+  },
+  {
+    label: 'Timeline',
+    href: '#timeline',
+  },
+  {
+    label: 'Sponsors',
+    href: '#sponsors',
   },
 ];
 export { navigationItems, type NavigationItem };
