@@ -7,10 +7,10 @@ export default function Discord() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Join our Discord"
-      className="flex items-center gap-2"
+      className="flex items-center gap-2 text-gray-200/80 hover:text-white/90 tranisition-colors duration-200"
     >
-      <FaDiscord className="w-6 h-6 md:w-6 md:h-6 lg:w-6 lg:h-8 object-contain" />
-      <span className="hidden lg:inline-block text-sm font-medium text-gray-200 whitespace-nowrap font-lato">
+      <FaDiscord className="w-6 h-6 md:w-6 md:h-6 lg:w-6 lg:h-8 object-contain " />
+      <span className="hidden lg:inline-block text-sm font-medium whitespace-nowrap font-lato">
         Join Discord
       </span>
     </a>
