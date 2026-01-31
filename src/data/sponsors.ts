@@ -7,14 +7,14 @@ interface Sponsor {
 
 const sponsors: Sponsor[] = [
   {
-    name: 'Hotfoot',
+    name: 'Hotfoot Technology Solutions',
     description:
       'Hotfoot Technology Solutions is a FinTech & CreditTech company enabling end-to-end digital and automated lending through smart onboarding, decision automation, and seamless disbursements.',
     logoUrl: '/images/sponsors/hotfoot.avif',
     websiteUrl: 'https://hotfoot.co.in/',
   },
   {
-    name: 'Backboard',
+    name: 'Backboard IO',
     description:
       'Backboard provides a unified API for the entire AI stack, with built-in memory, RAG, and access to thousands of models.',
     logoUrl: '/images/sponsors/backboard.avif',
