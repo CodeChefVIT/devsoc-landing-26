@@ -17,7 +17,10 @@ const SpeakerCard = ({
 }: SpeakerCardProps) => {
   return (
     <div className="w-full h-full flex justify-center">
-      <Glass contentClassName="relative flex flex-col items-center justify-between w-full h-full border border-white/25 p-6 lg:p-8 gap-6 transition-all duration-300">
+      <Glass
+        className="backdrop-blur-xs!"
+        contentClassName="relative flex flex-col items-center justify-between w-full h-full border border-white/25 p-6 lg:p-8 gap-6 transition-all duration-300"
+      >
         <div className="relative w-32 h-32 sm:w-40 sm:h-40 shrink-0">
           <div className="absolute inset-0 rounded-full bg-linear-to-tr from-white/20 to-transparent p-1">
             <div className="w-full h-full rounded-full overflow-hidden relative bg-[#0A0A0A]">
