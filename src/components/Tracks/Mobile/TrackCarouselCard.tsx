@@ -7,7 +7,7 @@ export default function TrackCarouselCard({ track }: { track: Track }) {
   if (!track) return null;
 
   return (
-    <div className="shrink-0 w-52 overflow-hidden snap-center">
+    <div className="shrink-0 w-52 overflow-hidden snap-center font-lato">
       <Glass className="h-full! rounded-3xl p-4 shadow-[0px_4px_12px_rgba(0,0,0,0.08)] flex flex-col justify-between overflow-hidden">
         <div className="flex flex-col h-full">
           <div className="flex-1 min-h-0 h-full flex flex-col gap-2.5">

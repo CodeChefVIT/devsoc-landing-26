@@ -8,7 +8,7 @@ export default function MobileFooter() {
   const secondRow = footerLinks.slice(half);
 
   return (
-    <div className="md:hidden relative w-full px-4 py-8">
+    <div className="md:hidden relative w-full px-4 py-8 font-lato">
       <div className="flex flex-col items-center gap-6 max-w-68.5 mx-auto">
         <h1
           className="text-[50px] font-normal font-the-sans-mono leading-11.5 text-transparent text-center w-full"
