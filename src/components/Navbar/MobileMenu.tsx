@@ -20,16 +20,16 @@ export default function MobileMenu() {
       <div className="relative flex items-center justify-between h-12 md:h-14 px-3 md:px-4">
         <div className="w-8" />
 
-        <Discord />
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
-          className="inline-flex items-center justify-center p-1.5 md:p-2 rounded-lg text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200"
+          className="inline-flex items-center justify-center p-1.5 md:p-2 rounded-lg text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200 gap-4"
           aria-controls="mobile-menu"
           aria-expanded={isOpen}
           whileTap={{ scale: 0.95 }}
         >
           <span className="sr-only">{isOpen ? 'Close menu' : 'Open menu'}</span>
+          <Discord />
           <motion.div
             className="h-5 w-5 md:h-6 md:w-6"
             animate={{ rotate: isOpen ? 90 : 0 }}
