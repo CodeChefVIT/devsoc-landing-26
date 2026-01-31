@@ -22,13 +22,15 @@ export default function Speakers() {
                 </div>
               </div>
             ) : (
-              <div key={index} className="w-full">
-                <SpeakerCard
-                  name={speaker.name}
-                  designation={speaker.designation}
-                  imageSrc={speaker.image}
-                  linkedinUrl={speaker.linkedin}
-                />
+              <div key={index} className="flex justify-center">
+                <div className="w-full md:w-105">
+                  <SpeakerCard
+                    name={speaker.name}
+                    designation={speaker.designation}
+                    imageSrc={speaker.image}
+                    linkedinUrl={speaker.linkedin}
+                  />
+                </div>
               </div>
             )
           )}
