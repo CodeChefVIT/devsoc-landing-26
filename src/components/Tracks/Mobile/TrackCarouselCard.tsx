@@ -1,36 +1,27 @@
 'use client';
 
-import Image from 'next/image';
 import type { Track } from '@/data/tracks';
+import Glass from '@/components/ui/Glass/Glass';
 
 export default function TrackCarouselCard({ track }: { track: Track }) {
-  if (!track) {
-    return null;
-  }
-
-  const backgroundImage = track.image?.mobile || track.image?.desktop;
+  if (!track) return null;
 
   return (
-    <div className="relative shrink-0 w-52 h-72 rounded-3xl overflow-hidden snap-center shadow-[0px_4px_12px_rgba(0,0,0,0.08)]">
-      {backgroundImage && (
-        <Image
-          src={backgroundImage}
-          alt={track.title ?? 'Track Image'}
-          fill
-          className="object-cover"
-          sizes="200px"
-          draggable="false"
-          loading="lazy"
-        />
-      )}
+    <div className="shrink-0 w-52 h-72 max-h-72 overflow-hidden snap-center">
+      <Glass className="h-full! rounded-3xl p-4 shadow-[0px_4px_12px_rgba(0,0,0,0.08)] flex flex-col justify-between overflow-hidden">
+        <div className="flex flex-col h-full">
+          <div className="flex-1 min-h-0 h-full">
+            <h3 className="text-white text-sm font-medium leading-tight mb-2">{track.title}</h3>
+            {track.description && (
+              <p className="text-white/80 text-xs leading-snug whitespace-pre-wrap overflow-hidden max-h-36">
+                {track.description}
+              </p>
+            )}
+          </div>
 
-      <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/64" />
-
-      <div className="absolute bottom-0 left-0 right-0 pb-4 flex items-end justify-center">
-        <h3 className="text-white text-center leading-tight font-the-sans-mono text-sm font-medium">
-          {track.title}
-        </h3>
-      </div>
+          <div className="self-end mt-auto text-xs text-white/70 text-right">Track</div>
+        </div>
+      </Glass>
     </div>
   );
 }
