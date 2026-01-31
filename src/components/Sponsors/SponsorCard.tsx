@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Glass } from '@/components/ui';
 
 type AlignmentType = 'left' | 'right' | 'full-left';
 
@@ -29,8 +30,9 @@ const SponsorCard = ({
       <div
         className={`flex flex-col ${getFlexDirection()} ${getLayoutStyle()} gap-6 md:gap-7 lg:gap-8 items-center md:items-start px-4 sm:px-6 md:px-0`}
       >
-        <div className="w-full max-w-xs sm:max-w-sm md:w-48 lg:w-60 shrink-0">
-          <div className="relative bg-[#0A0A0A] flex flex-col items-center justify-between w-full md:w-48 lg:w-60 min-h-50 sm:min-h-56 md:h-44 lg:h-50 border border-white/25 rounded-[20px] py-6 sm:py-8 md:py-0">
+        {/* Image Section  */}
+        <Glass className="px-16 md:px-0 w-fit!" contentClassName="w-fit">
+          <div className="relative flex flex-col items-center justify-between w-full md:w-48 lg:w-60 min-h-50 sm:min-h-56 md:h-44 lg:h-50 py-6 sm:py-8 md:py-0 max-w-xs sm:max-w-sm shrink-0">
             <div className="flex items-center justify-center flex-1 w-full px-4 sm:px-6 md:px-0">
               <Image
                 src={imageSrc}
@@ -73,8 +75,9 @@ const SponsorCard = ({
               </button>
             </Link>
           </div>
-        </div>
+        </Glass>
 
+        {/* Text Section  */}
         <div
           className={`w-full max-w-sm sm:max-w-md md:w-70 lg:w-84.25 flex flex-col gap-4 text-center md:self-center ${alignment === 'right' ? 'md:text-right' : 'md:text-left'}`}
         >
