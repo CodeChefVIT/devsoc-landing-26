@@ -22,7 +22,7 @@ const timeline: TimelineItem[] = [
     title: 'Opening Ceremony',
     subtitle: 'Kick-off & vision',
     description:
-      'Introduction to DEVSOC, sponsor shoutouts, rules walkthrough and an energizing kickoff to spark creativity and collaboration.',
+      'Introduction to DEVSOC, sponsor shoutouts, rules walkthrough and an energizing kick-off to spark creativity and collaboration.',
   },
   {
     id: 'd1-2300',
@@ -147,7 +147,8 @@ const timeline: TimelineItem[] = [
     datetime: '2026-02-10T20:00',
     title: 'Final Submission',
     subtitle: 'Code freeze',
-    description: 'All teams submit their projects for evaluation.',
+    description:
+      'All teams submit their projects for evaluation and disperse back to their hostels for the day.',
   },
 
   // DAY 4
