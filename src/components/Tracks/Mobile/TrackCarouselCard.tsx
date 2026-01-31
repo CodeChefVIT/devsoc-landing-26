@@ -11,7 +11,6 @@ export default function TrackCarouselCard({ track }: { track: Track }) {
       <Glass className="h-full! rounded-3xl p-4 shadow-[0px_4px_12px_rgba(0,0,0,0.08)] flex flex-col justify-between overflow-hidden">
         <div className="flex flex-col h-full">
           <div className="flex-1 min-h-0 h-full">
-            <h3 className="text-white text-sm font-medium leading-tight mb-2">{track.title}</h3>
             {track.description && (
               <p className="text-white/80 text-xs leading-snug whitespace-pre-wrap overflow-hidden max-h-36">
                 {track.description}
@@ -19,7 +18,7 @@ export default function TrackCarouselCard({ track }: { track: Track }) {
             )}
           </div>
 
-          <div className="self-end mt-auto text-xs text-white/70 text-right">Track</div>
+          <h3 className="text-white text-sm font-medium leading-tight mb-2">{track.title}</h3>
         </div>
       </Glass>
     </div>
