@@ -23,6 +23,10 @@ export const faqs: FAQ[] = [
       'Yes! Mentors from different domains will be available throughout the hackathon to guide you, give feedback & help you overcome challenges.',
   },
   {
+    question: 'Will participants get On-Duty?',
+    answer: ' Yes, participants will get OD throughout the event duration.',
+  },
+  {
     question: 'Have any more queries?',
     answer: 'If you have any further doubts, feel free to ask your doubts on our Discord server.',
   },
