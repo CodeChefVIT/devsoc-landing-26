@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollButton } from '@/components/ui';
 import { navigationItems } from '@/data/navigation';
+import Discord from './Discord';
 import Timer from './Timer';
 
 export default function MobileMenu() {
@@ -16,12 +17,10 @@ export default function MobileMenu() {
 
   return (
     <div className="lg:hidden w-full">
-      {/* Top Bar - Logo and Menu Button */}
       <div className="relative flex items-center justify-between h-12 md:h-14 px-3 md:px-4">
-        {/* Logo placeholder - actual logo rendered in Navbar */}
         <div className="w-8" />
 
-        {/* Menu Toggle Button */}
+        <Discord />
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
           type="button"

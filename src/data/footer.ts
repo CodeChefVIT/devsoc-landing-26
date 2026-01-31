@@ -30,7 +30,7 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-  { label: 'Discord', href: 'https://discord.gg/', Icon: FaDiscord },
+  { label: 'Discord', href: 'https://discord.gg/wrtHFfep6M', Icon: FaDiscord },
   { label: 'X', href: 'https://x.com/codechefvit/with_replies', Icon: FaXTwitter },
   { label: 'Instagram', href: 'https://www.instagram.com/codechefvit/?hl=en', Icon: FaInstagram },
   {
