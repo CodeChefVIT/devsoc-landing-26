@@ -8,7 +8,7 @@ interface Speaker {
 const speakers: Speaker[] = [
   {
     name: 'Naga Venkata Sahithya Alla',
-    designation: 'AI Data Scientist, Trust & Safety @ Google',
+    designation: 'AI Safety Data Scientist @ Google',
     linkedin: 'https://www.linkedin.com/in/sahithyaalla/',
     image: '/images/speakers/Naga-Venkata-Sahithya-Alla.avif',
   },
