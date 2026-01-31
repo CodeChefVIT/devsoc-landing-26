@@ -12,11 +12,11 @@ const SponsorCard = ({
 }) => {
   const getLayoutStyle = () => {
     if (alignment === 'left') {
-      return 'md:pl-[calc(20%-96px)] lg:pl-[calc(25%-120px)]';
+      return 'md:pl-[calc(25%-96px)] lg:pl-[calc(25%-120px)]';
     } else if (alignment === 'right') {
-      return 'md:pr-[calc(37.5%-96px)] lg:pr-[calc(37.5%-120px)]';
+      return 'md:pr-[calc(25%-96px)] lg:pr-[calc(25%-120px)]';
     } else {
-      return 'md:pl-[20%] lg:pl-[25%]';
+      return 'md:pl-[25%] lg:pl-[25%]';
     }
   };
 
