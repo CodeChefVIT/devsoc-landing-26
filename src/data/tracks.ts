@@ -18,7 +18,7 @@ const tracks: Track[] = [
     type: 'track',
     title: 'Hotfoot AI Challenges\n(Sponsor Track)',
     description:
-      'Challenge 1: Financial Audio Intelligence - Process unstructured voice calls into structured financial insights via AI.\n\nChallenge 2: Financial Document Intelligence - Extract data from 200+ document formats beyond rule-based OCR. \n\nSpecial prizes for winners using Backboard.io APIs.',
+      'Challenge 1: Financial Audio Intelligence - Process unstructured voice calls into structured financial insights via AI. \nChallenge 2: Financial Document Intelligence - Extract data from 200+ document formats beyond rule-based OCR. \nSpecial prizes for winners using Backboard.io APIs.',
     image: { mobile: '/images/tracks/track-1.avif' },
   },
   { id: 3, type: 'decoration', image: { desktop: '/images/tracks/box-3.svg' } },
