@@ -48,7 +48,7 @@ export default function About() {
               loading="lazy"
             />
             <p className="max-w-[20rem] sm:max-w-[24rem] font-lato text-base sm:text-lg leading-relaxed text-white">
-              DEVSOC’26 ignites innovation in its seventh edition blending AI and the metaverse to
+              DevSOC’26 ignites innovation in its seventh edition blending AI and the metaverse to
               solve real-world challenges.
             </p>
           </div>
