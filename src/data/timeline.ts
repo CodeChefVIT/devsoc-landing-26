@@ -22,7 +22,7 @@ const timeline: TimelineItem[] = [
     title: 'Opening Ceremony',
     subtitle: 'Kick-off & vision',
     description:
-      'Introduction to DEVSOC, sponsor shoutouts, rules walkthrough and an energizing kick-off to spark creativity and collaboration.',
+      'Introduction to DevSOC, sponsor shoutouts, rules walkthrough and an energizing kick-off to spark creativity and collaboration.',
   },
   {
     id: 'd1-2300',
@@ -66,7 +66,7 @@ const timeline: TimelineItem[] = [
     time: '11:00',
     datetime: '2026-02-09T11:00',
     title: 'Panel Discussion',
-    subtitle: 'Learn from Google industry experts and gain real world insights.',
+    subtitle: 'Learn from Google industry experts and gain real world insights',
     description:
       'A technical session by industry professionals covering tools, trends and best practices relevant to building projects.',
   },
@@ -171,7 +171,7 @@ const timeline: TimelineItem[] = [
     datetime: '2026-02-11T12:00',
     title: 'Closing Ceremony',
     subtitle: 'Wrap-up',
-    description: 'Partner acknowledgements, closing remarks and officially concluding DEVSOC 2026.',
+    description: 'Partner acknowledgements, closing remarks and officially concluding DevSOC 2026.',
   },
 ];
 
