@@ -13,11 +13,9 @@ import { DecorativeBackground, SectionBg, SectionSeparator, LazyLoad } from '@/c
 export default function Page() {
   return (
     <main className="relative flex flex-col">
-      {/* Hero loads immediately with high priority */}
       <Hero />
 
       <DecorativeBackground>
-        {/* About section - lazy load */}
         <LazyLoad fallback={<div className="min-h-screen" />}>
           <section id="about" className="relative">
             <SectionBg src="/images/backgrounds/bg-about.svg" />
@@ -34,7 +32,6 @@ export default function Page() {
           />
         </LazyLoad>
 
-        {/* Tracks section - lazy load */}
         <LazyLoad fallback={<div className="min-h-screen" />}>
           <section id="tracks" className="relative">
             <SectionBg src="/images/backgrounds/bg-tracks.svg" />
@@ -51,7 +48,6 @@ export default function Page() {
           />
         </LazyLoad>
 
-        {/* Speakers section - lazy load */}
         <LazyLoad fallback={<div className="min-h-screen" />}>
           <section id="speaker" className="relative">
             <SectionBg src="/images/backgrounds/bg-sponsors.svg" />
@@ -87,14 +83,12 @@ export default function Page() {
           />
         </div>
 
-        {/* Timeline section - lazy load */}
         <LazyLoad fallback={<div className="min-h-screen" />}>
           <section id="timeline" className="relative">
             <Timeline />
           </section>
         </LazyLoad>
 
-        {/* Sponsors section - lazy load */}
         <LazyLoad fallback={<div className="min-h-screen" />}>
           <section id="sponsors" className="relative">
             <SectionBg src="/images/backgrounds/bg-sponsors.svg" />
@@ -111,7 +105,6 @@ export default function Page() {
           />
         </LazyLoad>
 
-        {/* FAQ section - lazy load */}
         <LazyLoad fallback={<div className="min-h-screen" />}>
           <section id="faq" className="relative">
             <SectionBg src="/images/backgrounds/bg-faq.svg" opacity="opacity-90" fullWidth />

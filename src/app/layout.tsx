@@ -53,7 +53,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preload hero critical assets */}
         <link rel="preload" href="/rive/Hero.riv" as="fetch" crossOrigin="anonymous" />
         <link rel="preload" href="/images/hero/hero-placeholder.avif" as="image" />
         <link rel="preload" href="/images/hero/hero-placeholder-phone.avif" as="image" />

@@ -38,7 +38,6 @@ export default function Hero() {
         ref={containerRef}
         className="relative w-full h-full flex items-center justify-center overflow-hidden"
       >
-        {/* Placeholder with lower priority loads first */}
         <div
           className={`absolute inset-0 transition-opacity duration-700 ease-out pointer-events-none bg-[#0a0a0a] ${
             isRiveReady ? 'opacity-0' : 'opacity-100'
@@ -57,10 +56,10 @@ export default function Hero() {
             priority
             sizes="100vw"
             draggable="false"
+            preload
           />
         </div>
 
-        {/* Rive animation - high priority */}
         <div
           className={`absolute inset-0 transition-opacity duration-700 ease-out ${isRiveReady ? 'opacity-100' : 'opacity-0'}`}
         >
