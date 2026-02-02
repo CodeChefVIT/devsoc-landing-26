@@ -52,11 +52,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preload" href="/rive/Hero.riv" as="fetch" crossOrigin="anonymous" />
-        <link rel="preload" href="/images/hero/hero-placeholder.avif" as="image" />
-        <link rel="preload" href="/images/hero/hero-placeholder-phone.avif" as="image" />
-      </head>
       <body
         className={`${lato.variable} ${italianno.variable} ${theSansMono.variable} antialiased bg-black text-white select-none`}
       >

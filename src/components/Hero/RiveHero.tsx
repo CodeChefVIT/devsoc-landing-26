@@ -13,7 +13,7 @@ export default function RiveHero({ artboard, className, onLoad }: Props) {
   const layout = useMemo(() => new Layout({ fit: Fit.Contain, alignment: Alignment.Center }), []);
 
   const { rive, RiveComponent } = useRive({
-    src: '/rive/Hero.riv',
+    src: '/rive/HeroR.riv',
     artboard,
     stateMachines: ['State Machine 1'],
     autoplay: true,
@@ -28,5 +28,5 @@ export default function RiveHero({ artboard, className, onLoad }: Props) {
     }
   }, [rive, onLoad]);
 
-  return <RiveComponent className={className} style={{ willChange: 'transform' }} />;
+  return <RiveComponent className={className} />;
 }
