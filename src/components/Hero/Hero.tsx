@@ -11,6 +11,7 @@ const RiveHero = dynamic(() => import('./RiveHero'), {
 
 export default function Hero() {
   const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
+  const [shouldLoad, setShouldLoad] = useState(false);
   const [isRiveReady, setIsRiveReady] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -30,6 +31,35 @@ export default function Hero() {
     return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
 
+  useEffect(() => {
+    if (shouldLoad) return;
+    const el = containerRef.current;
+    if (!el) {
+      const t = setTimeout(() => setShouldLoad(true), 1500);
+      return () => clearTimeout(t);
+    }
+
+    const obs = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setShouldLoad(true);
+            obs.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: '300px' }
+    );
+
+    obs.observe(el);
+    const fallback = setTimeout(() => setShouldLoad(true), 5000);
+    return () => {
+      obs.disconnect();
+      clearTimeout(fallback);
+    };
+  }, [shouldLoad]);
+
   const artboard = screenSize === 'mobile' ? 'Mobile' : 'main';
 
   return (
@@ -46,29 +76,30 @@ export default function Hero() {
           <Image
             src={
               screenSize === 'mobile'
-                ? '/images/hero/hero-placeholder-phone.avif'
-                : '/images/hero/hero-placeholder.avif'
+                ? '/images/hero/hero-loader-phone.avif'
+                : '/images/hero/hero-loader.avif'
             }
             alt="Hero placeholder"
             fill
             className="object-contain object-center"
             decoding="async"
-            priority
+            fetchPriority="low"
             sizes="100vw"
             draggable="false"
-            preload
           />
         </div>
 
         <div
           className={`absolute inset-0 transition-opacity duration-700 ease-out ${isRiveReady ? 'opacity-100' : 'opacity-0'}`}
         >
-          <RiveHero
-            key={artboard}
-            artboard={artboard}
-            className="w-full h-full pan-y"
-            onLoad={() => setIsRiveReady(true)}
-          />
+          {shouldLoad && (
+            <RiveHero
+              key={artboard}
+              artboard={artboard}
+              className="w-full h-full pan-y"
+              onLoad={() => setIsRiveReady(true)}
+            />
+          )}
         </div>
       </div>
     </section>
