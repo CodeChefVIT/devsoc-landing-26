@@ -69,3 +69,20 @@ button {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* When applied, hide the native cursor everywhere (used by MouseFollower) */
+.hide-cursor-mousefollower,
+.hide-cursor-mousefollower *,
+.hide-cursor-mousefollower *::before,
+.hide-cursor-mousefollower *::after,
+.hide-cursor-mousefollower::before,
+.hide-cursor-mousefollower::after {
+  cursor: none !important;
+}
+
+/* hide text caret in editable fields while the dot is active */
+.hide-cursor-mousefollower input,
+.hide-cursor-mousefollower textarea,
+.hide-cursor-mousefollower [contenteditable] {
+  caret-color: transparent !important;
+}
