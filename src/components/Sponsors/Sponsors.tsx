@@ -14,9 +14,9 @@ export default function Sponsors() {
     <div className="relative h-[90vh]">
       <div className="relative">
         <Image
-          src="/images/backgrounds/bg-sponsors-eclipse.svg"
+          src="/images/backgrounds/bg-sponsors-art.svg"
           fill
-          className="hidden md:block object-contain -z-10 scale-100 translate-y-20"
+          className="hidden md:block object-contain -z-10 scale-125 translate-y-20"
           alt="Sponsors background art"
           draggable="false"
           loading="lazy"

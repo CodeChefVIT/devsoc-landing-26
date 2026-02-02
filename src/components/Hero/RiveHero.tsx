@@ -28,5 +28,5 @@ export default function RiveHero({ artboard, className, onLoad }: Props) {
     }
   }, [rive, onLoad]);
 
-  return <RiveComponent className={className} style={{ willChange: 'transform' }} />;
+  return <RiveComponent className={className} />;
 }
