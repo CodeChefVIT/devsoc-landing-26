@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { NavigationProvider } from '@/contexts/NavigationContext';
 
 const embedImagesUrl =
-  'https://res.cloudinary.com/dul1hx8p3/image/upload/v1769078428/opengraph-image_m2vfnh.jpg';
+  'https://res.cloudinary.com/dul1hx8p3/image/upload/v1770022656/opengraph-image_py5cze.png';
 
 export const metadata: Metadata = {
   title: "DEVSOC'26",
