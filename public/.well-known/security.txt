@@ -1,0 +1,4 @@
+Contact: security@codechefvit.com
+Expires: 2027-02-02T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://www.devsoc.codechefvit.com/.well-known/security.txt
