@@ -11,7 +11,6 @@ const RiveHero = dynamic(() => import('./RiveHero'), {
 
 export default function Hero() {
   const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
-  const [shouldLoad, setShouldLoad] = useState(false);
   const [isRiveReady, setIsRiveReady] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -31,35 +30,6 @@ export default function Hero() {
     return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
 
-  useEffect(() => {
-    if (shouldLoad) return;
-    const el = containerRef.current;
-    if (!el) {
-      const t = setTimeout(() => setShouldLoad(true), 1500);
-      return () => clearTimeout(t);
-    }
-
-    const obs = new IntersectionObserver(
-      entries => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setShouldLoad(true);
-            obs.disconnect();
-            break;
-          }
-        }
-      },
-      { rootMargin: '300px' }
-    );
-
-    obs.observe(el);
-    const fallback = setTimeout(() => setShouldLoad(true), 5000);
-    return () => {
-      obs.disconnect();
-      clearTimeout(fallback);
-    };
-  }, [shouldLoad]);
-
   const artboard = screenSize === 'mobile' ? 'Mobile' : 'main';
 
   return (
@@ -68,6 +38,7 @@ export default function Hero() {
         ref={containerRef}
         className="relative w-full h-full flex items-center justify-center overflow-hidden"
       >
+        {/* Placeholder with lower priority loads first */}
         <div
           className={`absolute inset-0 transition-opacity duration-700 ease-out pointer-events-none bg-[#0a0a0a] ${
             isRiveReady ? 'opacity-0' : 'opacity-100'
@@ -89,17 +60,16 @@ export default function Hero() {
           />
         </div>
 
+        {/* Rive animation - high priority */}
         <div
           className={`absolute inset-0 transition-opacity duration-700 ease-out ${isRiveReady ? 'opacity-100' : 'opacity-0'}`}
         >
-          {shouldLoad && (
-            <RiveHero
-              key={artboard}
-              artboard={artboard}
-              className="w-full h-full pan-y"
-              onLoad={() => setIsRiveReady(true)}
-            />
-          )}
+          <RiveHero
+            key={artboard}
+            artboard={artboard}
+            className="w-full h-full pan-y"
+            onLoad={() => setIsRiveReady(true)}
+          />
         </div>
       </div>
     </section>

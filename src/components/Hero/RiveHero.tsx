@@ -28,5 +28,11 @@ export default function RiveHero({ artboard, className, onLoad }: Props) {
     }
   }, [rive, onLoad]);
 
-  return <RiveComponent className={className} />;
+  return (
+    <RiveComponent
+      className={className}
+      // Preload the Rive canvas at high priority
+      style={{ willChange: 'transform' }}
+    />
+  );
 }
