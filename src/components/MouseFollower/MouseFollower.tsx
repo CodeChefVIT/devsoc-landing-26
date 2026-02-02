@@ -1,14 +1,27 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function MouseFollower() {
+  const [isDesktop, setIsDesktop] = useState(false);
   const followerRef = useRef<HTMLDivElement | null>(null);
   const dotRef = useRef<HTMLDivElement | null>(null);
   const mouse = useRef({ x: 0, y: 0 });
   const pos = useRef({ x: 0, y: 0 });
   const visible = useRef(false);
+
+  useEffect(() => {
+    // FIXED THIS PHONE/TAB SHIT
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
 
   useEffect(() => {
     const follower = followerRef.current;
@@ -77,19 +90,21 @@ export default function MouseFollower() {
 
   return (
     <>
-      <div
-        ref={dotRef}
-        aria-hidden="true"
-        className="pointer-events-none fixed z-10000 w-3 h-3 rounded-full border border-pink-500 bg-transparent shadow-[0_0_8px_rgba(236,72,153,0.9)] flex items-center justify-center"
-        style={{ left: '50%', top: '50%', transform: 'translate(-50% ,-50%)', opacity: 1 }}
-      >
-        <div className="w-[6px] h-[6px] rounded-full bg-white" />
-      </div>
+      {isDesktop && (
+        <div
+          ref={dotRef}
+          aria-hidden="true"
+          className="pointer-events-none fixed z-10000 w-3 h-3 rounded-full border border-pink-500 bg-transparent shadow-[0_0_8px_rgba(236,72,153,0.9)] flex items-center justify-center"
+          style={{ left: '50%', top: '50%', transform: 'translate(-50% ,-50%)' }}
+        >
+          <div className="w-1.5 h-1.5 rounded-full bg-white" />
+        </div>
+      )}
 
       <div
         ref={followerRef}
         aria-hidden="true"
-        className="pointer-events-none fixed z-9999 w-16 h-16 opacity-0 transition-opacity duration-300"
+        className="pointer-events-none fixed z-9999 w-16 h-16 opacity-0 transition-opacity duration-300 hidden md:block"
         style={{ left: '50%', top: '50%', transform: 'translate(-40%,-50%)' }}
       >
         <Image

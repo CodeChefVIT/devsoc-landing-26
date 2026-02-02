@@ -1,8 +1,9 @@
 interface FAQ {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
+export type { FAQ };
 export const faqs: FAQ[] = [
   {
     question: 'Is the hackathon free to attend?',
@@ -28,6 +29,19 @@ export const faqs: FAQ[] = [
   },
   {
     question: 'Have any more queries?',
-    answer: 'If you have any further doubts, feel free to ask your doubts on our Discord server.',
+    answer: (
+      <>
+        If you have any further doubts, feel free to ask your doubts on our{' '}
+        <a
+          href="https://discord.gg/wrtHFfep6M"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-[#ADAAF7] hover:text-white transition"
+        >
+          Discord server
+        </a>
+        .
+      </>
+    ),
   },
 ];
