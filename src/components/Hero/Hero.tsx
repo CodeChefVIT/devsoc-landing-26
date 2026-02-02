@@ -54,7 +54,7 @@ export default function Hero() {
             fill
             className="object-contain object-center"
             decoding="async"
-            fetchPriority="low"
+            priority
             sizes="100vw"
             draggable="false"
           />
