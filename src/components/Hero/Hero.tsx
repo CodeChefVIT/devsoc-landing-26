@@ -76,8 +76,8 @@ export default function Hero() {
           <Image
             src={
               screenSize === 'mobile'
-                ? '/images/hero/hero-placeholder-phone.avif'
-                : '/images/hero/hero-placeholder.avif'
+                ? '/images/hero/hero-loader-phone.avif'
+                : '/images/hero/hero-loader.avif'
             }
             alt="Hero placeholder"
             fill
