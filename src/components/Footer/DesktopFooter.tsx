@@ -8,18 +8,20 @@ export default function DesktopFooter() {
     <div className="hidden md:block relative max-w-7xl mx-auto px-8 py-12 font-lato font-semibold">
       <div className="flex items-center justify-between text-sm text-gray-300 mb-12">
         <ScrollButton href="#register" className="hover:text-white transition">
-          <span className="flex flex-row gap-2">
-            Register Now
-            <Image
-              src="/images/icons/arrow-up-right.svg"
-              alt="Arrow Right"
-              width={19}
-              height={16}
-              className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px w-auto h-3 self-center"
-              draggable="false"
-              loading="lazy"
-            />
-          </span>
+          <a href="https://vtop.vit.ac.in/vtop/login" target="_blank" rel="noopener">
+            <span className="flex flex-row gap-2">
+              Register Now
+              <Image
+                src="/images/icons/arrow-up-right.svg"
+                alt="Arrow Right"
+                width={19}
+                height={16}
+                className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px w-auto h-3 self-center"
+                draggable="false"
+                loading="lazy"
+              />
+            </span>
+          </a>
         </ScrollButton>
 
         <nav className="flex gap-8">
