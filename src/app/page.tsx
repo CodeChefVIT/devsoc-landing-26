@@ -88,7 +88,12 @@ export default function Page() {
         />
 
         <section id="faq" className="relative">
-          <SectionBg src="/images/backgrounds/bg-faq.svg" opacity="opacity-90" fullWidth />
+          <SectionBg
+            src="/images/backgrounds/bg-faq.svg"
+            opacity="opacity-90"
+            fullWidth
+            heightScreen
+          />
           <Faqs />
         </section>
       </DecorativeBackground>

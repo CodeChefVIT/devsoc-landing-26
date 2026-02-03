@@ -12,7 +12,8 @@ import { faqs } from '@/data/faq';
 
 export default function FAQ() {
   return (
-    <div id="faqs" className="relative px-6 py-24 ">
+    <div id="faqs" className="relative px-6 py-24">
+      {/* <SectionBg src="/images/backgrounds/bg-faq.svg" opacity="opacity-90" fullWidth fixed /> */}
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="flex justify-end">
           <SectionHeading title="FAQs" />
