@@ -4,7 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { NavigationProvider } from '@/contexts/NavigationContext';
-
+import MouseFollower from '@/components/MouseFollower';
 const embedImagesUrl =
   'https://res.cloudinary.com/dul1hx8p3/image/upload/v1770076077/opengraph-image_oi2kwn.png';
 
@@ -108,6 +108,7 @@ export default function RootLayout({
       >
         <NavigationProvider>
           <Navbar />
+          <MouseFollower />
           {children}
           <Footer />
         </NavigationProvider>

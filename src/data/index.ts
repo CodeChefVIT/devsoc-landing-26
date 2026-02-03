@@ -4,6 +4,7 @@ import speakers from './speakers';
 import { navigationItems, type NavigationItem } from './navigation';
 import { timeline, type TimelineItem } from './timeline';
 import { footerLinks, socialLinks } from './footer';
+import { faqs, type FAQ } from './faq';
 
 export {
   sponsors,
@@ -15,4 +16,6 @@ export {
   TimelineItem,
   footerLinks,
   socialLinks,
+  faqs,
+  FAQ,
 };
