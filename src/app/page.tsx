@@ -11,13 +11,14 @@ import { DecorativeBackground, SectionBg, SectionSeparator } from '@/components/
 export const dynamic = 'force-static';
 
 export default function Page() {
+  const src = '/images/backgrounds/bg-faq.svg';
   return (
     <main className="relative flex flex-col">
       <Hero />
 
       <DecorativeBackground>
         <section id="about" className="relative">
-          <SectionBg src="/images/backgrounds/bg-about.svg" />
+          {/* <SectionBg src="/images/backgrounds/bg-about.svg" /> */}
           <About />
         </section>
 
@@ -88,7 +89,18 @@ export default function Page() {
         />
 
         <section id="faq" className="relative">
-          <SectionBg src="/images/backgrounds/bg-faq.svg" opacity="opacity-90" fullWidth />
+          <div className="pointer-events-none fixed inset-0 -z-10">
+            <div className="relative h-screen w-screen">
+              <Image
+                src={src}
+                alt=""
+                fill
+                className="object-cover scale-110 opacity-90"
+                draggable="false"
+                loading="lazy"
+              />
+            </div>
+          </div>
           <Faqs />
         </section>
       </DecorativeBackground>

@@ -21,23 +21,11 @@ export default function TimelineMiddle({
     return Math.round(w * 0.28);
   };
 
-  const [slideWidth, setSlideWidth] = useState(() =>
-    typeof window !== 'undefined' ? calc(window.innerWidth) : 320
-  );
+  const [slideWidth, setSlideWidth] = useState<number>(320);
   const [spaceBetween, setSpaceBetween] = useState<number>(40);
-  const [isPhone, setIsPhone] = useState<boolean>(
-    typeof window !== 'undefined' ? window.innerWidth < 768 : false
-  );
-  const [initialRingScale, setInitialRingScale] = useState<number>(() =>
-    typeof window !== 'undefined'
-      ? (window.innerWidth >= 640 ? 40 : 32) / (window.innerWidth >= 640 ? 80 : 56)
-      : 32 / 56
-  );
-  const [slideOffset, setSlideOffset] = useState<number>(() =>
-    typeof window !== 'undefined'
-      ? Math.max(0, Math.round(window.innerWidth * 0.2 - calc(window.innerWidth) / 2))
-      : 0
-  );
+  const [isPhone, setIsPhone] = useState<boolean>(false);
+  const [initialRingScale, setInitialRingScale] = useState<number>(32 / 56);
+  const [slideOffset, setSlideOffset] = useState<number>(0);
 
   type SwiperExt = SwiperType & {
     __verticalTouchCleanup?: () => void;
