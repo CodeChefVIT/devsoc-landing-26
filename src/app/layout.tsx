@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { NavigationProvider } from '@/contexts/NavigationContext';
 import MouseFollower from '@/components/MouseFollower';
 const embedImagesUrl =
-  'https://res.cloudinary.com/dul1hx8p3/image/upload/v1770022656/opengraph-image_py5cze.png';
+  'https://res.cloudinary.com/dul1hx8p3/image/upload/v1770076077/opengraph-image_oi2kwn.png';
 
 const siteUrl = 'https://www.devsoc.codechefvit.com';
 
