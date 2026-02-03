@@ -43,22 +43,23 @@ export default function MobileFooter() {
             ))}
           </div>
         </nav>
-
-        <ScrollButton
-          href="#register"
-          className="text-md leading-4 font-semibold font-lato hover:text-gray-300 transition flex items-center gap-2 px-3 py-2 rounded-md"
-        >
-          Register Now
-          <Image
-            src="/images/icons/arrow-up-right.svg"
-            alt="Arrow Right"
-            width={19}
-            height={16}
-            className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px w-auto h-3 self-center"
-            draggable="false"
-            loading="lazy"
-          />
-        </ScrollButton>
+        <a href="https://vtop.vit.ac.in/vtop/login" target="_blank" rel="noopener">
+          <ScrollButton
+            href="#register"
+            className="text-md leading-4 font-semibold font-lato hover:text-gray-300 transition flex items-center gap-2 px-3 py-2 rounded-md"
+          >
+            Register Now
+            <Image
+              src="/images/icons/arrow-up-right.svg"
+              alt="Arrow Right"
+              width={19}
+              height={16}
+              className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-px w-auto h-3 self-center"
+              draggable="false"
+              loading="lazy"
+            />
+          </ScrollButton>
+        </a>
         <div className="flex items-center gap-5">
           {socialLinks.map(({ href, Icon, label }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
