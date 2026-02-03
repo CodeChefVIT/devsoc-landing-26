@@ -18,7 +18,7 @@ export default function Page() {
 
       <DecorativeBackground>
         <section id="about" className="relative">
-          {/* <SectionBg src="/images/backgrounds/bg-about.svg" /> */}
+          <SectionBg src="/images/backgrounds/bg-about.svg" />
           <About />
         </section>
 
