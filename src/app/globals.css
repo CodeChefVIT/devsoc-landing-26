@@ -189,3 +189,16 @@ button {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+
+@supports (-webkit-touch-callout: none) {
+  .ios-fix {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    transform: translateZ(0);
+  }
+
+  .ios-fix * {
+    transform: translateZ(0);
+  }
+}
