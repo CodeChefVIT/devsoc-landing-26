@@ -19,7 +19,7 @@ const SpeakerCard = ({
     <div className="w-full h-full flex justify-center">
       <Glass
         fillAvailable
-        className="backdrop-blur-xs!"
+        className="backdrop-blur-xs! min-h-fit"
         contentClassName="relative flex flex-col items-center justify-between w-full h-full border border-white/25 p-6 lg:p-8 gap-6 transition-all duration-300"
       >
         <div className="relative w-32 h-32 sm:w-40 sm:h-40 shrink-0">

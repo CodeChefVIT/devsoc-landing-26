@@ -33,7 +33,7 @@ const SponsorCard = ({
         {/* Image Section  */}
         <Glass className="px-16 md:px-0 w-fit! backdrop-blur-xs!" contentClassName="w-fit">
           <div className="relative flex flex-col items-center justify-between w-full md:w-48 lg:w-60 min-h-50 sm:min-h-56 md:h-44 lg:h-50 py-6 sm:py-8 md:py-0 max-w-xs sm:max-w-sm shrink-0">
-            <div className="relative flex flex-col items-center justify-between w-full md:w-48 lg:w-60 py-6 sm:py-8 md:py-0 max-w-xs sm:max-w-sm flex-none ios-fix">
+            <div className="flex items-center justify-center flex-1 w-full px-4 sm:px-6 md:px-0">
               <Image
                 src={imageSrc}
                 width={300}
