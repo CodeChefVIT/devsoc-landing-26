@@ -60,10 +60,82 @@
   "categories": ["productivity", "technology"],
   "screenshots": [
     {
-      "src": "/images/backgrounds/bg-tracks_grid.avif",
-      "sizes": "1280x720",
+      "src": "/screenshots/screenshot-desktop-1.avif",
+      "sizes": "2880x1556",
       "type": "image/avif",
       "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-desktop-2.avif",
+      "sizes": "2880x1556",
+      "type": "image/avif",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-desktop-3.avif",
+      "sizes": "2880x1556",
+      "type": "image/avif",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-desktop-4.avif",
+      "sizes": "2880x1556",
+      "type": "image/avif",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-desktop-5.avif",
+      "sizes": "2880x1556",
+      "type": "image/avif",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-desktop-6.avif",
+      "sizes": "2880x1556",
+      "type": "image/avif",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-desktop-7.avif",
+      "sizes": "2880x1556",
+      "type": "image/avif",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-desktop-8.avif",
+      "sizes": "2880x1556",
+      "type": "image/avif",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-phone-1.avif",
+      "sizes": "610x1354",
+      "type": "image/avif",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/screenshot-phone-2.avif",
+      "sizes": "610x1354",
+      "type": "image/avif",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/screenshot-phone-3.avif",
+      "sizes": "610x1354",
+      "type": "image/avif",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/screenshot-phone-4.avif",
+      "sizes": "610x1354",
+      "type": "image/avif",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/screenshot-phone-5.avif",
+      "sizes": "610x1354",
+      "type": "image/avif",
+      "form_factor": "narrow"
     }
   ]
 }
