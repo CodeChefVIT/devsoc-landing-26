@@ -1,6 +1,6 @@
 'use client';
 
-import { useNavigation } from '@/contexts/NavigationContext';
+import { useNavigation } from '@/contexts';
 
 interface ScrollButtonProps {
   href: string;

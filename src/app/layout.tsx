@@ -3,11 +3,11 @@ import { lato, italianno, theSansMono } from './fonts';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { NavigationProvider } from '@/contexts/NavigationContext';
 import MouseFollower from '@/components/MouseFollower';
+import { NavigationProvider } from '@/contexts';
+
 const embedImagesUrl =
   'https://res.cloudinary.com/dul1hx8p3/image/upload/v1770076077/opengraph-image_oi2kwn.png';
-
 const siteUrl = 'https://www.devsoc.codechefvit.com';
 
 export const metadata: Metadata = {

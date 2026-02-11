@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useNavigation } from '@/contexts/NavigationContext';
+import { useNavigation } from '@/contexts';
 import { timeline } from '@/data';
 import TimelineTop from './top/TimelineTop';
 import TimelineMiddle from './middle/TimelineMiddle';
@@ -23,7 +23,6 @@ export default function Timeline() {
   const next = () => setCurrentEventIndex(i => Math.min(i + 1, timeline.length - 1));
   const prev = () => setCurrentEventIndex(i => Math.max(i - 1, 0));
 
-  /* Center + activate */
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;

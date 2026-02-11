@@ -1,9 +1,9 @@
-interface Sponsor {
+type Sponsor = {
   name: string;
   description: string;
   logoUrl: string;
   websiteUrl?: string;
-}
+};
 
 const sponsors: Sponsor[] = [
   {
@@ -20,16 +20,7 @@ const sponsors: Sponsor[] = [
     logoUrl: '/images/sponsors/backboard.avif',
     websiteUrl: 'https://backboard.io/',
   },
-
-  /*
-  {
-    name: 'Sponsor 3',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla',
-    logoUrl: '/images/sponsors/sponsor-1.avif',
-    websiteUrl: 'https://sponsor3.com',
-  },
-  */
 ];
 
 export default sponsors;
+export type { Sponsor };

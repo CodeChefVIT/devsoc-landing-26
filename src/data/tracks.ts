@@ -1,4 +1,4 @@
-export interface Track {
+type Track = {
   id: number;
   title?: string;
   description?: string;
@@ -9,7 +9,7 @@ export interface Track {
   transparent?: boolean;
   type: 'track' | 'decoration' | 'spacer';
   isSponsorTrack?: boolean;
-}
+};
 
 const tracks: Track[] = [
   // Row 1
@@ -68,3 +68,4 @@ const tracks: Track[] = [
 ];
 
 export default tracks;
+export type { Track };

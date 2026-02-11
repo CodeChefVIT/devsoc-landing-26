@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useNavigation } from '@/contexts/NavigationContext';
+import { useNavigation } from '@/contexts';
 
 export default function Logo() {
   const { setIsNavigating } = useNavigation();

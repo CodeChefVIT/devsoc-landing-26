@@ -1,19 +1,12 @@
 'use client';
-import { FaPlus, FaMinus } from 'react-icons/fa6';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { SectionHeading } from '@/components/ui';
-import { faqs } from '@/data/faq';
+import { FaPlus, FaMinus } from 'react-icons/fa6';
+import { Accordion, SectionHeading } from '@/components/ui';
+import { faqs, type FAQ } from '@/data';
 
 export default function FAQ() {
   return (
     <div id="faqs" className="relative px-6 py-24">
-      {/* <SectionBg src="/images/backgrounds/bg-faq.svg" opacity="opacity-90" fullWidth fixed /> */}
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="flex justify-end">
           <SectionHeading title="FAQs" />
@@ -21,8 +14,12 @@ export default function FAQ() {
 
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border-b border-white/20">
-              <AccordionTrigger
+            <Accordion.Item
+              key={index}
+              value={`item-${index}`}
+              className="border-b border-white/20"
+            >
+              <Accordion.Trigger
                 className="
                 group
                 flex
@@ -44,11 +41,11 @@ export default function FAQ() {
                   <FaPlus className="group-data-[state=open]:hidden" />
                   <FaMinus className="hidden group-data-[state=open]:block" />
                 </span>
-              </AccordionTrigger>
-              <AccordionContent className="font-lato font-bold text-[#ADAAF7] text-base whitespace-pre-line">
+              </Accordion.Trigger>
+              <Accordion.Content className="font-lato font-bold text-[#ADAAF7] text-base whitespace-pre-line">
                 {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
+              </Accordion.Content>
+            </Accordion.Item>
           ))}
         </Accordion>
       </div>
