@@ -60,7 +60,6 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/icons/icon-512x512.webp',
         sizes: '512x512',
         type: 'image/webp',
-        purpose: 'any maskable',
       },
       {
         src: '/icons/maskable-icon.png',
