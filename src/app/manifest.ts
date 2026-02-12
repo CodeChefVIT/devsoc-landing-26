@@ -10,9 +10,11 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: '/',
     scope: '/',
     display: 'standalone',
-    orientation: 'portrait-primary',
-    background_color: '#000000',
-    theme_color: '#000000',
+    display_override: ['window-controls-overlay'],
+    orientation: 'landscape-primary',
+    prefer_related_applications: false,
+    background_color: '#0a0a0a',
+    theme_color: '#0a0a0a',
     categories: ['productivity', 'technology'],
     icons: [
       {
@@ -61,6 +63,13 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: '512x512',
         type: 'image/webp',
       },
+      {
+        src: '/icons/icon-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'any',
+      },
+
       {
         src: '/icons/maskable-icon.png',
         sizes: '512x512',

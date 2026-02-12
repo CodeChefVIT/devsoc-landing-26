@@ -99,11 +99,10 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
         <link rel="canonical" href={siteUrl} />
       </head>
       <body
-        className={`${lato.variable} ${italianno.variable} ${theSansMono.variable} antialiased bg-black text-white select-none`}
+        className={`${lato.variable} ${italianno.variable} ${theSansMono.variable} antialiased bg-[#0a0a0a] text-white select-none`}
       >
         <NavigationProvider>
           <Navbar />
