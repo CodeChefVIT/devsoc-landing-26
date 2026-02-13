@@ -1,9 +1,9 @@
-interface Speaker {
+type Speaker = {
   name: string;
   designation: string;
   linkedin: string;
   image: string;
-}
+};
 
 const speakers: Speaker[] = [
   {
@@ -27,3 +27,4 @@ const speakers: Speaker[] = [
 ];
 
 export default speakers;
+export type { Speaker };

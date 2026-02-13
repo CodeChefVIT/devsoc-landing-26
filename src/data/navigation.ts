@@ -1,7 +1,7 @@
-interface NavigationItem {
+type NavigationItem = {
   label: string;
   href: string;
-}
+};
 
 const navigationItems: NavigationItem[] = [
   {
@@ -25,4 +25,6 @@ const navigationItems: NavigationItem[] = [
     href: '#sponsors',
   },
 ];
-export { navigationItems, type NavigationItem };
+
+export default navigationItems;
+export type { NavigationItem };

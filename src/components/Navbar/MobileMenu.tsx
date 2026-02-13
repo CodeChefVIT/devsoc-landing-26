@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollButton } from '@/components/ui';
-import { navigationItems } from '@/data/navigation';
+import { navigationItems } from '@/data';
 import Discord from './Discord';
 import Timer from './Timer';
 

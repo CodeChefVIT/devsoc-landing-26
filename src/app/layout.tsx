@@ -3,11 +3,11 @@ import { lato, italianno, theSansMono } from './fonts';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { NavigationProvider } from '@/contexts/NavigationContext';
 import MouseFollower from '@/components/MouseFollower';
+import { NavigationProvider } from '@/contexts';
+
 const embedImagesUrl =
   'https://res.cloudinary.com/dul1hx8p3/image/upload/v1770076077/opengraph-image_oi2kwn.png';
-
 const siteUrl = 'https://www.devsoc.codechefvit.com';
 
 export const metadata: Metadata = {
@@ -99,12 +99,10 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
         <link rel="canonical" href={siteUrl} />
-        <link rel="manifest" href="/manifest.json" />
       </head>
       <body
-        className={`${lato.variable} ${italianno.variable} ${theSansMono.variable} antialiased bg-black text-white select-none`}
+        className={`${lato.variable} ${italianno.variable} ${theSansMono.variable} antialiased bg-[#0a0a0a] text-white select-none`}
       >
         <NavigationProvider>
           <Navbar />

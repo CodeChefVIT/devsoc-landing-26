@@ -1,10 +1,9 @@
-interface FAQ {
+type FAQ = {
   question: string;
   answer: React.ReactNode;
-}
+};
 
-export type { FAQ };
-export const faqs: FAQ[] = [
+const faqs: FAQ[] = [
   {
     question: 'Is the hackathon free to attend?',
     answer: "Yes, DevSOC'26 is completely free to attend thanks to our sponsors.",
@@ -36,7 +35,7 @@ export const faqs: FAQ[] = [
           href="https://discord.gg/wrtHFfep6M"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline text-[#ADAAF7] hover:text-white transition"
+          className="underline text-[#ADAAF7] hover:text-[#bcbaf7] transition"
         >
           Discord server
         </a>
@@ -45,3 +44,6 @@ export const faqs: FAQ[] = [
     ),
   },
 ];
+
+export default faqs;
+export { type FAQ };

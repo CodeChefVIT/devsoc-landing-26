@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 export default function MouseFollower() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -12,7 +12,6 @@ export default function MouseFollower() {
   const visible = useRef(false);
 
   useEffect(() => {
-    // FIXED THIS PHONE/TAB SHIT
     const checkDesktop = () => {
       setIsDesktop(window.innerWidth >= 1024);
     };
@@ -30,7 +29,6 @@ export default function MouseFollower() {
     // hide native cursor while mounted (use CSS class with !important to override element-level cursors)
     document.documentElement.classList.add('hide-cursor-mousefollower');
 
-    // initialization fix
     pos.current.x = window.innerWidth / 2;
     pos.current.y = window.innerHeight / 2;
     mouse.current.x = pos.current.x;
@@ -52,7 +50,6 @@ export default function MouseFollower() {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
 
-      // show follower with smooth scale when first movement happens
       if (!visible.current) {
         visible.current = true;
         follower.style.opacity = '1';
@@ -108,7 +105,7 @@ export default function MouseFollower() {
         style={{ left: '50%', top: '50%', transform: 'translate(-40%,-50%)' }}
       >
         <Image
-          src="/mascot/mascottt.png"
+          src="/mascot/mascot.avif"
           alt=""
           width={64}
           height={64}

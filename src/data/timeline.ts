@@ -1,4 +1,13 @@
-import type { TimelineItem } from '@/components/Timeline/types';
+type TimelineItem = {
+  id: string;
+  day: number;
+  date: string;
+  time: string;
+  datetime: string;
+  title: string;
+  subtitle: string;
+  description: string;
+};
 
 const timeline: TimelineItem[] = [
   // DAY 1
@@ -81,7 +90,6 @@ const timeline: TimelineItem[] = [
     description:
       'Teams continue building, integrating APIs, training models, and polishing core functionality.',
   },
-
   {
     id: 'd2-2300',
     day: 2,
@@ -106,7 +114,6 @@ const timeline: TimelineItem[] = [
     description:
       'Overnight hacking continues as teams work towards feature completion and stability.',
   },
-
   {
     id: 'd3-1000',
     day: 3,
@@ -175,5 +182,5 @@ const timeline: TimelineItem[] = [
   },
 ];
 
-export { timeline };
+export default timeline;
 export type { TimelineItem };

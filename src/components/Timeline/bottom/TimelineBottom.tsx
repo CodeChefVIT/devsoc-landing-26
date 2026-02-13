@@ -1,6 +1,5 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import TimelineNavButton from './TimelineNavButton';
-
 import type { TimelineBottomProps } from '../types';
 
 export default function TimelineBottom({

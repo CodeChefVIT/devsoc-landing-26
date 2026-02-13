@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { navigationItems } from '@/data/navigation';
+import { navigationItems } from '@/data';
 import { ScrollButton } from '@/components/ui';
 
 export default function DesktopNav() {

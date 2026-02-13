@@ -1,13 +1,4 @@
-export type TimelineItem = {
-  id: string;
-  day: number;
-  date: string;
-  time: string;
-  datetime: string;
-  title: string;
-  subtitle: string;
-  description: string;
-};
+import { TimelineItem } from '@/data';
 
 export type TimelineTopProps = {
   currentEvent: TimelineItem;

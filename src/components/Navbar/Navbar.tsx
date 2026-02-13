@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { Glass } from '@/components/ui';
+import DesktopNav from './DesktopNav';
+import MobileMenu from './MobileMenu';
 import Logo from './Logo';
 import Discord from './Discord';
 import Timer from './Timer';
-import DesktopNav from './DesktopNav';
-import MobileMenu from './MobileMenu';
 
 export default function Navbar() {
   return (

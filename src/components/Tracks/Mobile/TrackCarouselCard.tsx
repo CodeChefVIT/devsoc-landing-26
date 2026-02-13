@@ -1,7 +1,7 @@
 'use client';
 
 import type { Track } from '@/data/tracks';
-import Glass from '@/components/ui/Glass/Glass';
+import { Glass } from '@/components/ui';
 
 export default function TrackCarouselCard({ track }: { track: Track }) {
   if (!track) return null;
