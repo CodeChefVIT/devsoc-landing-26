@@ -58,7 +58,7 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
 <table>
    <tr>
       <td>
-         <img src="public/screenshots/screenshot-desktop-1.avif" alt="Desktop screenshot 1" />
+         <img src="public/screenshots/screenshot-desktop-1.avif" alt="Desktop screenshot 1" width="100%" height="100%" />
       </td>
    </tr>
 </table>
@@ -66,13 +66,13 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
 <table>
    <tr>
       <td>
-         <img src="public/screenshots/screenshot-desktop-2.avif" alt="Desktop screenshot 2" />
+         <img src="public/screenshots/screenshot-desktop-2.avif" alt="Desktop screenshot 2" width="100%" height="100%" />
       </td>
       <td>
-         <img src="public/screenshots/screenshot-desktop-3.avif" alt="Desktop screenshot 3" />
+         <img src="public/screenshots/screenshot-desktop-3.avif" alt="Desktop screenshot 3" width="100%" height="100%" />
       </td>
       <td>
-         <img src="public/screenshots/screenshot-desktop-4.avif" alt="Desktop screenshot 4" />
+         <img src="public/screenshots/screenshot-desktop-4.avif" alt="Desktop screenshot 4" width="100%" height="100%" />
       </td>
    </tr>
 </table>
@@ -80,13 +80,13 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
 <table>
    <tr>
       <td>
-         <img src="public/screenshots/screenshot-desktop-5.avif" alt="Desktop screenshot 5" />
+         <img src="public/screenshots/screenshot-desktop-5.avif" alt="Desktop screenshot 5" width="100%" height="100%" />
       </td>
       <td>
-         <img src="public/screenshots/screenshot-desktop-6.avif" alt="Desktop screenshot 6" />
+         <img src="public/screenshots/screenshot-desktop-6.avif" alt="Desktop screenshot 6" width="100%" height="100%" />
       </td>
       <td>
-         <img src="public/screenshots/screenshot-desktop-7.avif" alt="Desktop screenshot 7" />
+         <img src="public/screenshots/screenshot-desktop-7.avif" alt="Desktop screenshot 7" width="100%" height="100%" />
       </td>
    </tr>
 </table>
