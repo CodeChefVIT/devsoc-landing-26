@@ -23,8 +23,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
   </a>
 </p>
 
-
-
 ### Highlights
 
 - Built with Next.js and React 19
@@ -57,17 +55,41 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
 
 ### Screenshots
 
-|                                                                       |
-| --------------------------------------------------------------------- |
-| ![Desktop screenshot 1](public/screenshots/screenshot-desktop-1.avif) |
+<table>
+   <tr>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-1.avif" alt="Desktop screenshot 1" />
+      </td>
+   </tr>
+</table>
 
-|                                                                       |                                                                       |                                                                       |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| ![Desktop screenshot 2](public/screenshots/screenshot-desktop-2.avif) | ![Desktop screenshot 3](public/screenshots/screenshot-desktop-3.avif) | ![Desktop screenshot 4](public/screenshots/screenshot-desktop-4.avif) |
+<table>
+   <tr>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-2.avif" alt="Desktop screenshot 2" />
+      </td>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-3.avif" alt="Desktop screenshot 3" />
+      </td>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-4.avif" alt="Desktop screenshot 4" />
+      </td>
+   </tr>
+</table>
 
-|                                                                       |                                                                       |                                                                       |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| ![Desktop screenshot 5](public/screenshots/screenshot-desktop-5.avif) | ![Desktop screenshot 6](public/screenshots/screenshot-desktop-6.avif) | ![Desktop screenshot 7](public/screenshots/screenshot-desktop-7.avif) |
+<table>
+   <tr>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-5.avif" alt="Desktop screenshot 5" />
+      </td>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-6.avif" alt="Desktop screenshot 6" />
+      </td>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-7.avif" alt="Desktop screenshot 7" />
+      </td>
+   </tr>
+</table>
 
 ### Contributors
 
