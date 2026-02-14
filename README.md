@@ -1,8 +1,29 @@
-## DevSOC'26 Landing Page
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9ac24d63-e4f8-4713-b6ca-28f07e1accf8" alt="Official banner for DevSOC'26, the seventh edition of CodeChef VIT's flagship hackathon focused on AI and the metaverse" />
+</p>
 
-The landing website for DevSOC'26, the seventh edition of CodeChef VIT's flagship hackathon and the biggest student-run hackathon in Southeast Asia.
+<h1 align="center">DevSOC'26</h1>
 
-DEVSOC'26 ignites innovation in its seventh edition blending AI and the metaverse to solve real-world challenges. Bringing together diverse minds, we go beyond coding to build bold solutions that redefine what's possible.
+<h3 align="center">
+  The 7th Edition of CodeChef VIT’s Flagship Hackathon <br/>
+  The Biggest Student-Run Hackathon in Southeast Asia
+</h3>
+
+<p align="center">
+DEVSOC'26 ignites innovation in its seventh edition, blending <b>AI</b> and the <b>metaverse</b> to solve real-world challenges.
+</p>
+
+<p align="center">
+Bringing together diverse minds, we go beyond coding to build bold solutions that redefine what’s possible.
+</p>
+
+<p align="center">
+  <a href="https://devsoc26.codechefvit.com">
+    <img src="https://img.shields.io/badge/Official-Website-e600c0?style=for-the-badge&logo=google-chrome&logoColor=white" />
+  </a>
+</p>
+
+
 
 ### Highlights
 
