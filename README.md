@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## DevSOC'26 Landing Page
 
-## Getting Started
+The landing website for DevSOC'26, the seventh edition of CodeChef VIT's flagship hackathon and the biggest student-run hackathon in Southeast Asia.
 
-First, run the development server:
+DEVSOC'26 ignites innovation in its seventh edition blending AI and the metaverse to solve real-world challenges. Bringing together diverse minds, we go beyond coding to build bold solutions that redefine what's possible.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Highlights
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Built with Next.js and React 19
+- Hero animation created using Rive
+- Performance-focused asset handling and optimized media
+- Mobile-first responsive layout
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js 16
+- React 19 + TypeScript
+- Tailwind CSS (v4)
+- Rive (@rive-app/react-canvas)
+- Framer Motion
 
-## Learn More
+### Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+1. Install dependencies:
+   - `pnpm install`
+2. Start the dev server:
+   - `pnpm dev`
+3. Open `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/app` - Next.js app router and global styling
+- `src/components` - UI sections and shared components
+- `src/data` - static content and configuration
+- `public` - images, icons, fonts, and Rive assets
 
-## Deploy on Vercel
+### Screenshots
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+|                                                                       |
+| --------------------------------------------------------------------- |
+| ![Desktop screenshot 1](public/screenshots/screenshot-desktop-1.avif) |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+|                                                                       |                                                                       |                                                                       |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| ![Desktop screenshot 2](public/screenshots/screenshot-desktop-2.avif) | ![Desktop screenshot 3](public/screenshots/screenshot-desktop-3.avif) | ![Desktop screenshot 4](public/screenshots/screenshot-desktop-4.avif) |
+
+|                                                                       |                                                                       |                                                                       |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| ![Desktop screenshot 5](public/screenshots/screenshot-desktop-5.avif) | ![Desktop screenshot 6](public/screenshots/screenshot-desktop-6.avif) | ![Desktop screenshot 7](public/screenshots/screenshot-desktop-7.avif) |
+
+### Contributors
+
+<table>
+   <tr>
+      <td align="center">
+         <a href="https://github.com/upayanmazumder">
+            <img src="https://github.com/upayanmazumder.png?size=200" width="140" height="140" alt="Upayan Mazumder avatar" />
+         </a>
+         <br />
+         <b>Upayan Mazumder</b>
+         <br />
+         <a href="https://github.com/upayanmazumder" title="GitHub: upayanmazumder">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/upayanmazumder/" title="LinkedIn: Upayan Mazumder">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/Skywalker-organa">
+            <img src="https://github.com/Skywalker-organa.png?size=200" width="140" height="140" alt="Sanjana Shyamsundar avatar" />
+         </a>
+         <br />
+         <b>Sanjana Shyamsundar</b>
+         <br />
+         <a href="https://github.com/Skywalker-organa" title="GitHub: Skywalker-organa">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://in.linkedin.com/in/sanjana-shyamsundar-156180332" title="LinkedIn: Sanjana Shyamsundar">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/Dragon-Rage">
+            <img src="https://github.com/Dragon-Rage.png?size=200" width="140" height="140" alt="Ayman Raza avatar" />
+         </a>
+         <br />
+         <b>Ayman Raza</b>
+         <br />
+         <a href="https://github.com/Dragon-Rage" title="GitHub: Dragon-Rage">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" title="LinkedIn: Ayman Raza">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/aarushi-patidar">
+            <img src="https://github.com/aarushi-patidar.png?size=200" width="140" height="140" alt="Aarushi Patidar avatar" />
+         </a>
+         <br />
+         <b>Aarushi Patidar</b>
+         <br />
+         <a href="https://github.com/aarushi-patidar" title="GitHub: aarushi-patidar">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://in.linkedin.com/in/aarushi-patidar" title="LinkedIn: Aarushi Patidar">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+   </tr>
+</table>
