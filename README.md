@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9ac24d63-e4f8-4713-b6ca-28f07e1accf8" alt="Official banner for DevSOC'26, the seventh edition of CodeChef VIT's flagship hackathon focused on AI and the metaverse" />
+  <img src="https://github.com/user-attachments/assets/9ac24d63-e4f8-4713-b6ca-28f07e1accf8" alt="DevSOC'26 official banner" />
 </p>
 
 <h1 align="center">DevSOC'26</h1>
