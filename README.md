@@ -154,7 +154,7 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
       </td>
    </tr>
    <tr>
-   <td align="center">
+      <td align="center">
          <a href="https://github.com/aarushi-patidar">
             <img src="https://github.com/aarushi-patidar.png?size=200" width="140" height="140" alt="Aarushi Patidar avatar" />
          </a>
@@ -168,7 +168,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/ShouryaUpadhyaya">
             <img src="https://github.com/ShouryaUpadhyaya.png?size=200" width="140" height="140" alt="Shourya Upadhyaya avatar" />
