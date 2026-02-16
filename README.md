@@ -95,7 +95,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
 ### Contributors
 
 <table>
-
    <tr>
       <td align="center">
          <a href="https://github.com/upayanmazumder">
@@ -126,6 +125,20 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          </a>
       </td>
       <td align="center">
+         <a href="https://github.com/MelloHyu">
+            <img src="https://github.com/MelloHyu.png?size=200" width="140" height="140" alt="Aditya Gupta avatar" />
+         </a>
+         <br />
+         <b>Aditya Gupta</b>
+         <br />
+         <a href="https://github.com/MelloHyu">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/aditya-gupta-28136a274/">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
          <a href="https://github.com/Dragon-Rage">
             <img src="https://github.com/Dragon-Rage.png?size=200" width="140" height="140" alt="Ayman Raza avatar" />
          </a>
@@ -139,7 +152,9 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
-      <td align="center">
+   </tr>
+   <tr>
+   <td align="center">
          <a href="https://github.com/aarushi-patidar">
             <img src="https://github.com/aarushi-patidar.png?size=200" width="140" height="140" alt="Aarushi Patidar avatar" />
          </a>
@@ -153,22 +168,7 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
-   </tr>
-   <tr>
-      <td align="center">
-         <a href="https://github.com/MelloHyu">
-            <img src="https://github.com/MelloHyu.png?size=200" width="140" height="140" alt="Aditya Gupta avatar" />
-         </a>
-         <br />
-         <b>Aditya Gupta</b>
-         <br />
-         <a href="https://github.com/MelloHyu">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
-         </a>
-         <a href="https://www.linkedin.com/in/aditya-gupta-28136a274/">
-            <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
-         </a>
-      </td>
+
       <td align="center">
          <a href="https://github.com/ShouryaUpadhyaya">
             <img src="https://github.com/ShouryaUpadhyaya.png?size=200" width="140" height="140" alt="Shourya Upadhyaya avatar" />
@@ -177,10 +177,10 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          <b>Shourya Upadhyaya</b>
          <br />
          <a href="https://github.com/ShouryaUpadhyaya">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
          </a>
          <a href="https://www.linkedin.com/in/shourya-upadhyaya-998535332">
-            <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
       <td align="center">
@@ -191,10 +191,10 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          <b>Abhinav Pant</b>
          <br />
          <a href="https://github.com/abhitrueprogrammer">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
          </a>
          <a href="https://www.linkedin.com/in/abhinav-pant-081b79243/">
-            <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
       <td align="center">
@@ -205,12 +205,13 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          <b>Harshit Kashyap</b>
          <br />
          <a href="https://github.com/kashyap-harshit">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
          </a>
          <a href="https://www.linkedin.com/in/harshit-kashyap-sarma-247175179/">
-            <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
+
    </tr>
    <tr>
       <td align="center">
@@ -221,7 +222,7 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          <b>Dhruv Singh Chopra</b>
          <br />
          <a href="https://github.com/DhruvsChopra">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
          </a>
       </td>
       <td align="center">
@@ -232,7 +233,7 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          <b>Prisha Saran</b>
          <br />
          <a href="https://github.com/prishasharann">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
          </a>
       </td>
       <td align="center">
@@ -243,10 +244,10 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          <b>Diya Bajoria</b>
          <br />
          <a href="https://github.com/diyabajoria">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
          </a>
          <a href="https://www.linkedin.com/in/diya-bajoria-375367335/">
-            <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
       <td align="center">
@@ -257,10 +258,10 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          <b>Krishita Gupta</b>
          <br />
          <a href="https://github.com/krishitag">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
          </a>
          <a href="https://www.linkedin.com/in/krishita-gupta/">
-            <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
    </tr>
@@ -273,10 +274,10 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          <b>Ishan Jindal</b>
          <br />
          <a href="https://github.com/IshanJ25">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
          </a>
          <a href="https://linkedin.com/in/ishan-jindal-46ab3321a">
-            <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
       <td align="center">
@@ -287,10 +288,10 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
          <b>Parth</b>
          <br />
          <a href="https://github.com/t3rrible0ctopus">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
          </a>
          <a href="https://www.linkedin.com/in/parth-yadav-a04319258/">
-            <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
    </tr>
