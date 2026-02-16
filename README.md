@@ -1,36 +1,297 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9ac24d63-e4f8-4713-b6ca-28f07e1accf8" alt="DevSOC'26 official banner" />
+</p>
 
-## Getting Started
+<h1 align="center">DevSOC'26</h1>
 
-First, run the development server:
+<h3 align="center">
+  The 7th Edition of CodeChef VIT’s Flagship Hackathon <br/>
+  The Biggest Student-Run Hackathon in Southeast Asia
+</h3>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p align="center">
+DEVSOC'26 ignites innovation in its seventh edition, blending <b>AI</b> and the <b>metaverse</b> to solve real-world challenges.
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="center">
+Bringing together diverse minds, we go beyond coding to build bold solutions that redefine what’s possible.
+</p>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<p align="center">
+  <a href="https://devsoc26.codechefvit.com">
+    <img src="https://img.shields.io/badge/Official-Website-e600c0?style=for-the-badge&logo=google-chrome&logoColor=white" />
+  </a>
+</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Highlights
 
-## Learn More
+- Built with Next.js and React 19
+- Hero animation created using Rive
+- Performance-focused asset handling and optimized media
+- Mobile-first responsive layout
 
-To learn more about Next.js, take a look at the following resources:
+### Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js 16
+- React 19 + TypeScript
+- Tailwind CSS (v4)
+- Rive (@rive-app/react-canvas)
+- Framer Motion
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Getting Started
 
-## Deploy on Vercel
+1. Install dependencies:
+   - `pnpm install`
+2. Start the dev server:
+   - `pnpm dev`
+3. Open `http://localhost:3000`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app` - Next.js app router and global styling
+- `src/components` - UI sections and shared components
+- `src/data` - static content and configuration
+- `public` - images, icons, fonts, and Rive assets
+
+### Screenshots
+
+<table>
+
+   <tr>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-1.avif" alt="Desktop screenshot 1" width="100%" height="100%" />
+      </td>
+   </tr>
+</table>
+
+<table>
+   <tr>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-2.avif" alt="Desktop screenshot 2" width="100%" height="100%" />
+      </td>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-3.avif" alt="Desktop screenshot 3" width="100%" height="100%" />
+      </td>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-4.avif" alt="Desktop screenshot 4" width="100%" height="100%" />
+      </td>
+   </tr>
+</table>
+
+<table>
+   <tr>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-5.avif" alt="Desktop screenshot 5" width="100%" height="100%" />
+      </td>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-6.avif" alt="Desktop screenshot 6" width="100%" height="100%" />
+      </td>
+      <td>
+         <img src="public/screenshots/screenshot-desktop-7.avif" alt="Desktop screenshot 7" width="100%" height="100%" />
+      </td>
+   </tr>
+</table>
+
+### Contributors
+
+<table>
+   <tr>
+      <td align="center">
+         <a href="https://github.com/upayanmazumder">
+            <img src="https://github.com/upayanmazumder.png?size=200" width="140" height="140" alt="Upayan Mazumder avatar" />
+         </a>
+         <br />
+         <b>Upayan Mazumder</b>
+         <br />
+         <a href="https://github.com/upayanmazumder" title="GitHub: upayanmazumder">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/upayanmazumder/" title="LinkedIn: Upayan Mazumder">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/Skywalker-organa">
+            <img src="https://github.com/Skywalker-organa.png?size=200" width="140" height="140" alt="Sanjana Shyamsundar avatar" />
+         </a>
+         <br />
+         <b>Sanjana Shyamsundar</b>
+         <br />
+         <a href="https://github.com/Skywalker-organa" title="GitHub: Skywalker-organa">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://in.linkedin.com/in/sanjana-shyamsundar-156180332" title="LinkedIn: Sanjana Shyamsundar">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/MelloHyu">
+            <img src="https://github.com/MelloHyu.png?size=200" width="140" height="140" alt="Aditya Gupta avatar" />
+         </a>
+         <br />
+         <b>Aditya Gupta</b>
+         <br />
+         <a href="https://github.com/MelloHyu">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/aditya-gupta-28136a274/">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/Dragon-Rage">
+            <img src="https://github.com/Dragon-Rage.png?size=200" width="140" height="140" alt="Ayman Raza avatar" />
+         </a>
+         <br />
+         <b>Ayman Raza</b>
+         <br />
+         <a href="https://github.com/Dragon-Rage" title="GitHub: Dragon-Rage">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" title="LinkedIn: Ayman Raza">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+   </tr>
+   <tr>
+      <td align="center">
+         <a href="https://github.com/aarushi-patidar">
+            <img src="https://github.com/aarushi-patidar.png?size=200" width="140" height="140" alt="Aarushi Patidar avatar" />
+         </a>
+         <br />
+         <b>Aarushi Patidar</b>
+         <br />
+         <a href="https://github.com/aarushi-patidar" title="GitHub: aarushi-patidar">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://in.linkedin.com/in/aarushi-patidar" title="LinkedIn: Aarushi Patidar">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/ShouryaUpadhyaya">
+            <img src="https://github.com/ShouryaUpadhyaya.png?size=200" width="140" height="140" alt="Shourya Upadhyaya avatar" />
+         </a>
+         <br />
+         <b>Shourya Upadhyaya</b>
+         <br />
+         <a href="https://github.com/ShouryaUpadhyaya">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/shourya-upadhyaya-998535332">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/abhitrueprogrammer">
+            <img src="https://github.com/abhitrueprogrammer.png?size=200" width="140" height="140" alt="Abhinav Pant avatar" />
+         </a>
+         <br />
+         <b>Abhinav Pant</b>
+         <br />
+         <a href="https://github.com/abhitrueprogrammer">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/abhinav-pant-081b79243/">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/kashyap-harshit">
+            <img src="https://github.com/kashyap-harshit.png?size=200" width="140" height="140" alt="Harshit Kashyap avatar" />
+         </a>
+         <br />
+         <b>Harshit Kashyap</b>
+         <br />
+         <a href="https://github.com/kashyap-harshit">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/harshit-kashyap-sarma-247175179/">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+
+   </tr>
+   <tr>
+      <td align="center">
+         <a href="https://github.com/DhruvsChopra">
+            <img src="https://github.com/DhruvsChopra.png?size=200" width="140" height="140" alt="Dhruv Singh Chopra avatar" />
+         </a>
+         <br />
+         <b>Dhruv Singh Chopra</b>
+         <br />
+         <a href="https://github.com/DhruvsChopra">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/prishasharann">
+            <img src="https://github.com/prishasharann.png?size=200" width="140" height="140" alt="Prisha Saran avatar" />
+         </a>
+         <br />
+         <b>Prisha Saran</b>
+         <br />
+         <a href="https://github.com/prishasharann">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/diyabajoria">
+            <img src="https://github.com/diyabajoria.png?size=200" width="140" height="140" alt="Diya Bajoria avatar" />
+         </a>
+         <br />
+         <b>Diya Bajoria</b>
+         <br />
+         <a href="https://github.com/diyabajoria">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/diya-bajoria-375367335/">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/krishitag">
+            <img src="https://github.com/krishitag.png?size=200" width="140" height="140" alt="Krishita Gupta avatar" />
+         </a>
+         <br />
+         <b>Krishita Gupta</b>
+         <br />
+         <a href="https://github.com/krishitag">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/krishita-gupta/">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+   </tr>
+   <tr>
+      <td align="center">
+         <a href="https://github.com/IshanJ25">
+            <img src="https://github.com/IshanJ25.png?size=200" width="140" height="140" alt="Ishan Jindal avatar" />
+         </a>
+         <br />
+         <b>Ishan Jindal</b>
+         <br />
+         <a href="https://github.com/IshanJ25">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://linkedin.com/in/ishan-jindal-46ab3321a">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+      <td align="center">
+         <a href="https://github.com/t3rrible0ctopus">
+            <img src="https://github.com/t3rrible0ctopus.png?size=200" width="140" height="140" alt="Parth avatar" />
+         </a>
+         <br />
+         <b>Parth</b>
+         <br />
+         <a href="https://github.com/t3rrible0ctopus">
+            <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="24" height="24" alt="GitHub icon" />
+         </a>
+         <a href="https://www.linkedin.com/in/parth-yadav-a04319258/">
+            <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
+         </a>
+      </td>
+   </tr>
+</table>
