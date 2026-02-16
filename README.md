@@ -97,7 +97,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
 <table>
 
    <tr>
-
       <td align="center">
          <a href="https://github.com/upayanmazumder">
             <img src="https://github.com/upayanmazumder.png?size=200" width="140" height="140" alt="Upayan Mazumder avatar" />
@@ -112,7 +111,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/Skywalker-organa">
             <img src="https://github.com/Skywalker-organa.png?size=200" width="140" height="140" alt="Sanjana Shyamsundar avatar" />
@@ -127,7 +125,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/Dragon-Rage">
             <img src="https://github.com/Dragon-Rage.png?size=200" width="140" height="140" alt="Ayman Raza avatar" />
@@ -142,7 +139,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/aarushi-patidar">
             <img src="https://github.com/aarushi-patidar.png?size=200" width="140" height="140" alt="Aarushi Patidar avatar" />
@@ -157,11 +153,8 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="24" height="24" alt="LinkedIn icon" />
          </a>
       </td>
-
    </tr>
-   
    <tr>
-
       <td align="center">
          <a href="https://github.com/MelloHyu">
             <img src="https://github.com/MelloHyu.png?size=200" width="140" height="140" alt="Aditya Gupta avatar" />
@@ -176,7 +169,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/ShouryaUpadhyaya">
             <img src="https://github.com/ShouryaUpadhyaya.png?size=200" width="140" height="140" alt="Shourya Upadhyaya avatar" />
@@ -191,7 +183,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/abhitrueprogrammer">
             <img src="https://github.com/abhitrueprogrammer.png?size=200" width="140" height="140" alt="Abhinav Pant avatar" />
@@ -206,7 +197,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/kashyap-harshit">
             <img src="https://github.com/kashyap-harshit.png?size=200" width="140" height="140" alt="Harshit Kashyap avatar" />
@@ -221,11 +211,8 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
          </a>
       </td>
-
    </tr>
-
    <tr>
-
       <td align="center">
          <a href="https://github.com/DhruvsChopra">
             <img src="https://github.com/DhruvsChopra.png?size=200" width="140" height="140" alt="Dhruv Singh Chopra avatar" />
@@ -237,7 +224,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/prishasharann">
             <img src="https://github.com/prishasharann.png?size=200" width="140" height="140" alt="Prisha Saran avatar" />
@@ -249,7 +235,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/diyabajoria">
             <img src="https://github.com/diyabajoria.png?size=200" width="140" height="140" alt="Diya Bajoria avatar" />
@@ -264,7 +249,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/krishitag">
             <img src="https://github.com/krishitag.png?size=200" width="140" height="140" alt="Krishita Gupta avatar" />
@@ -279,11 +263,8 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
          </a>
       </td>
-
    </tr>
-
    <tr>
-
       <td align="center">
          <a href="https://github.com/IshanJ25">
             <img src="https://github.com/IshanJ25.png?size=200" width="140" height="140" alt="Ishan Jindal avatar" />
@@ -298,7 +279,6 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
          </a>
       </td>
-
       <td align="center">
          <a href="https://github.com/t3rrible0ctopus">
             <img src="https://github.com/t3rrible0ctopus.png?size=200" width="140" height="140" alt="Parth avatar" />
@@ -313,6 +293,5 @@ Bringing together diverse minds, we go beyond coding to build bold solutions tha
             <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
          </a>
       </td>
-
    </tr>
 </table>
